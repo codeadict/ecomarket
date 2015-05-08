@@ -1,0 +1,58 @@
+{% extends "base_modal.html" %}
+
+{% block modal_title %}
+{% if second_page %}
+Almost there - just confirm your numbers
+{% else %}
+We need to update your phone number
+{% endif %}
+{% endblock %}
+
+{% block modal_content %}
+<p>We are doing some tidying and since we often contact stall owners when there
+are any hiccups with orders on Eco Market we wanted to make sure we have an
+up-to-date phone number for you.</p>
+{% if phone_old %}
+<p>The number we already have for you is:<br />
+<pre>{{ phone_old }}</pre></p>
+<p>Since we don't know if this is a mobile number or a fixed landline number
+please could you choose one of the options below:</p>
+{% else %}
+<form class="form" id="phone_numbers_form" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {% with field=form.phone_landline %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+        {% endwith %}
+
+        {% with field=form.phone_mobile %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+        {% endwith %}
+    </fieldset>
+</form>
+{% endif %}
+{% endblock %}
+
+{% block modal_footer %}
+<div class="pull-right">
+    {% if phone_old %}
+    <a class="btn btn-primary" href="?use_old_as=fixed">Fixed number</a>
+    <a class="btn btn-primary" href="?use_old_as=mobile">Mobile number</a>
+    <a class="btn" href="?use_old_as=">It's wrong, change it!</a>
+    {% else %}
+    <button type="button" class="btn btn-primary" onclick="$('#phone_numbers_form').submit()">Save my numbers</button>
+    {% endif %}
+</div>
+{% endblock %}

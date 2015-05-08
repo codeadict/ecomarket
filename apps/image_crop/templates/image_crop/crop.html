@@ -1,0 +1,60 @@
+{% load url from future %}
+<div class="modal-header">
+  <button
+     type="button"
+     class="close"
+     data-dismiss="modal">×</button>
+  <h3>Edit image</h3>
+</div>
+<div class="modal-body">
+    <form class="image-crop form-horizontal">
+        <div class="alert alert-block alert-info">
+            <a class="close alert-dismiss" href="#">×</a>
+            <p>Don't forget to crop your image Drag the crop area below to crop your image so that it looks great!</p>
+        </div>
+
+        <div class="control-group{% if field.errors %} error{% endif %}">
+            <label for="image-upload" class="control-label">
+                <b>Image Description</b>
+            </label>
+            <div class="controls">
+                <input
+                    style="width: 370px;"
+                    type="text"
+                    id="image-upload"
+                    name="file-title"
+                    placeholder="Keep this one sentence if you can!" />
+            </div>
+        </div>
+
+        <div
+           id="file-cropper"
+           data-target="{% url 'image_crop_crop' %}">
+            <div class="file-crop-container">
+	           <div class="crop-container">
+	               <img
+            	     class="crop"
+            	     src="{{filepath}}{{preview}}"
+            	     id="crop-image" />
+                </div>
+                <div class="crop-preview-container">
+                    <img
+                     class="crop-preview"
+                     width="100px"
+                     height="100px"
+                     src="{{filepath}}{{original}}"
+                     id="crop-image-preview" />
+                </div>
+
+                <fieldset>
+                  <a href="#"
+                     name="submit-image-upload"
+                     class="btn btn-primary btn-load">Crop and Save</a>
+                  <a href="#"
+                     name="cancel-image-upload"
+                     class="btn btn-load">Cancel</a>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+</div>

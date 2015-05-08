@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+
+{% block content %}
+
+{% url 'promotion' as promotion_url %}
+{% url 'promotion_discounts' as promotion_discounts_url %}
+{% url 'promotion_stall_story' as promotion_stall_story_url %}
+{% url 'promotion_welcome_video' as promotion_welcome_video_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Promotion</h2>
+    <nav class="section-tabs">
+      <ul class="nav nav-tabs">
+        <li class="{% if request.path|startswith:promotion_discounts_url %}active{% endif %}{% ifequal request.path promotion_url %}active{% endifequal %}">
+          <a class="has-badge"
+	     href="{{ promotion_discounts_url }}">DISCOUNTS</a>
+          <em class="badge">16</em>
+        </li>
+        <li class="{% if request.path|startswith:promotion_stall_story_url %}active{% endif %}">
+          <a class="has-badge"
+	     href="{{ promotion_stall_story_url }}">STALL STORY</a>
+          <em class="badge">5</em>
+        </li>
+        <li class="{% if request.path|startswith:promotion_welcome_video_url %}active{% endif %}">
+          <a class="has-badge"
+	     href="{{ promotion_welcome_video_url }}">WELCOME VIDEO</a>
+          <em class="badge">0</em>
+        </li>
+      </ul>
+    </nav>
+    
+    {% block content_tab %}{% endblock content_tab %}
+    
+  </div>
+  
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>
+  
+</div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load url from future %}
+
+{% block mixpanel %}
+{% endblock %}
+
+{% block content %}
+    <div class="content cf single-content">
+        <div class="primary-content">
+
+            <div class="page-header">
+              <h1>Verification Unsucccessful</h1>
+            </div>
+
+            <div class="alert alert-block alert-error">
+                <h4 class="alert-heading">Error!</h4>
+                <p>Unfortunately, we couldn't verify your email address at this time. The unique link was expired or incorrect. Please <a href="http://help.ecomarket.com">contact us</a>. </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

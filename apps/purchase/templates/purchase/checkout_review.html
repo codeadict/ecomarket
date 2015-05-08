@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content %}
+<div class="content cf primary-left checkout-page">
+
+      <div class="primary-content-wrap">
+
+        <!-- add class of active step to checkout-progress container -->
+        <div class="checkout-progress step-review">
+          <ol class="steps">
+            <li class="step-cart step-completed">My Cart</li>
+            <li class="step-delivery step-completed">Delivery Address</li>
+            <li class="step-payment step-completed">Payment</li>
+            <!-- <li class="step-review step-active">Review order</li> -->
+          </ol>
+        </div>
+
+        <div class="alert address-form hide">
+            <form class="form form-horizontal" action="" method="POST">{% csrf_token %}
+                <fieldset>
+                    {% include 'fragments/form_snippet.html' with form=address_form only %}
+                </fieldset>
+                <input type="submit" value="Confirm Address" class="btn btn-primary btn-large">
+            </form>
+        </div>
+
+        <div class="content-box-inset">
+          <h2>Your Cart</h2>
+          {#{% for cart_stall in cart.cart_stalls.all %}#}
+
+            <!-- single seller cart entry -->
+            <div class="order-box content-box">
+              <form action="#" class="form form-inline">
+                <fieldset class="cf">
+                  <h3 class="">{{ stall.title|capfirst }}</h3>
+
+                      <div class="order-details">
+                          <ul class="list">
+                              {% for line_item in order.line_items.all %}
+                              {% with product=line_item.product %}
+                              <li class="order-item">
+                                  <div class="thumb">
+                                      <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url_80 }}" width="80" height="80" alt="{{ product.title }}"></a>
+                                  </div>
+                                  <div class="info">
+                                      <a href="{{ product.get_absolute_url }}" class="name dark-link">{{ product.title }}</a>
+                                      <span class="more">{{ product.description|slice:":35" }}</span>
+                                  </div>
+                                  <div class="product-price">
+                                      <strong class="price">£{{ line_item.price }} GBP</strong>
+                                  </div>
+                              </li>
+                              {% endwith %}
+                              {% endfor %}
+                          </ul>
+
+                          <div class="cart-options cf">
+
+                              <div class="cart-shipping">
+                                  <strong class="headline">Shipping address</strong>
+                                  {% with address=order.address %}
+                                  <address>
+                                      {{ address.name|title }}<br/>
+                                      {{ address.line1 }}<br/>
+                                      {{ address.line2 }}<br/>
+                                      {{ address.city }}, {{ address.state }}<br/>
+                                      {{ address.country }} {{ address.postal_code }}<br/>
+                                  </address>
+                                  <a class="change-address" href="#">Change</a>
+                                  {% endwith %}
+                              </div>
+
+                              <div class="cart-notes">
+                                  <strong class="headline">Note</strong>
+                                  <p>{{ cart_stall.note|linebreaksbr|default:"You've not added a note for the stall owner." }}</p>
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <div class="actions">
+
+                          {% with estimated_delivery=order.estimated_delivery %}
+                          {% with min=estimated_delivery.min %}
+                          {% with max=estimated_delivery.max %}
+                          {% comment %}
+                              <div class="delivery">
+                                  <span class="label">Estimated delivery</span>
+                                  {% if min == max %}
+                                      <span class="value">~{{ max }} days</span>
+                                  {% else %}
+                                      <span class="value">{{ min }}-{{ max }} days</span>
+                                  {% endif %}
+                              </div>
+                          {% endcomment %}
+                          {% endwith %}
+                          {% endwith %}
+                          {% endwith %}
+
+                          <dl class="totals cf">
+                              <dt>Subtotal</dt>
+                              <dd>
+                                  <strong>£{{ order.subtotal.amount }} GBP</strong>
+                              </dd>
+
+                              <dt>Delivery</dt>
+                              <dd>
+                                  <strong>£{{ order.delivery_charge.amount }} GBP</strong>
+                              </dd>
+
+
+                              <dt>Total</dt>
+                              <dd>
+                                  <strong>£{{ order.total.amount }} GBP</strong>
+                              </dd>
+                          </dl>
+
+                          <div class="buy">
+                              <a class="btn btn-primary btn-paypal" href="{% url 'checkout_cart' %}">Return to Cart</a>
+                          </div>
+
+
+                      </div>
+
+                  </fieldset>
+              </form>
+
+            </div>
+            <!-- /single seller cart entry -->
+
+        </div>
+
+
+      </div>
+
+      <div class="secondary-content">
+        {% include 'purchase/includes/howto_snippets.html' %}
+      </div>
+
+    </div>
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/purchase.js' %}" ></script>
+{% endblock %}

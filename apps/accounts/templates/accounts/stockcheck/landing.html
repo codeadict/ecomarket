@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load url from future %}
+
+{% block meta %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block content %}
+    <div class="content cf primary-left">
+        <div class="primary-content modal-login-static">
+          <div class="page-header" style="padding: 25px">
+            <h1>Sign in to do your stock check now!</h1>
+          </div>
+            {% if login_form.non_field_errors %}
+            <div class="alert alert-block alert-error">
+                <a href="#" data-dismiss="alert" class="close">×</a>
+                <h4 class="alert-heading">Please fix following errors:</h4>
+                <p>
+                    <ul>
+                        {% for error in login_form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
+            {% endif %}
+
+            <div class="modal-login">
+                <form id="register-form" class="form form-login" action="" method="post">{% csrf_token %}
+                    <div class="modal-body clearfix">
+                        <fieldset class="login-fields">
+                            {% with field=login_form.username %}
+                            <div class="control-group {% if field.errors %}error{% endif %}">
+                              <label for="{{ field.auto_id }}" class="control-label">Username or email:</label>
+                              <div class="controls">
+                                {{ field }}
+                                {{ field.errors }}
+                              </div>
+                            </div>
+                            {% endwith %}
+
+                            {% with field=login_form.password %}
+                            <div class="control-group {% if field.errors %}error{% endif %}">
+                              <label for="{{ field.auto_id }}" class="control-label">Password:</label>
+                              <div class="controls">
+                                {{ field }}
+                                {{ field.errors }}
+                              </div>
+                            </div>
+                            {% endwith %}
+
+                            {% with field=login_form.remember_me %}
+                            <div class="control-group">
+                                <div class="controls {% if field.errors %}error{% endif %}">
+                                    <label class="checkbox" for="{{ field.auto_id }}">
+                                      {{ field }}
+                                      Remember my login next time
+                                    </label>
+                                    <p><a href="/accounts/password/reset/" id="forgot-password-link">Forgot your password or username?</a></p>
+                                </div>
+                            </div>
+                            {% endwith %}
+
+                            <div class="or">OR</div>
+                        </fieldset>
+
+                        <fieldset class="sign-with-facebook">
+                            <a href="{% url 'socialauth_begin' 'facebook' %}?next={{request.GET.next}}" class="fb-login">Connect with Facebook</a>
+                            {% if social_login_error %}
+                            <div class="alert alert-inline alert-error">
+                              <b>Sorry, due to a technical glitch we couldn't connect to your Facebook acount. Try registering the traditional way using an email address.</b>
+                            </div>
+                            {% else %}
+                            <p>It's fast and easy. No need to fill in a form!</p>
+                            {% endif %}
+                        </fieldset>
+                    </div><!-- .modal-body -->
+
+                    <div class="modal-footer">
+                        <input type="submit" value="Sign In" class="btn btn-primary btn-large">
+                    </div>
+                </form>
+            </div><!-- .modal-login -->
+        </div><!-- .modal-login-static -->
+
+    <div class="secondary-content">
+      {% include 'accounts/includes/sidebar_help.html' %}
+    </div>
+
+    <div class="primary-content" style="min-height: 0">
+      <div class="spotlight cf">
+          <div class="quote">
+
+            <div class="quote-header">
+              <h2>Doing a stock check is fast &amp; easy!</h2>
+            </div>
+
+            <p>
+              Once you have logged into Eco Market doing a stock check is an easy but important part of selling your products here. The products you have
+              published on Eco Market must always be available for sale which keeps customers happy since they will keep coming back!
+              You simply need to check all the inventory amounts are correct on the products you have for sale right now and confirm this.
+            </p>
+
+
+          </div>
+
+          <div class="video">
+            <img width="333" height="219" alt="ettitude" src="/static/images/stockcheck.png">
+          </div>
+
+        </div>
+    </div>
+
+    <div class="primary-content why-sell" style="min-height: 0">
+      <h2>Common questions you might be wondering about.</h2>
+      <ul class="cf">
+            <li>
+              <h3><a href="http://help.ecomarket.com/customer/portal/articles/1342284-what-is-a-stock-check-and-how-do-i-do-them-" target="_blank">Why do I need to start doing a stock check on Eco Market?</a></h3>
+              <p>Stock checks were introduced to ensure that when a customer buys an item, their order can be fulfilled. Since our customers are your customers, keeping them happy is within everyones interest!</p>
+            </li>
+            <li>
+              <h3><a href="http://help.ecomarket.com/customer/portal/articles/1342284-what-is-a-stock-check-and-how-do-i-do-them-" target="_blank">How often do I need to do these stock checks?</a></h3>
+              <p>Your first stock check must be completed by November 20th 2013, after then you must do a stock check at least once every 30 days. This is to ensure that the stock you have live on Eco Market is accurate.</p>
+            </li>
+            <li>
+              <h3><a href="http://help.ecomarket.com" target="_blank">Who is Eco Market? Why are my products for sale here?</a></h3>
+              <p>Eco Market is a an eco-friendly marketplace selling thousands of products from thousands of sellers across the world. If you have reached this page, its very likely either you (or someone within your business) created a 'stall' to sell products here (if it helps, we used to be called Ethical Community some time ago!)</p>
+            </li>
+            <li>
+              <h3><a href="http://help.ecomarket.com/customer/portal/articles/1342284-what-is-a-stock-check-and-how-do-i-do-them-" target="_blank">How do I do a stock check? Can I get more help?</a></h3>
+              <p>It's extremely easy. You sign in using the form above, or if you want to watch a screencast video taking you through the entire process you can click the link above to visit our help centre.</p>
+            </li>
+          </ul>
+    </div>
+
+
+    </div>
+{% endblock content %}

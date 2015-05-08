@@ -1,0 +1,30 @@
+{% load url from future %}
+{% load comments humanize %}
+
+{% get_comment_list for object.user.get_profile as comments %}
+<div class="comments-list">
+	<ol class="comments">
+		{% with comment=comments|last %}
+			<li class="comment">
+				{% if comment %}
+					<div class="comment-box">
+						{% with name=comment.user.username %}
+						<a href="#" class="comment-author permalink">{{ name }} Says:</a>
+						{% endwith %}
+						<div class="comment-body">
+							<p>{{ comment.comment }}</p>
+						</div>
+						<span class="comment-meta"><time>{{ comment.submit_date|naturaltime }}</time></span>
+						{% if request.user == comment.user %}
+							<div class="comment-actions">
+        			          <a href="{% url 'comment_immediate_delete' comment.id %}" class="icon-delete comment-delete" title="Delete">×</a>          
+        			        </div>
+        		        {% endif %}
+					</div>
+				{% endif %}
+			</li>
+		{% endwith %}
+	</ol>
+	{% get_comment_form for object.user.get_profile as form %}
+	{% include "comments/mini_form.html" with facebook_off=1 %}
+</div>

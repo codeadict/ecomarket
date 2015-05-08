@@ -1,0 +1,308 @@
+.page-header{
+  position: relative;
+  margin: 10px 0 20px 0;
+  
+  .action{
+    position: absolute;
+    right: -5px;
+    top: -12px;
+  }
+  
+}
+
+.page-wrapper .content{
+  padding: 20px 0;
+}
+
+
+// standard layout with primary content on left, and secondary content on right
+
+.primary-content{
+  width: 710px;
+  border-radius: 3px;
+  background: #fff;
+  padding: 25px;
+  min-height: 415px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  margin: 0 0 20px 0;  
+}
+
+.primary-content-wrap{
+  width: 710px;
+}
+
+.secondary-content{
+  width: 230px;
+}
+
+
+// standard layout with primary column on the right side
+
+.content.primary-left{
+  
+  .primary-content{
+    float: left;
+  }
+  
+  .primary-content-wrap{
+    float: left;
+  }
+  
+  .secondary-content{
+    float: right;
+  }
+  
+}
+
+.content.primary-right{
+  
+  .primary-content{
+    float: right;
+  }
+  
+  .primary-content-wrap{
+    float: right;
+  }
+  
+  .secondary-content{
+    float: left;
+  }  
+}
+
+
+// layout with wider sidebar (like on product uploader page)
+
+.content.wider-sidebar{
+  .primary-content{
+    width: 660px;
+    float: left;
+  }
+  .secondary-content{
+    width: 280px;
+    float: right;
+  }
+}
+
+
+// layout with wider sidebar (like on product uploader page)
+
+.profile-page{
+  .primary-content-wrap{
+    width: 660px;
+    float: right;
+  }
+  .secondary-content{
+    width: 280px;
+    float: left;
+  }
+}
+
+
+// layout for product page, right side different view
+
+.content.product-page{
+  
+  .primary-content-wrap{
+    width: 570px;
+    float:left;
+    
+    .primary-content{
+      width: auto;
+      float: none;
+    }
+    
+  }
+    
+  .secondary-content{
+    width: 370px;
+    float: right;
+  }
+}
+
+
+// stall page, yet another column witdth size
+
+.content.stall-page{
+  
+  .primary-content{
+    width: 610px;
+    float: right;  
+  }
+  
+  .secondary-content{
+    width: 330px;
+    float: left;
+  }
+  
+}
+
+// content on the homepage
+
+.content.home-page{
+  
+  .primary-content-wrap{
+    width: 740px;
+  }
+  
+  .secondary-content{
+    width: 200px;
+  }
+  
+}
+
+
+
+// layout for login register pages
+
+.content.single-content{
+  
+  .primary-content{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &.full-width{
+    
+    .primary-content{
+      width: 960px;
+    }    
+  }
+  
+  .primary-content-wrap{
+    width: auto;
+    float: none;
+  }
+    
+}
+
+
+// full page content
+
+.full-content{
+  .primary-content-wrap{
+    width: auto;
+    float: none;
+    
+    .content-box-inset{
+      margin-left: 20px;
+      margin-right: 20px;
+      
+      &.content-box-full{
+        margin: 0;
+      }
+    }
+    
+    .discover-box{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+
+// overriding twitter behavior
+
+.tab-content{
+  overflow: visible;
+}
+
+
+// box with white background and header
+
+.content-box{
+  @include border-radius(3px);
+  background: #fff;
+  padding: 25px;
+  min-height: 215px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  
+  > h2{
+    margin:0;
+    padding:0;
+    font-family: $serif;
+    color:#fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background: url('../images/boxes/header-green.png');
+    font-size:15px;
+    font-weight: 400;
+    padding:10px 15px 5px 15px;      
+    line-height: 20px;
+    margin: -25px -25px 15px -25px;
+    border-radius: 3px 3px 0 0;
+  }  
+}
+
+#payment_status_message {
+    margin-top: 20px;
+}
+
+.pending {
+    text-align: center;
+}
+
+.content-box-inset{
+
+  background: rgba(0,0,0,0.1);
+  box-shadow: 0 0 1px rgba(0,0,0,0.2) inset;
+  padding: 10px;
+  // margin: 0 20px 20px 20px;
+  margin: 0 0 20px 0;
+  border-radius: 3px;
+  
+  > h2{
+    margin:0;
+    padding:0;
+    font-family: $serif;
+    color:#fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background: url('../images/boxes/header-bronze.png');
+    font-size:15px;
+    font-weight: 400;
+    padding:9px 15px 6px 15px;
+    line-height: 20px;
+    margin: -10px -10px 10px -10px;
+    border-radius: 3px 3px 0 0;
+    
+    em{
+      font-style: normal;
+    }
+    
+    &.with-link{
+      padding:0;
+    }    
+    
+    a{
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      padding:9px 15px 6px 15px;
+      display: block;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0) url('../images/boxes/arrow.png') 95% 50% no-repeat;
+      @include transition(background, 0.2s);
+    }
+    
+    a:hover{
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.1) url('../images/boxes/arrow.png') 97% 50% no-repeat;
+    }
+    
+  }
+
+}
+
+.primary-content-wrap{
+  
+  .content-box-inset{
+    > h2{
+      a{
+        background: rgba(0,0,0,0) url('../images/boxes/arrow.png') 98% 50% no-repeat;
+      }
+      a:hover{
+        background: rgba(0,0,0,0.1) url('../images/boxes/arrow.png') 99% 50% no-repeat;
+      }
+    }
+  }
+  
+}

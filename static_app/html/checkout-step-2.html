@@ -1,0 +1,566 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <title>Checkout step 2 - Eco Market</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=988">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="988">
+  <link rel="stylesheet" type="text/css" href="../js/vendor/select2-3.2/select2.css"/>  
+  <link rel="stylesheet" href="../css/ecomarket.css">
+  <script src="../js/vendor/modernizr/modernizr.custom.js"></script>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta http-equiv="cleartype" content="on">
+  <script src="http://use.typekit.com/nrj4aup.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>  
+</head>
+<body class="cf"><div class="body-outer-wrap"><div class="body-inner-wrap cf">
+  <div class="page-wrapper">
+    <header role="banner" class="cf">
+      <a href="/" class="logo">Eco Market.com</a>
+      <nav class="site">
+        <a href="#">Discover</a>        
+        <a href="#">Sell</a>
+        <a href="#">Blogs</a>
+      </nav>
+
+      <nav class="primary">
+        <ul>
+          <li class="activities"><a href="#">Activities <em class="badge">6</em></a></li>
+          <li class="messages"><a href="#">Messages <em class="badge">12</em></a></li>
+          <li class="love-list"><a href="#">Love Lists</a></li>
+          <li class="my-stall"><a href="#">My Stall</a></li>
+        </ul>
+      </nav>
+    
+      <div class="account">
+        
+        <div class="currency">
+          
+          <div class="dropdown">
+            
+            <a href="#" class="current toggle dropdown-toggle" data-toggle="dropdown">
+              <i class="icon icon-cad"></i> CAD
+              <b class="caret"></b>
+            </a>
+          
+          
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon icon-usd"></i> USD</a></li>
+              <li><a href="#"><i class="icon icon-gbp"></i> GBP</a></li>
+              <li><a href="#"><i class="icon icon-aud"></i> AUD</a></li>
+            </ul>
+          </div>
+          
+          
+        </div>
+        
+        <div class="user">
+          
+          <img src="../tmp/users/30x30/3.jpg" alt="Photo of {User.name}" width="30" height="30">
+          
+          <div class="dropdown">
+          
+            <a href="#" class="welcome toggle dropdown-toggle" data-toggle="dropdown">
+              <span class="welcome">Howdy, Jason</span>
+              <b class="caret"></b>
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Profile Page</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          
+          </div>
+          
+          
+        </div>
+        <nav class="support">
+          <a href="#" class="help">Help</a>
+        </nav>
+      </div>
+    
+      <form class="search" action="#" method="get">
+        <fieldset>
+          <label for="q" class="search-for">Products</label>
+          <input name="q" type="search" value="" placeholder="Search Eco Market">
+          <input type="submit" value="Go »">
+          <a href="#" class="cart">Cart</a>
+        </fieldset>
+      </form>
+    
+    </header>
+        
+    <div class="content cf primary-left checkout-page">
+      
+      <div class="primary-content-wrap">
+        
+        <!-- add class of active step to checkout-progress container -->
+        <div class="checkout-progress progress-3-steps step-delivery">
+          <ol class="steps">
+            <li class="step-cart step-completed">Add products</li>
+            <li class="step-delivery step-active">Delivery address</li>
+            <li class="step-payment">Payment</li>
+            <!-- <li class="step-review">Review order</li> -->
+          </ol>          
+        </div>
+
+        
+        <div class="content-box-inset">
+          <h2>Your Cart</h2>
+          
+          <!-- single seller cart entry -->
+          <div class="shipping-box content-box">
+
+              <p>Please create a shipping address to send this stalls' items to</p>
+
+              <form class="form form-horizontal" action="" method="POST"><div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="r3NnzgRhheuBLbrcYB3j2CzIzDPBSVxe"></div>
+              <fieldset>
+
+              <div class="control-group ">
+                <label for="id_name" class="control-label">Name:</label>
+                <div class="controls">
+                  <input id="id_name" type="text" name="name" maxlength="255">
+
+                </div>
+              </div>
+
+
+              <div class="control-group ">
+                <label for="id_line1" class="control-label">Address line 1:</label>
+                <div class="controls">
+                  <input id="id_line1" type="text" name="line1" maxlength="255">
+
+                </div>
+              </div>
+
+
+              <div class="control-group ">
+                <label for="id_line2" class="control-label">Address line 2:</label>
+                <div class="controls">
+                  <input id="id_line2" type="text" name="line2" maxlength="255">
+
+                </div>
+              </div>
+
+
+              <div class="control-group ">
+                <label for="id_city" class="control-label">City:</label>
+                <div class="controls">
+                  <input id="id_city" type="text" name="city" maxlength="255">
+
+                </div>
+              </div>
+
+
+              <div class="control-group ">
+                <label for="id_state" class="control-label">State:</label>
+                <div class="controls">
+                  <input id="id_state" type="text" name="state" maxlength="50">
+
+                </div>
+              </div>
+
+
+              <div class="control-group ">
+                <label for="id_country" class="control-label">Country:</label>
+                <div class="controls">
+                  <select name="country" id="id_country">
+              <option value="" selected="selected">---------</option>
+              <option value="1">Afghanistan</option>
+              <option value="2">Aland Islands</option>
+              <option value="3">Albania</option>
+              <option value="4">Algeria</option>
+              <option value="5">American Samoa</option>
+              <option value="6">Andorra</option>
+              <option value="7">Angola</option>
+              <option value="8">Anguilla</option>
+              <option value="9">Antarctica</option>
+              <option value="10">Antigua And Barbuda</option>
+              <option value="11">Argentina</option>
+              <option value="12">Armenia</option>
+              <option value="13">Aruba</option>
+              <option value="14">Australia</option>
+              <option value="15">Austria</option>
+              <option value="16">Azerbaijan</option>
+              <option value="17">Bahamas</option>
+              <option value="18">Bahrain</option>
+              <option value="19">Bangladesh</option>
+              <option value="20">Barbados</option>
+              <option value="21">Belarus</option>
+              <option value="22">Belgium</option>
+              <option value="23">Belize</option>
+              <option value="24">Benin</option>
+              <option value="25">Bermuda</option>
+              <option value="26">Bhutan</option>
+              <option value="27">Bolivia, Plurinational State Of</option>
+              <option value="28">Bonaire, Saint Eustatius And Saba</option>
+              <option value="29">Bosnia And Herzegovina</option>
+              <option value="30">Botswana</option>
+              <option value="31">Bouvet Island</option>
+              <option value="32">Brazil</option>
+              <option value="33">British Indian Ocean Territory</option>
+              <option value="34">Brunei Darussalam</option>
+              <option value="35">Bulgaria</option>
+              <option value="36">Burkina Faso</option>
+              <option value="37">Burundi</option>
+              <option value="38">Cambodia</option>
+              <option value="39">Cameroon</option>
+              <option value="40">Canada</option>
+              <option value="41">Cape Verde</option>
+              <option value="42">Cayman Islands</option>
+              <option value="43">Central African Republic</option>
+              <option value="44">Chad</option>
+              <option value="45">Chile</option>
+              <option value="46">China</option>
+              <option value="47">Christmas Island</option>
+              <option value="48">Cocos (Keeling) Islands</option>
+              <option value="49">Colombia</option>
+              <option value="50">Comoros</option>
+              <option value="51">Congo</option>
+              <option value="52">Congo, The Democratic Republic Of The</option>
+              <option value="53">Cook Islands</option>
+              <option value="54">Costa Rica</option>
+              <option value="55">Cote D'Ivoire</option>
+              <option value="56">Croatia</option>
+              <option value="57">Cuba</option>
+              <option value="58">Curacao</option>
+              <option value="59">Cyprus</option>
+              <option value="60">Czech Republic</option>
+              <option value="61">Denmark</option>
+              <option value="62">Djibouti</option>
+              <option value="63">Dominica</option>
+              <option value="64">Dominican Republic</option>
+              <option value="65">Ecuador</option>
+              <option value="66">Egypt</option>
+              <option value="67">El Salvador</option>
+              <option value="68">Equatorial Guinea</option>
+              <option value="69">Eritrea</option>
+              <option value="70">Estonia</option>
+              <option value="71">Ethiopia</option>
+              <option value="72">Falkland Islands (Malvinas)</option>
+              <option value="73">Faroe Islands</option>
+              <option value="74">Fiji</option>
+              <option value="75">Finland</option>
+              <option value="76">France</option>
+              <option value="77">French Guiana</option>
+              <option value="78">French Polynesia</option>
+              <option value="79">French Southern Territories</option>
+              <option value="80">Gabon</option>
+              <option value="81">Gambia</option>
+              <option value="82">Georgia</option>
+              <option value="83">Germany</option>
+              <option value="84">Ghana</option>
+              <option value="85">Gibraltar</option>
+              <option value="86">Greece</option>
+              <option value="87">Greenland</option>
+              <option value="88">Grenada</option>
+              <option value="89">Guadeloupe</option>
+              <option value="90">Guam</option>
+              <option value="91">Guatemala</option>
+              <option value="92">Guernsey</option>
+              <option value="93">Guinea</option>
+              <option value="94">Guinea-Bissau</option>
+              <option value="95">Guyana</option>
+              <option value="96">Haiti</option>
+              <option value="97">Heard Island And Mcdonald Islands</option>
+              <option value="99">Honduras</option>
+              <option value="100">Hong Kong</option>
+              <option value="101">Hungary</option>
+              <option value="102">Iceland</option>
+              <option value="103">India</option>
+              <option value="104">Indonesia</option>
+              <option value="105">Iran, Islamic Republic Of</option>
+              <option value="106">Iraq</option>
+              <option value="107">Ireland</option>
+              <option value="108">Isle Of Man</option>
+              <option value="109">Israel</option>
+              <option value="110">Italy</option>
+              <option value="111">Jamaica</option>
+              <option value="112">Japan</option>
+              <option value="113">Jersey</option>
+              <option value="114">Jordan</option>
+              <option value="115">Kazakhstan</option>
+              <option value="116">Kenya</option>
+              <option value="117">Kiribati</option>
+              <option value="118">Korea, Democratic People'S Republic Of</option>
+              <option value="119">Korea, Republic Of</option>
+              <option value="120">Kuwait</option>
+              <option value="121">Kyrgyzstan</option>
+              <option value="122">Lao People'S Democratic Republic</option>
+              <option value="123">Latvia</option>
+              <option value="124">Lebanon</option>
+              <option value="125">Lesotho</option>
+              <option value="126">Liberia</option>
+              <option value="127">Libyan Arab Jamahiriya</option>
+              <option value="128">Liechtenstein</option>
+              <option value="129">Lithuania</option>
+              <option value="130">Luxembourg</option>
+              <option value="131">Macao</option>
+              <option value="132">Macedonia, The Former Yugoslav Republic Of</option>
+              <option value="133">Madagascar</option>
+              <option value="134">Malawi</option>
+              <option value="135">Malaysia</option>
+              <option value="136">Maldives</option>
+              <option value="137">Mali</option>
+              <option value="138">Malta</option>
+              <option value="139">Marshall Islands</option>
+              <option value="140">Martinique</option>
+              <option value="141">Mauritania</option>
+              <option value="142">Mauritius</option>
+              <option value="143">Mayotte</option>
+              <option value="144">Mexico</option>
+              <option value="145">Micronesia, Federated States Of</option>
+              <option value="146">Moldova, Republic Of</option>
+              <option value="147">Monaco</option>
+              <option value="148">Mongolia</option>
+              <option value="149">Montenegro</option>
+              <option value="150">Montserrat</option>
+              <option value="151">Morocco</option>
+              <option value="152">Mozambique</option>
+              <option value="153">Myanmar</option>
+              <option value="154">Namibia</option>
+              <option value="155">Nauru</option>
+              <option value="156">Nepal</option>
+              <option value="157">Netherlands</option>
+              <option value="158">New Caledonia</option>
+              <option value="159">New Zealand</option>
+              <option value="160">Nicaragua</option>
+              <option value="161">Niger</option>
+              <option value="162">Nigeria</option>
+              <option value="163">Niue</option>
+              <option value="164">Norfolk Island</option>
+              <option value="165">Northern Mariana Islands</option>
+              <option value="166">Norway</option>
+              <option value="167">Oman</option>
+              <option value="168">Pakistan</option>
+              <option value="169">Palau</option>
+              <option value="170">Palestinian Territory, Occupied</option>
+              <option value="171">Panama</option>
+              <option value="172">Papua New Guinea</option>
+              <option value="173">Paraguay</option>
+              <option value="174">Peru</option>
+              <option value="175">Philippines</option>
+              <option value="176">Pitcairn</option>
+              <option value="177">Poland</option>
+              <option value="178">Portugal</option>
+              <option value="179">Puerto Rico</option>
+              <option value="180">Qatar</option>
+              <option value="181">Reunion</option>
+              <option value="182">Romania</option>
+              <option value="183">Russian Federation</option>
+              <option value="184">Rwanda</option>
+              <option value="185">Saint Barthelemy</option>
+              <option value="186">Saint Helena, Ascension And Tristan Da Cunha</option>
+              <option value="187">Saint Kitts And Nevis</option>
+              <option value="188">Saint Lucia</option>
+              <option value="189">Saint Martin (French Part)</option>
+              <option value="190">Saint Pierre And Miquelon</option>
+              <option value="191">Saint Vincent And The Grenadines</option>
+              <option value="192">Samoa</option>
+              <option value="193">San Marino</option>
+              <option value="194">Sao Tome And Principe</option>
+              <option value="195">Saudi Arabia</option>
+              <option value="196">Senegal</option>
+              <option value="197">Serbia</option>
+              <option value="198">Seychelles</option>
+              <option value="199">Sierra Leone</option>
+              <option value="200">Singapore</option>
+              <option value="201">Sint Maarten (Dutch Part)</option>
+              <option value="202">Slovakia</option>
+              <option value="203">Slovenia</option>
+              <option value="204">Solomon Islands</option>
+              <option value="205">Somalia</option>
+              <option value="206">South Africa</option>
+              <option value="207">South Georgia And The South Sandwich Islands</option>
+              <option value="208">Spain</option>
+              <option value="209">Sri Lanka</option>
+              <option value="210">Sudan</option>
+              <option value="211">Suriname</option>
+              <option value="212">Svalbard And Jan Mayen</option>
+              <option value="213">Swaziland</option>
+              <option value="214">Sweden</option>
+              <option value="215">Switzerland</option>
+              <option value="216">Syrian Arab Republic</option>
+              <option value="217">Taiwan, Province Of China</option>
+              <option value="218">Tajikistan</option>
+              <option value="219">Tanzania, United Republic Of</option>
+              <option value="220">Thailand</option>
+              <option value="221">Timor-Leste</option>
+              <option value="222">Togo</option>
+              <option value="223">Tokelau</option>
+              <option value="224">Tonga</option>
+              <option value="225">Trinidad And Tobago</option>
+              <option value="226">Tunisia</option>
+              <option value="227">Turkey</option>
+              <option value="228">Turkmenistan</option>
+              <option value="229">Turks And Caicos Islands</option>
+              <option value="230">Tuvalu</option>
+              <option value="231">Uganda</option>
+              <option value="232">Ukraine</option>
+              <option value="233">United Arab Emirates</option>
+              <option value="234">United Kingdom</option>
+              <option value="235">United States</option>
+              <option value="236">United States Minor Outlying Islands</option>
+              <option value="237">Uruguay</option>
+              <option value="238">Uzbekistan</option>
+              <option value="239">Vanuatu</option>
+              <option value="240">Vatican City State</option>
+              <option value="241">Venezuela, Bolivarian Republic Of</option>
+              <option value="242">Viet Nam</option>
+              <option value="243">Virgin Islands, British</option>
+              <option value="244">Virgin Islands, U.S.</option>
+              <option value="245">Wallis And Futuna</option>
+              <option value="246">Western Sahara</option>
+              <option value="247">Yemen</option>
+              <option value="248">Zambia</option>
+              <option value="249">Zimbabwe</option>
+              </select>
+
+                </div>
+              </div>
+
+
+              <div class="control-group ">
+                <label for="id_postal_code" class="control-label">Postal code:</label>
+                <div class="controls">
+                  <input id="id_postal_code" type="text" name="postal_code" maxlength="15">
+
+                </div>
+              </div>
+
+              </fieldset>
+              <fieldset class="form-actions">
+                <input type="submit" value="Confirm Address" class="btn btn-primary btn-large">
+              </fieldset>
+            </form>
+        </div>
+
+        </div>
+
+      
+      </div>
+      
+      <div class="secondary-content">
+        
+        <div class="box box-blue">
+          <h2>How Checkout Works</h2>
+          
+          <div class="howto-box">
+            
+            <ul class="howto-list">
+              <li>
+                <a href="http://etiska.desk.com/customer/portal/articles/774387-is-the-marketplace-global-" class="head external">Is the marketplace global?</a>
+                <p>Eco Market recently launched internationally due to huge demand from shoppers and sellers outside the UK. The shipping system enables you to easily set up your Stall's shipping profiles so that you can offer different shipping rates for different countries or regions. If your not yet ready to go global, dont worry you can select to ship to only shoppers in your country.</p>
+              </li>
+              <li>
+                <a href="http://etiska.desk.com/customer/portal/articles/396678-how-our-fees-work" class="head external">How our fees work.</a>
+                 <p>It’s free to create a Stall and list unlimited products for sale on Eco Market. When a product sells we charge a 10% sales commission on the total order value including the postage costs.</p>
+              </li>
+              <li>
+                <a href="http://etiska.desk.com/customer/portal/articles/562753-is-there-a-minimum-contract-length-or-fees-to-close-my-shop-" class="head external">Is it free to close my Stall?</a>
+                <p>Yes, we never charge you to close your Stall on Eco Market and the is no minimum contract length. If you dont like selling on the site you can easily close you stall anytime, however we are sure you will love your time here!</p>
+              </li>
+              <li>
+                <a href="http://etiska.desk.com/customer/portal/articles/362609-how-do-i-list-a-product-with-different-options-like-colour-and-size-" class="head external">How do I list a product with product options?</a>
+                <p>We suggest you list the different options that are available in the product description as a bullet points list and include photos of the different colours as images in your listing, you can list up to 10 images per product. In the product description request that the shopper leaves you a note in the special instructions box as to which option they would like during checkout.</p>
+              </li>
+            </ul>
+            <div class="box-action">
+              <a href="http://etiska.desk.com/" rel="external">Ask a question</a>
+            </div>
+            
+          </div>
+          
+        </div>
+                        
+      </div>
+        
+    </div>
+      
+
+  </div>
+  <div class="footer-wrapper">
+    <footer role="contentinfo" class="bottom">
+      <div class="navigational">
+        <nav>
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Shopping</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Selling</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav class="connect">
+          <h3>Connect</h3>
+          <ul>
+            <li class="twitter"><a href="#">Twitter</a></li>
+            <li class="facebook"><a href="#">Facebook</a></li>
+            <li class="pinterest"><a href="#">Pinterest</a></li>
+          </ul>
+        </nav>      
+      </div>
+      <div class="legal">
+        <p class="copy">© Etiska Ltd 2012 | Company No: 06829511</p>
+        <nav>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">About</a>
+          <a href="#">Press</a>
+          <a href="#">Contact</a>      
+        </nav>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- for the modal gallery we need to hold a placeholder somewhere -->
+  <!-- modal-gallery is the modal dialog used for the image gallery -->
+  <div id="modal-gallery" class="modal modal-gallery hide fade">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&times;</a>
+      <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+  </div>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="../bootstrap/js/2.1/bootstrap.min.js"></script>
+  <script src="../js/vendor/load-image.min.js"></script>  
+  <script src="../js/vendor/bootstrap-gallery/js/bootstrap-image-gallery.min.js"></script>  
+  <script src="../js/vendor/select2-3.1/select2.min.js"></script>
+  <script src="../js/vendor/jquery.jtruncate.min.js"></script>
+  <script src="../js/ecomarket.js"></script>
+</div></div></body>
+</html>

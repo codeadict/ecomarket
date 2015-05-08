@@ -1,0 +1,10 @@
+{% load url from future %}
+Hi {{ recipient.first_name }},
+
+You’ve got a new message on Eco Market from {{ sender.username }}.
+
+Here was the message:
+
+{{ message.body }}
+
+You can login and reply to the message on Eco Market http://ecomarket.com{% url 'messaging_inbox' %}.

@@ -1,0 +1,36 @@
+{% extends 'search/base.html' %}
+
+{% load url from future %}
+{% load partition %}
+{% load static from staticfiles %}
+{% load social_tags %}
+
+{% block content %}
+{% include "search/discover_header.html" %}
+<div class="content cf full-content">
+    <div class="primary-content-wrap single-content">
+        {% for subcategories in subcategories|rows_of_length:8 %}
+        <ul class="categories-grid">
+            {% for subcat in subcategories %}
+            <li class="{% cycle 'big' 'medium' 'small' 'small' %}">
+            <a class="image thumb" title="{{ subcat.name }}" href="{{ subcat.get_discover_url }}"><span class="image"><img alt="{{ subcat.name }}" src="{{ subcat.image_src }}" /></span><span class="title">{{ subcat.name }}</span></a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/vendor/jquery-masonry/jquery.masonry.min.js' %}"></script>
+{% share_script vertical %}
+<script type="text/javascript">
+$(function(){
+    $('.categories-grid').masonry({
+        itemSelector: 'li',
+        columnWidth: 60
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'accounts/profile/fragments/_activity_threaded-comment_base.html' %}
+{% load url from future %}
+
+{% comment %}
+This template fragment may be used to display a post on a users own wall
+or on somebody else's wall.
+{% endcomment %}
+
+{% block verb %} said{% endblock %}
+
+{% block target %}{% if action.actor.get_profile == action.target %}
+	{% comment %}Don't want to display the target (user's own profile).{% endcomment %}
+{% else %}{% if profile_user == action.target.user %}{% else %}
+to <a href="{% url 'public_profile' action.target.user.username %}">{{ action.target.user.username }}</a>{% endif %}{% endif %}{% endblock %}
+
+{% block body %}
+<div class="body-text">{{ action.action_object.comment }}</div>
+{% endblock %}

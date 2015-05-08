@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+
+{% block content %}
+
+{% url 'dashboard' as dashboard_url %}
+{% url 'dashboard_awaiting_delivery' as dashboard_awaiting_delivery_url %}
+{% url 'dashboard_waiting_feedback' as dashboard_waiting_feedback_url %}
+{% url 'dashboard_unresolved_questions' as dashboard_unresolved_questions_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>{{ user.first_name }}'s Dashboard</h2>
+    <div class="account-stats cf">
+      <div class="stat-group">
+        <span class="stat-label">Money made</span>
+        <strong>0</strong>
+        <a class="currency dark-link" href="#">GBP</a>
+      </div>
+      
+      <div class="stat-group middle">
+        <span class="stat-label">Orders placed</span>
+        <strong>0</strong>
+        <a class="dark-link" href="#">More info</a>
+      </div>
+
+      <div class="stat-group">
+        <span class="stat-label">Products viewed</span>
+        <strong>0</strong>
+        <a class="dark-link" href="#">More info</a>
+      </div>
+    </div>
+
+    <h3 class="headline">Don't forget</h3>
+    <nav class="section-tabs">
+      <ul class="nav nav-tabs">
+        <li class="{% if request.path|startswith:dashboard_awaiting_delivery_url %}active{% endif %}{% ifequal request.path dashboard_url %}active{% endifequal %}">
+          <a href="{{ dashboard_awaiting_delivery_url }}">AWAITING DELIVERY</a>
+          {#<em class="badge">16</em>#}
+        </li>
+        {% comment %}
+        {# Disabled for 2.0 launch #}
+        <li class="{% if request.path|startswith:dashboard_waiting_feedback_url %}active{% endif %}">
+          <a href="{{ dashboard_waiting_feedback_url }}">WAITING FEEDBACK</a>
+          {#<em class="badge">5</em>#}
+        </li>
+        <li class="{% if request.path|startswith:dashboard_unresolved_questions_url %}active{% endif %}">
+          <a href="{{ dashboard_unresolved_questions_url }}">UNRESOLVED QUESTIONS</a>
+          {#<em class="badge">0</em>#}
+        </li>
+        {% endcomment %}
+      </ul>
+    </nav>    
+    {% block content_tab %}{% endblock content_tab %}
+  </div>
+  
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>  
+</div>
+{% endblock content %}

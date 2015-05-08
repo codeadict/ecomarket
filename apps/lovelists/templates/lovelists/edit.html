@@ -1,0 +1,88 @@
+{% extends 'lovelists/base.html' %}
+
+{% load url from future %}
+{% load alerts %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li>
+        <a href="{% url 'home' %}">Home</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li>
+        <a href="{% url 'lovelist:main' %}">Lovelist</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li>
+        <a href="{% url 'lovelist:lists' username %}">{{ username }}</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li>
+    <a href="{{ love_list.get_absolute_url }}">{{ love_list.title }}</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li class="active">Edit</li>
+</ul>
+{% endblock %}
+
+{% block header %}
+{{ block.super }}
+<div class="modal hide fade modal-message modal-notification" id="delete">
+
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h3>Delete this love list?</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="notification-area cf">
+            <div class="content">
+                <p>Are you sure you want to delete this love list?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer cf">
+        <div class="pull-right">
+            <form method="POST" action="{% url 'lovelist:delete' love_list.identifier %}">
+                {% csrf_token %}
+                <a href="#" class="btn" data-dismiss="modal">No</a>
+                <input type="submit" class="btn btn-primary" value="Yes" />
+                <!--<a href="#" class="btn btn-primary">Do action</a>-->
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block list-info %}
+<div class="list-info">
+    <form class="form" method="POST">
+        {% csrf_token %}
+        {% if form.errors %}
+        {% alert error "Sorry, there were a few mistakes:" "These need fixing before we can save this product for you. Please scroll down and you can see the problems highlighted in red." http://help.ecomarket.com %}
+        {% endif %}
+        <fieldset>
+            <p>{{ form.title }}</p>{{ form.title.errors }}
+            <p>{{ form.description }}</p>{{ form.description.errors }}
+            <p>{% include "main/category_dropdown_include.html" with field=form.primary_category %}</p>{{ form.primary_category.errors }}
+            <p>{% include "main/category_dropdown_include.html" with field=form.secondary_category %}</p>{{ form.secondary_category.errors }}
+            <p>{% include "main/category_dropdown_include.html" with field=form.tertiary_category %}</p>{{ form.tertiary_category.errors }}
+            <p>
+                {{ form.is_public }}
+                <label class="inline" for="id_is_public">Make my list public so others can see it</label>
+            </p>
+            <div class="pull-left">
+                <input type="submit" value="Save changes" class="btn btn-primary">
+                <a href="{{ love_list.get_absolute_url }}" class="btn">cancel</a>
+            </div>
+            <a href="#delete" data-toggle="modal" class="list-delete-link">delete this list</a>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
+
+{% block love_button %}
+<span data-action="#" data-slug="{{ product.slug }}" data-list_identifier="{{ love_list.identifier }}" class="action-love btn-love btn-love-remove" title="Remove from this list"><i class="icon icon-love"></i></span>
+{% endblock %}

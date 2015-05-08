@@ -1,0 +1,38 @@
+{% with images=product.images %}
+
+
+<div class="product-photos">
+  <div class="photo-slider" data-toggle="modal-gallery" data-target="#modal-gallery">
+    
+    <div class="primary-photo">
+      <img src="{{product.image.url_preview}}" alt="{{product.image.name}}">
+    </div>
+    
+    <div class="side-photos">
+      <a class="nav prev nav-prev"><i class="icon icon-white icon-chevron-up"></i></a>
+      <a class="nav next nav-next"><i class="icon icon-white icon-chevron-down"></i></a>
+      <div class="photos-scrollable">
+        <div class="items">
+          <div class="item"><ul class="photos-nav">
+            {% for image in images %}
+              {% if forloop.counter == 5 or forloop.counter == 9 %}
+                <div class="item"><ul class="photos-nav">
+              {% endif %}
+                <li>
+                  <a href="{{image.url_preview}}" data-preview="{{image.url_preview}}" data-big="{{image.url_preview}}" title="{{image.name}}">
+                    <img width="80" height="80" src="{{image.url_80}}" alt="{{image.name}}" />
+                  </a>
+                </li>
+              {% if forloop.counter == 4 or forloop.counter == 8 %}
+                </ul></div>
+              {% endif %}
+            {% endfor %}
+          {% if images|length != 4 and images|length != 8 %}
+            </ul></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endwith %}

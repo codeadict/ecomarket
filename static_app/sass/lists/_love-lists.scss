@@ -1,0 +1,74 @@
+ul.love-lists{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+  overflow: hidden;
+  
+  li{
+    float: left;
+    width: 474px;
+    margin: 0 6px 12px 6px;
+    position: relative;
+    text-align: left;
+    
+    a.image{
+      display: block;
+      background: #fff;
+      font-family: $serif;      
+      font-size: 16px;      
+      @include border-radius(3px);
+      @include content-box-shadow;      
+      
+      &:hover{
+        color: $dark_link_hover;
+      }
+    }
+    
+    span.image{
+      @include border-radius(3px);
+      display: block;
+      overflow: hidden;
+      margin:0 0 0 6px;
+      float: left;
+    }
+    
+    span.title{
+      display: block;   
+      padding: 10px;
+      height: 35px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: left;
+    }
+    
+    span.images{
+        height: 120px;
+        clear: both;
+        display: block;
+        padding: 8px 0 0 0;
+        text-align: center;
+        img{
+            margin: 0px 3px 0 3px;
+        }
+    }
+    
+  }
+}
+
+.love-lists-wrap{
+  
+  margin: 0 -6px;
+  
+  .bottom-filtering{
+    margin: 0px 6px;
+    min-height: 50px;
+    padding: 12px 12px 0 12px;
+    overflow: hidden;
+  }
+  
+  .pagination{
+    margin: 0;
+  }
+}

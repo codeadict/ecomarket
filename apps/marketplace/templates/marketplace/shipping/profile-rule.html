@@ -1,0 +1,36 @@
+<fieldset
+   class="box shipping-profile-rule">
+
+  <div class="legend">
+    Shipping rule
+    <a href="#" class="close">✕</a>
+  </div>
+
+  <input
+     type="hidden" 
+     value="{% if form.instance.pk  %}{{form.instance.pk}}{% else %}add{% endif %}"
+     name="shipping_rule" />
+
+  {% with field=form.countries queryset=form.countries_qs select_class="country-select" %}
+  {% include "marketplace/includes/m2m.html" %}
+  {% endwith %}
+
+  {% with field=form.rule_price %}
+  {% include "marketplace/includes/money.html" %}
+  {% endwith %}
+
+  {% with field=form.rule_price_extra %}
+  {% include "marketplace/includes/money.html" %}
+  {% endwith %}
+
+  {% with field=form.despatch_time field_suffix=" days" %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  {% with field=form.delivery_time %}
+  {% with field_max=form.delivery_time_max %}
+  {% include "marketplace/shipping/delivery.html" %}
+  {% endwith %}
+  {% endwith %}
+
+</fieldset>

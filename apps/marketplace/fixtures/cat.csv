@@ -1,0 +1,431 @@
+"fashion","clothing","jeans and trousers","jeans"
+"fashion","clothing","jeans and trousers","trousers"
+"fashion","clothing","jeans and trousers","sports pants and trousers"
+"fashion","clothing","leggings and tights","leggings"
+"fashion","clothing","leggings and tights","tights"
+"fashion","clothing","shorts and skirts","shorts"
+"fashion","clothing","shorts and skirts","skirts"
+"fashion","clothing","t-shirts, polos and vests","t-shirts"
+"fashion","clothing","t-shirts, polos and vests","vests"
+"fashion","clothing","t-shirts, polos and vests","polo shirts"
+"fashion","clothing","hoodies and sweatshirts","hoodies"
+"fashion","clothing","hoodies and sweatshirts","sweatshirts"
+"fashion","clothing","coats and jackets",
+"fashion","clothing","jumpers and cardigans","jumpers"
+"fashion","clothing","jumpers and cardigans","cardigans"
+"fashion","clothing","tops",
+"fashion","clothing","blouses and tunics","blouses"
+"fashion","clothing","blouses and tunics","tunics"
+"fashion","clothing","shirts",
+"fashion","clothing","underwear and socks","socks"
+"fashion","clothing","underwear and socks","pants and knickers"
+"fashion","clothing","underwear and socks","bras"
+"fashion","clothing","underwear and socks","lingerie"
+"fashion","clothing","dresses",
+"fashion","clothing","nightwear","pyjamas"
+"fashion","clothing","nightwear","dressing gowns"
+"fashion","clothing","suits",
+"fashion","shoes","trainers and sneakers",
+"fashion","shoes","flip flops and sandals",
+"fashion","shoes","high heels",
+"fashion","shoes","slippers",
+"fashion","shoes","boots",
+"fashion","shoes","formal shoes",
+"fashion","accessories","bags & purses","hand bags"
+"fashion","accessories","bags & purses","clutch bags"
+"fashion","accessories","bags & purses","shopping and tote bags"
+"fashion","accessories","bags & purses","purses"
+"fashion","accessories","bags & purses","briefcases"
+"fashion","accessories","bags & purses","backpacks"
+"fashion","accessories","bags & purses","satchels and shoulder bags"
+"fashion","accessories","bags & purses","holdalls"
+"fashion","accessories","bags & purses","toiletry and makeup bags"
+"fashion","accessories","belts",
+"fashion","accessories","hats, gloves and scarves","hats"
+"fashion","accessories","hats, gloves and scarves","gloves"
+"fashion","accessories","hats, gloves and scarves","neck scarves"
+"fashion","accessories","hats, gloves and scarves","head scarves"
+"fashion","accessories","ties",
+"fashion","accessories","wallets",
+"fashion","accessories","eyewear","glasses"
+"fashion","accessories","eyewear","sunglasses"
+"fashion","accessories","watches",
+"fashion","accessories","keyrings",
+"fashion","accessories","gadget accessories","laptops"
+"fashion","accessories","gadget accessories","phones"
+"fashion","accessories","gadget accessories","tablets"
+"fashion","accessories","handkerchiefs",
+"fashion","accessories","other accessories",
+"fashion","jewellery","bracelets and bangles",
+"fashion","jewellery","earrings",
+"fashion","jewellery","jewellery boxes",
+"fashion","jewellery","jewellery sets",
+"fashion","jewellery","necklaces",
+"fashion","jewellery","pins and brooches",
+"fashion","jewellery","rings",
+"fashion","jewellery","hairbands and clips","hairbands"
+"fashion","jewellery","hairbands and clips","hair clips"
+"fashion","jewellery","other accessories",
+"electricals","batteries and chargers","batteries",
+"electricals","batteries and chargers","chargers",
+"electricals","torches",,
+"electricals","standby solutions and meters","standby solutions",
+"electricals","standby solutions and meters","energy meters",
+"electricals","computer accessories",,
+"electricals","music players","radios",
+"electricals","music players","portable music players",
+"electricals","music players","speakers",
+"electricals","appliances","irons",
+"electricals","appliances","hair dryers",
+"electricals","appliances","vacuums",
+"electricals","appliances","other appliances",
+"electricals","appliances","kitchen appliances",
+"electricals","light bulbs",,
+"office and stationery","paper and notebooks","paper",
+"office and stationery","paper and notebooks","envelopes",
+"office and stationery","paper and notebooks","writing pads and notebooks",
+"office and stationery","paper and notebooks","cards",
+"office and stationery","pens and pencils","pens",
+"office and stationery","pens and pencils","pencils",
+"office and stationery","office accessories","containers and stands",
+"office and stationery","office accessories","staplers",
+"office and stationery","office accessories","sticky notes",
+"office and stationery","office accessories","rulers",
+"office and stationery","office accessories","other accessories",
+"office and stationery","office filing and storage",,
+"home","living space","decor","drawings, paintings and photos"
+"home","living space","decor","ornaments and sculptures"
+"home","living space","decor","other decor items"
+"home","living space","decor","craft materials and tools"
+"home","living space","decor","picture frames"
+"home","living space","lights and candles","table lamps"
+"home","living space","lights and candles","ceiling lights"
+"home","living space","lights and candles","floor lights"
+"home","living space","lights and candles","candles and candle holders"
+"home","living space","lights and candles","other lighting"
+"home","living space","painting and decorating","paint"
+"home","living space","painting and decorating","brushes"
+"home","living space","painting and decorating","other accessories"
+"home","living space","rugs and door mats","rugs"
+"home","living space","rugs and door mats","door mats"
+"home","living space","cushions and textiles","cushions and covers"
+"home","living space","cushions and textiles","blankets and throws"
+"home","living space","cushions and textiles","tables cloth and runners"
+"home","living space","cushions and textiles","curtains and blinds"
+"home","living space","cushions and textiles","other textiles"
+"home","living space","furniture",
+"home","kitchen","bowls and plates","bowls"
+"home","kitchen","bowls and plates","plates"
+"home","kitchen","cups and glasses",
+"home","kitchen","jugs",
+"home","kitchen","kitchenware sets",
+"home","kitchen","kitchen linen","kitchen towels"
+"home","kitchen","kitchen linen","oven gloves"
+"home","kitchen","kitchen linen","aprons"
+"home","kitchen","kitchen linen","other linen"
+"home","kitchen","tools and utensils","chopping boards"
+"home","kitchen","tools and utensils","knives"
+"home","kitchen","tools and utensils","other utensils"
+"home","kitchen","lunch boxes, bags and wraps","lunch boxes"
+"home","kitchen","lunch boxes, bags and wraps","lunch bags"
+"home","kitchen","lunch boxes, bags and wraps","sandwich wraps"
+"home","kitchen","lunch boxes, bags and wraps","foils"
+"home","kitchen","water bottles & filters","water bottles"
+"home","kitchen","water bottles & filters","water filters and purifiers"
+"home","kitchen","kitchen paper",
+"home","kitchen","kitchen waste","bin bags"
+"home","kitchen","kitchen waste","kitchen bins"
+"home","kitchen","other kitchen accessories",
+"home","cleaning","tissues","toilet paper"
+"home","cleaning","tissues","facial tissues"
+"home","cleaning","cleaning cloths and wipes","cleaning cloths"
+"home","cleaning","cleaning cloths and wipes","cleaning wipes"
+"home","cleaning","mops and brushes","mops"
+"home","cleaning","mops and brushes","brushes"
+"home","cleaning","spray and liquid cleaners","glass and window cleaners"
+"home","cleaning","spray and liquid cleaners","table surface cleaners"
+"home","cleaning","spray and liquid cleaners","floor and carpet cleaners"
+"home","cleaning","spray and liquid cleaners","multi purpose"
+"home","cleaning","spray and liquid cleaners","toilet cleaners"
+"home","cleaning","spray and liquid cleaners","oven cleaners"
+"home","cleaning","spray and liquid cleaners","disinfectants"
+"home","cleaning","laundry","soap nuts"
+"home","cleaning","laundry","laundry power and detergents"
+"home","cleaning","laundry","laundry softener"
+"home","cleaning","laundry","dryer balls"
+"home","cleaning","polish",
+"home","bed and bath","beds and bedding","beds"
+"home","bed and bath","beds and bedding","bed linen and sheets"
+"home","bed and bath","beds and bedding","duvets and quilts"
+"home","bed and bath","beds and bedding","pillows"
+"home","bed and bath","beds and bedding","mattresses"
+"home","bed and bath","beds and bedding","bed sets"
+"home","bed and bath","beds and bedding","bed accessories"
+"home","bed and bath","beds and bedding","blankets,comforters and throws"
+"home","bed and bath","towels","face towels"
+"home","bed and bath","towels","hand towels"
+"home","bed and bath","towels","bath towels"
+"home","bed and bath","towels","beach towels"
+"home","bed and bath","towels","towel sets"
+"home","bed and bath","bath robes",
+"home","bed and bath","air fresheners and deodorisers",
+"home","home improvements","painting and decorating",
+"home","home improvements","other accessories",
+"outdoors","garden","barbecues and stoves",
+"outdoors","garden","water and waste storage",
+"outdoors","garden","wildlife",
+"outdoors","garden","gardening","trees"
+"outdoors","garden","gardening","plants"
+"outdoors","garden","gardening","seeds"
+"outdoors","garden","gardening","compost and fertiliser"
+"outdoors","garden","gardening","wormeries"
+"outdoors","garden","gardening","gardening tools and accessories"
+"outdoors","garden","furniture",
+"outdoors","camping and picnics","picnic accessories",
+"outdoors","camping and picnics","camping gear",
+"outdoors","transport","cycling",
+"outdoors","transport","other transport",
+"outdoors","sports and fitness",,
+"outdoors","travelling",,
+"baby and parenting","children","toys and activities","other toys"
+"baby and parenting","children","toys and activities","musical toys and instruments"
+"baby and parenting","children","toys and activities","animals and soft toys"
+"baby and parenting","children","toys and activities","blocks and building sets"
+"baby and parenting","children","toys and activities","dolls and doll houses"
+"baby and parenting","children","toys and activities","bath toys and accessories"
+"baby and parenting","children","toys and activities","kitchens and play food"
+"baby and parenting","children","toys and activities","games and puzzles"
+"baby and parenting","children","toys and activities","educational games"
+"baby and parenting","children","toys and activities","vehicle toys"
+"baby and parenting","children","toys and activities","school supplies"
+"baby and parenting","children","toys and activities","outdoor activities"
+"baby and parenting","children","toys and activities","books"
+"baby and parenting","babies","cleaning","wipes"
+"baby and parenting","babies","cleaning","other accessories"
+"baby and parenting","babies","nappies and diapers","cloth nappies"
+"baby and parenting","babies","nappies and diapers","disposable nappies"
+"baby and parenting","babies","nappies and diapers","changing mats and pads"
+"baby and parenting","babies","nappies and diapers","bags"
+"baby and parenting","babies","nappies and diapers","creams and remedies"
+"baby and parenting","babies","nappies and diapers",
+"baby and parenting","babies","plates bottles and cups","bowls and plates"
+"baby and parenting","babies","plates bottles and cups","bottles and cups"
+"baby and parenting","babies","plates bottles and cups","eating sets"
+"baby and parenting","babies","food and drink","baby milks and fomulas"
+"baby and parenting","babies","food and drink","drinks and smoothies"
+"baby and parenting","babies","food and drink","cereal and porridge"
+"baby and parenting","babies","food and drink","finger foods"
+"baby and parenting","babies","food and drink","snacks and rusks"
+"baby and parenting","babies","food and drink","prepared meals and side dishes"
+"baby and parenting","babies","baby clothing","bibs"
+"baby and parenting","babies","baby clothing","baby grows"
+"baby and parenting","babies","baby clothing","bodysuits and onesies"
+"baby and parenting","babies","baby clothing","sets"
+"baby and parenting","babies","baby clothing","jumpers and cardigans"
+"baby and parenting","babies","baby clothing","tops and t-shirts"
+"baby and parenting","babies","baby clothing","hats, gloves and scarves"
+"baby and parenting","babies","baby clothing","shoes"
+"baby and parenting","babies","baby clothing","socks"
+"baby and parenting","babies","baby clothing","accessories"
+"baby and parenting","babies","baby clothing","pyjamas and sleepers"
+"baby and parenting","babies","baby clothing","dresses"
+"baby and parenting","babies","rattles and teethers","rattles"
+"baby and parenting","babies","rattles and teethers","teethers"
+"baby and parenting","babies","cots, carriers and prams","cots"
+"baby and parenting","babies","cots, carriers and prams","baby carriers"
+"baby and parenting","babies","cots, carriers and prams","slings"
+"baby and parenting","babies","cots, carriers and prams","cot bedding"
+"baby and parenting","babies","cots, carriers and prams","cot accessories"
+"baby and parenting","babies","cots, carriers and prams","car seats and boosters"
+"baby and parenting","babies","cots, carriers and prams","prams and strollers"
+"baby and parenting","babies","maternity gear","breastfeeding"
+"baby and parenting","babies","maternity gear","breast pads"
+"baby and parenting","babies","maternity gear","other accessories"
+"baby and parenting","babies","dummies and pacifiers",
+"health and beauty","dental care","toothpaste",
+"health and beauty","dental care","mouthwash",
+"health and beauty","dental care","dental floss and tape",
+"health and beauty","dental care","toothbrushes",
+"health and beauty","dental care","dental sets",
+"health and beauty","dental care","other accessories",
+"health and beauty","grooming","shaving","razors"
+"health and beauty","grooming","shaving","shaving creams and foams and gels"
+"health and beauty","grooming","shaving","shaving sets"
+"health and beauty","grooming","hair styling",
+"health and beauty","beauty","makeup",
+"health and beauty","beauty","makeup","foundation and blusher"
+"health and beauty","beauty","makeup","brushes and applicators"
+"health and beauty","beauty","makeup","makeup remover"
+"health and beauty","beauty","makeup","other accessories"
+"health and beauty","beauty","lips","lip balm"
+"health and beauty","beauty","lips","lip gloss"
+"health and beauty","beauty","lips","lipstick"
+"health and beauty","beauty","eyes","gels, creams and serums"
+"health and beauty","beauty","eyes","eye shadow and minerals"
+"health and beauty","beauty","eyes","eye liner"
+"health and beauty","beauty","eyes","mascara"
+"health and beauty","beauty","nails","nail polish"
+"health and beauty","beauty","nails","nail polish removers"
+"health and beauty","beauty","nails","sets"
+"health and beauty","beauty","nails","other accessories"
+"health and beauty","bath and shower","bath products","bath foams"
+"health and beauty","bath and shower","bath products","bath bombs"
+"health and beauty","bath and shower","bath products","bath salts"
+"health and beauty","bath and shower","bath products","other bath products"
+"health and beauty","bath and shower","shampoo and conditioners","regular shampoo"
+"health and beauty","bath and shower","shampoo and conditioners","colouring shampoo"
+"health and beauty","bath and shower","shampoo and conditioners","conditioner"
+"health and beauty","bath and shower","shower gels",
+"health and beauty","bath and shower","bath and shower sets",
+"health and beauty","skin care","deodorants and fragrances","deodorants"
+"health and beauty","skin care","deodorants and fragrances","perfumes and fragrances"
+"health and beauty","skin care","face care","face scrubs"
+"health and beauty","skin care","face care","face masks and clays"
+"health and beauty","skin care","face care","facial mists"
+"health and beauty","skin care","sun care","sun tan and sunscreen"
+"health and beauty","skin care","sun care","after sun"
+"health and beauty","skin care","sun care","sun burns"
+"health and beauty","skin care","body care","moisturisers"
+"health and beauty","skin care","body care","body scrubs"
+"health and beauty","skin care","body care","loofahs and exfoliating scrubbers"
+"health and beauty","skin care","body care","body butter"
+"health and beauty","skin care","hand soaps and creams","bar soaps"
+"health and beauty","skin care","hand soaps and creams","liquid soap"
+"health and beauty","skin care","hand soaps and creams","soap sets"
+"health and beauty","skin care","hand soaps and creams","hand moisturisers"
+"health and beauty","skin care","feet care","foot creams and balms"
+"health and beauty","skin care","feet care","foot scrubs"
+"health and beauty","skin care","feet care","other feet accessories"
+"health and beauty","aromatherapy, massage and oils","oils and burners","oils"
+"health and beauty","aromatherapy, massage and oils","oils and burners","oil burners"
+"health and beauty","aromatherapy, massage and oils","other accessories",
+"health and beauty","aromatherapy, massage and oils","incense",
+"health and beauty","remedies and supplements","hair treatment","hair loss and growth"
+"health and beauty","remedies and supplements","hair treatment","hair repair"
+"health and beauty","remedies and supplements","cold and flu",
+"health and beauty","remedies and supplements","aches and pains",
+"health and beauty","remedies and supplements","other remedies",
+"health and beauty","remedies and supplements","vitamins",
+"health and beauty","remedies and supplements","allergies",
+"health and beauty","remedies and supplements","first aid and healing",
+"health and beauty","remedies and supplements","healthy sleeping",
+"health and beauty","remedies and supplements","bug and insect repellent",
+"health and beauty","feminine care","tampons",
+"health and beauty","feminine care","pads",
+"health and beauty","feminine care","menstrual cups",
+"health and beauty","feminine care","pantyliners",
+"health and beauty","adult","toys",
+"health and beauty","adult","lubricant",
+"health and beauty","adult","protection",
+"health and beauty","adult","books",
+"pets","houses and kennels","houses",
+"pets","houses and kennels","kennels",
+"pets","scratchers",,
+"pets","food and treats",,
+"pets","toys",,
+"pets","collars and leashes",,
+"pets","health and hygiene","vitamins and supplements",
+"pets","health and hygiene","grooming",
+"pets","health and hygiene","shampoo",
+"pets","health and hygiene","cleaning",
+"pets","health and hygiene","odour removal",
+"pets","health and hygiene","fleas and ticks",
+"pets","health and hygiene","other accessories",
+"pets","health and hygiene","waste disposal",
+"pets","bedding",,
+"pets","feeders",,
+"pets","carriers",,
+"pets","clothing",,
+"food and drink","drink","coffee","instant coffee"
+"food and drink","drink","coffee","ground coffee"
+"food and drink","drink","coffee","coffee beans"
+"food and drink","drink","coffee","coffee sets"
+"food and drink","drink","coffee","coffee accessories"
+"food and drink","drink","juices and soft drinks","juices"
+"food and drink","drink","juices and soft drinks","soft drinks"
+"food and drink","drink","juices and soft drinks","energy drinks"
+"food and drink","drink","juices and soft drinks","health drinks"
+"food and drink","drink","juices and soft drinks","other juices and soft drinks"
+"food and drink","drink","chocolate drinks",
+"food and drink","drink","tea","green tea"
+"food and drink","drink","tea","black tea"
+"food and drink","drink","tea","herbal tea"
+"food and drink","drink","tea","tea sets"
+"food and drink","drink","tea","other teas"
+"food and drink","drink","tea","tea accessories"
+"food and drink","drink","energy and health drinks",
+"food and drink","drink","alcohol","other alcohol"
+"food and drink","drink","alcohol","wine"
+"food and drink","drink","alcohol","beer"
+"food and drink","drink","alcohol","spirits"
+"food and drink","drink","alcohol","sets"
+"food and drink","food","breakfast","health bars"
+"food and drink","food","breakfast","granola and cereals"
+"food and drink","food","breakfast","pancake and waffle mixes"
+"food and drink","food","breakfast","syrups"
+"food and drink","food","soups",
+"food and drink","food","tinned vegetables and pulses","tinned vegetables"
+"food and drink","food","tinned vegetables and pulses","pulses"
+"food and drink","food","tinned vegetables and pulses","other tinned foods"
+"food and drink","food","pasta,rice and pulses","noodles"
+"food and drink","food","pasta,rice and pulses","beans and pulses"
+"food and drink","food","pasta,rice and pulses","grains"
+"food and drink","food","pasta,rice and pulses","pasta"
+"food and drink","food","pasta,rice and pulses","couscous"
+"food and drink","food","pasta,rice and pulses","rice"
+"food and drink","food","pasta,rice and pulses","other pastas pulses or rice"
+"food and drink","food","home baking","other home baking foods"
+"food and drink","food","home baking","flour"
+"food and drink","food","home baking","baking soda and powder"
+"food and drink","food","home baking","flavourings and essences"
+"food and drink","food","home baking","sugars"
+"food and drink","food","home baking","yeast"
+"food and drink","food","home baking","cacao"
+"food and drink","food","sweets, cakes and chocolate","sweets"
+"food and drink","food","sweets, cakes and chocolate","marshmallows"
+"food and drink","food","sweets, cakes and chocolate","truffles"
+"food and drink","food","sweets, cakes and chocolate","chocolates"
+"food and drink","food","sweets, cakes and chocolate","cookies and biscuits"
+"food and drink","food","sweets, cakes and chocolate","cakes"
+"food and drink","food","gift sets and hampers","hampers"
+"food and drink","food","gift sets and hampers","gift sets"
+"food and drink","food","gift sets and hampers","other sweets or chocolates"
+"food and drink","food","herbs, spices and seasoning","salt"
+"food and drink","food","herbs, spices and seasoning","pepper"
+"food and drink","food","herbs, spices and seasoning","marinades"
+"food and drink","food","herbs, spices and seasoning","herbs"
+"food and drink","food","herbs, spices and seasoning","chillies"
+"food and drink","food","herbs, spices and seasoning","mixed seasoning"
+"food and drink","food","herbs, spices and seasoning","other herbs and spices"
+"food and drink","food","herbs, spices and seasoning","garlic"
+"food and drink","food","herbs, spices and seasoning","ginger"
+"food and drink","food","herbs, spices and seasoning","spice accessories"
+"food and drink","food","chewing gum and mint","chewing gum"
+"food and drink","food","chewing gum and mint","mint"
+"food and drink","food","snacks","dried fruit and nuts"
+"food and drink","food","snacks","snack bars"
+"food and drink","food","snacks","fruit sauces"
+"food and drink","food","snacks","crisps and crackers"
+"food and drink","food","snacks","popcorn"
+"food and drink","food","snacks","other snacks"
+"food and drink","food","ready meals",
+"food and drink","food","condiments","olives"
+"food and drink","food","condiments","dressings sauce and toppings"
+"food and drink","food","condiments","stock cubes"
+"food and drink","food","condiments","vinegar"
+"food and drink","food","condiments","purees, ketchup and mustards"
+"food and drink","food","condiments","other condiments"
+"food and drink","food","jams and preserves","jams"
+"food and drink","food","jams and preserves","jellys"
+"food and drink","food","jams and preserves","honeys"
+"food and drink","food","jams and preserves","marmalade"
+"food and drink","food","jams and preserves","other jams and preserves"
+"food and drink","food","oils","olive oil"
+"food and drink","food","oils","vegetable and sunflower oil"
+"food and drink","food","oils","other oils"
+"food and drink","food","meat","poultry"
+"food and drink","food","meat","fish"
+"food and drink","food","meat","pork"
+"food and drink","food","meat","beef"
+"food and drink","food","meat","other meat"
+"food and drink","food","fresh vegetables",

@@ -1,0 +1,15 @@
+<h2>More Product Information</h2>
+
+{% if product.causes.all %}
+<div class="eco-credentials">
+
+  <h4>Eco Friendly and Natural Credentials</h4>
+
+  <div class="eco-icons">
+    {% for cause in product.causes.all %}
+    <a href="#eco-natural"><i class="icon eco-icon icon-natural"></i></a>
+    {% endfor %}
+  </div>
+  {#<p class="concerns">Have concerns? <a href="#">Report Product</a></p>#}
+</div>
+{% endif %}

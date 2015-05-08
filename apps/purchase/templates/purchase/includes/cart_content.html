@@ -1,0 +1,95 @@
+{% load url from future %}
+{% load alerts %}
+{% load static from staticfiles %}
+
+    <div class="content cf primary-left checkout-page">
+
+        <div class="primary-content-wrap">
+
+            <div id="alertbox">
+            </div>
+            <div id="alert_template" class="hide">
+                {% alert error "Out of stock" "There is not enough stock of that product to increase the number of items." %}
+            </div>
+
+            <!-- add class of active step to checkout-progress container -->
+            <div class="checkout-progress step-cart">
+                <ol class="steps">
+                    <li class="step-cart step-active">My Cart</li>
+                    <li class="step-delivery">Delivery Address</li>
+                    <li class="step-payment">Payment</li>
+                    <!-- <li class="step-review">Review order</li> -->
+                </ol>
+            </div>
+
+
+            <div class="content-box-inset" id="cart-container">
+                <h2>Your Cart</h2>
+                <div class="hide content-box" id="empty-cart-message" >
+                    <h3>Your cart is empty. There's an easy way to fix that though!</h3>
+                </div>
+            </div>
+
+
+            {% comment %}
+            <div class="content-box-inset recent-products">
+              <h2 class="with-link"><a href="#">Some more suggestions</a></h2>
+
+              <ul class="small-products-list list-squeezed list-6 cf">
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/1.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/2.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/3.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/4.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/5.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/6.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+
+              </ul>
+
+            </div>
+            {% endcomment %}
+
+        </div>
+
+        <div class="secondary-content">
+          {% include 'purchase/includes/howto_snippets.html' %}
+        </div>
+
+    </div>
+

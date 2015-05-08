@@ -1,0 +1,180 @@
+.primary-content{
+
+  .stall-header{
+    background: url('../images/backgrounds/stall.png') 0 0px repeat-x;
+    height: 92px;
+    margin: -25px -30px 20px -30px;
+    padding: 15px 15px 15px 80px;
+    color: #fff;
+    border-radius: 3px 3px 5px 5px;
+    border: none;
+    position: relative;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.25);
+
+    .stall-image{
+      border-radius: 2px;
+      border: 4px solid #fff;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+      width: 56px;
+      position: absolute;
+      left: 15px;
+      top: 15px;
+    }
+
+    h1{
+      font-family: $sans;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .stall-reviews{
+      padding: 2px 0 0 0;
+
+      b{
+        color: #e4683d;
+      }
+
+      i{
+        font-style: normal;
+      }
+
+      a:link, a:visited{
+        color: #fafbf3;
+        margin-left: 10px;
+      }
+
+      a:hover{
+        color: #ffffff;
+        text-shadow: none;
+      }
+
+
+    }
+
+    .shipping-record{
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      text-align: center;
+
+      span.value{
+        font-size: 38px;
+        font-weight: 700;
+        display: block;
+        padding: 0 0 10px 0;
+      }
+
+      span.label{
+        text-transform: uppercase;
+        color: #394318;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+        background: none;
+      }
+
+      a.help{
+        position: relative;
+        top:-2px;
+        left: px;
+      }
+
+    }
+
+  }
+  // social box
+  div.social{
+  
+    .dummy-social{
+      display: block;
+      background: url('../images/product/dummy-social.jpg') 0 0 no-repeat;
+      width: 265px;
+      height: 20px;
+    }
+    
+    margin: 0 0 5px 0;
+
+    .buttons{
+    
+      .button{
+
+        float: left;
+        margin-right: 8px;
+
+      }
+
+      .twitter{
+
+        width:80px;
+
+      }
+      
+    }
+  
+  }
+
+  .stall-video{
+    margin: 0 0 20px 0;
+      text-align: center;
+
+    iframe{
+      @include white-box(10px);
+      //width: 292px;
+      //float:left;
+      //margin-right: 15px;
+    }
+
+    div.description{
+      padding: 10px;
+
+      p {
+        overflow: hidden;
+        max-height: 142px;
+      }
+    }
+
+  }
+
+  .story-content{
+
+    .photo-box{
+      @include white-box(10px);
+      margin:10px 0 20px 0;
+
+      .caption{
+        font-style: italic;
+        display: block;
+        color: $subtle_text;
+        padding: 10px 0 0 0;
+        text-align: center;
+      }
+    }
+
+    .more-photos{
+      ul{
+        margin: -10px 0 0px 0;
+        height: 110px;
+      }
+
+      li{
+        display: block;
+        margin: 0;
+        padding: 5px 0;
+        float: left;
+      }
+
+      a{
+        @include white-box(5px);
+        float: left;
+        width: 87px;
+        margin: 0 6px 0 0;
+      }
+
+    }
+
+    .video-box{
+      @include white-box(10px);
+      margin:10px 0 20px 0;
+    }
+
+  }
+
+}

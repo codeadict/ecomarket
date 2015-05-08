@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content %}
+<div class="content cf full-content no-activity">
+    <div class="primary-content-wrap single-content">
+
+        <div class="love-lists-wrap">
+            <div class="content-box">
+                <div class="page-header">
+                    <h1>You have no activity yet since you haven't followed anyone. Let's fix that!...</h1>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span6">
+                        <p>
+                            Across Eco Market you will find follow buttons where you can follow
+                            people who find interesting and kept up to date on their latest activity.
+                            It's great way to personalise your shopping experience to the people and
+                            products that rock your world the most!
+                        <p>
+
+                        <p>Just keep an eye out buttons that look like this...<p>
+
+                        <img src="/static/images/buttons/following.png" alt="follow button">
+
+                        <br>
+                        <br>
+
+                        <h2 class="bold">Need some inspiration?</h2>
+
+                        <p>To help you get going, we've suggested a few awesome stall owners here
+                            that you might like the look of or you could head over to our
+                            <a href="/discover">discover</a> page to explore products that interest y
+                            ou and follow people that way. Your choice amigo.
+                        </p>
+                    </div>
+                    <div class="suggestion_container span6 suggestions">
+                        {% for follow_suggestion in follow_suggestions %}
+                            <div class="person_suggestion clearfix">
+
+                                <p><a href="{% url 'public_profile' follow_suggestion.username %}">{{ follow_suggestion.username }}</a>
+                                from <a href="{{ follow_suggestion.stall.get_absolute_url }}">{{ follow_suggestion.stall.title }}</a></p>
+
+                                <div>
+                                    <img class="follow_user_img pull-left" src="{{ follow_suggestion.get_profile.avatar_228 }}" alt="{{ follow_suggestion.username }}" width="80">
+                                    <div class="content-heading">
+                                        <p >{{ follow_suggestion.stall.description_short }}</p>
+                                    </div>
+                                    <div>
+                                        {% include "fragments/show_follow_button.html" with user=user follow_candidate=follow_suggestion %}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

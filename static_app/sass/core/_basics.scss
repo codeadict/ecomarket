@@ -1,0 +1,92 @@
+h1{
+  font-family: $serif;
+  font-size: 24px;
+  padding: 0 0 0px 0;
+  margin: 0 0 0px 0;
+  font-weight: 100;
+}
+
+.subtitle{
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  padding: 5px 0 0 0;
+  color: #949494;
+  
+}
+
+h3.headline, h4.headline{
+  color: #9b9b9b;    
+  font-size: 11px;
+  font-family: $sans;
+  text-transform: uppercase;
+  font-weight:700;    
+  border-bottom: none;
+  border-top: 1px solid #e5e5e5;    
+  margin:5px 0px;
+  padding: 5px 0 0 0;    
+  letter-spacing: 1px;
+}
+
+blockquote{
+  margin:0 0 10px 0;
+  padding: 0 0 10px 0;
+  border: none;
+  color: $subtle_color;
+
+  
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  
+}
+
+a.thmb{
+  //-webkit-transform: translate3D(0, 0, 0);
+  //-webkit-backface-visibility: hidden;
+  
+  img{
+    @include opacity(1);
+    //-webkit-transform: translate3D(0, 0, 0);    
+    //-webkit-backface-visibility: hidden;
+    //@include transition(opacity, 0.2s); 
+  }  
+  
+  &:hover{
+    img{
+      @include opacity(0.80); 
+    }
+  }
+}
+
+a.help{
+    
+  i.icon-help{  
+    width: 20px;
+    height: 20px;
+    @include opacity(0.8);
+    
+    background: url('../images/icons/icon-help.png') 0 0 no-repeat;
+    
+    &.icon-white{
+      background: url('../images/icons/icon-help-white.png') 0 0 no-repeat;
+    }
+      
+  }
+  
+  
+  
+  
+  &:hover{
+    i.icon-help{
+      @include opacity(1)
+    }
+  }
+  
+}
+
+strong.amount_currency_convert{
+display:inline-block;
+}

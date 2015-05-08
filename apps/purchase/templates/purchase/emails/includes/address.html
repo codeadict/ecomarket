@@ -1,0 +1,20 @@
+<div class="address" style="margin-top: 5px; margin-bottom: 5px;padding:10px;background-color:#fafafa;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;">
+{# Not, if statements required otherwise we end up with extra <br /> tags #}
+{{ address.name }}<br/>
+{{ address.line1 }}<br/>
+{% if address.line2 %}
+{{ address.line2 }}<br/>
+{% endif %}
+{% if address.city %}
+{{ address.city }}<br/>
+{% endif %}
+{% if address.state %}
+{{ address.state }}<br/>
+{% endif %}
+{% if address.postal_code %}
+{{ address.postal_code }}<br/>
+{% endif %}
+{% if address.country %}
+{{ address.country }}<br/>
+{% endif %}
+</div>

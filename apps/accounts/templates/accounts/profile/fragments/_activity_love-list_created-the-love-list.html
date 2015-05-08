@@ -1,0 +1,60 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load action_tags %}
+{% load url from future %}
+
+{% block target_title %}{{ action.target.title }}{% endblock %}
+
+{% block activity_extra_class %}activity-lovelist{% endblock %}
+
+{% block li_attrs %}{{ block.super }} id="comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}"{% endblock %}
+
+{% get_related_actions action as actions %}
+{% block body %}
+    <div class="activity-preview products-preview">
+        {% with product=action.action_object.get_first_product %}
+        <div class="thumbs">
+            {% with product.images|first as image %}
+                <a href="{{ product.get_absolute_url }}" class="thmb"><img src="{{ image.url_105 }}" alt="{{ image.name }}"></a>
+            {% endwith %}
+
+            {% if total_actions == 1 %}
+                {% for image in action.action_object.images %}
+                    {% if forloop.counter > 1 and forloop.counter < 6 %}
+                        <a href="{{ action.action_object.path }}" class="thmb"><img class="thmb50" src="{{ image.url_50 }}" alt="{{ image.name }}"></a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% get_related_actions action as actions %}
+                {% for single_action in actions %}
+                    {% with single_action.action_object.images|first as image %}
+                        <a href="{{ single_action.action_object.path }}" class="thmb"><img class="thmb50" src="{{ image.url_50 }}" alt="{{ image.name }}"></a>
+                    {% endwith %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="product-info">
+            <span class="name">
+              <a href="{{ product.get_absolute_url }}" class="dark-link">{{ product.title }}</a><br>
+              from <a href="{{ product.stall.get_absolute_url }}">{{ product.stall.title }}</a>
+            </span>
+            <span class="price-box">
+              <strong class="price amount_currency_convert" data-amount="{{ product.price.amount }}"><span class="amount_currency_symbol">£</span><span class="amount_amount">{{ product.price.amount }}</span></strong>
+			  {# <span class="approximation">Approx $29.99 CDN</span>#}
+            </span>
+        </div>
+        {% endwith %}
+    </div>
+{% endblock %}
+
+{% block verb %}
+    {% get_related_actions action as actions %}
+    {% if total_actions > 1 %}
+        created <a href="{{ action.action_object.path }}">{{ total_actions }} love lists{{ total_actions|pluralize }}</a> on
+    {% else %}
+        created the lovelist <a href="{{ action.action_object.get_absolute_url }}">{{ action.action_object.title }}</a>
+    {% endif %}
+{% endblock %}
+
+{% block reply_button %}
+<a class="comment-reply" data-toplevel_comment="#comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}" href="{% url 'comment_create' ctype_and_id.ctype_id ctype_and_id.object_id %}">Reply</a>
+{% endblock %}

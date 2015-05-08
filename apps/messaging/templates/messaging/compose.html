@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="content cf full-content">
+        <div class="primary-content-wrap single-content">
+            <div class="content-filter">
+            	<h2>Compose message{% if recipient %} to {{ recipient }}{% endif %}</h2>
+                {% include 'messaging/fragments/_compose_form.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+{% endblock %}

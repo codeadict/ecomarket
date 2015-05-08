@@ -1,0 +1,4 @@
+{% for item in object.materials.all %}
+{{ item.title }}
+{{ item.slug }}
+{% endfor %}

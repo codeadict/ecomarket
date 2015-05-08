@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+{% load i18n l10n %}
+{% load show_video_frame %}
+
+{% block content %}
+
+  <div style="text-align: center">
+    {% show_video_frame video %}
+  </div>
+{% endblock %}

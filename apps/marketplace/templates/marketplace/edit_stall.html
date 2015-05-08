@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content cf wider-sidebar">
+        <div class="primary-content">
+
+            {% include 'accounts/fragments/tabs.html' %}
+
+            <h1>Edit Your Stall</h1>
+
+            <form  id="product-form" class="product-form form form-horizontal" action="" method="post">{% csrf_token %}
+                <fieldset>
+
+                    {% with field=edit_form.title %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+
+                        {% if not field.errors and stall %}
+                        <div class="alert alert-inline alert-info">
+                          <p>Your stall has a unique url at <br><a href="http://{{ CURRENT_SITE.domain }}{{ stall.get_absolute_url }}">http://{{ CURRENT_SITE.domain }}{{ stall.get_absolute_url }}</a></p>
+                        </div>
+                        {% endif %}
+
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=edit_form.description_short %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=edit_form.description_full %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=edit_form.phone_landline %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=edit_form.phone_mobile %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=edit_form.twitter_username %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:
+                      <br>
+                      <em class='opt'>(Optional)</em>
+                      </label></label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                </fieldset>
+
+                <fieldset class="form-actions">
+                    <input type="submit" class="btn btn-primary btn-large" value="Edit Stall"/>
+                </fieldset>
+
+            </form>
+
+        </div>
+
+        {% include 'marketplace/includes/stall_edit_sidebar.html' %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+.product-preview{
+  
+  .form{
+    margin: -20px 0 0 0;
+    
+    div.field{
+      margin: 10px 0 0 0;
+    }
+    
+  }
+  
+  .form-actions{
+    margin: 0px 0 0 0;
+    padding: 20px 0 0px 0;
+  }
+}
+
+
+.page-header .product-price{
+  position: absolute;
+  right: 0;
+  top: 10px;
+  text-align: right;
+    
+  .price{
+    font-size: 17px;
+    font-weight: 500;
+    
+  }
+
+  .old-price{
+    text-decoration: line-through;
+  }
+
+  .special-price{
+    color: #C8652B;
+    font-weight: 500;
+  }
+
+  .approximation{
+    display: block;
+    font-size: 13px;
+
+    a{
+      color:#7C913C;
+      text-decoration: underline;
+    }
+  }
+  
+}

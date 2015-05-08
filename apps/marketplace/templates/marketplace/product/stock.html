@@ -1,0 +1,37 @@
+{% with field=form.stock %}
+<fieldset class="stock">
+  
+  <legend>Stock levels</legend>
+
+  <div class="control-group">
+    <label
+       for="stock-level"
+       class="control-label">Products in stock:</label>
+    <div class="controls">
+      <select
+	 name="stock_level"
+	 id="stock-level"
+	 class="select stock-level">
+	<option value="unlimited">I have unlimited amounts of these to sell</option>
+	<option {% if field.value %}selected="selected"{% endif %}
+		value="fixed">I have a fixed amount of these to sell</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="control-group {% if not field.value %}hide{% endif %} stock">
+    <label
+       for="stock"
+       class="control-label">Amount:</label>
+    <div class="controls">
+      <input
+	 type="text"
+	 name="stock"
+	 id="stock"
+	 value="{% if field.value %}{{field.value}}{% endif %}"
+	 class="input-number"
+	 placeholder="Number of products you have in stock" />
+    </div>
+  </div>
+</fieldset>
+{% endwith %}

@@ -1,0 +1,24 @@
+{% load comments %}
+{% load mptt_tags %}
+
+{% get_comment_list for object as comments %}
+
+<div class="comments-list">
+    {% if not request.user.is_authenticated  %}
+        {% get_comment_form for object as form %}
+        {% include "comments/form.html" %}
+    {% endif %}
+	<ul class="comments">
+        {% recursetree comments %}{# magically creates node and children variables #}
+        {% if node.is_removed %}{% if node.children.count %}
+		{% include "comments/_comment.html" with comment=node template_name="comments/_comment_inner_deleted.html" comment_box_extra="no-background comment-deleted" %}
+        {% endif %}{% else %}
+		{% include "comments/_comment.html" with comment=node %}
+        {% endif %}
+		{% endrecursetree %}
+	</ul>
+    {% if request.user.is_authenticated %}
+        {% get_comment_form for object as form %}
+        {% include "comments/form.html" %}
+    {% endif %}
+</div>

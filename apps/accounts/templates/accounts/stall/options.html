@@ -1,0 +1,32 @@
+{% extends 'accounts/stall/base.html' %}
+
+{% block content_tab %}
+    <form  id="form" class="form form-horizontal" action="" method="post">{% csrf_token %}
+        <fieldset>
+            {% with field=form.holiday_mode %}
+                <div class="control-group {% if field.errors %}error{% endif %}">
+                  <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                  <div class="controls">
+                    {{ field }}
+                    {{ field.errors }}
+                  </div>
+                </div>
+            {% endwith %}
+
+            {% with field=form.holiday_message %}
+                <div class="control-group {% if field.errors %}error{% endif %}">
+                  <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                  <div class="controls">
+                    {{ field }}
+                    {{ field.errors }}
+                  </div>
+                </div>
+            {% endwith %}
+
+        </fieldset>
+
+        <fieldset class="form-actions">
+            <input type="submit" class="btn btn-primary btn-large" value="Save Changes"/>
+        </fieldset>
+    </form>
+{% endblock content_tab %}

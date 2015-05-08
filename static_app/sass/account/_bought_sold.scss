@@ -1,0 +1,22 @@
+// Nasty hack to get the 'mark as shipped' button on
+// the sold screen to display like a link. It has to
+// be a form because it needs to be a post request
+.order-actions ul form {
+    margin:0;
+    padding:0;
+    input {
+        border-style:none;
+        background:transparent;
+        display:block;
+        text-decoration:underline;
+        color:$link-color;
+        padding:3px 15px;
+        width:100%;
+        text-align:left;
+        &:hover {
+            text-decoration:none;
+            background-color:#0088CC;
+            color:white;
+        }
+    }
+}

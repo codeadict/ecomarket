@@ -1,0 +1,5298 @@
+[
+  {
+    "pk": 1,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "@$$"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ahole"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "amcik"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "anal-sex"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "analsex"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "andskota"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "arschloch"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "arse"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ash0le"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ash0les"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "asholes"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ass monkey"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ass-hole"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "assface"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "assh0le"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "assh0lez"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "asshole"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "assholes"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "assholz"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "assrammer"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "asswipe"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "attractive"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ayir"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "azzhole"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b!+ch"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b!tch"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b00b"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b00bi"
+    }
+  },
+  {
+    "pk": 29,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b00bies"
+    }
+  },
+  {
+    "pk": 30,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b00bs"
+    }
+  },
+  {
+    "pk": 31,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b00by"
+    }
+  },
+  {
+    "pk": 32,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b17ch"
+    }
+  },
+  {
+    "pk": 33,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "b1tch"
+    }
+  },
+  {
+    "pk": 34,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bang"
+    }
+  },
+  {
+    "pk": 35,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bassterds"
+    }
+  },
+  {
+    "pk": 36,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bastard"
+    }
+  },
+  {
+    "pk": 37,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bastards"
+    }
+  },
+  {
+    "pk": 38,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bastardz"
+    }
+  },
+  {
+    "pk": 39,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "basterds"
+    }
+  },
+  {
+    "pk": 40,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "basterdz"
+    }
+  },
+  {
+    "pk": 41,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bi+ch"
+    }
+  },
+  {
+    "pk": 42,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bi7ch"
+    }
+  },
+  {
+    "pk": 43,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "biatch"
+    }
+  },
+  {
+    "pk": 44,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "big-cock"
+    }
+  },
+  {
+    "pk": 45,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "big-dick"
+    }
+  },
+  {
+    "pk": 46,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "big-tits"
+    }
+  },
+  {
+    "pk": 47,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bigcock"
+    }
+  },
+  {
+    "pk": 48,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bigdick"
+    }
+  },
+  {
+    "pk": 49,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bigtits"
+    }
+  },
+  {
+    "pk": 50,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bitch"
+    }
+  },
+  {
+    "pk": 51,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bitches"
+    }
+  },
+  {
+    "pk": 52,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bj"
+    }
+  },
+  {
+    "pk": 53,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "blow job"
+    }
+  },
+  {
+    "pk": 54,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "blow-job"
+    }
+  },
+  {
+    "pk": 55,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "blow-me"
+    }
+  },
+  {
+    "pk": 56,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "blowjob"
+    }
+  },
+  {
+    "pk": 57,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "blowme"
+    }
+  },
+  {
+    "pk": 58,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "body rub"
+    }
+  },
+  {
+    "pk": 59,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boffing"
+    }
+  },
+  {
+    "pk": 60,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boiolas"
+    }
+  },
+  {
+    "pk": 61,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bollock"
+    }
+  },
+  {
+    "pk": 62,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bollocks"
+    }
+  },
+  {
+    "pk": 63,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bollox"
+    }
+  },
+  {
+    "pk": 64,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bondage"
+    }
+  },
+  {
+    "pk": 65,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boner"
+    }
+  },
+  {
+    "pk": 66,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boob"
+    }
+  },
+  {
+    "pk": 67,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boobies"
+    }
+  },
+  {
+    "pk": 68,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boobs"
+    }
+  },
+  {
+    "pk": 69,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boyfriend"
+    }
+  },
+  {
+    "pk": 70,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boyfriend-experience"
+    }
+  },
+  {
+    "pk": 71,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "boyfriendexperience"
+    }
+  },
+  {
+    "pk": 72,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bra"
+    }
+  },
+  {
+    "pk": 73,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "brassiere"
+    }
+  },
+  {
+    "pk": 74,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "breast"
+    }
+  },
+  {
+    "pk": 75,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "breasts"
+    }
+  },
+  {
+    "pk": 76,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "breats"
+    }
+  },
+  {
+    "pk": 77,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "briefs"
+    }
+  },
+  {
+    "pk": 78,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "buceta"
+    }
+  },
+  {
+    "pk": 79,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bulging-cock"
+    }
+  },
+  {
+    "pk": 80,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bulging-dick"
+    }
+  },
+  {
+    "pk": 81,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bulgingcock"
+    }
+  },
+  {
+    "pk": 82,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bulgingdick"
+    }
+  },
+  {
+    "pk": 83,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "bunghole"
+    }
+  },
+  {
+    "pk": 84,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "butt-pirate"
+    }
+  },
+  {
+    "pk": 85,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "butthole"
+    }
+  },
+  {
+    "pk": 86,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "buttwipe"
+    }
+  },
+  {
+    "pk": 87,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "c0ck"
+    }
+  },
+  {
+    "pk": 88,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "c0cks"
+    }
+  },
+  {
+    "pk": 89,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "c0k"
+    }
+  },
+  {
+    "pk": 90,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cabron"
+    }
+  },
+  {
+    "pk": 91,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "camel toe"
+    }
+  },
+  {
+    "pk": 92,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "carpet muncher"
+    }
+  },
+  {
+    "pk": 93,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "carpetmuncher"
+    }
+  },
+  {
+    "pk": 94,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cawk"
+    }
+  },
+  {
+    "pk": 95,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cawks"
+    }
+  },
+  {
+    "pk": 96,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cazzo"
+    }
+  },
+  {
+    "pk": 97,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "chinc"
+    }
+  },
+  {
+    "pk": 98,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "chink"
+    }
+  },
+  {
+    "pk": 99,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "choad"
+    }
+  },
+  {
+    "pk": 100,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "chode"
+    }
+  },
+  {
+    "pk": 101,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "chraa"
+    }
+  },
+  {
+    "pk": 102,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "chuj"
+    }
+  },
+  {
+    "pk": 103,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cialis"
+    }
+  },
+  {
+    "pk": 104,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cipa"
+    }
+  },
+  {
+    "pk": 105,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "clit"
+    }
+  },
+  {
+    "pk": 106,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "clits"
+    }
+  },
+  {
+    "pk": 107,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cnts"
+    }
+  },
+  {
+    "pk": 108,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cntz"
+    }
+  },
+  {
+    "pk": 109,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cock"
+    }
+  },
+  {
+    "pk": 110,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cock-head"
+    }
+  },
+  {
+    "pk": 111,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cock-smoker"
+    }
+  },
+  {
+    "pk": 112,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cock-sucker"
+    }
+  },
+  {
+    "pk": 113,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cockhead"
+    }
+  },
+  {
+    "pk": 114,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cocks"
+    }
+  },
+  {
+    "pk": 115,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cocksmoker"
+    }
+  },
+  {
+    "pk": 116,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cocksucker"
+    }
+  },
+  {
+    "pk": 117,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "coochie"
+    }
+  },
+  {
+    "pk": 118,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "coochy"
+    }
+  },
+  {
+    "pk": 119,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "coon"
+    }
+  },
+  {
+    "pk": 120,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cooter"
+    }
+  },
+  {
+    "pk": 121,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cougar"
+    }
+  },
+  {
+    "pk": 122,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "crap"
+    }
+  },
+  {
+    "pk": 123,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cum"
+    }
+  },
+  {
+    "pk": 124,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cunnie"
+    }
+  },
+  {
+    "pk": 125,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cunnilingus"
+    }
+  },
+  {
+    "pk": 126,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cunny"
+    }
+  },
+  {
+    "pk": 127,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cunt"
+    }
+  },
+  {
+    "pk": 128,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cunts"
+    }
+  },
+  {
+    "pk": 129,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "cuntz"
+    }
+  },
+  {
+    "pk": 130,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "d4mn"
+    }
+  },
+  {
+    "pk": 131,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dago"
+    }
+  },
+  {
+    "pk": 132,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "damn"
+    }
+  },
+  {
+    "pk": 133,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "daygo"
+    }
+  },
+  {
+    "pk": 134,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dego"
+    }
+  },
+  {
+    "pk": 135,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dick"
+    }
+  },
+  {
+    "pk": 136,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dick-head"
+    }
+  },
+  {
+    "pk": 137,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dickhead"
+    }
+  },
+  {
+    "pk": 138,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dike"
+    }
+  },
+  {
+    "pk": 139,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dild0"
+    }
+  },
+  {
+    "pk": 140,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dild0s"
+    }
+  },
+  {
+    "pk": 141,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dilf"
+    }
+  },
+  {
+    "pk": 142,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dilld0"
+    }
+  },
+  {
+    "pk": 143,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dilld0s"
+    }
+  },
+  {
+    "pk": 144,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dirsa"
+    }
+  },
+  {
+    "pk": 145,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "doggie style"
+    }
+  },
+  {
+    "pk": 146,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "doggie-style"
+    }
+  },
+  {
+    "pk": 147,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "doggiestyle"
+    }
+  },
+  {
+    "pk": 148,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "doggy style"
+    }
+  },
+  {
+    "pk": 149,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "doggy-style"
+    }
+  },
+  {
+    "pk": 150,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "doggystyle"
+    }
+  },
+  {
+    "pk": 151,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dominatricks"
+    }
+  },
+  {
+    "pk": 152,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dominatrics"
+    }
+  },
+  {
+    "pk": 153,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "douche"
+    }
+  },
+  {
+    "pk": 154,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "douche-bag"
+    }
+  },
+  {
+    "pk": 155,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "douchebag"
+    }
+  },
+  {
+    "pk": 156,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dupa"
+    }
+  },
+  {
+    "pk": 157,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dyke"
+    }
+  },
+  {
+    "pk": 158,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "dziwka"
+    }
+  },
+  {
+    "pk": 159,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ejackulate"
+    }
+  },
+  {
+    "pk": 160,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ejaculate"
+    }
+  },
+  {
+    "pk": 161,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ejakulate"
+    }
+  },
+  {
+    "pk": 162,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ekrem"
+    }
+  },
+  {
+    "pk": 163,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ekto"
+    }
+  },
+  {
+    "pk": 164,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "enculer"
+    }
+  },
+  {
+    "pk": 165,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "enema"
+    }
+  },
+  {
+    "pk": 166,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "enzyte"
+    }
+  },
+  {
+    "pk": 167,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "erectile"
+    }
+  },
+  {
+    "pk": 168,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "erotic-massage"
+    }
+  },
+  {
+    "pk": 169,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "erotic-services"
+    }
+  },
+  {
+    "pk": 170,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "eroticservices"
+    }
+  },
+  {
+    "pk": 171,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "exotic"
+    }
+  },
+  {
+    "pk": 172,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "exotic-massage"
+    }
+  },
+  {
+    "pk": 173,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "f u c k"
+    }
+  },
+  {
+    "pk": 174,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "f u c k e r"
+    }
+  },
+  {
+    "pk": 175,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "f-u-c-k"
+    }
+  },
+  {
+    "pk": 176,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "f.u.c.k"
+    }
+  },
+  {
+    "pk": 237,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "f_u_c_k"
+    }
+  },
+  {
+    "pk": 177,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faen"
+    }
+  },
+  {
+    "pk": 178,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fag"
+    }
+  },
+  {
+    "pk": 179,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fag1t"
+    }
+  },
+  {
+    "pk": 180,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faget"
+    }
+  },
+  {
+    "pk": 181,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fagg1t"
+    }
+  },
+  {
+    "pk": 182,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faggit"
+    }
+  },
+  {
+    "pk": 183,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faggot"
+    }
+  },
+  {
+    "pk": 184,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faggots"
+    }
+  },
+  {
+    "pk": 185,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fagit"
+    }
+  },
+  {
+    "pk": 186,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fags"
+    }
+  },
+  {
+    "pk": 187,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fagz"
+    }
+  },
+  {
+    "pk": 188,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faig"
+    }
+  },
+  {
+    "pk": 189,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "faigs"
+    }
+  },
+  {
+    "pk": 190,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fanculo"
+    }
+  },
+  {
+    "pk": 191,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fanny"
+    }
+  },
+  {
+    "pk": 192,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fantasies"
+    }
+  },
+  {
+    "pk": 193,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fantasy"
+    }
+  },
+  {
+    "pk": 194,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fart"
+    }
+  },
+  {
+    "pk": 195,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fatass"
+    }
+  },
+  {
+    "pk": 196,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fcuk"
+    }
+  },
+  {
+    "pk": 197,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "feces"
+    }
+  },
+  {
+    "pk": 198,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "feg"
+    }
+  },
+  {
+    "pk": 199,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "felcher"
+    }
+  },
+  {
+    "pk": 200,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fellatio"
+    }
+  },
+  {
+    "pk": 201,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "feltch"
+    }
+  },
+  {
+    "pk": 202,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ficken"
+    }
+  },
+  {
+    "pk": 203,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "firecrotch"
+    }
+  },
+  {
+    "pk": 204,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fitt"
+    }
+  },
+  {
+    "pk": 205,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "flamer"
+    }
+  },
+  {
+    "pk": 206,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "flikker"
+    }
+  },
+  {
+    "pk": 207,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "flipping the bird"
+    }
+  },
+  {
+    "pk": 208,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "foreskin"
+    }
+  },
+  {
+    "pk": 209,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fotze"
+    }
+  },
+  {
+    "pk": 210,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "french maid"
+    }
+  },
+  {
+    "pk": 211,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fu(er"
+    }
+  },
+  {
+    "pk": 212,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fu(ing"
+    }
+  },
+  {
+    "pk": 213,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuck"
+    }
+  },
+  {
+    "pk": 214,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuck-off"
+    }
+  },
+  {
+    "pk": 215,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuck-you"
+    }
+  },
+  {
+    "pk": 216,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fucka"
+    }
+  },
+  {
+    "pk": 217,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fucker"
+    }
+  },
+  {
+    "pk": 218,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuckin"
+    }
+  },
+  {
+    "pk": 219,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fucking"
+    }
+  },
+  {
+    "pk": 220,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuckme"
+    }
+  },
+  {
+    "pk": 221,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuckoff"
+    }
+  },
+  {
+    "pk": 222,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fucks"
+    }
+  },
+  {
+    "pk": 223,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuckyou"
+    }
+  },
+  {
+    "pk": 224,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fudge packer"
+    }
+  },
+  {
+    "pk": 225,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuk"
+    }
+  },
+  {
+    "pk": 226,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukah"
+    }
+  },
+  {
+    "pk": 227,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuken"
+    }
+  },
+  {
+    "pk": 228,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fuker"
+    }
+  },
+  {
+    "pk": 229,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukin"
+    }
+  },
+  {
+    "pk": 230,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukk"
+    }
+  },
+  {
+    "pk": 231,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukkah"
+    }
+  },
+  {
+    "pk": 232,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukken"
+    }
+  },
+  {
+    "pk": 233,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukker"
+    }
+  },
+  {
+    "pk": 234,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fukkin"
+    }
+  },
+  {
+    "pk": 235,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "futkretzn"
+    }
+  },
+  {
+    "pk": 236,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "fux0r"
+    }
+  },
+  {
+    "pk": 238,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "g00k"
+    }
+  },
+  {
+    "pk": 239,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gay-sex"
+    }
+  },
+  {
+    "pk": 240,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gayboy"
+    }
+  },
+  {
+    "pk": 241,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gaygirl"
+    }
+  },
+  {
+    "pk": 242,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gays"
+    }
+  },
+  {
+    "pk": 243,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gaysex"
+    }
+  },
+  {
+    "pk": 244,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gayz"
+    }
+  },
+  {
+    "pk": 245,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "girl on top"
+    }
+  },
+  {
+    "pk": 246,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "girlfriend-experience"
+    }
+  },
+  {
+    "pk": 247,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "girlfriendexperience"
+    }
+  },
+  {
+    "pk": 248,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gmilf"
+    }
+  },
+  {
+    "pk": 249,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "god-damned"
+    }
+  },
+  {
+    "pk": 250,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gooch"
+    }
+  },
+  {
+    "pk": 251,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gook"
+    }
+  },
+  {
+    "pk": 252,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "gringo"
+    }
+  },
+  {
+    "pk": 253,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "guido"
+    }
+  },
+  {
+    "pk": 254,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "guiena"
+    }
+  },
+  {
+    "pk": 255,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "h00r"
+    }
+  },
+  {
+    "pk": 256,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "h0ar"
+    }
+  },
+  {
+    "pk": 257,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "h0r"
+    }
+  },
+  {
+    "pk": 258,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "h0re"
+    }
+  },
+  {
+    "pk": 259,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "h4x0r"
+    }
+  },
+  {
+    "pk": 260,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "handjob"
+    }
+  },
+  {
+    "pk": 261,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "happy ending"
+    }
+  },
+  {
+    "pk": 262,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "happy-ending"
+    }
+  },
+  {
+    "pk": 263,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hard core"
+    }
+  },
+  {
+    "pk": 264,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hard on"
+    }
+  },
+  {
+    "pk": 265,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hard-core"
+    }
+  },
+  {
+    "pk": 266,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hard-on"
+    }
+  },
+  {
+    "pk": 267,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hardcore"
+    }
+  },
+  {
+    "pk": 268,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hardon"
+    }
+  },
+  {
+    "pk": 269,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "heeb"
+    }
+  },
+  {
+    "pk": 270,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hell"
+    }
+  },
+  {
+    "pk": 271,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hells"
+    }
+  },
+  {
+    "pk": 272,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "helvete"
+    }
+  },
+  {
+    "pk": 273,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "ho"
+    }
+  },
+  {
+    "pk": 274,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hoar"
+    }
+  },
+  {
+    "pk": 275,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hoe"
+    }
+  },
+  {
+    "pk": 276,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hoer"
+    }
+  },
+  {
+    "pk": 277,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "homo"
+    }
+  },
+  {
+    "pk": 278,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "homo-sexual"
+    }
+  },
+  {
+    "pk": 279,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "homos"
+    }
+  },
+  {
+    "pk": 280,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "homosexual"
+    }
+  },
+  {
+    "pk": 281,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "honkey"
+    }
+  },
+  {
+    "pk": 282,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hooker"
+    }
+  },
+  {
+    "pk": 283,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hookers"
+    }
+  },
+  {
+    "pk": 284,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hoor"
+    }
+  },
+  {
+    "pk": 285,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hoore"
+    }
+  },
+  {
+    "pk": 286,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hore"
+    }
+  },
+  {
+    "pk": 287,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hot"
+    }
+  },
+  {
+    "pk": 288,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hot-deal"
+    }
+  },
+  {
+    "pk": 289,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hot-girl"
+    }
+  },
+  {
+    "pk": 290,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hot-girls"
+    }
+  },
+  {
+    "pk": 291,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hotgirl"
+    }
+  },
+  {
+    "pk": 292,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hotgirls"
+    }
+  },
+  {
+    "pk": 293,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "huevon"
+    }
+  },
+  {
+    "pk": 294,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hui"
+    }
+  },
+  {
+    "pk": 295,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "hummer"
+    }
+  },
+  {
+    "pk": 296,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "injun"
+    }
+  },
+  {
+    "pk": 297,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "intimate"
+    }
+  },
+  {
+    "pk": 298,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jackass"
+    }
+  },
+  {
+    "pk": 299,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jackoff"
+    }
+  },
+  {
+    "pk": 300,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jap"
+    }
+  },
+  {
+    "pk": 301,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "japs"
+    }
+  },
+  {
+    "pk": 302,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jerk-off"
+    }
+  },
+  {
+    "pk": 303,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jerking-off"
+    }
+  },
+  {
+    "pk": 304,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jerkingoff"
+    }
+  },
+  {
+    "pk": 305,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jerkoff"
+    }
+  },
+  {
+    "pk": 306,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jigaboo"
+    }
+  },
+  {
+    "pk": 307,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jisim"
+    }
+  },
+  {
+    "pk": 308,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jism"
+    }
+  },
+  {
+    "pk": 309,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jiss"
+    }
+  },
+  {
+    "pk": 310,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jizm"
+    }
+  },
+  {
+    "pk": 311,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jizz"
+    }
+  },
+  {
+    "pk": 312,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jungle bunny"
+    }
+  },
+  {
+    "pk": 313,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "jungle-bunny"
+    }
+  },
+  {
+    "pk": 314,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "junglebunny"
+    }
+  },
+  {
+    "pk": 315,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kanker"
+    }
+  },
+  {
+    "pk": 316,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kawk"
+    }
+  },
+  {
+    "pk": 317,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kike"
+    }
+  },
+  {
+    "pk": 318,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kkk"
+    }
+  },
+  {
+    "pk": 319,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "klootzak"
+    }
+  },
+  {
+    "pk": 320,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "knobz"
+    }
+  },
+  {
+    "pk": 321,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "knulle"
+    }
+  },
+  {
+    "pk": 322,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kooch"
+    }
+  },
+  {
+    "pk": 323,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kootch"
+    }
+  },
+  {
+    "pk": 324,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kraut"
+    }
+  },
+  {
+    "pk": 325,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kuk"
+    }
+  },
+  {
+    "pk": 326,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kuksuger"
+    }
+  },
+  {
+    "pk": 327,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kunt"
+    }
+  },
+  {
+    "pk": 328,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kunts"
+    }
+  },
+  {
+    "pk": 329,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kuntz"
+    }
+  },
+  {
+    "pk": 330,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kurac"
+    }
+  },
+  {
+    "pk": 331,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kurwa"
+    }
+  },
+  {
+    "pk": 332,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kusi"
+    }
+  },
+  {
+    "pk": 333,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kyke"
+    }
+  },
+  {
+    "pk": 334,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "kyrpa"
+    }
+  },
+  {
+    "pk": 335,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "l3i+ch"
+    }
+  },
+  {
+    "pk": 336,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "l3itch"
+    }
+  },
+  {
+    "pk": 337,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lesbian"
+    }
+  },
+  {
+    "pk": 338,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lesbians"
+    }
+  },
+  {
+    "pk": 339,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lesbo"
+    }
+  },
+  {
+    "pk": 340,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lezbo"
+    }
+  },
+  {
+    "pk": 341,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lezzian"
+    }
+  },
+  {
+    "pk": 342,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lezzie"
+    }
+  },
+  {
+    "pk": 343,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lipshits"
+    }
+  },
+  {
+    "pk": 344,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "lipshitz"
+    }
+  },
+  {
+    "pk": 345,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "m i l f"
+    }
+  },
+  {
+    "pk": 346,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "m-i-l-f"
+    }
+  },
+  {
+    "pk": 347,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "m.i.l.f."
+    }
+  },
+  {
+    "pk": 403,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "m_i_l_f"
+    }
+  },
+  {
+    "pk": 348,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mamhoon"
+    }
+  },
+  {
+    "pk": 349,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masokist"
+    }
+  },
+  {
+    "pk": 350,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "massterbait"
+    }
+  },
+  {
+    "pk": 351,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masstrbait"
+    }
+  },
+  {
+    "pk": 352,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masstrbate"
+    }
+  },
+  {
+    "pk": 353,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masterbaiter"
+    }
+  },
+  {
+    "pk": 354,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masterbat3"
+    }
+  },
+  {
+    "pk": 355,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masterbate"
+    }
+  },
+  {
+    "pk": 356,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masterbater"
+    }
+  },
+  {
+    "pk": 357,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masterbates"
+    }
+  },
+  {
+    "pk": 358,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masterbating"
+    }
+  },
+  {
+    "pk": 359,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "masturbate"
+    }
+  },
+  {
+    "pk": 360,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menage a tois"
+    }
+  },
+  {
+    "pk": 361,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menage a trois"
+    }
+  },
+  {
+    "pk": 362,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menage et tois"
+    }
+  },
+  {
+    "pk": 363,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menage et trois"
+    }
+  },
+  {
+    "pk": 364,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menage-a-tois"
+    }
+  },
+  {
+    "pk": 365,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menage-a-trois"
+    }
+  },
+  {
+    "pk": 366,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menageatois"
+    }
+  },
+  {
+    "pk": 367,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menageatrois"
+    }
+  },
+  {
+    "pk": 368,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menagetois"
+    }
+  },
+  {
+    "pk": 369,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "menagetrois"
+    }
+  },
+  {
+    "pk": 370,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "merd"
+    }
+  },
+  {
+    "pk": 371,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mibun"
+    }
+  },
+  {
+    "pk": 372,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "milf"
+    }
+  },
+  {
+    "pk": 373,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "milk pillow"
+    }
+  },
+  {
+    "pk": 374,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "minge"
+    }
+  },
+  {
+    "pk": 375,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "missionary style"
+    }
+  },
+  {
+    "pk": 376,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mofo"
+    }
+  },
+  {
+    "pk": 377,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "molest"
+    }
+  },
+  {
+    "pk": 378,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "molested"
+    }
+  },
+  {
+    "pk": 379,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "molester"
+    }
+  },
+  {
+    "pk": 380,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "monkleigh"
+    }
+  },
+  {
+    "pk": 381,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "motha fucker"
+    }
+  },
+  {
+    "pk": 382,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "motha fuker"
+    }
+  },
+  {
+    "pk": 383,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "motha fukkah"
+    }
+  },
+  {
+    "pk": 384,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "motha fukker"
+    }
+  },
+  {
+    "pk": 385,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mother fucker"
+    }
+  },
+  {
+    "pk": 386,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mother fukah"
+    }
+  },
+  {
+    "pk": 387,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mother fuker"
+    }
+  },
+  {
+    "pk": 388,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mother fukkah"
+    }
+  },
+  {
+    "pk": 389,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mother fukker"
+    }
+  },
+  {
+    "pk": 390,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mother-fucker"
+    }
+  },
+  {
+    "pk": 391,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "motherfucker"
+    }
+  },
+  {
+    "pk": 392,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mouliewop"
+    }
+  },
+  {
+    "pk": 393,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "muff"
+    }
+  },
+  {
+    "pk": 394,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "muie"
+    }
+  },
+  {
+    "pk": 395,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mulkku"
+    }
+  },
+  {
+    "pk": 396,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "munging"
+    }
+  },
+  {
+    "pk": 397,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "muschi"
+    }
+  },
+  {
+    "pk": 398,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mutha fucker"
+    }
+  },
+  {
+    "pk": 399,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mutha fukah"
+    }
+  },
+  {
+    "pk": 400,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mutha fuker"
+    }
+  },
+  {
+    "pk": 401,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mutha fukkah"
+    }
+  },
+  {
+    "pk": 402,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "mutha fukker"
+    }
+  },
+  {
+    "pk": 404,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "n1gr"
+    }
+  },
+  {
+    "pk": 405,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nastt"
+    }
+  },
+  {
+    "pk": 406,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nazi"
+    }
+  },
+  {
+    "pk": 407,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nazis"
+    }
+  },
+  {
+    "pk": 408,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "negro"
+    }
+  },
+  {
+    "pk": 409,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nepesaurio"
+    }
+  },
+  {
+    "pk": 410,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nigga"
+    }
+  },
+  {
+    "pk": 411,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nigger"
+    }
+  },
+  {
+    "pk": 412,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nigger;"
+    }
+  },
+  {
+    "pk": 413,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "niggers"
+    }
+  },
+  {
+    "pk": 414,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "niglet"
+    }
+  },
+  {
+    "pk": 415,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nigur;"
+    }
+  },
+  {
+    "pk": 416,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "niiger;"
+    }
+  },
+  {
+    "pk": 417,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "niigr;"
+    }
+  },
+  {
+    "pk": 418,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nut sack"
+    }
+  },
+  {
+    "pk": 419,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nut-sack"
+    }
+  },
+  {
+    "pk": 420,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nutsack"
+    }
+  },
+  {
+    "pk": 421,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "nympho"
+    }
+  },
+  {
+    "pk": 422,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "orafis"
+    }
+  },
+  {
+    "pk": 423,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "oral"
+    }
+  },
+  {
+    "pk": 424,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "oralsex"
+    }
+  },
+  {
+    "pk": 425,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "orgasim;"
+    }
+  },
+  {
+    "pk": 426,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "orgasum"
+    }
+  },
+  {
+    "pk": 427,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "oriface"
+    }
+  },
+  {
+    "pk": 428,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "orifice"
+    }
+  },
+  {
+    "pk": 429,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "orifiss"
+    }
+  },
+  {
+    "pk": 430,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "orospu"
+    }
+  },
+  {
+    "pk": 431,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "p0rn"
+    }
+  },
+  {
+    "pk": 432,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "packi"
+    }
+  },
+  {
+    "pk": 433,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "packie"
+    }
+  },
+  {
+    "pk": 434,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "packy"
+    }
+  },
+  {
+    "pk": 435,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "paki"
+    }
+  },
+  {
+    "pk": 436,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pakie"
+    }
+  },
+  {
+    "pk": 437,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "paky"
+    }
+  },
+  {
+    "pk": 438,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "panooch"
+    }
+  },
+  {
+    "pk": 439,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "panty"
+    }
+  },
+  {
+    "pk": 440,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "paska"
+    }
+  },
+  {
+    "pk": 441,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pecker"
+    }
+  },
+  {
+    "pk": 442,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pederast"
+    }
+  },
+  {
+    "pk": 443,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pedophile"
+    }
+  },
+  {
+    "pk": 444,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "peeenus"
+    }
+  },
+  {
+    "pk": 445,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "peeenusss"
+    }
+  },
+  {
+    "pk": 446,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "peenus"
+    }
+  },
+  {
+    "pk": 447,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "peinus"
+    }
+  },
+  {
+    "pk": 448,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pen1s"
+    }
+  },
+  {
+    "pk": 449,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "penas"
+    }
+  },
+  {
+    "pk": 450,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "penis-breath"
+    }
+  },
+  {
+    "pk": 451,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "penus"
+    }
+  },
+  {
+    "pk": 452,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "penuus"
+    }
+  },
+  {
+    "pk": 453,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "perse"
+    }
+  },
+  {
+    "pk": 454,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "phuc"
+    }
+  },
+  {
+    "pk": 455,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "phuck"
+    }
+  },
+  {
+    "pk": 456,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "phuk"
+    }
+  },
+  {
+    "pk": 457,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "phuker"
+    }
+  },
+  {
+    "pk": 458,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "phukker"
+    }
+  },
+  {
+    "pk": 459,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "picka"
+    }
+  },
+  {
+    "pk": 460,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pierdol"
+    }
+  },
+  {
+    "pk": 461,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pillu"
+    }
+  },
+  {
+    "pk": 462,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pimmel"
+    }
+  },
+  {
+    "pk": 463,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pimpis"
+    }
+  },
+  {
+    "pk": 464,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "piss"
+    }
+  },
+  {
+    "pk": 465,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pizda"
+    }
+  },
+  {
+    "pk": 466,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "poison"
+    }
+  },
+  {
+    "pk": 467,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "polac"
+    }
+  },
+  {
+    "pk": 468,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "polack"
+    }
+  },
+  {
+    "pk": 469,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "polak"
+    }
+  },
+  {
+    "pk": 470,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pole smoker"
+    }
+  },
+  {
+    "pk": 471,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "polesmoker"
+    }
+  },
+  {
+    "pk": 472,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pollock"
+    }
+  },
+  {
+    "pk": 473,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "polygamy"
+    }
+  },
+  {
+    "pk": 474,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "poon"
+    }
+  },
+  {
+    "pk": 475,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "poonani"
+    }
+  },
+  {
+    "pk": 476,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "poontsee"
+    }
+  },
+  {
+    "pk": 477,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "poop"
+    }
+  },
+  {
+    "pk": 478,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "porch monkey"
+    }
+  },
+  {
+    "pk": 479,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "porchmonkey"
+    }
+  },
+  {
+    "pk": 480,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pr0n"
+    }
+  },
+  {
+    "pk": 481,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pr1c"
+    }
+  },
+  {
+    "pk": 482,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pr1ck"
+    }
+  },
+  {
+    "pk": 483,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pr1k"
+    }
+  },
+  {
+    "pk": 484,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "preteen"
+    }
+  },
+  {
+    "pk": 485,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "prick"
+    }
+  },
+  {
+    "pk": 486,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pron"
+    }
+  },
+  {
+    "pk": 487,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "prostitute"
+    }
+  },
+  {
+    "pk": 488,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "prostitutes"
+    }
+  },
+  {
+    "pk": 489,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "prostituting"
+    }
+  },
+  {
+    "pk": 490,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "prostitution"
+    }
+  },
+  {
+    "pk": 491,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pube"
+    }
+  },
+  {
+    "pk": 492,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pubic"
+    }
+  },
+  {
+    "pk": 493,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pula"
+    }
+  },
+  {
+    "pk": 494,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pule"
+    }
+  },
+  {
+    "pk": 495,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pusse"
+    }
+  },
+  {
+    "pk": 496,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pussee"
+    }
+  },
+  {
+    "pk": 497,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pussie"
+    }
+  },
+  {
+    "pk": 498,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pussies"
+    }
+  },
+  {
+    "pk": 499,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "pussy"
+    }
+  },
+  {
+    "pk": 500,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "puta"
+    }
+  },
+  {
+    "pk": 501,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "puto"
+    }
+  },
+  {
+    "pk": 502,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "puuke"
+    }
+  },
+  {
+    "pk": 503,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "puuker"
+    }
+  },
+  {
+    "pk": 504,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "qahbeh"
+    }
+  },
+  {
+    "pk": 505,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "queef"
+    }
+  },
+  {
+    "pk": 506,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "queer"
+    }
+  },
+  {
+    "pk": 507,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "queers"
+    }
+  },
+  {
+    "pk": 508,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "queerz"
+    }
+  },
+  {
+    "pk": 509,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "qweers"
+    }
+  },
+  {
+    "pk": 510,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "qweerz"
+    }
+  },
+  {
+    "pk": 511,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "qweir"
+    }
+  },
+  {
+    "pk": 512,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "rautenberg"
+    }
+  },
+  {
+    "pk": 513,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "recktum"
+    }
+  },
+  {
+    "pk": 514,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "rectum"
+    }
+  },
+  {
+    "pk": 515,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "renob"
+    }
+  },
+  {
+    "pk": 516,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "retard"
+    }
+  },
+  {
+    "pk": 517,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "rimjob"
+    }
+  },
+  {
+    "pk": 518,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "s.o.b."
+    }
+  },
+  {
+    "pk": 519,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sadist"
+    }
+  },
+  {
+    "pk": 520,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "scank"
+    }
+  },
+  {
+    "pk": 521,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "schaffer"
+    }
+  },
+  {
+    "pk": 522,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "scheisser"
+    }
+  },
+  {
+    "pk": 523,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "schiesser"
+    }
+  },
+  {
+    "pk": 524,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "schlampe"
+    }
+  },
+  {
+    "pk": 525,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "schlong"
+    }
+  },
+  {
+    "pk": 526,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "schmeg"
+    }
+  },
+  {
+    "pk": 527,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "schmuck"
+    }
+  },
+  {
+    "pk": 528,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "screw"
+    }
+  },
+  {
+    "pk": 529,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "screwing"
+    }
+  },
+  {
+    "pk": 530,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "scrote"
+    }
+  },
+  {
+    "pk": 531,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "scrotum"
+    }
+  },
+  {
+    "pk": 532,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "seduce"
+    }
+  },
+  {
+    "pk": 533,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "seducing"
+    }
+  },
+  {
+    "pk": 534,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "seductive"
+    }
+  },
+  {
+    "pk": 535,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "semen"
+    }
+  },
+  {
+    "pk": 536,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sensual"
+    }
+  },
+  {
+    "pk": 537,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sensual-massage"
+    }
+  },
+  {
+    "pk": 538,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sensualmassage"
+    }
+  },
+  {
+    "pk": 539,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh!+"
+    }
+  },
+  {
+    "pk": 540,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh!t"
+    }
+  },
+  {
+    "pk": 541,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh!ter"
+    }
+  },
+  {
+    "pk": 542,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh!tter"
+    }
+  },
+  {
+    "pk": 543,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh1t"
+    }
+  },
+  {
+    "pk": 544,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh1ter"
+    }
+  },
+  {
+    "pk": 545,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh1ts"
+    }
+  },
+  {
+    "pk": 546,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh1tter"
+    }
+  },
+  {
+    "pk": 547,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sh1tz"
+    }
+  },
+  {
+    "pk": 548,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sharmuta"
+    }
+  },
+  {
+    "pk": 549,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sharmute"
+    }
+  },
+  {
+    "pk": 550,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shemale"
+    }
+  },
+  {
+    "pk": 551,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shi+"
+    }
+  },
+  {
+    "pk": 552,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shipal"
+    }
+  },
+  {
+    "pk": 553,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shit"
+    }
+  },
+  {
+    "pk": 554,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shit-head"
+    }
+  },
+  {
+    "pk": 555,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shithead"
+    }
+  },
+  {
+    "pk": 556,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shits"
+    }
+  },
+  {
+    "pk": 557,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shitter"
+    }
+  },
+  {
+    "pk": 558,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shitty"
+    }
+  },
+  {
+    "pk": 559,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shity"
+    }
+  },
+  {
+    "pk": 560,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shitz"
+    }
+  },
+  {
+    "pk": 561,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shiz"
+    }
+  },
+  {
+    "pk": 562,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shyt"
+    }
+  },
+  {
+    "pk": 563,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shyte"
+    }
+  },
+  {
+    "pk": 564,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shytty"
+    }
+  },
+  {
+    "pk": 565,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "shyty"
+    }
+  },
+  {
+    "pk": 566,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skanck"
+    }
+  },
+  {
+    "pk": 567,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skank"
+    }
+  },
+  {
+    "pk": 568,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skankee"
+    }
+  },
+  {
+    "pk": 569,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skankey"
+    }
+  },
+  {
+    "pk": 570,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skanks"
+    }
+  },
+  {
+    "pk": 571,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skanky"
+    }
+  },
+  {
+    "pk": 572,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skeet"
+    }
+  },
+  {
+    "pk": 573,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skribz"
+    }
+  },
+  {
+    "pk": 574,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "skurwysyn"
+    }
+  },
+  {
+    "pk": 575,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "slut"
+    }
+  },
+  {
+    "pk": 576,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sluts"
+    }
+  },
+  {
+    "pk": 577,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "slutty"
+    }
+  },
+  {
+    "pk": 578,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "slutz"
+    }
+  },
+  {
+    "pk": 579,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "smeg"
+    }
+  },
+  {
+    "pk": 580,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "smut"
+    }
+  },
+  {
+    "pk": 581,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "snatch"
+    }
+  },
+  {
+    "pk": 582,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "son-of-a-bitch"
+    }
+  },
+  {
+    "pk": 583,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sphencter"
+    }
+  },
+  {
+    "pk": 584,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "spic"
+    }
+  },
+  {
+    "pk": 585,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "spick"
+    }
+  },
+  {
+    "pk": 586,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "spierdalaj"
+    }
+  },
+  {
+    "pk": 587,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "splooge"
+    }
+  },
+  {
+    "pk": 588,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suck"
+    }
+  },
+  {
+    "pk": 589,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suck-cock"
+    }
+  },
+  {
+    "pk": 590,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suck-dick"
+    }
+  },
+  {
+    "pk": 591,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suck-me"
+    }
+  },
+  {
+    "pk": 592,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suckcock"
+    }
+  },
+  {
+    "pk": 593,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suckdick"
+    }
+  },
+  {
+    "pk": 594,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suckme"
+    }
+  },
+  {
+    "pk": 595,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "suka"
+    }
+  },
+  {
+    "pk": 596,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sweater cows"
+    }
+  },
+  {
+    "pk": 597,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "sweater meat"
+    }
+  },
+  {
+    "pk": 598,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "swinger"
+    }
+  },
+  {
+    "pk": 599,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "swingers"
+    }
+  },
+  {
+    "pk": 600,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tantric"
+    }
+  },
+  {
+    "pk": 601,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tard"
+    }
+  },
+  {
+    "pk": 602,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "teets"
+    }
+  },
+  {
+    "pk": 603,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "teez"
+    }
+  },
+  {
+    "pk": 604,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "terd"
+    }
+  },
+  {
+    "pk": 605,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "testical"
+    }
+  },
+  {
+    "pk": 606,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "testicle"
+    }
+  },
+  {
+    "pk": 607,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "testicles"
+    }
+  },
+  {
+    "pk": 608,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "three-some"
+    }
+  },
+  {
+    "pk": 609,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "three-somes"
+    }
+  },
+  {
+    "pk": 610,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "threesome"
+    }
+  },
+  {
+    "pk": 611,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "threesomes"
+    }
+  },
+  {
+    "pk": 612,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tie up"
+    }
+  },
+  {
+    "pk": 613,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tied up "
+    }
+  },
+  {
+    "pk": 614,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tighty whitey"
+    }
+  },
+  {
+    "pk": 615,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tighty whities"
+    }
+  },
+  {
+    "pk": 616,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tighty-whitey"
+    }
+  },
+  {
+    "pk": 617,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tighty-whities"
+    }
+  },
+  {
+    "pk": 618,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tightywhitey"
+    }
+  },
+  {
+    "pk": 619,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tightywhities"
+    }
+  },
+  {
+    "pk": 620,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tird"
+    }
+  },
+  {
+    "pk": 621,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tit"
+    }
+  },
+  {
+    "pk": 622,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tits"
+    }
+  },
+  {
+    "pk": 623,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "titt"
+    }
+  },
+  {
+    "pk": 624,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "titties"
+    }
+  },
+  {
+    "pk": 625,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "titty"
+    }
+  },
+  {
+    "pk": 626,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "tittys"
+    }
+  },
+  {
+    "pk": 627,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "triple x"
+    }
+  },
+  {
+    "pk": 628,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "turd"
+    }
+  },
+  {
+    "pk": 629,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "twat"
+    }
+  },
+  {
+    "pk": 630,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "urinate"
+    }
+  },
+  {
+    "pk": 631,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "va1jina"
+    }
+  },
+  {
+    "pk": 632,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vag"
+    }
+  },
+  {
+    "pk": 633,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vag1na"
+    }
+  },
+  {
+    "pk": 634,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vagiina"
+    }
+  },
+  {
+    "pk": 635,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vaj"
+    }
+  },
+  {
+    "pk": 636,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vaj1na"
+    }
+  },
+  {
+    "pk": 637,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vajayjay"
+    }
+  },
+  {
+    "pk": 638,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vajina"
+    }
+  },
+  {
+    "pk": 639,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "viagra"
+    }
+  },
+  {
+    "pk": 640,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vittu"
+    }
+  },
+  {
+    "pk": 641,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vjayjay"
+    }
+  },
+  {
+    "pk": 642,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vomit"
+    }
+  },
+  {
+    "pk": 643,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vullva"
+    }
+  },
+  {
+    "pk": 644,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "vulva"
+    }
+  },
+  {
+    "pk": 645,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "w00se"
+    }
+  },
+  {
+    "pk": 646,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "w0p"
+    }
+  },
+  {
+    "pk": 647,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wank"
+    }
+  },
+  {
+    "pk": 648,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wanker"
+    }
+  },
+  {
+    "pk": 649,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wanking"
+    }
+  },
+  {
+    "pk": 650,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wet t-shirt"
+    }
+  },
+  {
+    "pk": 651,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wet tshirt"
+    }
+  },
+  {
+    "pk": 652,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wetback"
+    }
+  },
+  {
+    "pk": 653,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wh00r"
+    }
+  },
+  {
+    "pk": 654,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wh0re"
+    }
+  },
+  {
+    "pk": 655,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "whoar"
+    }
+  },
+  {
+    "pk": 656,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "whore"
+    }
+  },
+  {
+    "pk": 657,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "whores"
+    }
+  },
+  {
+    "pk": 658,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wichser"
+    }
+  },
+  {
+    "pk": 659,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "wop"
+    }
+  },
+  {
+    "pk": 660,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "xxx"
+    }
+  },
+  {
+    "pk": 661,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "yed"
+    }
+  },
+  {
+    "pk": 662,
+    "model": "spamish.bannedword",
+    "fields": {
+      "active": true,
+      "word": "zabourah"
+    }
+  }
+]

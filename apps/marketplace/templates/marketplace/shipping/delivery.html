@@ -1,0 +1,15 @@
+<div class="control-group{% if field.errors %} error{% endif %}">
+  <label
+     for="{{field.auto_id}}"
+     class="control-label">{{field.label}}</label>
+  <div class="controls">
+    {{field}}
+    {{field.errors}}
+    and
+    {% with field=field_max %}
+    {{field}} days
+    {{field.errors}}
+    {% endwith %}
+  </div>
+</div>
+

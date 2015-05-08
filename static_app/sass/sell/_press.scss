@@ -1,0 +1,34 @@
+.press{
+  
+  padding: 10px 0 20px 0;
+  
+  ul{
+    @include list-reset;
+    
+    
+    li{
+      margin: 0 45px 0 0;
+      padding: 0;
+      width: 185px;
+      float: left;
+      
+      &:last-child{
+        margin-right: 0;
+      }
+      
+      .link{
+        display: inline-block;
+        margin: 10px 0 0 0;
+        opacity: 0.85;
+        
+        &:hover{
+          opacity: 1;
+        }
+      }
+      
+      
+    }
+    
+  }
+  
+}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+{% load static from staticfiles %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/my_account.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+{% url 'video_intro' as video_intro_url %}
+{% url 'video_responses' as video_responses_url %}
+{% url 'video_draft' as video_draft_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Edit your video</h2>
+    <div id="capture_video_container" style="height:600px; width: 410px;">
+      <script type="text/javascript">
+        var sociagram_params = {
+          'account': 'ecomarket',
+          'UID': '{{ request.user.stall.id }}',
+          'descriptor': 'stall',
+          'mediaLabel': '& Publish My Video',
+          'timeLimit': {{ video.video_type.time_limit }},
+          'onComplete': function(data) {
+            var dict = {
+              guid: data['guid'],
+              embed_url: data['embedUrl'],
+              splash_url: data['splashUrl']
+            };
+            $.ajax({
+              url: "{% url 'video_edit' video.id %}",
+              type: "post",
+              data: dict,
+              success: function(data, textStatus, jqXHR) {
+                if (data['success'] == true) {
+                  window.location = '{% url 'video' %}';
+                }
+              }
+            })
+          },
+        }
+      </script>
+      <script type="text/javascript" src="//track.sociagram.com/plugin/attached-media.js?account=ecomarket"></script>
+    </div>
+  </div>
+</div>
+{% endblock content %}

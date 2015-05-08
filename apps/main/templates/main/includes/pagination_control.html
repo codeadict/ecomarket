@@ -1,0 +1,26 @@
+{% load add_get_parameter %}
+{% if is_paginated or page_obj.has_previous or page_obj.has_next %}
+<div class="pagination {{ pagination_class|default:"pagination-left pull-left" }}">
+    <ul>
+        {% if page_obj.has_previous %}
+        <li>
+        <a href="{% add_get_parameter page=page_obj.previous_page_number %}">
+            <i class="icon icon-chevron-left icon-white"></i>
+        </a>
+        </li>
+        {% endif %}
+
+        {% for page in page_obj.paginator.page_range %}
+            <li{% if page == page_obj.number %} class="active"{% endif %}><a href="{% add_get_parameter page=page %}">{{ page }}</a></li>
+        {% endfor %}
+        
+        {% if page_obj.has_next %}
+        <li>
+        <a href="{% add_get_parameter page=page_obj.next_page_number %}">
+            <i class="icon icon-chevron-right icon-white"></i>
+        </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}

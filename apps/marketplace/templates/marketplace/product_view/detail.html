@@ -1,0 +1,18 @@
+{% load url from future %}
+
+<div class="product-description">
+  <p>{{ product.description|linebreaksbr }}</p>
+</div>
+
+{% with keywords=product.keywords.all %}
+{% if keywords %}
+<div class="product-keywords">
+  <h4>Keywords</h4>
+  <div class="tags tags-list">
+    {% for item in keywords %}
+    <a href="{% url 'product_search' %}?q={{ item.title }}" class="tag"><em>{{ item.title|title }}</em></a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+{% endwith %}

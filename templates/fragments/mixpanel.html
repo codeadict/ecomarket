@@ -1,0 +1,57 @@
+<script type="text/javascript">
+        (function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");
+        b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
+        '//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';d=c.getElementsByTagName("script")[0];
+        d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){
+        var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(
+        Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:
+        f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links',
+        'track_forms','register','register_once','unregister','identify','alias','name_tag','set_config',
+        'people.set','people.set_once','people.increment','people.track_charge','people.append'];
+        for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.2;})(document,window.mixpanel||[]);
+
+        mixpanel.init('{{ MIXPANEL_TOKEN }}');
+        {% if user.is_authenticated %}
+            {% with user_profile=user.get_profile %}
+                {% comment %}
+                    {# All users need to be fully anonymous to the JS library #}
+                    {# We cant even have mp_name_tag because it breaks funnel #}
+                    {# Anything which causes the user to show up differently. #}
+                    mixpanel.register({
+                        'username': '{{ user.username }}',
+                        'email': '{{ user.email }}',
+                        {% if user_profile.age %}
+                        'age': {{ user_profile.age }},
+                        {% endif %}
+                        'gender': '{{ user_profile.get_gender_display }}',
+                        "Items in Cart": {{user.cart.num_items}},
+                        {% if not user.stall %}
+                        "Member Type": "Regular",
+                        {% else %}
+                        "Member Type": "Stall Owner",
+                        {% endif %}
+                        'first_name': '{{user.first_name}}',
+                        'last_name': '{{user.last_name}}',
+                        'mp_name_tag': '{{user.get_full_name}}',
+                    });
+                    mixpanel.identify('{{ user.id }}');            
+                    mixpanel.people.set({
+                        '$username': '{{ user.username }}',
+                        '$email': '{{ user.email }}',
+                        '$first_name': '{{ user.first_name }}',
+                        '$last_name': '{{ user.last_name }}',
+                        "created": "{{ user.date_joined }}",
+                        "last_login": "{{ user.last_login }}",
+                        'gender': '{{ user_profile.get_gender_display }}',
+                        'mp_name_tag': '{{ user_profile.get_full_name }}',
+                        {% if not user.stall %}
+                        "Member Type": "Regular"
+                        {% else %}
+                        "Member Type": "Stall Owner"
+                        {% endif %}
+                    });                                
+                {% endcomment %}
+            {% endwith %}
+        {% endif %}
+        mixpanel.track_links("a.help", "Clicked Help Link");
+    </script>

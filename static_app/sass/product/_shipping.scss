@@ -1,0 +1,27 @@
+
+.shipping-rules .shipping-profile-rule:last-child {
+    display: none;
+}
+
+form .shipping-rules .shipping-profile-rule:nth-of-type(1) {
+    display: block;
+}
+
+form .shipping-rules .shipping-profile-rule:nth-of-type(1) a.close {
+    display: none;
+}
+
+.shipping #s2id_shipping_country{
+  width: 308px;
+}
+.shipping #s2id_shipping_country_price{
+  width: 308px;
+}
+
+.product-page{
+  table.shipping{
+    form{
+      margin: 0 5px 0 0;
+    }
+  }
+}

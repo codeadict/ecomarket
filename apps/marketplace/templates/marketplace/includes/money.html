@@ -1,0 +1,12 @@
+<div class="control-group{% if field.errors %} error{% endif %}">
+  <label
+     for="{{field.auto_id}}"
+     class="control-label">{{field.label}}:</label>
+
+  <div class="controls">
+    £
+    {{field}}
+    GBP
+    {{field.errors}}
+  </div>
+</div>

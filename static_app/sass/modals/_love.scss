@@ -1,0 +1,36 @@
+.love-modal{
+  
+  overflow: visible;
+  
+  .modal-body{
+    overflow-y: visible;
+  }
+  
+  label.inline{
+    display: inline;
+  }
+  
+  .categories-row{
+    margin: 0 0 10px 0;
+  }
+  
+  .category-field{
+    margin: 5px 0;
+  }
+  
+  .btn-remove-category {
+    height: 30px;
+    line-height: 30px;
+    margin: -1px 0 0 0;
+    padding: 0 7px;
+  }
+  
+  .category-picker{
+    display: inline-block;
+  }
+  
+  .additional-category{
+    margin: 5px;
+  }
+  
+}

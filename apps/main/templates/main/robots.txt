@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /checkout/*
+Disallow: /accounts/*
+Disallow: /messages/*
+Disallow: /admin/*
+
+Sitemap: {{baseurl}}/sitemap.xml

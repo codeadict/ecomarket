@@ -1,0 +1,121 @@
+nav.site{
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  font-family: $serif;
+  font-size: 14px;
+
+  a{
+    color: #E7E2D4;
+    display: inline-block;
+    padding: 20px 10px;
+    margin: 0 10px 0 0;
+    height: 54px;
+    text-shadow: 0px -1px 0 rgba(0,0,0,0.75);
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: #fff;
+  }
+  
+  a:hover, a.active{
+    background: url('../images/header/nav-tick.png') 50% 100% no-repeat;
+  }  
+  
+}
+
+nav.primary{
+  position: absolute;
+  left: 0;
+  top: 90px;
+  width: 450px;
+  font-family: $sans;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 1px solid #C8C8C8; 
+    border-right:  1px solid #D3D3D3;
+    border-bottom:  1px solid #B7B7B7;
+    border-top: 1px solid #D4D4D4;
+    @include border-radius(3px);
+    height: 52px; 
+    float: left;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    @include background(linear-gradient(#ffffff, #e6e6e6));
+    @include filter-gradient(#fafafa, #e6e6e6, vertical);
+  }
+
+  li{
+    margin:0;
+    padding: 0;
+    float: left;
+  }
+
+  ul a{
+    float:left;
+    width: 84px;
+    height: 50px;
+    padding: 30px 0 0 0;
+    color: #66645C;
+    text-shadow: 0 1px 0 #fff;
+    text-align:center;
+    position: relative;
+    border-right: 1px solid #D5D5D5;
+    border-left: 1px solid #ffffff;
+    text-decoration: none;
+  }
+
+  ul a:hover{
+    color: #333333;
+    background-color: #fafafa !important;
+  }
+
+  li:first-child, li.first, li:first-child a, li.first a{
+    border-radius: 3px 0 0 3px;
+    border-left: none;
+  }
+  
+  li.activities a{background: url('../images/header/nav.png') 0 10px no-repeat;}
+  li.messages a{background: url('../images/header/nav.png') -87px 10px no-repeat;}  
+  li.love-list a{background: url('../images/header/nav.png') -172px 10px no-repeat;}
+  li.my-stall a{background: url('../images/header/nav.png') -255px 10px no-repeat;}
+  
+  li.register a{background: url('../images/header/nav.png') -334px 10px no-repeat;}
+  li.sign-in a{background: url('../images/header/nav.png') -419px 10px no-repeat;}
+
+  li:last-child a, li.last a{
+    border-radius: 0 3px 3px 0;
+    border-right: none;
+  }
+
+  em{
+    position: absolute;
+    top:-5px;
+    right: 5px;
+    background: transparent url('../images/header/badge.png') 50% 0 no-repeat;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+    font-style: normal;
+    font-size: 12px;
+    width: 23px;
+    height: 30px;
+    line-height: 25px;
+    border-radius: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.fb-hint{
+  text-decoration: none !important;
+  padding: 14px 10px 10px 45px;
+  text-shadow:1px 1px 0 #fff;
+  float: left;
+  width: 160px;
+  line-height:12px;
+  background: url('../images/icons/fb-signin.png') 10px 10px no-repeat;
+  color: $subtle_text !important;
+}

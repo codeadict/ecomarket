@@ -1,0 +1,20 @@
+<fieldset class="info">
+  {% with field=form.title %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  {% with field=form.description %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  {% with field=form.primary_category %}
+  {% include "marketplace/product/categories.html" %}
+  {% endwith %}
+
+  <div class="secondary-category {% if not form.primary_category.value %}hide{% endif %}">
+    {% with field=form.secondary_category %}
+    {% include "marketplace/product/secondary_categories.html" %}
+    {% endwith %}
+  </div>
+
+</fieldset>

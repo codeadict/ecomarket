@@ -1,0 +1,15 @@
+{% load comments %}
+
+{% get_comment_list for object as comments %}
+
+<div class="comments-list">
+	<ol class="comments">
+		{% for comment in comments reversed %}
+		{% include "comments/_comment.html" %}
+		{% endfor %}
+	</ol>
+	{% block comment_form %}
+		{% get_comment_form for object as form %}
+		{% include "comments/form.html" %}
+	{% endblock %}
+</div>

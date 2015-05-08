@@ -1,0 +1,137 @@
+[
+  {
+    "pk": 1, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 1, 
+      "slug": "jewellery", 
+      "title": "Jewellery"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 12, 
+      "slug": "electricals", 
+      "title": "Electricals"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 29, 
+      "slug": "stationary", 
+      "title": "Stationary"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 39, 
+      "slug": "art", 
+      "title": "Art"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 44, 
+      "slug": "clothing", 
+      "title": "Clothing"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 63, 
+      "slug": "home", 
+      "title": "Home"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 63, 
+      "slug": "garden", 
+      "title": "Garden"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 108, 
+      "slug": "entertainment", 
+      "title": "Entertainment"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 113, 
+      "slug": "outdoors", 
+      "title": "Outdoors"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 121, 
+      "slug": "eco-baby", 
+      "title": "Eco Baby"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 130, 
+      "slug": "pets", 
+      "title": "Pets"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 136, 
+      "slug": "health", 
+      "title": "Health"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 136, 
+      "slug": "beauty", 
+      "title": "Beauty"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 142, 
+      "slug": "food", 
+      "title": "Food"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "articles.blogcategory", 
+    "fields": {
+      "product_category": 142, 
+      "slug": "drink", 
+      "title": "Drink"
+    }
+  }
+]

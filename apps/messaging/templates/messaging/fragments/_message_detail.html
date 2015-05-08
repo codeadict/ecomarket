@@ -1,0 +1,35 @@
+{% load url from future %}
+{% load inbox %}
+{% load static from staticfiles %}
+
+<tr class="{% thread_read_row thread user %}">
+    <td class="check"><input type="checkbox" name="all" value="{{ message.thread.pk }}"/></td>
+    {% if message.sender_profile %}
+        {% with message.sender_profile as sender_profile %}
+        <td class="avatar"><a href="{% url 'public_profile' message.sender.username %}"><img src="{{ sender_profile.avatar_50 }}" alt="Acme Dress Makers" width="50" height="50"></a></td>
+        <td class="user">
+            <a href="{% url 'public_profile' message.sender.username %}" class="name">{{ sender_profile.user.username }}</a>
+        {% endwith %}
+    {% else %}
+        <td class="avatar"><a href="{% url 'profile' %}"><img src="{% static 'images/avatar/50x50/default.png' %}" alt="Acme Dress Makers" width="50" height="50"></a></td>
+        <td class="user">
+            <a href="#" class="name">{{ message.sender.username }}</a>
+    {% endif %}
+        <time>{{ message.sent_at|timesince }} ago</time>
+        <span class="messages">{{ message.sender_messages_count }} Messages</span>
+    </td>
+    <td>
+        <a href="{% url 'view_thread' tab thread.pk %}" class="btn-reply-messages ajax title {% thread_read_subject thread user %}"  data-toggle="modal" data-source="{% reply_url thread user %}" data-target="#reply-message">{{ message.subject }}</a>
+        <p>{{ message.body|truncatewords:20 }}</p>
+    </td>
+        <td class="row-actions">
+            <a href="#reply-message" class="btn-reply-messages ajax"  data-toggle="modal" data-source="{% reply_url thread user %}" data-target="#reply-message">View and reply</a><br/>
+            {% if request.user.get_profile.is_seller %}
+                {% if thread.resolved %}
+                    <a href="#" class="btn-flat btn-resolve btn-resolved" data-thread-id="{{ message.thread.pk }}" data-source="{% url 'messaging_mark_unresolved_selected' %}?suppress_messages=1">Resolved</a>
+                {% else %}
+                    <a href="#" class="btn-flat btn-resolve btn-unresolved" data-thread-id="{{ message.thread.pk }}" data-source="{% url 'messaging_mark_resolved_selected' %}?suppress_messages=1">Unresolved</a>
+                {% endif %}
+            {% endif %}
+        </td>
+</tr>

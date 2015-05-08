@@ -1,0 +1,24 @@
+{% load absolute_url %}
+
+Hello {{ order.stall.user.get_profile.full_name }},<br />
+<br />
+On {{ order.created }} you received an order from {{ order.user.get_profile.full_name }} (username '{{ order.user.username }}') in your <a href="{% absurl my_stall slug=order.stall.slug %}">Eco Market stall</a>, however <b>you have not yet marked your order as dispatched.</b><br />
+<br />
+<b> In accordance with our terms of selling on Eco Market will be automatically refunding the customer tomorrow with their payment because we think that you have not dispatched the product</b>. This refund is not reversible and if you think this is a mistake you need to take immediate action by following the steps below or <a href="{% absurl help %}">contacting us</a><br />
+<br />
+If you have already posted out the order, remember you still need to mark the item as dispatched on Eco Market in your my account area so that you can receive your payment (and also so that the customer gets notified that the order is on its way). Please ensure you do this as soon as the item has been posted to avoid any confusion.<br />
+<br />
+You can <a href="{% absurl invoice order_id=order.id %}">mark the item as dispatched</a> by logging into Eco Market and going to your My Account > Sold area and pressing the gear icon next to the order and marking this as dispatched.<br />
+<br />
+The order number was {{ order.id }} and the details of the order can be seen below:<br />
+<br />
+
+{% include 'purchase/emails/includes/order_details.html' %}
+
+Please note that if you have not dispatched your order within 14 days of the order being placed <b>the payment will be automatically refunded to the customer</b> so please ensure this happens soon.<br />
+<br />
+We do ask all stall owners to keep all their stock levels up to date on Eco Market however in the event that you need to refund the customer you can also do this within your My Account <a href="{% absurl sold %}">Sold tab</a>.<br />
+<br />
+Remember, the faster you post out orders and mark them as dispatched the more repeat order you will get so try to ensure you are ready to handle any orders when they come in and are checking to make sure all the products in your stall are available if they are published.<br />
+<br />
+

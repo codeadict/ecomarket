@@ -1,0 +1,115 @@
+
+div.modal-capture{
+
+    .modal-body{
+
+        padding: 40px 20px 0 20px ;
+        width:580px;
+
+        input#id_email_address{
+            width:290px !important;
+        }
+
+        .login-fields {
+            width: 305px !important;
+            padding: 0 20px 0 0 !important;
+
+            .or {
+                top: 19px;
+            }
+        }
+
+        .sign-with-facebook {
+            position: absolute;
+            top: 143px;
+            right: 10px;
+            padding-left: 0px !important;
+            padding-top: 0px !important;
+        }
+
+        .errorlist {
+            width: auto !important;
+            margin-top: 0 !important;
+        }
+    }
+
+    .modal-footer{
+
+        padding: 15px 20px 15px 20px;
+
+        p{
+            float:left;
+            line-height:20px;
+        }
+
+        input{
+
+            float:right;
+
+        }
+
+        .fb-login{
+
+          float: right;
+          padding:0;
+          margin-top:5px;
+          width: 34px;
+          height:30px;
+          background: url('../images/icons/fb-signin.png') 0 0 no-repeat;
+
+        }
+    }
+
+    .select2-container .select2-choice span {
+
+        margin-right:60px;
+
+    }
+
+    .sign-with-facebook{
+
+        float:right;
+        padding-top:1px;
+
+    }
+
+    span.or{
+
+        text-align: center;
+        width: 40px;
+        display: inline-block;
+
+    }
+
+    .social{
+  
+        .dummy-social{
+
+            display: block;
+            background: url('../images/product/dummy-social.jpg') 0 0 no-repeat;
+            width: 265px;
+            height: 20px;
+
+        }
+    
+        margin: 0 0 5px 0;
+
+        .buttons{
+    
+            .button{
+
+                float: left;
+                margin-right: 8px;
+
+            }
+
+            .twitter{
+
+                width:80px;
+
+            }
+      
+        }
+  
+    }
+}

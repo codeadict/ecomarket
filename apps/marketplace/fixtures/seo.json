@@ -1,0 +1,597 @@
+[
+  {
+    "pk": 1,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Open Your Stall | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/stalls/new/"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Dashboard | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/dashboard/awaiting_delivery/"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Profile | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/profile/"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Account | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/account/account/"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Delivery Addresses | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/account/delivery_addresses/"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Connected Accounts | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/account/connected_accounts/"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Email Notifications | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/account/email_notifications/"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Products I'm Selling | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/selling/published/"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Products I've Sold | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/sold/awaiting_shipping/"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Products I've Bought | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/bought/"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Stall Appearance | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/stall/appearance/"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Stall Address | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/stall/address/"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Payment Settings | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/stall/payment/"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Stall Policies & Templates | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/stall/policies/"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Create New Product | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/products/new/"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Things I Love | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/love_list/"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Messages | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/messages/inbox/"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Eco Market makes it easy for eco and natural sellers to sell their products online.",
+      "title": "Sell My Products | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/sell-my-products/"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Its free, and you'll get a profile plus access to tons of features across the site!",
+      "title": "Register an Account | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/register/"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "My Shopping Cart | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/checkout/cart/"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Read up on what our eco friendly and natural marketplace is all about",
+      "title": "About us | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/about-eco-market"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Looking to work in an awesome start-up with a great cause? We're hiring...",
+      "title": "Work with us | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/work-with-us"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Read about us in some of our national pres we've been getting. Not that we like to brag.",
+      "title": "Press | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/press"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Forgot your password or username? | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/accounts/password/reset/"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "http://ecomarket.com/static/images/ecomarket.png",
+      "og_video": "",
+      "og_description": "",
+      "description": "Find eco-friendly products, natural products and organic products at Eco Market. Shop for natural beauty products, organic food and much more.",
+      "title": "Eco Market | Good People, Great Products!",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "seo.marketplacemetadatapath",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Privacy Policy | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_path": "/privacy-policy/"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "http://{{ request.get_host }}{{product.images.0.url_preview}}",
+      "og_video": "{% if product.stall.get_welcome_video %}{{product.stall.get_welcome_video.url}}{% endif %}",
+      "og_description": "",
+      "description": "{{product.description}}",
+      "title": "{{product.title}} | Eco Market",
+      "og_type": "product",
+      "keywords": "{{product.keywords.all|join:\", \"}}, {{product.categories|join:\", \"}}",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_view": "product_page"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "http://{{ request.get_host }}{{stall.user.get_profile.avatar_50}}",
+      "og_video": "{% if stall.get_welcome_video %}{{stall.get_welcome_video.url}}{% endif %}",
+      "og_description": "",
+      "description": "{{stall.description_short}}",
+      "title": "{{stall.title}} | Eco Market",
+      "og_type": "stall",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_view": "my_stall"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "{{article.description|striptags}}",
+      "title": "{{article.title}} | Eco Market Blogs",
+      "og_type": "",
+      "keywords": "{{article.keywords}}",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_view": "articles_display_article"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "{{profile_user.get_profile.avatar_228}}",
+      "og_video": "",
+      "og_description": "",
+      "description": "{{profile_user.get_profile.about_me}}",
+      "title": "{{profile_user.username}} | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_view": "public_profile"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Eco Market Blogs",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "/blog/page/1",
+      "_view": "articles_archive"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "Eco Market Blogs",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_view": "articles_archive_page"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Discover 1000's of amazing eco-friendly and natural products and gifts on Eco Market.",
+      "title": "{{ category_tag|default:\"Discover\" }} | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "/discover/{{ search_terms }}",
+      "_view": "product_search"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "Its free, and you'll get a profile plus access to tons of features across the site!",
+      "title": "Sign In | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "/accounts/login/",
+      "_view": "login"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "seo.marketplacemetadataview",
+    "fields": {
+      "og_image": "",
+      "og_video": "",
+      "og_description": "",
+      "description": "",
+      "title": "{{ category.name|default:\"Discover\" }} | Eco Market",
+      "og_type": "",
+      "keywords": "",
+      "og_title": "",
+      "og_url": "",
+      "canonical_url": "",
+      "_view": "category_discover"
+    }
+  }
+]

@@ -1,0 +1,155 @@
+[
+    {
+        "pk": 1, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "everyone", 
+            "title": "Everyone"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "men", 
+            "title": "Men"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "women", 
+            "title": "Women"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "unisex-adults", 
+            "title": "Unisex Adults"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "teen-boys", 
+            "title": "Teen Boys"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "teen-girls", 
+            "title": "Teen Girls"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "teens", 
+            "title": "Teens"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "boys", 
+            "title": "Boys"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "girls", 
+            "title": "Girls"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "children", 
+            "title": "children"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "baby-boys", 
+            "title": "Baby Boys"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "baby-girls", 
+            "title": "Baby Girls"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "babies", 
+            "title": "Babies"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "birds", 
+            "title": "Birds"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "dogs", 
+            "title": "Dogs"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "cats", 
+            "title": "Cats"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "marketplace.recipient", 
+        "fields": {
+            "description": "", 
+            "slug": "animals-and-insects", 
+            "title": "Animals and Insects"
+        }
+    }
+]

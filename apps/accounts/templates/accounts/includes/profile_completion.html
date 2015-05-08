@@ -1,0 +1,39 @@
+{% load url from future %}
+
+{% if user.stall %}
+<div class="product-add-button">
+  <a id="add-product-for-sale-link" class="btn btn-primary btn-load" href="/products/new">Add a product for sale</a>
+</div>
+
+{% include 'accounts/includes/profile_tip.html' %}
+
+{% else %}
+
+<div class="product-add-button">
+  <a class="btn btn-primary"
+     href="{% url 'create_stall' %}">Open Your Stall Today</a>
+</div>
+
+<div class="box box-blue box-tips">
+    <h2>Looking for a Stall Owner?</h2>
+    <p>You can message stall owners using the messaging system, or if you have
+        made an order already you can message stall owners directly from the
+        'Bought' tab.</p>
+    <div>
+        <a href="{% url 'messaging_inbox' %}" class="btn btn-green btn-flat">My Messages</a>
+    </div>
+</div>
+{% endif %}
+
+{% comment %}
+{# Not ready for 2.0 disabling for launch #}
+<div class="box">
+  <h2>Stall Completeness</h2>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+</div>
+
+<div class="box box-blue">
+  <h2>Stall Owner Score</h2>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+</div>
+{% endcomment %}

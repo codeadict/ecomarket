@@ -1,0 +1,32 @@
+{% load url from future %}
+{% load i18n thumbnail comments %}
+<div class="blog-entry cf">
+    {% with video=article.youtube_video image=article.get_image %}
+    <div class="entry-image" style="width: 265px; height: 200px; overflow: hidden;">
+        {% if video %}
+        <object height="200" width="265">
+            <param name="quality" value="high" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="movie" value="{{ video.url }}" />
+            <param name="allowscriptaccess" value="always">
+            <embed width="265" height="200" type="application/x-shockwave-flash" src="{{ video.url }}" quality="high" allowscriptaccess="always" />
+        </object>
+        {% elif image %}
+        <a href="{{ article.get_absolute_url }}"><img src="/media/{{image}}" alt="Read more about »{{ article.title }}«"></a>
+        {% endif %}
+    </div>
+    {% endwith %}
+    <div class="entry-header">
+        <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+    </div>
+    <div class="entry-content">
+        {{ article.content|safe|striptags|truncatechars:280|linebreaks }}
+    </div>
+    <div class="entry-footer">
+        <span class="meta">{% trans 'Published on' %} {{ article.publish_date|date:"F jS, Y" }}<br />{% trans 'by' %} <a href="{% url 'public_profile' article.author.username %}">{{ article.author.username }}</a>
+            &nbsp;|&nbsp;
+            {% get_comment_count for article as comment_count %}
+            <a href="{{ article.get_absolute_url }}#comments">{{comment_count}} comment{{comment_count|pluralize}}</a></span>
+    </div>
+</div>
+

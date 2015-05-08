@@ -1,0 +1,46 @@
+{% load url from future %}
+
+<!-- message box include -->
+{#<div class="modal hide fade modal-message" id="new-message">#}
+
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h3>Compose message</h3>
+    </div>
+
+    <form class="message-form form" 
+        {% if product_to_be_delivered %}
+        action="{% url 'messaging_compose' %}?product_to_be_delivered={{ product_to_be_delivered }}"
+        {% else %}
+        action="{% url 'messaging_compose' %}?"
+        {% endif %}
+        method="post" id="message-form">
+        {% csrf_token %}
+        <div class="modal-body">
+            <div class="control-group{% if form.recipient.errors %} error{% endif %}">
+                <div class="controls">
+                    {{ form.recipient }}
+                    {{ form.recipient.errors }}
+                </div>
+            </div>
+            <div class="control-group{% if form.subject.errors %} error{% endif %}">
+                <div class="controls">
+                    {{ form.subject }}
+                    {{ form.subject.errors }}
+                </div>
+            </div>
+            <div class="control-group{% if form.body.errors %} error{% endif %}">
+                <div class="controls">
+                    {{ form.body }}
+                    {{ form.body.errors }}
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            {{ form.message_purpose }}
+            <input type="submit" value="Send message" class="btn btn-primary btn-large ajax-submit">
+            <a href="javascript:void(0)" class="btn btn-large" data-dismiss="modal">Cancel</a>
+        </div>
+    </form>
+{#</div>#}
+

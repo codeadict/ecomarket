@@ -1,0 +1,12 @@
+{% load url from future %}
+{% with image=article.get_image %}
+<li>
+    <a href="/blog/{{ article.publish_date|date:"Y" }}/{{ article.slug }}/" class="image" title="{{article.title}}"><img src="/media/{{image}}" width="232" alt="{{ article.title }}"></a>
+    <div class="details">
+        <strong><a href="/blog/{{ article.publish_date|date:"Y" }}/{{ article.slug }}/">{{ article.title }}</a></strong>
+        <time>{{ article.publish_date|date:"M d, Y" }}</time>
+        {{ article.content|striptags|safe|truncatechars:185 }}
+    </div>
+    <a href="{% url 'public_profile' article.author %}" class="author">{{ article.author }}</a>
+  </li>
+{% endwith %}

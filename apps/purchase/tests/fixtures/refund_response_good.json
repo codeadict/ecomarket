@@ -1,0 +1,34 @@
+{
+    "currencyCode": "GBP", 
+    "refundInfoList": {
+        "refundInfo": [
+            {
+                "encryptedRefundTransactionId": "2SW81107DD1411344", 
+                "receiver": {
+                    "amount": "11.00", 
+                    "email": "tech.alerts@ecomarket.com"
+                }, 
+                "refundFeeAmount": "0.00", 
+                "refundGrossAmount": "11.00", 
+                "refundHasBecomeFull": "true", 
+                "refundNetAmount": "11.00", 
+                "refundStatus": "REFUNDED", 
+                "refundTransactionStatus": "COMPLETED", 
+                "totalOfAllRefunds": "11.00"
+            }, 
+            {
+                "receiver": {
+                    "amount": "11.00", 
+                    "email": "quixop_1348927123_biz@gmail.com"
+                }, 
+                "refundStatus": "NOT_PAID"
+            }
+        ]
+    }, 
+    "responseEnvelope": {
+        "ack": "Success", 
+        "build": "3779320", 
+        "correlationId": "e6a3a39106545", 
+        "timestamp": "2012-10-04T15:41:32.671-07:00"
+    }
+}

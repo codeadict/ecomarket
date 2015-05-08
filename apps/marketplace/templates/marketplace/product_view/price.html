@@ -1,0 +1,69 @@
+{% load url from future %}
+{% load lovelists_tags %}
+
+<!-- price box -->
+<div class="box no-header price-box">
+  <div class="product-price amount_currency_convert" data-amount="{{ product.get_price_instance.amount }}">
+    {#<span class="price old-price">£29.99</span>#}
+    <strong class="price special-price">{% if requested_currency %}<span class="amount_currency_symbol">{{ requested_currency_symbol }}</span><span class="amount_amount">{{ price_in_requested_currency }}</span>{# <span class="amount_currency_code">{{ requested_currency }}</span>#}{% else %}<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ product.get_price_instance.amount }}</span>{# <span class="amount_currency_code">GBP</span>#}{% endif %}</strong>
+    <span class="approximation"><p class="text-success" id="free-shipping">&nbsp;</p></span>
+    {#<span class="approximation">Approx. $29.99 <a href="#">CAD</a></span>#}
+    <!--span id="item-shipping-cost" class="amount_currency_convert muted" data-amount="" style="font-size:90%;">Shipping - <span class="amount_currency_symbol">£</span><span class="amount_amount">10</span></span><span id="extra-item-shipping-cost" class="amount_currency_convert muted" data-amount="" style="font-size:90%;">; with another item - <span class="amount_currency_symbol">£</span><span class="amount_amount">10</span>
+    </span-->
+  </div>
+  <div class="love">
+    {% love_this_button user product %}
+    <span>{{ product.num_hearts }}</span>
+  </div>
+
+  <form id="add-to-cart-form" action="{% url 'checkout_add' product.slug %}" method="POST">{% csrf_token %}
+    {% include 'marketplace/product_view/shipping.html' %}
+    <div class="actions">
+      {% if product.is_out_of_stock %}
+      <input type="submit" disabled="true" class="btn btn-disabled" value="Add to cart"/>
+      {% else %}
+      <input type="submit" class="btn btn-primary btn-green" value="Add to cart"/>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      <a href="#" class="btn btn-gray btn-new-messages ajax"
+          data-toggle="modal"
+          data-source="{% url 'messaging_compose' %}"
+          data-target="#new-message"
+          data-username="{{ product.stall.user.username }}"
+          id="ask-question-link" >Ask a question</a>
+      {% else %}
+      <!--<a href="/log-in/?next={{self_url}}" class="btn btn-gray">Ask a question</a>-->
+      <a href="#"
+         data-next="{% url 'register' %}?next={{self_url}}?ask-question=1"
+         class="btn btn-gray needs-login"
+         id="ask-question-link">Ask a question</a>
+      {% endif %}
+    </div>
+  </form>
+
+  <div class="product-availability">
+      {% if product.stock == None %}
+          Loads of this item in stock
+      {% elif product.stock > 0 and product.stock < 10 %}
+          Hurry! Only <strong>{{ product.stock|default:0 }}</strong> of this item in stock
+      {% else %}
+    <strong>{{ product.stock|default:0 }}</strong> of this item in stock
+      {% endif %}
+    {% with profile=product.shipping_profile %}
+        <br><span class="muted">Dispatched from: <strong class="country">{{ profile.shipping_country }}</strong></span>
+    {% endwith %}
+  </div>
+
+</div>
+
+<script type="text/javascript">
+$(function(){
+  {% if ask_question_popup %}
+    $('#ask-question-link').click();
+  {% endif %}
+  {% if request_delivery_country_popup %}
+    $('#request-delivery-country-link').click();
+  {% endif %}
+});
+</script>

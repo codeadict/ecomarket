@@ -1,0 +1,4 @@
+{% for item in object.occasions.all %}
+{{ item.title }}
+{{ item.slug }}
+{% endfor %}

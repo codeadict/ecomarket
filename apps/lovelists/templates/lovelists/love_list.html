@@ -1,0 +1,78 @@
+{% extends 'lovelists/base.html' %}
+
+{% load url from future %}
+{% load lovelists_tags %}
+{% load static from staticfiles %}
+{% load social_tags %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li>
+        <a href="{% url 'home' %}">Home</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li>
+        <a href="{% url 'lovelist:main' %}">Lovelist</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li>
+        <a href="{% url 'lovelist:lists' username %}">{{ username }}</a>
+        <span class="divider">&gt;</span>
+    </li>
+    <li class="active">
+        {{ love_list.title }}
+    </li>
+</ul>
+{% endblock %}
+
+{% block list-info %}
+<div class="list-info">
+    <h1>{{ love_list.title }}</h1>
+    <span class="subtitle product-stall">by <a href="{% url 'public_profile' username %}">{{ username }}</a></span>
+    {% if user == love_list.user %}<a href="{% url 'lovelist:edit' love_list.identifier %}" class="btn btn-flat">Edit list</a>{% endif %}
+    {% include "fragments/show_follow_button.html" with user=user follow_candidate=love_list.user %}
+</div>
+
+<div class="social">
+    <div id="shareme"></div>
+</div>
+
+{% comment %}
+<div class="followers-info">
+    <span class="followers"><strong>43</strong> followers</span>
+    <span class="following">following <strong>72</strong></span>
+</div>
+{% endcomment %}
+{% endblock %}
+
+{% block beneath-list-info %}
+<div class="list-description">
+    <p>{{ love_list.description }}</p>
+</div>
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/vendor/jquery.form.js' %}"></script>
+{% share_script love_list vertical %}
+{% endblock %}
+
+{% block love_button %}
+{% love_this_button user product %}
+{% endblock %}
+
+{% block below_list %}
+<div class="primary-content-wrap">
+  <div class="content-box">
+    <h2>Have comments? Share them here</h2>
+    {% if user.is_authenticated %}
+    <div class="clearfix">
+        <p class="pull-right">{% include 'comments/_add_comment_link.html' with object=love_list %}</p>
+    </div>
+    {% endif %}
+    <div class="entry-comments lovelist-comments cf" id="comments">
+      {% include 'comments/_comments.html' with object=love_list %}
+    </div>
+  </div>
+</div>
+{% endblock %}

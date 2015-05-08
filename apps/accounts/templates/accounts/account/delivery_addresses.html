@@ -1,0 +1,25 @@
+{% extends 'accounts/account/base.html' %}
+
+{% block content_tab %}
+{% for address in addresses %}
+<li>
+    <p>{{ address.name }}</p>
+    <p>{{ address.line1 }}</p>
+    <p>{{ address.line2 }}</p>
+    <p>{{ address.city }}</p>
+    <p>{{ address.state }}</p>
+    <p>{{ address.postal_code }}</p>
+</li>
+{% endfor %}
+
+<form action="#" class="form form-horizontal" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    <fieldset>
+    	{% include 'fragments/form_snippet.html' with form=address_form only %}
+    </fieldset>
+
+    <fieldset class="form-actions">
+        <input type="submit" class="btn btn-primary btn-large" value="Save Changes"/>
+    </fieldset>
+</form>
+{% endblock content_tab %}

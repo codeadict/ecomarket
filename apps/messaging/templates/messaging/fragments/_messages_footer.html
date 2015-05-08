@@ -1,0 +1,26 @@
+<div class="bottom-filtering cf">
+    {% ifnotequal paginator.num_pages 1 %}
+    <div class="pagination pagination-left pull-left">
+        <ul>            
+            {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}&page-count={{ paginator.per_page }}"><i class="icon icon-chevron-left icon-white"></i></a></li>
+            {% endif %}            
+            {% for page in paginator.page_range %}
+                <li {% ifequal page page_obj.number %}class="active"{% endifequal %}><a href="?page={{ page }}&page-count={{ paginator.per_page }}">{{ page }}</a></li>
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}&page-count={{ paginator.per_page }}"><i class="icon icon-chevron-right icon-white"></i></a></li>
+            {% endif %}
+        </ul>
+    </div>
+    {% endifnotequal %}
+    <div class="pagination per-page pagination-right pull-right">
+        <span class="pagination-label">Show:</span>
+        <ul>            
+            <li {% ifequal paginator.per_page 12 %}class="active"{% endifequal %}><a href="?page-count=12">12</a></li>
+            <li {% ifequal paginator.per_page 24 %}class="active"{% endifequal %}><a href="?page-count=24">24</a></li>
+            <li {% ifequal paginator.per_page 48 %}class="active"{% endifequal %}><a href="?page-count=48">48</a></li>
+            <li {% ifequal paginator.per_page 1000 %}class="active"{% endifequal %}><a href="?page-count=all">All</a></li>            
+        </ul>
+    </div>
+</div>

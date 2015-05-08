@@ -1,0 +1,30 @@
+{% load url from future %}
+{% load i18n thumbnail %}
+{% load static from staticfiles %}
+
+<div class="entry-header">
+  <h2>{{ article.title }}</h2>
+  <div class="entry-author clearfix">
+    <a href="{% url 'public_profile' article.author.username %}" class="avatar">
+      <img src="{% if article.author.get_profile.avatar_50 %}{{article.author.get_profile.avatar_50}}{% else %}{% static 'images/avatar/50x50/default.png' %}{% endif %}" alt="{{ article.author.username }}" />
+    </a>
+    <span class="meta">Entry published on {{ article.publish_date|date:"F jS, Y" }} by <a href="{% url 'public_profile' article.author.username %}">{{ article.author.username }}</a></span>
+    {% include "fragments/show_follow_button.html" with user=user follow_candidate=article.author %}
+  </div>
+  <div class="social">
+    <div id="shareme" data-url="{{ article.get_absolute_url }}" data-text="{{ article.title }}"></div>
+  </div>    
+</div>
+<div class="entry-content">
+  {% comment %}
+    {% with image=article.get_image %}
+      {% if image %}
+        <div class="entry-image big-image">
+          <img src="{{ image.attachment }}" alt="{{ article.title }}">
+        </div>
+      {% endif %}
+    {% endwith %}
+  {% endcomment %}
+  {{ article.content|safe }}
+</div>
+<br />

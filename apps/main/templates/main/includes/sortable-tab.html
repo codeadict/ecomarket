@@ -1,0 +1,9 @@
+{% if active %}
+{% if ascending %}
+<a href="{{ descending_link }}" class="date dark-link active">{{ display_name }}<i class="icon icon-chevron-down"></i></a>
+{% else %}
+<a href="{{ ascending_link }}" class="date dark-link active">{{ display_name }}<i class="icon icon-chevron-up"></i></a>
+{% endif %}
+{% else %}
+<a href="{{ ascending_link }}" class="date dark-link">{{ display_name }}</a>
+{% endif %}

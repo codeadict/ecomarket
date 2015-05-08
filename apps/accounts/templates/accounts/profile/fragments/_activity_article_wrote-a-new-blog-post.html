@@ -1,0 +1,36 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load action_tags %}
+{% load url from future %}
+
+{% block target_title %}{{ action.target.title }}{% endblock %}
+
+{% block activity_extra_class %}activity-comment{% endblock %}
+{% block li_attrs %}{{ block.super }} id="comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}"{% endblock %}
+
+{% block body %}
+    <div class="activity-preview products-preview">
+        {% with article=action.action_object %}
+        {% if article.get_image %}
+            {% with image=article.get_image %}
+            <div class="thumbs">
+                <a href="{{ article.get_absolute_url }}"><img class="blogthmb" src="{{ image.attachment }}" alt="{{ article.title }}"></a>
+            </div>
+            {% endwith %}
+        {% endif %}
+        <div class="product-info">
+            <span class="name">
+              <a href="{{ article.get_absolute_url }}" class="dark-link">{{ article.title }}</a><br>
+              <p>{{ article.rendered_content|safe|striptags|truncatewords:16 }}</p>
+            </span>
+        </div>
+        {% endwith %}
+    </div>
+{% endblock %}
+
+{% block verb %}
+   created the blog post 
+{% endblock %}
+
+{% block reply_button %}
+<a class="comment-reply" data-toplevel_comment="#comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}" href="{% url 'comment_create' ctype_and_id.ctype_id ctype_and_id.object_id %}">Reply</a>
+{% endblock %}

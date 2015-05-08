@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block mixpanel %}
+mixpanel.track_forms("#product-form", "submitted stall info", function(form){
+    var $form = $(form);
+    return {
+        "city or town": $form.find("#id_city").attr("value"),
+        "country": $form.find("#id_country :selected").text(),
+        "newsletter": $form.find("#id_email_opt_in").is(":checked"),
+    }
+})
+{% endblock %}
+
+{% block content %}
+    <div class="content cf single-content">
+        <div class="primary-content">
+
+            <h1>Open Your Stall</h1>
+
+            <form  id="product-form" class="product-form form form-horizontal" action="" method="post">{% csrf_token %}
+                <fieldset>
+                    <legend>Stall Owner</legend>
+
+                    {% with field=profile_form.address_1 %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.address_2 %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.city %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.state %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.zipcode %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.country %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Stall Details</legend>
+
+                    {% with field=creation_form.title %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=creation_form.description_short %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=creation_form.description_full %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=creation_form.phone_landline %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+                    {% with field=creation_form.phone_mobile %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=creation_form.twitter_username %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:
+                        <br>
+                        <em class='opt'>(Optional)</em>
+                      </label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=creation_form.email_opt_in %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                        <div class="controls">
+                        <label class="checkbox" for="{{ field.auto_id }}">
+                            {{ field }}
+                            Email me tips on how to improve my stall.
+                        </label>
+                        {{ field.errors }}
+                        </div>
+                    </div>
+                    {% endwith %}
+
+                </fieldset>
+
+                <fieldset class="form-actions">
+                    <input type="submit" class="btn btn-primary btn-large" value="Create Stall"/>
+                    {#<input type="button" class="btn btn-secondary btn-large" value="Save as a Draft"/>#}
+                </fieldset>
+
+            </form>
+
+        </div>
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,100 @@
+{% load url from future %}
+{% load social_tags %}
+<div class="modal modal-message modal-notification off-screen capture-slider capture-slider1">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h3>Liked this post?</h3>
+    </div>
+    <div class="modal-body">
+        <p>Join us and we'll email you when new blogs come out</p>
+
+        <form class="form form-horizontal product-form slider-form slider-form1" action="{% url 'email_capture_from_blog' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="source" id="id_source" value="BP" />
+            <input type="hidden" name="marketing_optin" id="id_marketing_optin" value="true">
+            <fieldset class="sign-with-facebook">
+                <a href="{% url 'socialauth_begin' 'facebook' %}?next={{request.GET.next}}" class="fb-login">Sign In with Facebook</a>
+            </fieldset>
+            <span class="or">or...</span>
+            <fieldset>
+                <div class="control-group">
+                    <div class="controls">
+                            <input type="text" id="id_email_address" name="email_address" placeholder="Enter your email...">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer slider-footer">
+        <button class="btn btn-primary btn-load" data-action="submit">Join Us!</button>
+    </div>
+</div>
+<div class="modal modal-message modal-notification off-screen capture-slider capture-slider2">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h3>Nearly done.</h3>
+    </div>
+    <div class="modal-body">
+        <p>Just fill out below to set up an account.</p>
+        <form class="form form-horizontal product-form slider-form slider-form2" action="{% url 'quick_register_from_blog' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="email" id="id_email" />
+            <input type="hidden" name="marketing_optin" id="id_marketing_optin" value="true"/>
+
+            <fieldset>
+
+                <div class="control-group">
+                  <label for="id_first_name">First name:</label>
+                    <div class="controls">
+                      <input type="text" maxlength="30" name="first_name" id="id_first_name">
+                   </div>
+                </div>
+
+                <div class="control-group">
+                  <label for="id_last_name">Last name:</label>
+                    <div class="controls">
+                      <input type="text" maxlength="30" name="last_name" id="id_last_name">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                  <label for="id_gender">Gender:</label>
+                  <div class="controls">
+                      <select class="select" name="gender" id="id_gender">
+                        <option value="x">I'd rather not say</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                      </select>
+                  </div>
+                </div>
+                
+                <div class="control-group">
+                  <label for="id_password">Password:</label>
+                  <div class="controls">
+                      <input type="password" maxlength="128" name="password" id="id_password">
+                  </div>
+                </div>
+
+                <div class="hidden"><input type="submit"/><div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer slider-footer">
+        <button class="btn btn-primary btn-load" data-action="submit">Join us!</button>
+    </div>
+</div>
+<div class="modal modal-message modal-notification off-screen capture-slider capture-slider3">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h3>Great! You're signed up!</h3>
+    </div>
+    <div class="modal-body">
+      <p>Great! You are signed up and can now use the site like a true eco warrior!</p>
+      <p>Do check out our social media pages for free product giveaways we often run...</p>
+      <div class="social">
+          <div id="shareme-slider" data-text="I just joined Eco Market!"></div>
+      </div>
+      {% share vertical #shareme-slider %}
+    </div>
+</div>

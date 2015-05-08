@@ -1,0 +1,40 @@
+{% load url from future %}
+
+{% comment %}
+{# Leaving in but commented out incase we swap back. #}
+<div class="box box-blue box-tips">
+    <h2>Great photos means more sales!</h2>
+    <p>Try to take photos using natural light, never resize or edit them before you upload them (we take care of this), and try to include a good close up for your main image.</p>
+    <div style="padding-top: 10px;">
+      <a href="{% url 'profile' %}" class="btn btn-flat btn-green">My Profile</a>
+      <a href="http://help.ecomarket.com/" class="btn btn-flat" target="_blank">Help</a>
+    </div>
+</div>
+{% endcomment %}
+
+{% comment %}
+<div class="box box-blue box-tips">
+    <h2>Our payment process has changed!</h2>
+    <p>
+    	Our payment system has been through a few changes since we migrated our site from ethicalcommunity.com to here! Note that in order to receive your payment through PayPal you must now mark any pending orders you have as dispatched, and you need to do this within 14 days of your sale.
+    </p>
+    <div style="padding-top: 10px;">
+      <a href="{% url 'sold_awaiting_shipping' %}" class="btn btn-flat btn-green">Pending Orders</a>
+      <a href="http://help.ecomarket.com/" class="btn btn-flat" target="_blank">More Help?</a>
+    </div>
+</div>
+{% endcomment %}
+
+{% if stockcheck_count %}
+<div class="box box-blue box-tips">
+    <h2>{% if days_to_next_stockcheck < 0 %}Your stock check is overdue!{% else %}
+      Next stock check due in {{ days_to_next_stockcheck }} days{% endif %}</h2>
+    <p>
+      At Eco Market we want to users to only order products that are in stock. So we require our stall owners to check their stock at regular intervals. It is very easy to do a stock check and takes a few minutes. You have {{ stockcheck_count }} total live and sold out products.
+    </p>
+    <div style="padding-top: 10px;">
+      <a href="{% url 'stockcheck_update' %}" class="btn btn-flat btn-green">Do this now</a>
+      <a href="http://help.ecomarket.com/customer/portal/articles/1342284-what-is-a-stock-check-and-how-do-i-do-them-" class="btn btn-flat" target="_blank">More Help?</a>
+    </div>
+</div>
+{% endif %}

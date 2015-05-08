@@ -1,0 +1,99 @@
+.scrollable-container{
+  position: relative;
+}
+
+.products-scrollable{
+  position:relative;
+  overflow:hidden;
+  width: 720px;
+  height:380px;
+  
+  .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+    
+    .item{
+      float: left;
+      width: 720px;
+      margin-right: 10px;
+    }
+  }    
+}
+
+.blogs-scrollable{
+  position:relative;
+  overflow:hidden;
+  width: 720px;
+  height:340px;
+  
+  .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+    
+    .item{
+      float: left;
+      width: 720px;
+      margin-right: 10px;
+    }
+  }    
+}
+
+.videos-scrollable{
+  position:relative;
+  overflow:hidden;
+  width: 720px;
+  height:270px;
+  
+  .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+    
+    .item{
+      float: left;
+      width: 720px;
+      margin-right: 10px;
+    }
+  }
+}
+
+a.scrollable-browse{
+  
+  position: absolute;
+  top: 7px;;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;  
+  @include transition(background, 0.2s);
+  
+  &.scrollable-prev{
+    right: 35px;
+    background: transparent url('../images/boxes/arrow-back.png') 50% 50% no-repeat;
+    
+    &:hover{
+      background: url('../images/boxes/arrow-back.png') 0% 50% no-repeat;
+    }
+    
+  }
+  
+  &.scrollable-next{
+    right: 10px;
+    background: url('../images/boxes/arrow.png') 50% 50% no-repeat;
+    
+    &:hover{
+      background: url('../images/boxes/arrow.png') 100% 50% no-repeat;
+    }    
+  }
+  
+  &.disabled{
+    @include opacity(0.5);
+    cursor: default;
+    
+    &:hover{
+      background-position: 50% 50%;
+    }
+    
+  }
+}

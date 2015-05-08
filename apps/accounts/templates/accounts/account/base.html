@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+{% load static from staticfiles %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+{% endblock js %}
+
+{% block content %}
+
+{% url 'account' as account_url %}
+{% url 'account_account' as account_account_url %}
+{% url 'account_delivery_addresses' as account_delivery_addresses_url %}
+{% url 'account_connected_accounts' as account_connected_accounts_url %}
+{% url 'account_email_notifications' as account_email_notifications_url %}
+{% url 'account_privacy' as account_privacy_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Account settings</h2>
+    <nav class="section-tabs">
+      <ul class="nav nav-tabs narrow-tabs">
+        <li class="{% if request.path|startswith:account_account_url %}active{% endif %}{% ifequal request.path account_url %}active{% endifequal %}">
+          <a class="has-badge"
+	     href="{{ account_account_url }}">ACCOUNT</a>
+        </li>
+        {% comment %}
+        {# Not ready for 2.0 disabling for launch #}        
+        <li class="{% if request.path|startswith:account_delivery_addresses_url %}active{% endif %}">
+          <a class="has-badge"
+	     href="{{ account_delivery_addresses_url }}">DELIVERY ADDRESSES</a>
+        </li>
+        {% endcomment %}
+        {% comment %}
+        {# Not ready for 2.0 disabling for launch #}
+        <li class="{% if request.path|startswith:account_connected_accounts_url %}active{% endif %}">
+          <a class="has-badge"
+	     href="{{ account_connected_accounts_url }}">CONNECTED ACCOUNTS</a>
+        </li>
+        {% endcomment %}
+        <li class="{% if request.path|startswith:account_email_notifications_url %}active{% endif %}">
+          <a class="has-badge"
+	     href="{{ account_email_notifications_url }}">EMAIL NOTIFICATIONS</a>
+        </li>
+        <li class="{% if request.path|startswith:account_privacy_url %}active{% endif %}">
+          <a class="has-badge"
+	     href="{{ account_privacy_url }}">PRIVACY</a>
+        </li>
+      </ul>
+    </nav>    
+    {% block content_tab %}{% endblock content_tab %}    
+  </div>
+  
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>  
+</div>
+{% endblock content %}

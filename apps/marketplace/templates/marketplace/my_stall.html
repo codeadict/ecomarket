@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load add_get_parameter %}
+{% load review_tags comments %}
+{% load lovelists_tags %}
+{% load static from staticfiles %}
+{% load social_tags %}
+{% load show_video_frame %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/jquery.form.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/infinite-scroll/jquery.infinitescroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('.stall-contents .details .product').each(function() {
+        txt = $(this).text().truncatechars(55);
+        $(this).html(txt);
+    });
+});
+</script>
+{% share_script stall horizontal %}
+{% endblock %}
+
+{% block mixpanel %}
+mixpanel.track_links("#ask-question-link", "Clicked Ask a Question Button", {"Referring Button": "stall page"});
+{% endblock %}
+
+{% block content %}
+{% with owner=stall.user %}
+{% with owner_profile=owner.get_profile %}
+<div class="modal hide fade modal-message" id="new-message"></div>
+<div class="content cf primary-right stall-page">
+
+    <div class="primary-content">
+
+        <div class="page-header stall-header">
+
+          <h1>{{ stall.title|capfirst }}</h1>
+          <span class="tagline">{{ stall.description_short }}</span>
+          <!--<div class="stall-reviews">
+            {% display_rating stall.avg_review %}
+            <a href="#">{{ stall.num_reviews }} reviews</a>
+          </div>-->
+
+          <div class="stall-image">
+            <img src="{{ owner_profile.avatar_50 }}" alt="{{ stall.title|capfirst }}" />
+          </div>
+
+          {% comment %}
+          <div class="shipping-record">
+            <span class="value">{{ stall.shipping_record }}%</span>
+            <span class="label">shipping record</span>
+            <a href="#"><i class="icon icon-white icon-question-sign"></i></a>
+          </div>
+          {% endcomment %}
+
+        </div>
+
+        <div class="social cf">
+            <div id="shareme"></div>
+        </div>
+
+        <div class="stall-video cf">
+
+        {% if video %}
+          {% show_video_frame video %}
+        {% endif %}
+
+          <div class="description">
+            <p>{{ stall.description_full|linebreaksbr }}</p>
+            {% if user.is_authenticated %}
+            <a href="#" class="btn btn-blue btn-new-messages ajax"
+                data-toggle="modal"
+                data-source="{% url 'messaging_compose' %}"
+                data-target="#new-message"
+                data-username="{{ stall.user.username }}" id="ask-question-link">Ask a Question</a>
+            {% else %}
+            <a href="#"
+               data-next="{% url 'register' %}?next={{self_url}}?ask-question=1"
+               class="btn btn-blue needs-login"
+               id="ask-question-link">Ask a question</a>
+            {% endif %}
+          </div><!-- .description -->
+        </div><!-- .stall-video -->
+
+        <div class="stall-contents">
+
+          <nav class="section-tabs">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#products" data-toggle="tab">Products</a></li>
+              <!--<li><a href="#story" data-toggle="tab">Our story</a></li>
+              <li><a href="#reviews" data-toggle="tab">Review and FAQ's</a></li>
+              <li><a href="#policies" data-toggle="tab">Policies</a></li>-->
+            </ul>
+          </nav>
+
+          <div class="tab-content">
+
+            <div id="infinite-scroll" class="tab-pane active" id="products" data-page="{{ current_page }}" data-max-page="{{ page_count }}">
+              <h2>{{ product_count }} products</h2>
+
+              {% if products %}
+              <div class="listing-box pagination-results">
+
+                <ul class="products-list list-3 cf">
+                  {% for product in products %}
+                  <li>
+                    <a href="{{product.path}}"
+		       class="image"
+		       ><img
+			   src="{{product.image.url_170}}"
+			   width="170"
+			   height="170"
+			   alt="{{ product.title }}"></a>
+                    <div class="details">
+                      <a href="{{product.path}}" class="product" title="{{ product.title|addslashes }}">{{ product.title }}</a>
+                    </div>
+                    <div class="prices">
+                      <strong class="price amount_currency_convert" data-amount="{{ product.get_price_instance.amount }}"><span class="amount_currency_symbol">£</span><span class="amount_amount">{{ product.get_price_instance.amount }}</span></strong>
+                      {% love_this_button user product %}
+                    </div>
+                  </li>
+                  {% endfor %}
+
+                </ul>
+              </div>
+              {% include "main/includes/pagination_control.html" with pagination_class="pagination-centered" page_obj=products %}
+              {% endif %}
+
+              {% comment %}
+              <div class="pagination pagination-centered">
+                <ul>
+                  <li><a href="#">«</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">»</a></li>
+                </ul>
+              </div>
+              {% endcomment %}
+
+            </div>
+          </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="secondary-content">
+        {% with owner=stall.user %}
+        {% with profile_url=owner.get_profile.get_absolute_url %}
+        <!-- bronze box with owner info -->
+        <div class="box-inset box-bronze">
+          <h2 class="with-link"><a href="{% url 'public_profile' owner.username %}">Stall Owner</a></h2>
+
+          <div class="box stall-box stall-owner">
+
+            <div class="stall-header">
+              <div class="stall-image">
+                <a href="{{ profile_url }}">
+                  <img src="{{ owner_profile.avatar_50 }}" alt="{{ owner.username }}" width="50" height="50" />
+                </a>
+              </div>
+              <strong class="user-name"><a href="{{ profile_url }}">{{ owner.username }}</a></strong>
+              {% include "fragments/show_follow_button.html" with user=user follow_candidate=owner %}
+              <div class="stall-description">
+                <p>{{ owner.get_profile.about_me|striptags|safe|truncatechars:250 }}</p>
+              </div>
+            </div>
+
+            <div class="stall-comment">
+              <h4 class="headline">What people are saying</h4>
+              <div class="latest-comment">
+                {% include 'comments/_latest_comment.html' %}
+              </div>
+
+              <div class="box-action">
+                <a href="{% url 'public_profile' owner.username %}">{{ owner.username }}'s profile</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% endwith %}
+        {% endwith %}
+
+        {% if suggested_categories %}
+        <div class="box box-green box-categories">
+          <h2>Other Suggested Eco & Natural Products</h2>
+          <ul>
+          {% for category in suggested_categories %}
+          <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+{% endwith %}
+{% endwith %}
+{% endblock content %}

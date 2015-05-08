@@ -1,0 +1,18 @@
+{% load absolute_url %}
+
+Hello {{ order.stall.user.first_name }}<br />
+<br />
+Congratulations this email confirms that a customer <a href="{% absurl public_profile username=order.user.username %}">{{ order.user.get_profile.full_name }}</a> has placed an order with you on Eco Market. The order ID is {{ order.id }}. You must now ship the following order direct to the customer's delivery address given below. <br />
+<br />
+{% include 'purchase/emails/includes/order_details.html' %}
+
+The delivery address that {{ order.user.get_profile.full_name }} has given us is:<br />
+
+{% include 'purchase/emails/includes/address.html' with address=order.address %}
+
+
+Please try to ship the item as soon as possible, and if you have any questions regarding this order you can <a href="{% absurl messaging_compose_to order.user %}">message the customer directly</a>.<br />
+<br />
+Once the item has been shipped, do remember to mark it as dispatched straight away which you can also do at any time from your my account area. <strong>Your payment for the order will only be passed to you once you have marked the item as dispatched</strong> and the customer will be notified that the product is on its way so we suggest you do this as soon as it has been posted. You must mark dispatch orders within 14 days in order to receive your payment.<br />
+<br />
+Well done on the sale, and great to have you on board as a stall owner at Eco Market.

@@ -1,0 +1,24 @@
+{% load url from future %}
+{% load humanize %}
+{% load static from staticfiles %}
+
+{% with name=action.actor.username image=action.actor.get_profile.avatar_50 %}
+{% url 'public_profile' name as url_profile %}
+<li {% block li_attrs %}class="activity"{% endblock %}>
+	<div class="author"><a href="{{ url_profile }}" class="avatar cf"><img src="{% if image %}{{image}}{% else %}{% static 'images/avatar/50x50/default.png' %}{% endif %}" alt="{{ name }}" /></a></div>
+
+	<div class="activity-box {% block activity_extra_class %}activity-comment{% endblock %}">
+		<div class="activity-headline">
+			<span class="activity-author">{% if action.actor != request.user %}<a href="{{ url_profile }}">{{ name }}</a>{% else %}{{ name }}{% endif %}</span>{% block verb %} {{ action.verb }}{% endblock %}{% block target %}{% if action.target %} <a href="{{ action.target.get_absolute_url }}">{% block target_title %}{{ action.target }}{% endblock %}</a>{% endif %}{% endblock target %}:
+		</div>
+		<div class="activity-body">
+			{% block body %}{% endblock %}
+		</div>
+        <p class="pull-right">
+            {% block reply_button %}{% endblock %}
+        </p>
+		<span class="activity-meta"><time>{{ action.timestamp|naturaltime }}</time></span>
+	</div>
+    {% block below_activity %}{% endblock %}
+</li>
+{% endwith %}

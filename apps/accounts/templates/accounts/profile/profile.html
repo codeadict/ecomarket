@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load alerts %}
+{% load static from staticfiles %}
+
+{% block mixpanel %}
+mixpanel.track_links("a.add", "Clicked Avatar Upload");
+{% endblock %}
+
+{% block css %}
+<link
+   rel="stylesheet"
+   type="text/css"
+   href="{% static 'js/vendor/ajaxuploader/css/fileuploader.css' %}">
+<link
+   rel="stylesheet"
+   type="text/css"
+   href="{% static 'js/vendor/jcrop/css/jquery.Jcrop.min.css' %}">
+{% endblock %}
+
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/datepicker/js/date.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/datepicker/js/datepicker.js' %}"></script>
+
+{% block js %}
+<script
+   type="text/javascript"
+   src="{% static 'js/profile.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/ajaxuploader/js/fileuploader.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/image_crop.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/jcrop/js/jquery.Jcrop.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+
+    <!-- contenf of form -->
+    <h2>Profile</h2>
+    {% if user_profile_form.errors  %}
+      {% alert_invalid_form %}
+    {% endif %}
+
+    {% if hold_fire %}
+    <div class="alert alert-block alert-warning cf">
+          <p>Hang on... before you list products (which we can't wait to get you doing!) you need to have an avatar uploaded so customers know who you are. This is required of all stall owners because we have found that customers shop with us because they like to put a face to the stall they are buying from. Please make these as high quality and personal as possible (try to use lots of natural light in your photo), and please use face-shots of the stall owner in person and not logos or pictures as these may end up being taken offline and will cause problems later for you!</p>
+          <div class="flash-actions pull-left">
+            <a href="http://www.paypal.com" target="_new" class="btn btn-flat btn-green alert-dismiss">OK</a>
+          </div>
+        </div>
+    {% endif %}
+
+    {% if user_profile_form.non_field_errors  %}
+    <div class="alert alert-block alert-error">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <h4 class="alert-heading">Please fix following errors:</h4>
+      <p>
+        <ul>
+          {% for error in user_profile_form.non_field_errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </p>
+    </div>
+    {% endif %}
+
+    <form
+       id="user_profile_form"
+       class="form form-register form-horizontal"
+       action=""
+       method="post"
+       enctype="multipart/form-data">{% csrf_token %}
+      <fieldset>
+
+	{% with field=user_profile_form.avatar %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label
+	     for="{{ field.auto_id }}"
+	     class="control-label"
+	     >{{ field.label }}:</label>
+          <div class="controls">
+	    {% with src=user.get_profile.avatar_100 %}
+	    {% include 'accounts/profile/avatar_upload.html' %}
+	    {% endwith %}
+            {{ field.errors }}
+          </div>
+        </div>
+	{% endwith %}
+
+        {% for field in user_profile_form %}
+	{% if not field.name == 'avatar' %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+	{% endif %}
+        {% endfor %}
+
+      <fieldset class="form-actions intended">
+        <input type="submit" value="Save" class="btn btn-primary btn-large">
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>
+</div>
+
+<div id="uploadModal" class="modal hide">
+</div>
+
+{% endblock content %}

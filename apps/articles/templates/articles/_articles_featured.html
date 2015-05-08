@@ -1,0 +1,26 @@
+{% load url from future %}
+{% load i18n thumbnail comments %}
+
+<div class="featured-entry">
+	<div class="entry-header">
+		<h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+	</div>
+	<div class="entry-content">
+        {% with video=article.youtube_video image=article.get_image %}
+        {% if video %}
+        <div style="margin: 0 auto; width: {{ video.width }}px">
+            {{ video.object_html|safe }}
+        </div>
+		{% elif image %}
+		<div class="entry-image big-image">
+			<a href="{{ article.get_absolute_url }}"><img src="/media/{{image}}" alt="Read more about »{{ article.title }}«"></a>
+		</div>
+        {% endif %}
+        {% endwith %}
+		{{ article.content|safe|striptags|truncatechars:280 }}
+	</div>
+	<div class="entry-footer">
+		{% get_comment_count for article as comment_count %}
+		<span class="meta">{% trans 'Published on' %} {{ article.publish_date|date:"F jS, Y" }} {% trans 'by' %} <a href="{% url 'public_profile' article.author.username %}">{{ article.author.username }}</a> | <a href="{{ article.get_absolute_url }}#comments">{{comment_count}} comment{{comment_count|pluralize}}</a></span>
+	</div>
+</div>

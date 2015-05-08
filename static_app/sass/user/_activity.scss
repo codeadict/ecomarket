@@ -1,0 +1,67 @@
+.status-box{
+  min-height: 80px;
+}
+
+#status-form{
+  margin: 0;
+  padding: 0;
+  
+  fieldset{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .control-group{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+  }
+  
+  .control-label{
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    
+    img{
+      @include border-radius(3px);
+    }
+  }
+  
+  .controls{
+    margin-left: 60px;    
+  }
+  
+  textarea{
+    width: 525px;
+    height: 80px;
+    margin: 0 5px 10px 0;
+  }
+  
+  a.btn-comment{
+    float: right;
+  }
+  
+  .comment-privacy{
+    padding-top: 13px;
+    padding-right: 10px;        
+  }
+  
+
+}
+
+
+#followers-search{
+  
+  fieldset{
+    
+    margin: 0;
+    padding: 10px 0 0 0;
+  
+    input.search-query{
+      width: 250px;
+      margin-bottom: 5px;
+    }
+  }
+
+}
+

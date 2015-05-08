@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load main_tags %}
+
+{% load url from future %}
+{% load static from staticfiles %}
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="content cf wider-sidebar">
+
+      <div class="primary-content">
+
+        {% include 'accounts/fragments/tabs.html' %}
+        <!-- contenf of form -->
+
+        <h2>Order #{{ order.id }} made on {{ order.created }}</h2>
+
+        <div class="order-invoice">
+
+          <div class="clearfix order-parties">
+            <div class="info-box customer-box">
+              {% with customer_profile=order.user.get_profile %}
+              <h3>Customer</h3>
+              <a href="{% url 'public_profile' order.user.username %}" class="avatar"><img src="{{ customer_profile.avatar_50 }}" width="50" height="50" alt="{{ customer_profile.full_name }}"></a>
+              <span class="name">{{ customer_profile.full_name }} (<a href="{% url 'public_profile' order.user.username %}">{{ customer_profile.user.username }}</a>)</span>
+              {% if user_is_merchant %}
+                <a href="javascript:void(0)" class="btn-flat btn-new-messages ajax" data-toggle="modal"
+                    data-source="{% url 'messaging_compose' %}"
+                    data-target="#new-message"
+                    data-username="{{ order.user.username }}">Send Message</a>
+                {% endif %}
+              {% endwith %}
+            </div>
+
+            <div class="info-box stall-box">
+              {% with owner_profile=order.stall.user.get_profile owner=order.stall.user %}
+              <h3>Stall owner</h3>
+              <a href="{% url 'public_profile' owner.username %}" class="avatar"><img src="{{ owner_profile.avatar_50 }}" width="50" height="50" alt="{{ owner_profile.full_name }}"></a>
+              <span class="name">{{ owner_profile.full_name }} (<a href="{% url 'public_profile' owner.username %}">{{ owner.username }}</a>) from <a href="{{ order.stall.get_absolute_url }}">{{ order.stall.title }}</a></span>
+              {% if not user_is_merchant %}
+                <a href="javascript:void(0)" class="btn-flat btn-new-messages ajax" data-toggle="modal"
+                    data-source="{% url 'messaging_compose' %}"
+                    data-target="#new-message"
+                    data-username="{{ order.stall.user.username }}">Send Message</a>
+                {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+
+          <div class="payment-delivery clearfix">
+            <div class="info-box shipping-box">
+              <h3>Delivery Address</h3>
+              {% with address=order.address %}
+              <address>
+                  {% include 'accounts/includes/address_snippet.html' with address=order.address only %}
+              </address>
+              {% endwith %}
+            </div>
+            <div class="info-box payment-box">
+              <h3>Payment</h3>
+              {% if user_is_merchant %}
+              <p>This customer has paid via PayPal, and is sent to you via PayPal to {{ order.stall.paypal_email }} 48 hours after you mark the item as dispatched.</p>
+              {% else %}
+              <p>Paid to {{ order.stall.title }} via PayPal</p>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if user_is_merchant %}
+          <div class="order-actions">
+              {% if order.is_dispatchable %}
+              <form id="mark-dispatched-form" method="post" action="{% url 'mark_dispatched' order_id=order.id %}">
+                 {% csrf_token %}
+                 <input type="hidden" id="redirect_url" value="{{ request.get_full_path }}" />
+                 <input type="submit" value="Mark order as dispatched" class="btn btn-primary"/>
+              </form>
+              {% endif %}
+              {% if order.is_refundable %}
+              <form action="{% url 'refund' order_id=order.id %}" id="refund-form" method="post" accept-charset="utf-8">
+                  {% csrf_token %}
+                 <input type="hidden" id="redirect_url" value="{{ request.get_full_path }}" />
+                 <input type="hidden" name="reason" value="Refunded from invoice screen" />
+                 <input type="hidden" name="entire_order" value="True" />
+                 <input type="submit" value="Issue Refund" class="btn"/>
+              </form>
+              {% endif %}
+          </div>
+          {% endif %}
+
+          <h2 class="headline">Order details</h2>
+
+          <div class="account-orders">
+
+            <div class="sorter">
+              <span class="date">Date</span>
+              <span class="quantity">Qty</span>
+              <span class="price">Price</span>
+            </div>
+
+            <!-- single seller order entry -->
+            <div class="order-box dashboard-order-box content-box">
+              <div class="cf user-order">
+
+                <div class="order-details">
+                  <ul class="list">
+                     {% for line_item in order.line_items.all %}
+                    <li class="order-item">
+                      <div class="thumb">
+                          <a href="{{ line_item.product.get_absolute_url }}"><img src="{{ line_item.product.image.url_80 }}" width="80" height="80" alt="{{ line_item.product.name }}"></a>
+                      </div>
+                      <div class="info">
+                          <a href="{{ line_item.product.get_absolute_url }}" class="name dark-link">{{ line_item.product.title }}</a>
+                      </div>
+                      <span class="date">{{ line_item.created }}</span>
+                      <span class="quantity">{{ line_item.quantity }}</span>
+                      <div class="product-price">
+                          <strong class="price">£{{ line_item.price }}</strong>
+                          <strong class="price amount_currency_convert" data-amount="{{ line_item.price }}" data-approx="true">(<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ line_item.price }}</span>)</strong>
+                      </div>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+                <div class="actions">
+
+                  <dl class="totals cf">
+                    <dt>Subtotal</dt>
+                    <dd>
+                    <strong>£{{ order.subtotal }}</strong>
+                    <strong class="amount_currency_convert" data-amount="{{ order.subtotal }}" data-approx="true">(<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.subtotal }}</span>)</strong>
+                    </dd>
+
+                    <dt>Delivery</dt>
+                    <dd>
+                    <strong>£{{ order.delivery_charge }}</span></strong>
+                    <strong class="amount_currency_convert" data-amount="{{ order.delivery_charge }}" data-approx="true">(<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.delivery_charge }}</span>)</strong>
+                    {# <span class="approx">$19.99 CDN</span> #}
+                    </dd>
+
+
+                    <dt class="total">Total</dt>
+                    <dd class="total">
+                    <strong>£{{ order.total }}</strong>
+                    <strong class="amount_currency_convert" data-amount="{{ order.total }}" data-approx="true">(<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.total }}</span>)</strong>
+                    {# <span class="approx">$29.99 CDN</span> #}
+                    </dd>
+                  </dl>
+
+                </div>
+              </div>
+            </div>
+            <!-- /single seller order entry -->
+          </div>
+
+          {% if order.note %}
+          <div class="order-notes">
+            <h3 class="headline">Customer special notes</h3>
+            <div id="comments">
+
+              <ol class="comments">
+
+                <li class="comment">
+                <div class="author"><a href="{% url 'public_profile' username=order.user.username  %}"><img src="{{ order.user.get_profile.avatar_50 }}" alt="{{ order.user.get_profile.first_name }}" /></a></div>
+
+                  <div class="comment-box">
+                      <span class="comment-author">Order note by <a href="{% url 'public_profile' username=order.user.username  %}" class="permalink">{{ order.user.get_profile.full_name }}</a></span>
+                    <div class="comment-body">
+                        <p>{{ order.note }}</p>
+                    </div>
+                  </div>
+                </li>
+
+              </ol>
+
+
+            </div>
+
+          </div>
+          {% endif %}
+
+          <div class="owner-notes order-notes">
+                {% comment %}
+            <h3 class="headline">Stall owner notes</h3>
+
+            <div id="comments">
+              <ol class="comments">
+
+                <li class="comment">
+                  <div class="author"><a href="#"><img src="../tmp/users/50x50/3.jpg" alt="Acme Dress Makers" /></a></div>
+
+                  <div class="comment-box">
+                    <div class="comment-body">
+                      <p>Need to remember to buy more of resources... We're running out of bacon!</p>
+                    </div>
+                    <span class="comment-meta"><time>1 Day Ago</time></span>
+                  </div>
+                </li>
+              </ol>
+            </div>
+              {% endcomment %}
+
+
+            {% comment %}
+            <form class="form form-horizontal note-form" id="note-form" action="#" method="post">
+              <fieldset>
+                <div class="control-group">
+                  <div class="controls">
+                    <textarea placeholder="Put some internal notes here" cols="10" rows="2"></textarea>
+                    <input type="submit" value="Post note" class="btn btn-primary">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+            {% endcomment %}
+
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+      <div class="secondary-content">
+        {% include 'accounts/includes/profile_tip.html' %}
+    </div>
+    <div class="modal hide fade modal-message" id="new-message"></div>
+{% endblock %}

@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>*|MC:SUBJECT|*</title>
+  <style type="text/css">
+    /* Client-specific Styles */
+    #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+    body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+    body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
+    
+    /* Reset Styles */
+    body{margin:0; padding:0;}
+    img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+    table td{border-collapse:collapse;}
+    #backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+    
+    
+    /* Template Styles */
+    
+    /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: COMMON PAGE ELEMENTS /\/\/\/\/\/\/\/\/\/\ */
+
+    /**
+    * @tab Page
+    * @section background color
+    * @tip Set the background color for your email. You may want to choose one that matches your company's branding.
+    * @theme page
+    */
+    body, #backgroundTable{
+      /*@editable*/ background-color:#E5E3D7;
+      background-image: url('http://stage.ecomarket.com/static/images/backgrounds/body.jpg');
+    }
+    
+    /**
+    * @tab Page
+    * @section email border
+    * @tip Set the border for your email.
+    */
+    #templateContainer{
+      /*@editable*/ border:0;
+    }
+    
+    /**
+    * @tab Page
+    * @section heading 1
+    * @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+    * @style heading 1
+    */
+    h1, .h1{
+      /*@editable*/ color:#4e4842;
+      display:block;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:32px;
+      /*@editable*/ font-weight:bold;
+      /*@editable*/ line-height:100%;
+      margin-top:0px;
+      margin-right:40px;
+      margin-bottom:10px;
+      margin-left:40px;
+      padding-left: 0px;
+      padding-bottom: 10px;
+      /*@editable*/ text-align:left;
+      border-bottom: 1px solid #eee;
+    }
+
+    /**
+    * @tab Page
+    * @section heading 2
+    * @tip Set the styling for all second-level headings in your emails.
+    * @style heading 2
+    */
+    h2, .h2{
+      /*@editable*/ color:#4e4842;
+      display:block;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:24px;
+      /*@editable*/ font-weight:bold;
+      /*@editable*/ line-height:100%;
+      margin-top:2%;
+      margin-right:0;
+      margin-bottom:10px;
+      margin-left:0;
+      /*@editable*/ text-align:left;
+    }
+
+    /**
+    * @tab Page
+    * @section heading 3
+    * @tip Set the styling for all third-level headings in your emails.
+    * @style heading 3
+    */
+    h3, .h3{
+      /*@editable*/ color:#4e4842;
+      display:block;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:16px;
+      /*@editable*/ font-weight:bold;
+      /*@editable*/ line-height:100%;
+      margin-top:2%;
+      margin-right:0;
+      margin-bottom:1%;
+      margin-left:0;
+      /*@editable*/ text-align:left;
+    }
+
+    /**
+    * @tab Page
+    * @section heading 4
+    * @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+    * @style heading 4
+    */
+    h4, .h4{
+      /*@editable*/ color:#4e4842;
+      display:block;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:14px;
+      /*@editable*/ font-weight:bold;
+      /*@editable*/ line-height:100%;
+      margin-top:2%;
+      margin-right:0;
+      margin-bottom:1%;
+      margin-left:0;
+      /*@editable*/ text-align:left;
+    }
+    
+    /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: PREHEADER /\/\/\/\/\/\/\/\/\/\ */
+    
+    /**
+    * @tab Header
+    * @section preheader style
+    * @tip Set the background color for your email's preheader area.
+    * @theme page
+    */
+    #templatePreheader{
+      /*@editable*/ background-color:#594A37;
+      background-image: url('http://stage.ecomarket.com/static/images/backgrounds/header.jpg');
+      background-position: 0 -5px;
+    }
+    
+    /**
+    * @tab Header
+    * @section preheader text
+    * @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+    */
+    .preheaderContent{
+      /*@editable*/ text-align:center;
+    }
+    
+
+    
+    /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
+    
+    /**
+    * @tab Header
+    * @section header style
+    * @tip Set the background color and border for your email's header area.
+    * @theme header
+    */
+    #headerContainer{
+      background: #fff;
+      padding-top: 20px;
+    }
+    
+    /**
+    * @tab Header
+    * @section header text
+    * @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+    */
+    .headerContent{
+      /*@editable*/ color:#4e4842;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:32px;
+      /*@editable*/ font-weight:bold;
+      /*@editable*/ line-height:100%;
+      /*@editable*/ padding:10px 0;
+      /*@editable*/ text-align:left;
+      /*@editable*/ vertical-align:middle;
+    }
+    
+    /**
+    * @tab Header
+    * @section header link
+    * @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+    */
+    .headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+      /*@editable*/ color:#336699;
+      /*@editable*/ font-weight:normal;
+      /*@editable*/ text-decoration:underline;
+    }
+    
+    #headerImage{
+      height:auto;
+      max-width:600px !important;
+      text-align:center;
+    }
+    
+    /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MAIN BODY /\/\/\/\/\/\/\/\/\/\ */
+    
+    /**
+    * @tab Body
+    * @section body style
+    * @tip Set the background color for your email's body area.
+    */
+    #templateContainer{
+      border-radius: 5px;
+      /* margin: 10px 0; */
+    }
+    
+    .bodyContent{
+      background: #fff;
+      padding-top:20px;
+      padding-bottom: 30px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }    
+    
+    .separator{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    /**
+    * @tab Body
+    * @section body text
+    * @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+    * @theme main
+    */
+    .bodyContent div{
+      /*@editable*/ color:#505050;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:14px;
+      /*@editable*/ line-height:150%;
+      /*@editable*/ text-align:justify;
+    }
+    
+    /**
+    * @tab Body
+    * @section body link
+    * @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
+    */
+    .bodyContent div a:link, .bodyContent div a:visited, /* Yahoo! Mail Override */ .bodyContent div a .yshortcuts /* Yahoo! Mail Override */{
+      /*@editable*/ color:#336699;
+      /*@editable*/ font-weight:normal;
+      /*@editable*/ text-decoration:underline;
+    }
+    
+    .bodyContent img{
+      display:inline;
+      height:auto;
+    }
+    
+    .bodyContent .btn-primary:link,.bodyContent .btn-primary:visited{
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      box-sizing: border-box;
+      -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+      -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+      border-radius: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      color: #6F6F6F;
+      letter-spacing: 1px;
+      line-height: 18px;
+      margin: 10px 5px 5px 0;
+      text-align: center;
+      outline: none;
+      position: relative;
+      padding: 10px 40px;
+      border-color: #637529;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      color: #ffffff;
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #96a74a), color-stop(100%, #768b38));
+      background: -webkit-linear-gradient(#96a74a, #768b38);
+      background: -moz-linear-gradient(#96a74a, #768b38);
+      background: -o-linear-gradient(#96a74a, #768b38);
+      background: linear-gradient(#96a74a, #768b38);
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF96A74A', endColorstr='#FF768B38');
+      outline: none;    
+      color: #fff;
+      text-decoration: none;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    
+    .bodyContent .btn-primary:hover,.bodyContent .btn-primary:active{
+      background: #768B38;
+      color: #ffffff;
+    }
+    
+    /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: SIDEBAR /\/\/\/\/\/\/\/\/\/\ */
+    
+    /**
+    * @tab Sidebar
+    * @section sidebar style
+    * @tip Set the background color and border for your email's sidebar area.
+    */
+    #templateSidebar{
+      /*@editable*/ background-color:#FDFDFD;
+    }
+    
+    /**
+    * @tab Sidebar
+    * @section sidebar style
+    * @tip Set the background color and border for your email's sidebar area.
+    */
+    .sidebarContent{
+
+    }
+    
+    /**
+    * @tab Sidebar
+    * @section sidebar text
+    * @tip Set the styling for your email's sidebar text. Choose a size and color that is easy to read.
+    */
+    .sidebarContent div{
+      /*@editable*/ color:#505050;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:10px;
+      /*@editable*/ line-height:150%;
+      /*@editable*/ text-align:left;
+    }
+    
+    /**
+    * @tab Sidebar
+    * @section sidebar link
+    * @tip Set the styling for your email's sidebar links. Choose a color that helps them stand out from your text.
+    */
+    .sidebarContent div a:link, .sidebarContent div a:visited, /* Yahoo! Mail Override */ .sidebarContent div a .yshortcuts /* Yahoo! Mail Override */{
+      /*@editable*/ color:#336699;
+      /*@editable*/ font-weight:normal;
+      /*@editable*/ text-decoration:underline;
+    }
+    
+    .sidebarContent img{
+      display:inline;
+      height:auto;
+    }
+    
+    /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
+    
+    /**
+    * @tab Footer
+    * @section footer style
+    * @tip Set the background color and top border for your email's footer area.
+    * @theme footer
+    */
+    #templateFooter{
+      /*@editable*/ background-color:#4B4233;
+      background-image: url('http://stage.ecomarket.com/static/images/backgrounds/footer.jpg');
+      -webkit-border-radius: 0 0 5px 5px;
+      -moz-border-radius: 0 0 5px 5px;
+      -ms-border-radius: 0 0 5px 5px;
+      border-radius: 0 0 5px 5px;
+      
+    }
+    
+    /**
+    * @tab Footer
+    * @section footer text
+    * @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+    * @theme footer
+    */
+    .footerContent div{
+      /*@editable*/ color:#C0B8A7;
+      /*@editable*/ font-family: Helvetica, Arial, sans-serif;
+      /*@editable*/ font-size:15px;
+      /*@editable*/ line-height:125%;
+      /*@editable*/ text-align:left;
+    }
+    
+    /**
+    * @tab Footer
+    * @section footer link
+    * @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+    */
+    
+    .footerContent a:link, .footerContent a:visited, /* Yahoo! Mail Override */ .footerContent div a .yshortcuts /* Yahoo! Mail Override */{
+      /*@editable*/ color: #C0B8A7;
+      /*@editable*/ font-weight:normal;
+      /*@editable*/ text-decoration:underline;
+    }    
+    
+    .footerContent a:hover{
+      color: #fff;
+    }
+    
+    
+    .footerContent img{
+      display:inline;
+    }
+    
+    /**
+    * @tab Footer
+    * @section social bar style
+    * @tip Set the background color and border for your email's footer social bar.
+    * @theme footer
+    */
+    #social{}
+        
+    /**
+    * @tab Footer
+    * @section social bar style
+    * @tip Set the background color and border for your email's footer social bar.
+    */
+    #social div{
+      /*@editable*/ text-align:center;
+    }
+    
+  </style>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<center>
+  <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+    <tr>
+      <td align="center" valign="top">
+        
+        <!-- // Begin Template Preheader \\ -->
+        <table border="0" cellpadding="5" cellspacing="0" width="760" id="templatePreheader">
+          <tr>
+            <td valign="top" class="preheaderContent">
+              <img src="http://stage.ecomarket.com/static/images/ecomarket.png" alt="Eco Market" style="margin-bottom: -50px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
+            </td>
+          </tr>
+        </table>
+        <!-- // End Template Preheader \\ -->
+        
+        
+        <!-- // Begin Template Header \\ -->        
+        <table border="0" cellpadding="0" cellspacing="0" width="760" id="headerContainer">
+          <tr>
+            <td class="headerContent" width="200">
+              <div mc:edit="Header_content">
+                <h1>Eco News</h1>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!-- // End Template Header \\ -->
+
+        <table border="0" cellpadding="0" cellspacing="0" width="760" id="templateContainer">
+          <tr>
+            <td align="center" valign="top">
+              <!-- // Begin Template Body \\ -->
+              <table border="0" cellspacing="0" width="760" id="templateBody">
+                <tr>
+                  <td valign="top" class="bodyContent roundedLeft">
+                    <!-- // Begin Module: Standard Content \\ -->
+                    <table border="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top">
+                          <div mc:edit="std_content00">
+                            <h2 class="h2">Heading 2</h2>
+                            <strong>Getting started:</strong> Customize your template by clicking on the style editor tabs up above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content!
+                            <br />
+                            <a href="#" class="btn-primary">Call to action</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- // End Module: Standard Content \\ -->
+                  </td>
+                  <!-- // Begin Sidebar \\  -->
+                  <td valign="top" width="370" id="templateSidebar" class="roundedRight">
+                    <table border="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top">                      
+                          <!-- // Begin Module: Standard Content \\ -->
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" class="sidebarContent" style="padding-left:20px;padding-top: 20px;padding-bottom: 20px;">
+                            <tr>
+                              <td valign="top" style="padding-right:10px;">
+                                <div mc:edit="std_content01">
+                                  <a href="http://stage.ecomarket.com/static/html/blog.html"><img src="http://stage.ecomarket.com/static/tmp/blog/265x200/1.jpg" alt="Some Alt text for image" width="265"></a>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                          <!-- // End Module: Standard Content \\ -->                      
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- // End Sidebar \\ -->
+                </tr>
+                
+                <tr>
+                  <td class="bodyContent separator" colspan="2" style="border-bottom: 1px solid #eee;"></td>
+                </tr>
+                
+                <tr>
+                  <td valign="top" colspan="2" class="bodyContent roundedLeft">
+                    <!-- // Begin Module: Standard Content \\ -->
+                    <table border="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top">
+                          <div mc:edit="std_content00">
+                            <h2 class="h2">Heading 2</h2>
+                            <strong>Getting started:</strong> Customize your template by clicking on the style editor tabs up above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content!
+                            <br />
+                            <a href="#" class="btn-primary">Call to action</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- // End Module: Standard Content \\ -->
+                  </td>
+                </tr>
+
+
+              </table>
+              <!-- // End Template Body \\ -->
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top">
+              <!-- // Begin Template Footer \\ -->
+              <table border="0" cellpadding="10" cellspacing="0" width="760" id="templateFooter">
+                <tr>
+                  <td valign="top" class="footerContent">
+                    <!-- // Begin Module: Standard Footer \\ -->
+                    <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top" width="400" style="padding-left: 30px">
+                          <div mc:edit="std_footer">
+                            <p>If you don't want to receive emails from Eco Market, you can <a href="#">manage your subscription preferences</a>.</p>
+                            <p>If you're having trouble reading this, try the <a href="#">web version</a>.</p>
+                            <p>Eco Market 32-38 Scrutton Street London EC2A 4RQ</p>
+                          </div>
+                        </td>
+                        <td valign="middle" id="social">
+                          <div mc:edit="std_social" style="text-align: right;">
+                            <a href="*|TWITTER:PROFILEURL|*"><img src="http://stage.ecomarket.com/static/images/footer/twitter.png" alt="Follow on Twitter" /></a>
+                            <a href="*|FACEBOOK:PROFILEURL|*"><img src="http://stage.ecomarket.com/static/images/footer/facebook.png" alt="Like on Facebook" /></a>
+                            <a href="*|PINTEREST:PROFILEURL|*"><img src="http://stage.ecomarket.com/static/images/footer/pinterest.png" alt="View on Pinterest" /></a>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- // End Module: Standard Footer \\ -->
+                  </td>
+                </tr>
+              </table>
+              <!-- // End Template Footer \\ -->
+            </td>
+          </tr>
+        </table>
+        <br />
+      </td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>

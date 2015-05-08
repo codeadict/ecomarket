@@ -1,0 +1,13 @@
+<fieldset class="certificate-suggestion">
+  {% with field=form.title %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  {% with field=form.url %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  {% with field=form.description %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}  
+</fieldset>

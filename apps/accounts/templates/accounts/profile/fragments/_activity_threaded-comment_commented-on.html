@@ -1,0 +1,16 @@
+{% extends 'accounts/profile/fragments/_activity_threaded-comment_base.html' %}
+
+{% block body %}
+<div class="body-text">{{ action.action_object.comment }}</div>
+{% endblock %}
+
+{% block target %}
+{% if action.target %}
+  {% if action.target.content_type|stringformat:"s" == "product" %}
+    <a href="{{ action.target.get_absolute_url }}">{{ action.target.title }}</a>
+    {# (in stall <a href="{{ action.target.stall.get_absolute_url }}">{{ action.target.stall.title }}</a>) #}
+  {% else %}
+    <a href="{{ action.target.get_absolute_url }}">{{ action.target }}</a>
+  {% endif %}
+{% endif %}
+{% endblock target %}

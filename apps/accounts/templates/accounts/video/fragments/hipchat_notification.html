@@ -1,0 +1,11 @@
+{% load url from future %}
+{{ user.first_name }} {{ user.last_name }} recorded a video on {{ now }}<br>
+<br>
+<b>Stall Owners Details:</b><br>
+Stall Name: {{ user.stall.title }}<br>
+Email: {{ user.email }}<br>
+Stalls mobile: {{ user.stall.phone_mobile }}<br>
+Stalls landline: {{ user.stall.phone_landline }}<br>
+
+Impersonate User: <b>Impersonate User:</b> <a href="http://{{ request.META.HTTP_HOST }}{% url 'impersonate' user_id=user.id %}">http://{{ request.META.HTTP_HOST }}{% url 'impersonate' user_id=user.id %}</a><br>
+Stall URL: <a href="http://{{ request.META.HTTP_HOST }}{{ user.stall.get_absolute_url }}">{{ request.META.HTTP_HOST }}{{ user.stall.get_absolute_url }}</a><br>

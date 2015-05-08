@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load main_tags %}
+{% load jsonify %}
+{% load breadcrumb %}
+{% load seo %}
+{% load static from staticfiles %}
+{% load social_tags %}
+
+{% block js %}
+  {# compress js #}
+    <script type="text/javascript" src="{% static 'js/vendor/underscore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/product_view.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vendor/flowplayer/flowplayer-3.2.11.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vendor/jquery.form.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+  {# endcompress #}
+{% share_script product horizontal %}
+{% comment %}
+<script type="text/javascript">
+$(function() {
+  {% comment %}
+  flowplayer("video-playback", "{% static 'js/vendor/flowplayer/flowplayer-3.2.13.swf' %}",{
+  clip:  {
+  autoPlay: false,
+  autoBuffering: true
+  }
+  });
+});
+</script>
+{% endcomment %}
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+    if ($('#shipping_country').find('option[value="' + currency.country() + '"]').length) {
+        $('#shipping_country').select2('val', currency.country()).trigger('change');
+    } else if ($('#shipping_country').find('option[value="rest-of-world"]').length) {
+        $('#shipping_country').select2('val', 'rest-of-world').trigger('change');
+    }
+    if ($('#shipping_country_price').find('option[value="' + currency.country() + '"]').length) {
+        $('#shipping_country_price').select2('val', currency.country()).trigger('change');
+    } else if ($('#shipping_country_price').find('option[value="rest-of-world"]').length) {
+        $('#shipping_country_price').select2('val', 'rest-of-world').trigger('change');
+    }
+    shipping_top_change = false;
+    shipping_bottom_change = false;
+    $('#shipping_country').on('change', function(e) {
+        shipping_top_change = true;
+        if (!shipping_bottom_change)
+            $('#shipping_country_price').select2('val', e.val).trigger('change');
+        shipping_bottom_change = false;
+    });
+    $('#shipping_country_price').on('change', function(e) {
+        shipping_bottom_change = true;
+        if (!shipping_top_change)
+            $('#shipping_country').select2('val', e.val).trigger('change');
+        shipping_top_change = false;
+    });
+});
+</script>
+<script type="text/javascript" charset="utf-8">
+    shipping_profile = {{ product.shipping_profile.to_json|jsonify|safe }};
+    free_shippings = {{ free_shippings|jsonify|safe }};
+    product_price = {{ product.price.amount }}
+</script>
+
+
+{% endblock %}
+
+{% block mixpanel %}
+mixpanel.track_links("#ask-question-link", "Clicked Ask a Question Button", {"Referring Button": "product page"});
+mixpanel.track_links("#request-delivery-country-link", "Clicked Request Delivery Country", {"Referring Button": "product page"});
+mixpanel.track_links("#other-products-that-deliver", "Clicked Other Products That Deliver", {"Referring Button": "product page"});
+
+mixpanel.track_forms("#add-to-cart-form", "Viewed Cart", {"Referring Cart CTA": "Add to Cart Button"});
+mixpanel.track_links(".cause-link", "Clicked Cause", function(anchor){
+    var $anchor = $(anchor);
+    properties = {Cause: $anchor.attr("data-cause-name")};
+    return properties;
+});
+{% endblock %}
+
+{% block content %}
+{% with stall=product.stall %}
+{% with owner=stall.user %}
+{% with owner_profile=owner.get_profile %}
+
+<div class="modal hide fade modal-message" id="new-message"></div>
+
+<div class="content cf product-page">
+  <div class="primary-content-wrap">
+    <div class="primary-content">
+
+      {% generate_breadcrumb product %}
+
+      <div class="page-header">
+        <h1>{{ product.title|capfirst }}</h1>
+        <span class="subtitle product-stall">by <a href="{{ stall.get_absolute_url }}">{{ stall.title|capfirst }}</a></span>
+      </div>
+
+      <div class="social cf">
+          <div id="shareme"></div>
+      </div>
+
+      {% include 'marketplace/product_view/images.html' %}
+      {% include 'marketplace/product_view/detail.html' %}
+    </div><!-- .primary-content -->
+
+    <div class="content-box">
+      <h2>More Product Information</h2>
+
+      {% include 'marketplace/product_view/causes.html' %}
+
+      <div class="product-talk">
+        {% include 'marketplace/product_view/shipping_price.html' %}
+        {% include 'marketplace/product_view/talk.html' %}
+      </div> <!-- end product-talk -->
+
+    </div> <!-- end content-box -->
+
+  </div><!-- .primary-content-wrap -->
+
+  <div class="secondary-content">
+    {% include 'marketplace/product_view/price.html' %}
+    {% include 'marketplace/product_view/stall.html' %}
+    {% include 'marketplace/product_view/owner.html' %}
+    {% include 'marketplace/product_view/love.html' %}
+
+    {% if recommended_products %}
+    {% include 'marketplace/product_view/recommended.html' %}
+    {% endif %}
+  </div><!-- .secondary-content -->
+</div><!-- .product-page -->
+
+<!-- for the modal gallery we need to hold a placeholder somewhere -->
+<!-- modal-gallery is the modal dialog used for the image gallery -->
+<div id="modal-gallery" class="modal modal-gallery hide fade">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3 class="modal-title"></h3>
+  </div>
+  <div class="modal-body"><div class="modal-image"></div></div>
+</div><!-- #modal-gallery -->
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endblock %}
+
+{% block footer_category_links %}
+{% with tier1_category=product.primary_category.get_top_level_parent %}
+<h3>{{ tier1_category.name }}</h3>
+<ul>
+    <li><a href="{{ tier1_category.get_absolute_url }}">All {{ tier1_category.seo_title }}</a></li>
+    {% for category in tier1_category.children.all %}
+    <li><a href="{{ category.get_absolute_url }}">{{ category.seo_title }}</a></li>
+    {% endfor %}
+</ul>
+{% endwith %}
+{% endblock %}

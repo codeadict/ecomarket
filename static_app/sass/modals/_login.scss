@@ -1,0 +1,270 @@
+
+#login-form {
+  clear: both;
+  padding-top: 30px;
+}
+
+div.modal-login, div.modal-register, div.modal-capture{
+  
+  overflow: visible;
+  padding-top: 0px;
+  background: #fff url('../images/modals/login-bg.png');
+  border: none;
+    
+  .ecomarket{
+    position: absolute;
+    left: 50%;
+    top: -70px;
+    margin-left: -125px;
+    width: 230px;
+    height: 158px;
+    background: transparent url('../images/ecomarket.png') 0 0 no-repeat;
+  }
+   
+  .close{
+    margin: 10px;
+    border: 2px solid #C1C1C1;
+    border-radius: 50px;
+    color: #C1C1C1;
+    padding: 0px;
+    font-size: 26px;
+    font-weight: 100;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    opacity: 1;
+    display: block;
+  }
+  
+  .toggle{
+    margin:90px 0 0 3px;
+    text-align:center;
+    
+    a{
+      width:130px;
+      height:55px;
+      padding: 0 0px;
+      line-height: 50px;
+      text-indent: 45px;
+      text-align: center;
+      display: inline-block;
+      text-transform: uppercase;
+      color: #C4C4C4;
+      text-decoration: none;
+      
+      &:hover{
+        color:#61ACDE;
+      }
+      
+      &.active{
+        color:#61ACDE;
+      }
+      
+      &.sign-in{
+        text-indent: 30px;
+        background:url('../images/modals/modal-icons.png') 0px 0 no-repeat;
+        &.active,&:hover{background:url('../images/modals/modal-icons.png') 0px -100px no-repeat;}
+      }
+      &.register{
+        margin-right: 10px;
+        background:url('../images/modals/modal-icons.png') -250px 0 no-repeat;
+        &.active,&:hover{background:url('../images/modals/modal-icons.png') -250px -100px no-repeat;}
+      }
+
+      
+    }
+    
+  }
+  
+  form{
+    padding: 0;
+    margin: 0;
+    
+    p{
+      margin: 0;
+    }
+    
+    label{
+      font-size: 13px;
+      color: #595048;
+    }
+    
+    
+    label.inline{
+      display: inline;
+    }
+    
+    input[type=text], input[type=password], input[type="email"]{
+      width: 320px;
+      height: 35px;
+      padding: 10px;
+      font-size: 14px;
+      color: #746F6A;
+    }  
+    
+
+    
+    &.register-form{
+      
+      margin-top: -10px;
+      
+      .modal-body{
+        overflow: visible;
+        max-height: auto;
+      }
+      
+      input[type=text], input[type=password], input[type="email"]{
+        width: 270px;
+        margin: 0;
+      }
+      
+      select, .select{
+        width: 270px;
+      }
+      
+      .inspirations{
+        margin: 15px 0 -10px 0;
+      }   
+      
+      
+    } 
+        
+    .row-fluid{
+      margin-bottom: 10px;
+    }
+  }
+  
+  
+  .modal-body{
+    padding: 25px 28px;    
+  }
+  
+  .modal-footer{
+    padding: 15px 28px;
+    background: #eee url('../images/modals/login-actions.png');
+    text-align: left;
+    
+    p {
+      padding: 9px 0 0 14px;
+      float: left; 
+    }
+
+    .btn-primary{
+      @include background(linear-gradient(#96A74A, #768C39));
+      @include filter-gradient(#96A74A, #768C39, vertical);      
+      border: 1px solid #637529;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 12px;
+      text-transform: uppercase;
+      padding-left: 30px;
+      padding-right: 30px;
+      float: left;
+    }
+    
+  }
+ 
+  
+  .sign-with-facebook{
+    width: 200px;
+    padding: 57px 0 10px 30px;;
+    float: left;
+  }
+  
+  .login-fields{
+    width: 345px;
+    padding: 0 32px 0 0;
+    border-right: 1px dotted #ddd;
+    float: left;
+    position: relative;
+
+    .or {
+      top: 67px;
+      position: absolute;
+      right: -11px;
+      width: 20px;
+      background: #fff;
+    }
+  }
+  
+  .register-fields{
+    width: 600px;
+    padding: 0 20px 0 0;
+    border-right: 1px dotted #ddd;
+    float: left;
+    position: relative;
+
+    .or {
+      background: #fff;
+      position: absolute;
+      right: -11px;
+      top: 100px;
+      width: 20px;
+    }
+  }
+  
+}
+
+div.modal-capture {
+  .ecomarket {
+    margin-left: -120px;
+  }
+}
+
+div.modal-login{
+  width: 640px;
+  margin-left: -315px;
+}
+
+.modal-login-static {
+  padding: 0;
+  min-height: 200px !important;
+
+  ul.errorlist {
+    margin-top: 0 !important;
+  }
+
+  label.control-label {
+    font-weight: normal !important;
+  }
+
+  .modal-login {
+    background: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    overflow: visible;
+  }
+
+  .modal-body {
+    overflow: visible;
+    padding-left: 75px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .modal-footer {
+    padding-left: 75px !important;
+  }  
+}
+
+div.modal-register{
+  width: 880px;
+  margin-left: -435px;
+
+  .notification {
+    padding: 108px 32px 0 28px;
+
+    h2 {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: 0;
+        top: 2px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+      }
+    }
+  }  
+}

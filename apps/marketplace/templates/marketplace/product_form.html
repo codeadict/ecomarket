@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load alerts %}
+{% load static from staticfiles %}
+
+{% block css %}
+<link
+   rel="stylesheet"
+   type="text/css"
+   href="{% static 'js/vendor/ajaxuploader/css/fileuploader.css' %}">
+<link
+   rel="stylesheet"
+   type="text/css"
+   href="{% static 'js/vendor/jcrop/css/jquery.Jcrop.min.css' %}">
+{% endblock %}
+
+{% block js %}
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/bootstrap-typeahead/bootstrap-typeahead.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/ajaxuploader/js/fileuploader.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/product_uploader.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/image_crop.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/stall_shipping.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/vendor/jcrop/js/jquery.Jcrop.min.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/utils.js' %}"></script>
+<script
+   type="text/javascript"
+   src="{% static 'js/field_tracker.js' %}"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+            $('.product-form').fieldtracker();
+            })
+</script>
+{% endblock %}
+
+{% block mixpanel %}
+// TODO re-enable this and make sure the product form still works
+/*
+mixpanel.track_forms('.product-form', "Edits Product Details", function(form){
+    var properties = Ecomarket.Utils.getPropertiesFromProductForm(form);
+    properties["Fields Editted"] = $(form).fieldtracker('changedFields');
+    return properties;
+});
+*/
+{% endblock %}
+
+
+{% block content %}
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+
+      {% if form_errors %}
+          {#    {% alert_invalid_form %}#}
+          {% alert error "Sorry, there were a few mistakes:" "These need fixing before we can save this product for you. Please scroll down and you can see the problems highlighted in red." http://help.ecomarket.com %}
+      {% endif %}
+
+    <h2>Edit Product</h2>
+    <form
+       class="product-form form form-horizontal"
+       action="."
+       method="post"
+       id="product-form">
+      {% csrf_token %}
+
+      {% with form=product_form %}
+      {% include 'marketplace/product/info.html' %}
+      {% include 'marketplace/product/causes_certs.html' %}
+
+      {% with formset=images_formset %}
+      {% include 'marketplace/product/image_upload_formset.html' %}
+      {% endwith %}
+
+      {% include 'marketplace/product/details.html' %}
+
+      {% with form=price_form %}
+      {% include 'marketplace/product/price.html' %}
+      {% endwith %}
+
+      {% include 'marketplace/product/stock.html' %}
+      {% include 'marketplace/shipping/profiles.html' %}
+      {% endwith %}
+
+      <fieldset class="form-actions">
+  <input type="hidden" id="save-publish" name="save-publish" value="save-publish" disabled="disabled">
+	<input type="submit" id="publish-button"
+	   class="btn btn-primary btn-large single-trigger"
+	   name="save-publish" value="Publish now" />
+  <input type="hidden" id="save-draft" name="save-draft" value="save-draft" disabled="disabled">
+	<input
+	   type="submit"
+	   class="btn btn-secondary btn-large single-trigger"
+       name="save-draft"
+       value="Save as Unpublished" />
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<div id="uploadModal" class="modal hide">
+</div>
+{% endblock content %}
+

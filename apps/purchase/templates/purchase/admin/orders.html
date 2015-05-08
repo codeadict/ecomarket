@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load url from future %}
+
+{% load main_tags %}
+
+{% block js %}
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+            $('#filter-form').submit(function() {
+                $(':input[value=""]').attr('disabled', 'disabled');
+                $(':input[value="Filter"]').attr('disabled', 'disabled');
+                });
+            })
+</script>
+{% endblock %}
+
+{% block content %}
+<form id="filter-form" class="horizontal-form" action="{% url 'orders_admin' %}" method="get" accept-charset="utf-8">
+    <!--{% include 'fragments/form_snippet.html' with form=filter_form %}-->
+    <ul>
+    {{ filter_form.as_ul }}
+    </ul>
+    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Filter" />
+</form>
+<table class="order-table">
+    <tr>
+        <th>Order id</th>
+        <th>
+            {{ created_tab.render|safe }}
+        </th>
+        <th>Total Price</th>
+        <th>Customer Name</th>
+        <th>Stall Owner Name</th>
+        <th>Dispatched</th>
+        <th>Stall Owner Paid</th>
+        <th>Refunded</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td><a href="{% url 'orders_admin_detail' order_id=order.id %}">{{ order.id }}</a></td>
+        <td>{{ order.created }}</td>
+        <td>{{ order.total }}</td>
+        <td>{{ order.user.username }}</td>
+        <td>{{ order.stall.user.username }}</td>
+        <td>{{ order.is_dispatched }}</td>
+        {% if order.payment.status == 'CREATED' %}
+        <td>True</td>
+        {% else %}
+        <td>False</td>
+        {% endif %}
+        <td>{{ order.is_refunded }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% include 'main/includes/pagination_control.html' %}
+{% endblock %}
+

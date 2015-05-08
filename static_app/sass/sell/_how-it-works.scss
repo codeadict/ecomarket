@@ -1,0 +1,39 @@
+.how-it-works{
+  
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #E5E5E5;
+  margin: 0 0 10px 0;
+  
+  h2{
+    border: none;
+  }
+  
+  ol{
+    background: url('../images/sell/how-it-works.png') 0px 10px no-repeat;
+    padding: 180px 0 0 0;
+    margin: 0;
+    list-style: none;
+    
+    li{
+      float:left;
+      width: 185px;
+      margin: 0;
+      padding: 0;
+      
+      h3{
+        font-size: 16px;
+      }
+      
+      &.middle{
+        width: 285px;
+        padding: 0 50px;
+      }
+    }
+  }
+  
+  &.uk-version{
+    ol{
+      background: url('../images/sell/how-it-works-uk.png') 0px 10px no-repeat;
+    }
+  }
+}

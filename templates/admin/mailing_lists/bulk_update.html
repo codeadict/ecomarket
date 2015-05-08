@@ -1,0 +1,55 @@
+{% extends "admin/base_site.html" %}
+{% load url from future %}
+{% load i18n admin_static admin_modify %}
+{% load admin_urls %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_label|capfirst|escape }}</a>
+&rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+&rsaquo; Bulk Upload
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div>
+        {% if form.errors %}
+            <p class="errornote">
+            {% blocktrans count counter=errors|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+            </p>
+            {{ form.non_field_errors }}
+        {% endif %}
+        {% if reject_count %}
+            <div class="errornote">
+                <p>The following email addresses were rejected because of bad data:</p>
+                <ul>
+                    {% for email in rejected_emails %}
+                    <li>{{ email }}</li>
+                    {% endfor %}
+                </ul>
+                <p>Please fix the data and try again. The rest of the emails imported successfully.</p>
+            </div>
+        {% endif %}
+
+        {% block field_sets %}
+        {% for fieldset in adminform %}
+          {% include "admin/includes/fieldset.html" %}
+        {% endfor %}
+        {% endblock %}
+    </div>
+
+    {% block submit_buttons_bottom %}
+    <div class="submit-row">
+        <input value="Save" class="default" name="_save" type="submit" />
+    </div>
+    {% endblock %}
+
+</form>
+{% endblock %}

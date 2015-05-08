@@ -1,0 +1,63 @@
+<fieldset class="causes">
+  <legend>Causes and Certificates</legend>
+
+  {% with field=form.causes queryset=form.causes_qs %}
+  {% include "marketplace/includes/m2m.html" %}
+  {% endwith %}
+
+  {% with field=form.certificates queryset=form.certificates_qs %}
+  <div class="control-group {% if not form.causes.value %}hide{% endif %} certificates separated{% if field.errors %} error{% endif %}">
+    <label
+       for="select-{{field.auto_id}}"
+       class="control-label">{{field.label}}:
+      {% if not field.field.required %}
+      <br/>
+      <em class="opt">(Optional)</em> {% endif %}</label>
+    <div class="controls">
+      <select class="m2m" multiple="multiple" name="{{field.auto_id}}" id="{{field.auto_id}}">
+        {% for item in queryset %}
+          {% if item.id in field.value %}
+            <option value="{{item.title}}__{{item.id}}" selected="selected">{{item.title}}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+      <input
+	 id="select-{{field.auto_id}}"
+	 data-target="/products/certificates/"
+	 data-type="{{field.label}}"
+	 data-params=""
+	 class="ajax-causes-select tagger-select" />
+      <div class="form-message">
+	      <p class="field-hint">Can't find it on the list? <a class="suggest-certificate"  href="#">Suggest certificate</a></p>
+      </div>
+      <div class="tags tags-editable tags-list">
+	{% for item in queryset %}
+	{% if item.id in field.value %}
+	<span class="tag">
+	  <em data-value="{{item.title}}__{{item.id}}">{{item.title}}</em>
+	  <a href="#" class="tag-remove">
+	    <i class="icon icon-remove-sign m2m-icon"></i>
+	  </a>
+	</span>
+	{% endif %}
+	{% endfor %}
+      </div>
+      {{field.errors}}
+    </div>
+    {% with formset=cert_form %}
+    {{formset.management_form}}
+    {% for form in formset %}
+    {% if form.title.value %}
+    <div class="new-certificate">
+      {% include 'marketplace/suggest_certificate.html' %}
+    </div>
+    {% else %}
+    <div class="new-certificate hide">
+      {% include 'marketplace/suggest_certificate.html' %}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endwith %}
+  </div>
+  {% endwith %}
+</fieldset>

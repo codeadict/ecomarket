@@ -1,0 +1,18 @@
+{% load social_tags %}
+
+    <div class="ecomarket"></div>
+    <a href="#" class="close" data-dismiss="modal">×</a>
+    <div class="modal-body" style="margin-top:60px;">
+        <h2>Good job! You are signed up!</h2>
+      <p>Great! You are signed up and can now use the site like a true eco warrior!</p>
+      <p>Do check out our social media pages for free product giveaways we often run...</p>
+      <div class="social">
+          <div id="shareme" data-text="I just joined Eco Market!"></div>
+      </div>
+      {% share_script horizontal %}
+    </div>
+
+    
+    <div class="modal-footer">
+        <a href="#" class="btn reload-after-click" data-dismiss="modal">OK, let's get started!</a>
+    </div>

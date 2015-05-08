@@ -1,0 +1,9 @@
+{% load follow_utils %}
+
+{% if user.is_authenticated %}
+    {% if user != follow_candidate %}
+        {% show_follow_or_following_button user follow_candidate %}
+    {% endif %}
+{% else %}
+    <a href="{% url register %}?next={% url try_become_friends_with follow_candidate.pk  %}?follow={{ request.get_full_path }}" class="btn-follow btn-follow-login">Follow</a>
+{% endif %}

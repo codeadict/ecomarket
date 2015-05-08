@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% load cache %}
+{% load url from future %}
+{% load static from staticfiles %}
+{% load comments %}
+{% load lovelists_tags %}
+{% load render_product_card %}
+
+{% if MIXPANEL_ACTIVE %}
+    {% block mixpanel %}
+    {% endblock %}
+{% endif %}
+
+{% block js %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/vendor/jquery.form.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="content cf primary-right home-page">
+  <div class="primary-content-wrap">
+
+    {% comment %}
+    <!-- banner great people -->
+    <a href="/discover/"><img src="/static/images/teasers/good-people-great-products.jpg" alt="Discover eco friendly and natural products!" width="740" height="125" /></a>
+    <br/><br/>
+    {% endcomment %}
+    
+      {% for love_list in featured_love_lists %}
+        <div class="content-box-inset featured-products">
+            <h2 class="with-link"><a href="{{ love_list.get_absolute_url }}">{{ love_list.title }}</a></h2>
+
+            {% with username=love_list.user.username %}
+            <div class="list-header clearfix">
+                <div class="owner-image">
+                    {% with profile=love_list.user.get_profile %}
+                        <a href="{% url 'public_profile' username %}" class="avatar"><img src="{% if profile.avatar_30 %}{{ profile.avatar_30 }}{% else %}{% static 'images/avatar/30/avatar.png' %}{% endif %}" width="30" height="30" alt="{{ username }}" /></a>
+                    {% endwith %}
+                </div>
+                <span class="list-info">
+                    <a href="{{ love_list.get_absolute_url }}">{{ love_list.title }}</a> love list curated by <a href="{% url 'public_profile' username %}" class="owner-name">{{ username }}</a>
+                    {% include "fragments/show_follow_button.html" with user=user follow_candidate=love_list.user %}
+                </span>
+            </div>
+            {% endwith %}
+
+            <ul class="products-list cf list-4">
+                {% for product in love_list.hot_products|slice:":8" %}
+                    {% render_product_card product 'small' %}
+                {% endfor %}
+            </ul>
+        </div>
+      {% endfor %}
+
+    <!-- blog section -->
+    {% cache 300 home-blog %}
+    <div class="content-box-inset blog scrollable-container">
+      <h2>Our Green Blog</h2>
+
+      <a class="prev scrollable-browse scrollable-prev"></a>
+
+      <div class="blogs-scrollable">
+        <div class='items'>
+      {% for article in articles_slide1 %}
+      {% get_comment_count for article as comment_count %}
+      {% ifequal forloop.counter 1 %}
+            <div class='item'><ul class="post-list cf list-3">
+      {% endifequal forloop.counter 1 %}
+              {% include 'main/_recent_blog.html' %}
+      {% ifequal forloop.counter articles_slide1.count %}</ul></div>{% endifequal %}{% endfor %}{% for article in articles_slide2 %}{% get_comment_count for article as comment_count %}{% ifequal forloop.counter 1 %}
+            <div class='item'><ul class="post-list cf list-3">{% endifequal forloop.counter 1 %}
+              {% include 'main/_recent_blog.html' %}
+      {% ifequal forloop.counter articles_slide2.count %}</ul></div>{% endifequal %}
+      {% endfor %}
+        </div>
+      </div>
+
+      <a class="next scrollable-browse scrollable-next"></a>
+    </div>
+    {% endcache %}
+    <!-- /blog section -->
+
+    {% if featured_stall %}
+    {% cache 60 home-featured-stall featured_stall.id %}
+    {% with stall=featured_stall %}
+    {% with owner=stall.user %}
+    {% with owner_profile=owner.get_profile %}
+    <div class="content-box-inset video-box">
+      <h2 class="with-link"><a href="{{ stall.get_absolute_url }}">Behind the Stall</a></h2>
+
+      <div class="content-box cf">
+
+        {% with video=stall.get_welcome_video %}
+        {% if video %}
+        <div class="video">
+          <video width="270" height="145" preload="metadata">
+            <source src="{{ video.url }}" type="video/mp4">
+          </video>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <div class="stall-header">
+          <div class="stall-image">
+            <a href="{{ stall.get_absolute_url }}"><img src="{{ owner_profile.avatar_50 }}" alt="{{owner.username}}'s Stall" width="50" height="50" /></a>
+          </div>
+          <strong class="stall-name"><a href="{{ stall.get_absolute_url }}">{{ stall.title|capfirst }}</a></strong>
+         <!--<a href="#" class="btn-flat btn-gray">
+            <i class="icon icon-plus icon-white"></i> Follow
+          </a>-->
+          <div class="stall-description">
+            <p>{{ stall.description }}</p>
+          </div>
+        </div>
+
+        <div class="stall-products">
+          <h4 class="small">Products ({{featured_stall.products.live.count}})</h4>
+          <ul class="products cf">
+            {% for product in featured_stall.products.live.select_related|slice:":5" %}
+            <li>
+              <a href="{{product.path}}"><img
+					      src="{{ product.image.url_50 }}"
+					      alt=""
+                width="50" height="50"></a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div><!-- .content-box -->
+    </div><!-- .content-box-inset -->
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    {% endcache %}
+    {% endif %}
+
+    {% cache 300 home-recent-products %}
+    <div class="content-box-inset recent-products scrollable-container">
+      <h2>Recent Eco Friendly &amp; Natural Products</h2>
+      <a class="prev scrollable-browse scrollable-prev"></a>
+      <div class="products-scrollable">
+        <div class="items">
+          {% for product in recent_products %}
+            {% if forloop.first or forloop.counter == 1 or forloop.counter == 13 or forloop.counter == 25 or forloop.counter == 37 or forloop.counter == 49 %}
+          <div class="item">
+            <ul class="small-products-list list-6 cf">
+            {% endif %}
+
+              {% render_product_card product 'tiny' %}
+
+            {% if forloop.last or forloop.counter == 12 or forloop.counter == 24 or forloop.counter == 36 or forloop.counter == 48 %}
+            </ul>
+          </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+       </div>
+      <a class="next scrollable-browse scrollable-next"></a>
+    </div><!-- .recent-products -->
+    {% endcache %}
+  </div><!-- .primary-content-wrap -->
+
+  {% cache 300 home-secondary-content %}
+  <div class="secondary-content">
+    <div class="box box-green box-categories">
+        <h2 class="with-link"><a href="{% url 'category_discover' %}">Discover Products</a></h2>
+      <ul>
+        {% for category in categories %}
+          <li><a href="{% url 'category_discover' category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="box box-green box-categories">
+      <h2 class="with-link"><a href="/discover/">Eco & Natural Causes</a></h2>
+      <ul>
+        {% for cause in causes %}
+        <li><a href="{% url 'product_search' %}?causes={{ cause.slug }}">{{ cause.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="box box-green box-press">
+      <h2 class="with-link"><a href="http://press.ecomarket.com/">The Press</a></h2>
+      <div class="logos">
+        <a href="http://www.treehugger.com/green-jobs/eco-market-etsy-eco.html"><img src="{% static 'images/press/treehugger.png' %}" height="25" width="94" alt=""></a>
+        <a href="http://techcrunch.com/2013/03/13/eco-market-the-etsy-for-eco-rebrands-revamps-raises-prepares-a-u-s-launch/"><img src="{% static 'images/press/techcrunch.png' %}" height="25" width="80" alt=""></a>
+        <a href="http://www.thetimes.co.uk/tto/public/smallbusinessmasterclass/article3385365.ece"><img src="{% static 'images/press/the-times.png' %}" height="25" width="114" alt=""></a>
+        <a href="http://www.bbc.co.uk/news/business-17549278"><img src="{% static 'images/press/bbc.png' %}" height="25" width="51" alt=""></a>
+        <a href="http://www.inc.com/jessica-stillman/stay-in-school-drop-out-of-college.html"><img src="{% static 'images/press/inc.png' %}" height="25" width="40" alt=""></a>
+        <a href="http://www.guardian.co.uk/money/2012/mar/30/next-generation-business-views"><img src="{% static 'images/press/the-guardian.png' %}" height="25" width="91" alt=""></a>
+      </div>
+    </div>
+  </div>
+  {% endcache %}
+
+</div>
+{% endblock %}

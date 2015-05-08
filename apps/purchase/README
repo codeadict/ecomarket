@@ -1,0 +1,4 @@
+Forked/modified from https://github.com/gmcguire/django-paypal-adaptive
+
+The original didn't support chained payments.
+Also removed Pre-Approve related code for now

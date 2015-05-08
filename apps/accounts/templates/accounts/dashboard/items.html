@@ -1,0 +1,141 @@
+{% extends 'accounts/dashboard/base.html' %}
+{% load static from staticfiles %}
+
+{% block content_tab %}
+    <div class="tab-content">
+        <div id="delivery" class="tab-pane active">
+
+            <div class="account-orders">
+
+                There are no orders yet.
+                {% comment %}
+                <div class="sorter">
+                    <a class="date dark-link active" href="#">Date<i class="icon icon-chevron-down"></i></a>
+                    <span class="quantity">Qty</span>
+                    <a class="price dark-link" href="#">Price</a>
+                </div>
+
+
+                <!-- single seller order entry -->
+                <div class="order-box dashboard-order-box content-box">
+
+                    <div class="cf user-order">
+
+                        <strong class="user-name">
+                            <a class="avatar thmb" href="#"><img width="30" height="30" alt="Monica Garminci" src="{% static 'tmp/users/30x30/1.jpg' %}"></a>
+                            <a href="#">Monica Garminci</a>
+                        </strong>
+
+                        <span class="order-number">Order No. 00100129</span>
+
+                        <div class="btn-group order-actions">
+                            <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+                                <i class="icon icon-cog"></i>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">See full order details</a></li>
+                                <li><a href="#">Message customer</a></li>
+                                <li><a href="#">Mark as shipped</a></li>
+                                <li><a href="#">Send feedback</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="order-details">
+                            <ul class="list">
+                                <li class="order-item">
+                                    <div class="thumb">
+                                        <a href="#" class="thmb"><img width="80" height="80" alt="product name here" src="{% static 'tmp/products/80x80/4.jpg' %}"></a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="name dark-link" href="#">Product name goes here</a>
+                                    </div>
+                                    <span class="date">Aug 15, 2012</span>
+                                    <span class="quantity">1</span>
+                                    <div class="product-price">
+                                        <strong class="price">£19.99 GBP</strong>
+                                    </div>
+                                </li>
+                                <li class="order-item">
+                                    <div class="thumb">
+                                        <a href="#" class="thmb"><img width="80" height="80" alt="product name here" src="{% static 'tmp/products/80x80/5.jpg' %}"></a>
+                                    </div>
+                                    <div class="info">
+                                        <a class="name dark-link" href="#">Product name goes here</a>
+                                    </div>
+                                    <span class="date">Aug 15, 2012</span>
+                                    <span class="quantity">1</span>
+                                    <div class="product-price">
+                                        <strong class="price">£19.99 GBP</strong>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="actions">
+
+                            <dl class="totals cf">
+                                <dt>Subtotal</dt>
+                                <dd>
+                                    <strong>£19.99 GBP</strong>
+                                </dd>
+
+                                <dt>Delivery</dt>
+                                <dd>
+                                    <strong>£9.99 GBP</strong>
+                                    <span class="approx">$19.99 CDN</span>
+                                </dd>
+
+
+                                <dt class="total">Total</dt>
+                                <dd class="total">
+                                    <strong>£29.99 GBP</strong>
+                                    <span class="approx">$29.99 CDN</span>
+                                </dd>
+                            </dl>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /single seller order entry -->
+                {% endcomment %}
+
+                {% comment %}
+
+                <div class="bottom-filtering cf">
+                    <div class="pagination pagination-left pull-left">
+                        <ul>
+                            <li><a href="#"><i class="icon icon-chevron-left icon-white"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="icon icon-chevron-right icon-white"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pagination per-page pagination-right pull-right">
+                        <span class="pagination-label">Show:</span>
+                        <ul>
+                            <li class="active"><a href="#">12</a></li>
+                            <li><a href="#">24</a></li>
+                            <li><a href="#">48</a></li>
+                            <li><a href="#">All</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                {% endcomment %}
+
+            </div>
+
+        </div>
+
+        <div id="feedback" class="tab-pane active">
+    </div>
+
+        <div id="questions" class="tab-pane active">
+    </div>
+    </div>
+{% endblock content_tab %}

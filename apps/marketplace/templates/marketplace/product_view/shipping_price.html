@@ -1,0 +1,39 @@
+{% with profile=product.shipping_profile %}
+<div class="shipping">
+  <h4>Delivery</h4>
+  <p>Dispatched from:
+    <strong class="country">{{profile.shipping_country}}</strong>
+  </p>
+  <table class="table shipping table-striped">
+    <thead>
+      <tr>
+        <th class="st">Deliver to</th>
+        <th class="sc">Cost</th>
+        <th class="sci">With another item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>
+      <form action="" method="get" accept-charset="utf-8">
+        <select name="shipping_country_price" id="shipping_country_price" class="select" data-search="true">
+          {% for country in delivery_countries %}<option value="{{ country.code }}"> {{ country.title }}</option>{% endfor %}
+          {% if product.shipping_profile.ships_worldwide %}
+            <option value="rest-of-world">Rest of the World</option>
+          {% endif %}
+        </select>
+      </form>
+      </td>
+      <td id="item-shipping-cost" class="amount_currency_convert" data-amount="">
+        <span class="amount_currency_symbol"></span><span class="amount_amount"></span>
+      </td>
+      <td id="extra-item-shipping-cost" class="amount_currency_convert" data-amount="">
+        <span class="amount_currency_symbol"></span><span class="amount_amount"></span>
+      </td>
+    </tr>
+    </tbody>
+</table>
+
+{#<p class="shipping-request">Your country not here? <a href="#">Request it</a></p>#}
+</div>
+{% endwith %}

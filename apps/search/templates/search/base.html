@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load url from future %}
+{% load partition %}
+
+{% block footer_navigation %}
+<div class="navigational navigational-fluid">
+    <nav class="categories">
+        <h3>Eco Friendly &amp; Natural Products at Eco Market</h3>
+
+        <div class="row">
+            <div class="span1 ecomarket-group">
+                <ul>
+                    <li class="headline"><a href="{% url 'category_discover' %}">Discover</a></li>
+                </ul>
+            </div>
+            {% for row in ROOTS_CATEGORIES|rows:3 %}
+            <div class="span2">
+                {% for category in row %}
+                <ul>
+                    <li class="headline"><a href="{% url 'category_discover' category.slug %}">{{ category.name }}</a></li>
+                    {% for subcat in category.children.all %}
+                    <li><a href="{% url 'category_discover' category.slug subcat.slug %}">{{ subcat.name }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </nav>
+
+    {% block social_connect %}{{ block.super }}{% endblock %}
+</div>
+{% endblock %}

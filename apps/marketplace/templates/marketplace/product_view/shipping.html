@@ -1,0 +1,36 @@
+{% load url from future %}
+{% with profile=product.shipping_profile %}
+<div class="shipping">
+<span class="deliver_head">Deliver this to</span><select name="shipping_country" id="shipping_country" class="select" data-search="true">
+  {% for country in delivery_countries %}<option value="{{ country.code }}"> {{ country.title }}</option>{% endfor %}
+  {% if product.shipping_profile.ships_worldwide %}
+    <option value="rest-of-world">Rest of the World</option>
+  {% endif %}
+</select>
+{#<p class="shipping-request">Your country not here? <a href="#">Request it</a></p>#}
+
+{% if not can_deliver_to_user_country %}
+<div class="alert alert-block alert-warning cf cannot_deliver_to_country">
+  <span class="alert-heading">This doesn't deliver to {{ user_country_title }}</span>
+  <p>If you are shipping to {{ user_country_title }} we are sorry to say that the stall owner doesn't currently deliver here.</p>
+  <div class="flash-actions">
+  {% if user.is_authenticated %}
+    <a href="#" class="btn btn-flat btn-gray btn-new-messages ajax"
+      data-toggle="modal"
+      data-source="{% url 'messaging_compose' %}?request_delivery_to_country={{ request.country }}&amp;product_to_be_delivered={{ product.id }}"
+      data-target="#new-message"
+      data-username="{{ product.stall.user.username }}"
+      id="request-delivery-country-link">Request delivery to your country</a>
+  {% else %}
+    <!--<a href="/log-in/?next={{self_url}}" class="btn btn-gray">Ask a question</a>-->
+    <a href="#"
+      data-next="{% url 'register' %}?next={{self_url}}?request-delivery-country=1"
+      class="btn btn-flat btn-gray needs-login"
+      id="request-delivery-country-link">Request delivery to your country</a>
+  {% endif %}
+  </div>
+  <div class="flash-actions"><a href="{% url 'category_discover' related_search_category.slug %}" class="btn btn-flat btn-gray" id="other-products-that-deliver">See other products that do deliver</a></div>
+</div>
+{% endif %}
+</div>
+{% endwith %}

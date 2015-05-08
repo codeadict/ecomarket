@@ -1,0 +1,41 @@
+{% extends 'accounts/stall/base.html' %}
+
+{% block mixpanel %}
+mixpanel.track_forms("#form", "Added Paypal Address", function(form){
+    var $form = $(form);
+    return {
+        "paypal email": $form.find("#id_paypal_email").attr("value")
+    }
+})
+
+{% endblock %}
+
+{% block content_tab %}
+    {% if hold_fire %}
+    <div class="alert alert-block alert-warning cf">
+          <p>Hold fire, we can't wait to get your products onto the site but before you do this you need enter in your PayPal email address into our site so that customers can pay you! Its free to create a paypal account if you don't have one.</p>
+          <div class="flash-actions pull-left">
+            <a href="#" target="_new" class="btn btn-flat btn-green alert-dismiss">OK, I'LL ENTER IT</a>
+            <a href="http://www.paypal.com" target="_new" class="btn btn-flat btn-gray">CREATE A FREE PAYPAL ACCOUNT</a>
+          </div>
+        </div>
+    {% endif %}
+
+    <form  id="form" class="form form-horizontal" action="" method="post">{% csrf_token %}
+        <fieldset>
+            {% with field=form.paypal_email %}
+                <div class="control-group {% if field.errors %}error{% endif %}">
+                  <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+                  <div class="controls">
+                    {{ field }}
+                    {{ field.errors }}
+                  </div>
+                </div>
+            {% endwith %}
+        </fieldset>
+
+        <fieldset class="form-actions">
+            <input type="submit" class="btn btn-primary btn-large" value="Save Changes"/>
+        </fieldset>
+    </form>
+{% endblock content_tab %}

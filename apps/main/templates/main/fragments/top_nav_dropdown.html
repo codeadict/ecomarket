@@ -1,0 +1,37 @@
+<nav class="row" id="menu">
+{% for root_cat in ROOTS_CATEGORIES %}
+    <div id="menu-category-wall">
+    <ul>
+
+    <li {% if category.get_root == root_cat %}class="current"{% endif %}>
+        <a target="_self" href="{{ root_cat.get_absolute_url }}">
+            <h1>{{ root_cat.navigation_name }}</h1>
+        </a>
+    <div style="width: 960px">
+        {% for level_2 in root_cat.children.all %}
+        <div class="span2">
+          <div class="menu-category-wall-sub-name">
+              <a href="{{ level_2.get_absolute_url }}"><h2>{{ level_2.name }}</h2></a>
+          </div>
+            <div>
+                <ul>
+                    {% for level_3 in level_2.children.all|slice:":8" %}
+                        <li>
+                            {% if category == level_3 %}
+                                <a href="{{ level_3.get_absolute_url }}"><h3><b>{{ level_3.name }}</b></h3></a>
+                            {% else %}
+                                <a href="{{ level_3.get_absolute_url }}"><h3>{{ level_3.name }}</h3></a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+              </div>
+          </div>
+        {% endfor %}
+        </div>
+    </li>
+  </ul>
+    </div>
+{% endfor %}
+
+</nav>

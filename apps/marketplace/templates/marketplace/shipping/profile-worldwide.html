@@ -1,0 +1,52 @@
+<fieldset class="box">
+  <div class="control-group">
+    <label
+       for="shipping-profile-worldwide"
+       class="control-label">Ship worldwide:</label>
+    <div class="controls">
+      <select
+        id="shipping-profile-worldwide"
+        name="shipping_profile_worldwide"
+        class="select">
+        	<option
+            value="0"
+            {% if not form.others_price.value %}selected="selected"{% endif %}>No, only the countries above</option>
+        	<option
+        	  value="1"
+        	  {% if form.others_price.value %}selected="selected"{% endif %}>Yes, ship to the rest of the world</option>
+      </select>      
+    </div>
+  </div>
+
+  <div class="{% if not form.others_price %}hide{% endif %} shipping-profile-worldwide-prices">
+    <div class="control-group">
+      {% with field=form.others_price %}
+      <label
+	 for="shipping-profile-worldwide-price"
+	 class="control-label">{{field.label}}:</label>
+      <div class="controls">
+	£
+	{{field}}
+	GBP
+      </div>
+    </div>
+    {% endwith %}  
+    <div class="control-group">
+      {% with field=form.others_price_extra %}
+      <label
+	 for="shipping-profile-worldwide-price-extra"
+	 class="control-label">{{field.label}}:</label>
+      <div class="controls">
+	£
+	{{field}}
+	GBP
+      </div>
+      {% endwith %}  
+    </div>
+    {% with field=form.others_delivery_time %}
+    {% with field_max=form.others_delivery_time_max %}
+    {% include "marketplace/shipping/delivery.html" %}
+    {% endwith %}
+    {% endwith %}
+  </div>
+</fieldset>

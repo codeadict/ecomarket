@@ -1,0 +1,67 @@
+.shipping{
+  padding: 0;
+  
+  h4{
+    margin-bottom: 20px;
+  }
+  
+  table{
+    
+    thead{
+      th{
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+    }
+    
+    th.st{width: 250px;}
+    th.sci{width:150px;}
+    
+    tbody{
+      tr:nth-child(odd){
+        td{
+          // important hack, to override bootstrap hover
+          background: #EDF0E6 !important;
+        }
+      }
+      
+      tr:nth-child(even){
+        td{
+          // important hack, to override bootstrap hover
+          background: #ffffff !important;
+        }
+      }      
+      
+      td{
+        border: none;
+      }
+      
+    }
+  }
+  
+  p.shipping-request{}
+  
+  .deliver_head{
+    padding:12px 0 9px;
+    vertical-align:bottom;
+    text-transform:uppercase;
+    display:block;
+  }
+
+  .alert.alert-warning.cannot_deliver_to_country{
+    margin-top:16px;
+    width:308px;
+    padding-right:16px;
+    margin-bottom:8px;
+
+    .alert-heading{
+      font-weight:bold;
+      font-size:14px;
+      line-height:18px;
+      display:block;
+      box-sizing:border-box;
+      text-rendering:optimizelegibility;
+      text-shadow:rgba(255, 255, 255, 0.498039) 0px 1px 0px;
+    }
+  }
+}

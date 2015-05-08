@@ -1,0 +1,16 @@
+{% load dictionary_access %}
+{% with causes=product.causes.all %}
+  {% if causes|length %}
+    {% with certs=product.certificates_by_cause %}
+    <h4>Eco Friendly and Natural Credentials</h4>
+    <div class="eco-icons">
+    {% for cause in causes %}
+    <a class="cause-link" href="#eco-{{cause.slug}}" data-cause-name="{{ cause.title }}"><i class="icon eco-icon {% if cause.id in certs %}icon-certified{% endif %} icon-{{cause.slug}}"></i></a>
+    {% endfor %}
+    </div><!-- .eco-icons -->
+
+    <div class="eco-descriptions" id="eco-descriptions"></div><!-- .eco-descriptions -->
+    <br />
+    {% endwith %}
+  {% endif %}
+{% endwith %}

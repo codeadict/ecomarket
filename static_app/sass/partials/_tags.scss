@@ -1,0 +1,48 @@
+.tags-list{
+    
+  .tag{
+    line-height: 18px;
+    display: inline-block;
+    border-radius: 3px;
+    padding-right: 5px;   
+    margin:0 5px 5px 0;
+    background: url('../images/product/tag.png') 100% 0 no-repeat;
+    color: $tag_blue;
+    
+    em{
+      font-style: normal;
+      padding: 7px 10px 3px 25px;
+      display: inline-block;
+      background: #fff url('../images/product/tag.png') 0 0 no-repeat;
+    }
+    
+    &:hover{color: $tag_hover;}
+    &:active{color: $tag_active;}    
+    
+    a.tag-remove{
+      @include opacity(0.5);
+      
+      &:hover{
+        @include opacity(0.6);
+      }
+    }    
+    
+  }
+  
+  
+  &.tags-editable{
+    
+    .tag{
+      color:#999 !important;
+      background: url('../images/product/tag.png') 100% 0 no-repeat;
+      padding-right: 10px;
+      
+      em{
+        background: #fff url('../images/product/tag.png') 0 0 no-repeat;
+      }
+            
+    }
+    
+  }
+  
+}

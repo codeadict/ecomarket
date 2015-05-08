@@ -1,0 +1,45 @@
+{% load url from future %}
+{% load string_tags %}
+
+{% url 'dashboard' as dashboard_url %}
+{% url 'selling' as selling_url %}
+{% url 'sold' as sold_url %}
+{% url 'bought' as bought_url %}
+{% url 'stall' as stall_url %}
+{% url 'account' as account_url %}
+{% url 'profile' as profile_url %}
+{% url 'promotion' as promotion_url %}
+{% url 'video' as video_url %}
+
+{% url 'create_stall' as create_stall_url %}
+
+<!-- tabbed navigation (tabs via normal url) -->
+<nav class="content-tabs">
+    <ul class="nav nav-tabs content-tabs">
+        {% if user.stall %}
+        {% comment %}
+        {# Disabled for 2.0 launch. If you re-enable also uncomment the code in views/dashboard.py #}
+         <li {% if request.path|startswith:dashboard_url %}class="active"{% endif %}><a href="{{ dashboard_url }}">Dashboard</a></li>
+        {% endcomment %}
+            <li {% if request.path|startswith:selling_url %}class="active"{% endif %}><a href="{{ selling_url }}">Selling</a></li>
+            <li {% if request.path|startswith:sold_url %}class="active"{% endif %}><a href="{{ sold_url }}">Sold</a></li>
+        {% endif %}
+
+        <li {% if request.path|startswith:bought_url %}class="active"{% endif %}><a href="{{ bought_url }}">Bought</a></li>
+
+        {% if user.stall %}
+        <li {% if request.path|startswith:stall_url %}class="active"{% endif %}><a href="{{ stall_url }}">Stall</a></li>
+        {% endif %}
+        {% if user.stall.is_in_video_beta %}
+        <li {% if request.path|startswith:video_url %}class="active"{% endif %}><a href="{{ video_url }}">Video</a></li>
+        {% endif %}
+
+
+        <li {% if request.path|startswith:account_url %}class="active"{% endif %}><a href="{{ account_url }}">Account</a></li>
+        <li {% if request.path|startswith:profile_url %}class="active"{% endif %}><a href="{{ profile_url }}">Profile</a></li>
+        {% comment %}
+        {# Disabled for 2.0 launch #}
+        <li {% if request.path|startswith:promotion_url %}class="active"{% endif %}><a href="{{ promotion_url }}" class="last" >Promotion</a></li>
+        {% endcomment %}
+    </ul>
+</nav>

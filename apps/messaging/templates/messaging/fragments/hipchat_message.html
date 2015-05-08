@@ -1,0 +1,27 @@
+{% load url from future %}
+<b>{{ message.sender.get_full_name }}
+  (<a href="http://{{ request.META.HTTP_HOST }}{{ message.sender.user_profile.get_absolute_url }}">{{message.sender.username }}</a>, {{ message.sender.email }})</b> sent a message to
+  <b>{{ message.recipient.get_full_name }}
+  (<a href="http://{{ request.META.HTTP_HOST }}{{ message.sender.user_profile.get_absolute_url }}">{{message.recipient.username }}</a>, {{ message.recipient.email }})</b> on {{ message.sent_at|date:"r" }}:
+<br><br>
+<b>Subject:</b> {{ message.subject }}
+<br>
+<b>Body:</b> {{ message.body|linebreaksbr }}
+<br><br>
+<b>Sender's setails:</b><br>
+<b>Email: </b> {{ message.sender.email }}<br>
+<b>Impersonate User:</b> <a href="http://{{ request.META.HTTP_HOST }}{% url 'impersonate' user_id=message.sender.id %}">http://{{ request.META.HTTP_HOST }}{% url 'impersonate' user_id=message.sender.id %}</a><br>
+{% if message.sender.stall %}
+  <b>Stall name:</b> <a href="http://{{ request.META.HTTP_HOST }}{{ message.sender.stall.get_absolute_url }}">{{ message.sender.stall.title }}</a><br>
+  <b>Stalls mobile:</b> {{ message.sender.stall.phone_mobile|default:"not set" }}<br>
+  <b>Stalls landline:</b> {{ message.recipient.stall.phone_landline|default:"not set" }}<br>
+{% endif %}
+<br><br>
+<b>Recipient's details:</b><br>
+<b>Email: </b> {{ message.recipient.email }}<br>
+<b>Impersonate User:</b> <a href="http://{{ request.META.HTTP_HOST }}{% url 'impersonate' user_id=message.recipient.id %}">http://{{ request.META.HTTP_HOST }}{% url 'impersonate' user_id=message.recipient.id %}</a><br>
+{% if message.recipient.stall %}
+  <b>Stall name:</b> <a href="http://{{ request.META.HTTP_HOST }}{{ message.recipient.stall.get_absolute_url }}">{{ message.recipient.stall.title }}</a><br>
+  <b>Stalls mobile:</b> {{ message.recipient.stall.phone_mobile|default:"not set" }}<br>
+  <b>Stalls landline:</b> {{ message.recipient.stall.phone_landline|default:"not set" }}<br>
+{% endif %}

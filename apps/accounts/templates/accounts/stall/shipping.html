@@ -1,0 +1,19 @@
+{% extends 'accounts/stall/base.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block js %}
+<script
+   type="text/javascript"
+   src="{% static 'js/stall_shipping.js' %}"></script>
+{% endblock %}
+
+{% block content_tab %}
+
+<div id="stall-shipping">
+  <form>
+    {% csrf_token %}
+    {% include 'accounts/stall/shipping-profiles.html' %}    
+  </form>
+</div>
+{% endblock content_tab %}

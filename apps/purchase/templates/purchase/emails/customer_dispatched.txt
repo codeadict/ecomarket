@@ -1,0 +1,6 @@
+{% load absolute_url %}
+Hello {{ first_name }}
+
+Your order from {{ stall.title }} (order number {{ order.id }}) has been marked as dispatched and should arrive with you in approximately 5 days.
+
+If you have any questions you can <a href="{% absurl messaging_compose_to order.stall.user %}">message the stall owner directly</a> and can do this any time and see details of your order by logging and seeing your ‘my account’ area on http://www.ecomarket.com

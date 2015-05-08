@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load url from future %}
+
+{% block mixpanel %}
+mixpanel.track('register page');
+mixpanel.track_forms("#register-form", "Submitted basic Register Info", function(form){
+    var $form = $(form);
+    var result = {
+        firstname: $form.find("#id_first_name").attr("value"),
+        lastname: $form.find("#id_last_name").attr("value"),
+        gender: $form.find("select[name='gender']").attr("value"),
+        username: $form.find("#id_username").attr("value"),
+        email: $form.find("#id_email").attr("value")
+    }
+    return result;
+})
+{% endblock %}
+
+{% block content %}
+    <div class="content cf single-content">
+        <div class="primary-content">
+
+            <div class="page-header">
+              <h1>Register for an Eco Market Account</h1>
+            </div>
+
+            {% if reg_form.non_field_errors or profile_form.non_field_errors %}
+            <div class="alert alert-block alert-error">
+                <a href="#" data-dismiss="alert" class="close">×</a>
+                <h4 class="alert-heading">Please fix following errors:</h4>
+                <p>
+                    <ul>
+                        {% for error in reg_form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+
+                        {% for error in profile_form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
+            {% endif %}
+
+            <form id="register-form" class="form form-register form-horizontal" action="" method="post">{% csrf_token %}
+
+                <fieldset class="sign-with-facebook">
+                    <a href="{% url 'socialauth_begin' 'facebook' %}?next={{request.GET.next}}" class="fb-register">Connect with Facebook</a>
+                    <p>It's fast and easy. We'll never post without your permission...</p>
+                </fieldset>
+
+                <fieldset>
+                    <h2>Or you can register the "old fashioned" way!...</h2>
+
+                    {% with field=reg_form.first_name %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_first_name" class="control-label">Firstname:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=reg_form.last_name %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_last_name" class="control-label">Lastname:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.gender %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_last_name" class="control-label">Gender:</label>
+                      <div class="controls inline-radio">
+                        {% for radio in profile_form.gender %}
+                            {{ radio }}
+                        {% endfor %}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=reg_form.username %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_username" class="control-label">Username:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=reg_form.email %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_email" class="control-label">Email:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=reg_form.password %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_password" class="control-label">Password:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=reg_form.password_confirm %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                      <label for="id_password_confirm" class="control-label">Password confirmation:</label>
+                      <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                      </div>
+                    </div>
+                    {% endwith %}
+
+                    {% with field=profile_form.send_newsletters %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                        <div class="controls">
+                        <label class="checkbox" for="id_send_newsletters">
+                            {{ field }}
+                            Send me some great product inspirations via email.
+                        </label>
+                        {{ field.errors }}
+                        </div>
+                    </div>
+                    {% endwith %}
+                </fieldset>
+
+                <fieldset class="form-actions intended">
+                    <p>By clicking Register, you confirm that you accept our <a href="/terms-and-conditions/" target="_blank">Terms of Use</a> and <a href="/privacy-policy/" target="_blank">Site Policy</a>.</p>
+
+                    <input type="submit" value="Register" class="btn btn-primary btn-large">
+
+                </fieldset>
+
+              </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock content %}

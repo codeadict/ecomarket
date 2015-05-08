@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load add_get_parameter %}
+{% load string_tags %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+{% url 'sold' as sold_url %}
+{% url 'sold_awaiting_shipping' as sold_awaiting_shipping_url %}
+{% url 'sold_awaiting_feedback' as sold_awaiting_feedback_url %}
+{% url 'sold_completed' as sold_completed_url %}
+{% url 'sold_all' as sold_all_url %}
+
+<div class="modal hide fade modal-message modal-notification" id="refund-modal">
+<form method="POST" id="refund-form-actual">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h3>Refund this order?</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="notification-area cf">
+            <div class="content">
+                <p>Are you sure you want to refund this order? Please tell us why you need to do this...</p>
+              <select name="reason" id="reason">
+                {% for reason_id, reason_text in refund_reasons %}
+                <option value="{{ reason_id }}">{{ reason_text }}</option>
+                {% endfor %}
+              </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer cf">
+        <div class="pull-right">
+
+                {% csrf_token %}
+                <a href="#" class="btn" data-dismiss="modal">No</a>
+                <input type="hidden" name="redirect_url" value="" />
+                <input type="hidden" name="entire_order" value="" />
+
+                <input type="submit" class="btn btn-primary" value="Yes" />
+
+        </div>
+    </div>
+</form>
+</div>
+<div class="content cf wider-sidebar">
+    <div class="primary-content">
+        {% include 'accounts/fragments/tabs.html' %}
+        <h2>Product's I've sold</h2>
+        <nav class="section-tabs">
+        <ul class="nav nav-tabs">
+            <li class="{% if request.path|startswith:sold_awaiting_shipping_url %}active{% endif %}{% ifequal request.path sold_url %}active{% endifequal %}">
+              <a href="{{ sold_awaiting_shipping_url }}">AWAITING SHIPPING</a>
+              {#<em class="badge">16</em>#}
+            </li>
+            {% comment %}
+            {# Disabled for 2.0 launch #}
+            <li class="{% if request.path|startswith:sold_awaiting_feedback_url %}active{% endif %}">
+              <a href="{{ sold_awaiting_feedback_url }}">AWAITING FEEDBACK</a>
+              {#<em class="badge">5</em>#}
+            </li>
+            {% endcomment %}
+            <li class="{% if request.path|startswith:sold_completed_url %}active{% endif %}">
+              <a href="{{ sold_completed_url }}">COMPLETED</a>
+            </li>
+            <li class="{% if request.path|startswith:sold_all_url %}active{% endif %}">
+              <a href="{{ sold_all_url }}">ALL</a>
+            </li>
+        </ul>
+        </nav>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="published">
+
+                <div class="account-orders">
+                    <div class="sorter">
+                        {% if order_by == 'date-asc' %}
+                        <a href="{% add_get_parameter order_by='date-desc' page=1 %}" class="date dark-link active">Date <i class="icon icon-chevron-up"></i></a>
+                        {% elif order_by == 'date-desc' %}
+                        <a href="{% add_get_parameter order_by='date-asc' page=1 %}" class="date dark-link active">Date <i class="icon icon-chevron-down"></i></a>
+                        {% else %}
+                        <a href="{% add_get_parameter order_by='date-asc' page=1 %}" class="date dark-link">Date</a>
+                        {% endif %}
+                        <span class="quantity">Qty</span>
+                        <span class="price">Price</span>
+
+                        {% comment %}
+                        NOTE: This is non trivial as price is not stored on the
+                        order so expressing as a SQL query is tough.
+                        {% if order_by == 'price-asc' %}
+                        <a href="{% add_get_parameter order_by='price-desc' page=1 %}" class="price dark-link">Price<i class="icon icon-chevron-up"></i></a>
+                        {% elif order_by == 'price-desc' %}
+                        <a href="{% add_get_parameter order_by='price-asc' page=1 %}" class="price dark-link">Price<i class="icon icon-chevron-down"></i></a>
+                        {% else %}
+                        <a href="{% add_get_parameter order_by='price-asc' page=1 %}" class="price dark-link">Price</a>
+                        {% endif %}
+                        {% endcomment %}
+                    </div>
+
+                    <!-- single seller order entry -->
+                    {% for order in orders %}
+                    <div class="order-box dashboard-order-box content-box">
+                        <div class="cf user-order">
+                            <strong class="user-name">
+                                <a href="{% url 'public_profile' order.user.username %}" class="avatar"
+				   ><img
+				       src="{{order.user.get_profile.avatar_30}}"
+				       width="30"
+				       height="30"
+				       alt="{{ order.user.username }}"></a>
+                                <a href="{% url 'public_profile' order.user.username %}">{{ order.user.username }}</a>
+                            </strong>
+
+                            <span class="order-number">Order No. {{ order.id }}</span>
+
+                            <div class="btn-group order-actions">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="icon icon-cog"></i> Order actions
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'invoice' order_id=order.id %}">See full order details</a></li>
+                                    <li><a href="javascript:void(0)" class="btn-new-messages ajax" data-toggle="modal"
+                                        data-source="{% url 'messaging_compose' %}"
+                                        data-target="#new-message"
+                                        data-username="{{ order.user.username }}">Message Customer</a></li>
+                                    <li>
+                                    {% if order.is_dispatchable %}
+                                    <form id="mark-dispatched-form" method="post" action="{% url 'mark_dispatched' order_id=order.id %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="redirect_url" value="{{ request.get_full_path }}" />
+                                        <input type='submit' value='Mark as dispatched' />
+                                    </form>
+                                    {% endif %}
+                                    {% if order.is_refundable %}
+                                    <form class="refund-form" action="{% url 'refund' order_id=order.id %}" method="post" accept-charset="utf-8">
+                                        {% csrf_token %}
+                                       <input type="hidden" id="redirect_url" value="{{ request.get_full_path }}" />
+                                       <input type="hidden" name="reason" value="Refunded from invoice screen" />
+                                       <input type="hidden" name="entire_order" value="True" />
+                                       <input type="submit" value="Issue Refund"/>
+                                    </form>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+
+
+
+                            <div class="order-details">
+                                <ul class="list">
+                                    {% for line_item in order.line_items.all %}
+                                    <li class="order-item">
+                                    <div class="thumb">
+                                        <a href="{{line_item.product.path}}"><img src="{{line_item.product.image.url_80}}" width="80" height="80" alt="{{line_item.product.title }}"></a>
+                                    </div>
+                                    <div class="info">
+                                        <a href="{{line_item.product.path}}" class="name dark-link">{{ line_item.product.title }}</a>
+                                    </div>
+                                    <span class="date">{{ line_item.created }}</span>
+                                    <span class="quantity">{{ line_item.quantity }}</span>
+                                    <div class="product-price">
+                                        <strong class="price">£{{ line_item.price }}</strong>
+                                        <strong class="price amount_currency_convert" data-amount="{{ line_item.price }}" data-approx="true">
+										  (<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ line_item.price }}</span>)
+										</strong>
+                                    </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                            <div class="actions">
+
+                                <dl class="totals cf">
+                                    <dt>Subtotal</dt>
+                                    <dd>
+                                    <strong>£{{order.subtotal}}</strong>
+                                    <strong class="amount_currency_convert" data-amount="{{ order.subtotal }}" data-approx="true">
+									  (<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.subtotal }}</span>)
+									</strong>
+                                    </dd>
+
+                                    <dt>Delivery</dt>
+                                    <dd>
+                                    <strong>£{{order.delivery_charge}}</strong>
+                                    <strong class="amount_currency_convert" data-amount="{{ order.delivery_charge }}" data-approx="true">
+									  (<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.delivery_charge }}</span>)
+									</strong>
+                                    <!--<span class="approx">$19.99 CDN</span>-->
+                                    </dd>
+
+
+                                    <dt class="total">Total</dt>
+                                    <dd class="total">
+                                    <strong>£{{order.total}}</strong>
+                                    <strong class="amount_currency_convert" data-amount="{{ order.total }}" data-approx="true">
+									  (<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.total }}</span>)
+									</strong>
+                                    <!--<span class="approx">$29.99 CDN</span>-->
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- /single seller order entry -->
+
+                    <div class="bottom-filtering cf">
+                        {% include "main/includes/pagination_control.html" %}
+                        {{ paginate_by_control.render }}
+                        {% comment %}
+                        TODO: Implement dynamic page size
+                        <div class="pagination per-page pagination-right pull-right">
+                            <span class="pagination-label">Show:</span>
+                            <ul>
+                                <li class="active"><a href="#">12</a></li>
+                                <li><a href="#">24</a></li>
+                                <li><a href="#">48</a></li>
+                                <li><a href="#">All</a></li>
+                            </ul>
+                        </div>
+                        {% endcomment %}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="secondary-content">
+        {% include 'accounts/includes/profile_completion.html' %}
+    </div>
+
+</div>
+
+<div class="modal hide fade modal-message" id="new-message"></div>
+
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+<script type="text/javascript">
+$(function() {
+    $(".refund-form").submit(function(e) {
+        var data = $(this).serializeArray(),
+            other_form = document.getElementById("refund-form-actual");
+            console.log(data);
+        other_form.action = this.action;
+        other_form.redirect_url = data.redirect_url;
+        other_form.reason = data.reason;
+        other_form.entire_url = data.entire_url;
+        $("#refund-modal").modal('show');
+        e.preventDefault();
+    });
+});
+</script>
+{% endblock %}
+

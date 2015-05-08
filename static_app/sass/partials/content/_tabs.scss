@@ -1,0 +1,154 @@
+nav.content-tabs{
+  margin: -25px -25px 0 -25px;
+  
+  ul.nav{
+    
+    background: #F0F0F0;
+    border-radius: 3px 3px 0 0;
+    border-bottom: none;
+    overflow: hidden;
+    
+    li{
+      
+      float: left;
+      background: #F0F0F0;
+      
+      a{
+        float: left;
+        padding: 15px 5px;
+        
+        font-size: 12px;
+        color: #898989;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        width: 80px;
+        height: 48px;
+        text-align: center;
+        box-shadow: -2px -5px 5px -5px rgba(0, 0, 0, 0.35) inset;
+        @include transition(all, 0.1s, ease-in-out);
+        cursor: pointer;
+        text-decoration: none;
+        
+        &.two-lines{
+          padding: 10px 5px 5px 5px;
+          height: 48px;
+          line-height: 13px;
+        }
+        &.last{
+          width: 100px;
+        }
+      }
+      
+      a:hover{
+        color:#4B4B4B;
+        background:#fefefe;
+      }
+            
+    
+    }
+    
+    li.active{
+      a{
+        background: #fff;
+        color: #4B4B4B;
+        font-weight: 700;
+        border-radius: none;
+        border: none;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        position: relative;
+        z-index: 2;
+      }
+    }
+    
+  }
+  
+}
+
+
+nav.section-tabs{
+  
+  ul.nav-tabs{
+    padding: 10px 0 0 0;
+    text-align: center;
+    
+    li{
+      display: inline-block;
+      float: none;
+      position: relative;
+    }
+    
+    a{
+      float: none;
+      display: inline-block;
+      width:auto;
+      padding: 10px 20px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-right: 0px;
+      text-decoration: none;
+      border: 1px solid #eee;
+      @include background(linear-gradient(#ffffff, #F8F8F8));
+      @include filter-gradient(#fafafa, #F8F8F8, vertical);
+      
+      &:hover{
+        background: #F8F8F8;
+      }
+      
+      &.has-badge{
+        padding-right: 40px
+      }
+      
+      i{
+        font-style: normal;
+        color: #E2BF9F;
+        font-weight: 500;
+      }
+      
+      b{
+        color: #E4683D;
+        font-weight: 500;
+      }
+    
+    }
+    
+    .badge{
+      position: absolute;
+      top:-5px;
+      right: 10px;      
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+      font-style: normal;
+      font-size: 12px;
+      width: 23px;
+      height: 30px;
+      display: inline-block;
+      line-height: 25px;
+      border-radius: 0;
+      padding: 0;
+      text-align: center;
+      
+      background: transparent url('../images/header/badge-gray.png') 50% 0 no-repeat;
+      
+      &.important{
+        background: transparent url('../images/header/badge.png') 50% 0 no-repeat;
+      }
+      
+      
+    }    
+    
+    li.active a{
+      background: #fff;
+      border-bottom: 1px solid #fff;
+    }
+    
+    
+    &.narrow-tabs{
+      a{
+        padding: 10px 8px;
+      }
+    }
+        
+  }
+}

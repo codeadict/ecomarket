@@ -1,0 +1,104 @@
+header{
+  .search{
+    position: absolute;
+    right: 0;
+    top:85px;
+    width: 340px;
+    font-family: $sans;
+    padding: 10px;
+    border: 1px solid #D4D4D4;
+    border-bottom: 1px solid #B7B7B7;
+    @include border-radius(3px);
+    @include background(linear-gradient(#ffffff, #e6e6e6));
+    @include filter-gradient(#fafafa, #e6e6e6, vertical);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  
+    label{
+      display: none;
+    }
+  
+    input[type=search]{
+      font: $sans;
+      color: #66645C;
+      font-size: 13px;
+      box-shadow: 0 0 1px inset rgba(0,0,0,0.3);
+      width: 210px;
+      padding: 10px;
+      height: 16px;
+      margin: 0;
+      background:url('../images/header/search-input.png') repeat-x;
+    }
+  
+    input[type=search]:focus{
+      background: #fff;
+    }
+  
+  
+    input[type=submit]{
+      width: 40px;
+      height: 38px;  
+      margin: 0 0 0 -10px;
+      text-indent: -9999px;
+      border: none;
+      background:url('../images/header/search-icons.png') -40px 0 no-repeat;
+      &:hover,&:active{
+        background:url('../images/header/search-icons.png') -40px -38px no-repeat;
+      }    
+    }
+  
+    a.cart{
+      display: inline-block;
+      width: 40px;
+      height: 38px;    
+      text-indent: -9999px;
+      position: absolute;
+      right: 10px;
+      background:url('../images/header/search-icons.png') 0 0 no-repeat;
+      &:hover,&:active{
+        background:url('../images/header/search-icons.png') 0 -38px no-repeat; 
+      }
+    }
+    
+    .cart-badge{
+      position: absolute;
+      top:-5px;
+      right: 5px;
+      background: transparent url('../images/header/badge.png') 50% 0 no-repeat;
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.75);
+      font-style: normal;
+      font-size: 12px;
+      width: 23px;
+      height: 30px;
+      line-height: 25px;
+      border-radius: 0;
+      padding: 0;
+      text-align: center;
+    }
+  
+  }
+
+  .newsearch{
+    @include background(linear-gradient(#75bde5, #4f9dd7));
+    @include filter-gradient(#75bde5, #4f9dd7, vertical);
+    input[type=search]{
+      background:#fff;
+      background-color:#fff;
+    }
+
+    a.cart{
+      background:url('../images/header/cart-icon.png') 0 0 no-repeat;
+      text-decoration:none;
+      padding-left:8px;
+      box-shadow:1px 1px 3px rgba(0,0,0,0.1);
+      &:active{
+        @include background(linear-gradient(#fff, #e6e6e6));
+        @include filter-gradient(#fff, #e6e6e6, vertical);
+      }
+      &:hover{
+        background:url('../images/header/cart-icon.png') -40px 0 no-repeat;
+        color:#333;
+      }
+    }
+  }
+}

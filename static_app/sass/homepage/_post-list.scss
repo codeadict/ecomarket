@@ -1,0 +1,92 @@
+ul.post-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li{
+    @include white-block(0);
+    float: left;
+    width:230px;
+    height: 335px;
+    margin:5px;
+    padding: 0;
+    position: relative;
+  }
+
+  &.list-3{
+    li:nth-child(3n){
+      margin-right: 0;
+    }
+  }
+
+
+  a.image img{
+    border-radius: 3px 3px 0 0;
+  }
+
+  a.image {
+    border-radius: 3px 3px 0 0;
+    width:230px;display:block;height:113px;overflow:hidden;
+  }
+
+  .details{
+    padding: 10px;
+    height: 188px;
+    overflow: hidden;
+    border-bottom: 1px solid #ededed;
+    text-overflow: ellipsis;
+
+    strong{
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      height: 18px;
+      overflow: hidden;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    time{
+      display: block;
+      text-transform: uppercase;
+      color: $subtle_text;
+      padding: 5px 0;
+    }
+
+    p{
+      color: $subtle_text;
+    }
+
+  }
+
+  .comments{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 23px;
+    text-indent: 25px;
+    text-decoration: none;
+    height: 23px;
+    line-height: 24px;
+    display: block;
+    text-align: left;
+    background: url('../images/icons/icon-love.png') -102px 0 no-repeat;
+
+    &:hover, .love-shown{
+      background: url('../images/icons/icon-love.png') 0 0 no-repeat;
+    }
+
+    span{
+      display: none;
+    }
+
+  }
+
+  .author{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
+}

@@ -1,0 +1,47 @@
+{% load static from staticfiles %}
+<script type="text/javascript" src="{% static 'js/vendor/jcrop/js/jquery.Jcrop.min.js' %}"></script>
+<script>
+$(document).ready(function() {
+        $('#special img').Jcrop({
+            // onChange: showSpecialPreview,
+            // onSelect: showSpecialPreview,
+            boxWidth: 400,
+            boxHeight: 400,
+        });
+
+        $('#thumbnail img').Jcrop({
+            // onChange: showThumbnailPreview,
+            // onSelect: showThumbnailPreview,
+            boxWidth: 400,
+            boxHeight: 400,
+        });
+
+        function showSpecialPreview(coords)
+        {
+            console.info(coords.w);
+            var rx = 100 / coords.w;
+            var ry = 100 / coords.h;
+
+            $('#special #preview').css({
+                width: Math.round(rx * 1920) + 'px',
+                height: Math.round(ry * 1080) + 'px',
+                marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                marginTop: '-' + Math.round(ry * coords.y) + 'px'
+            });
+            console.info("============");
+        }
+
+        function showThumbnailPreview(coords)
+        {
+            var rx = 100 / coords.w;
+            var ry = 100 / coords.h;
+
+            $('#thumbnail #preview').css({
+                width: Math.round(rx * 1920) + 'px',
+                height: Math.round(ry * 1080) + 'px',
+                marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                marginTop: '-' + Math.round(ry * coords.y) + 'px'
+            });
+        }
+});
+</script>

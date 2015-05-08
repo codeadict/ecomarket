@@ -1,0 +1,11 @@
+{% load absurl_tag %}
+<p>Hello {{ user }}</p>
+
+<p>Thanks for signing up to <a href="http://www.ecomarket.com">http://www.ecomarket.com</a></p>
+<p>In order to complete your registration you need to click the link below which will make your account active. If you don’t click the link within <em>{{ expiration_days }}</em> days it will become inactive so we suggest you do this straight away!</p>
+
+<p>Here it is...</p>
+
+<a href="{% absurl verify activation_key %}">{% absurl verify activation_key %}</a>
+
+<p>If you feel this email has reached you by mistake please disregard it.</p>

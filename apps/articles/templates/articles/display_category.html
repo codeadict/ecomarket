@@ -1,0 +1,20 @@
+{% extends 'articles/base.html' %}
+
+{% load url from future %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Articles Categorized' %}: {{ category.title }}{% endblock %}
+{% block extra-head %}
+{{ block.super }}
+<link rel="alternate" type="application/rss+xml" title="Blog Articles Categorized '{{ category.title }}' RSS Feed" href="{% url 'articles_rss_feed_category' category.slug %}" />
+<link rel="alternate" type="application/atom+xml" title="Blog Articles Categorized '{{ category.title }}' Atom Feed" href="{% url 'articles_atom_feed_category' category.slug %}" />
+{% endblock %}
+
+{% block articles-content %}
+<h2>{% trans 'Articles Categorized' %} <em>{{ category.title }}</em>{% ifnotequal paginator.num_pages 1 %}, {% trans 'page' %} {{ page_obj.number }}{% endifnotequal %}</h2>
+
+{% for article in page_obj.object_list %}
+{% include 'articles/_articles.html' %}
+{% endfor %}
+{% endblock %}

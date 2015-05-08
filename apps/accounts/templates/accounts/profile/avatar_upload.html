@@ -1,0 +1,45 @@
+{% load url from future %}
+{% with src=user.get_profile.avatar_100 %}
+<fieldset class="upload-single photos">
+<div
+   class="photo-container"
+   id="photo-add">
+  <div class="photo">
+    <a class="add"
+       id="{{field.auto_id}}"
+       href="#"
+       data-target="#uploadModal"
+       data-source="{% url 'avatar_upload' %}"
+       data-crop="/image-crop/crop/"
+       data-toggle="modal"
+       data-upload-instructions="<p>Eco Market is built all around people, and no-one likes to look at an empty avatar so here you can uploading a photo of yourself. Please keep these to mug-shots only please and no logos or other things, as this personal touch is one of the many things that makes our marketplace great!</p><p>Try to choose a nice high resolution photo (ideally using lots of natural light). Once you upload your image your cropping tool will help you crop this to however you like.</p>"
+       ><img src="{{src}}" /></a>
+    <div class="toolbar">
+      <span class="remove hide">
+<a href="#">X</a>
+      </span>
+    </div>
+    <input
+       type="text"
+       class="image-title hide"
+       name="image_title"
+       value="" />
+    <input
+       type="hidden"
+       class="image-filename"
+       name="image_filename"
+       value="" />
+    <input
+       type="hidden"
+       class="image-data"
+       name="image_data"
+       value="" />
+    <input
+       type="hidden"
+       class="image-thumbnail"
+       name="image_thumbnail"
+       value="{{src}}" />
+  </div>
+</div>
+</fieldset>
+{% endwith %}

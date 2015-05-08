@@ -1,0 +1,15 @@
+{% extends 'accounts/account/base.html' %}
+{% load url from future %}
+
+{% block content_tab %}
+    <form id="form" class="account form form-horizontal" action="" method="post">{% csrf_token %}
+        <fieldset>
+            <div class="control-group">
+              <label for="" class="control-label">Facebook:</label>
+              <div class="controls">
+                <a href="{% url 'socialauth_begin' 'facebook' %}" class="fb-register">Connect with Facebook</a>
+              </div>
+            </div>
+        </fieldset>
+    </form>
+{% endblock content_tab %}

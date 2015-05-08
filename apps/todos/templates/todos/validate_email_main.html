@@ -1,0 +1,16 @@
+{% extends "base_modal.html" %}
+{% load url from future %}
+
+{% block modal_title %}Validate email address{% endblock %}
+
+{% block modal_content %}
+<p>Oops, it looks like your email address isn't validated yet and we will need you to do this before you can log in. All you need to do is click the link in the email we sent you.</p>
+<p><a href="{% url 'todos:validate_email_resend_validation' %}">Don't have the email or has it expired? Click here to send a new one.</a></p>
+<p><a href="{% url 'todos:validate_email_change_address' %}">Need to change your email address? Click here to do this.</a></p>
+{% endblock %}
+
+{% block modal_footer %}
+<div class="pull-right">
+    <a class="btn btn-primary" href="{% url 'logout' %}">Log out</a>
+</div>
+{% endblock %}

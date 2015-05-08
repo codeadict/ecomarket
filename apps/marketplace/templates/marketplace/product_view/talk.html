@@ -1,0 +1,170 @@
+{% load url from future %}
+{% load static from staticfiles %}
+
+<h4>Product talk</h4>
+      
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#comments" data-toggle="tab">comments</a></li>
+  <!--<li><a href="#reviews" data-toggle="tab">
+      <b>★</b><b>★</b><b>★</b><b>★</b><i>★</i>
+      reviews
+  </a></li>
+  <li><a href="#faq" data-toggle="tab">faq</a></li>-->
+</ul>
+<div class="clearfix">
+    {% if user.is_authenticated %}
+    <p class="pull-right">{% include 'comments/_add_comment_link.html' %}</p>
+    {% endif %}
+</div>
+
+<div class="tab-content">
+  
+  <div class="tab-pane active" id="comments">
+    {% with object=product %}
+    {% include 'comments/_comments.html' %}
+    {% endwith %}
+  </div>
+  
+  <!--<div class="tab-pane" id="reviews">
+    
+    <ol class="reviews">
+      
+      <li class="review">
+        <div class="author">
+          <a href="#" class="avatar"><img src="{% static 'tmp/users/80x80/1.jpg' %}" alt="Rachel Woods"></a>
+          <span class="user">
+            by <a href="#">Rachel Woods</a>
+          </span>
+          <time>22/07/2012</time>
+        </div>
+	
+        <div class="review">
+	  
+          <strong class="review-title">Review title goes here</strong>
+	  
+          <div class="review-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+            <div class="hidden">
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <a href="#" class="reveal-review">Read more...</a>
+          </div>
+	  
+          <div class="vote">
+	    
+            <div class="vote-summary vote-high">4.5</div>
+            <ul class="vote-elements">
+              <li><span class="vote-label">Packaging:</span> <b>★</b><b>★</b><b>★</b><b>★</b><i>★</i></li>
+              <li><span class="vote-label">Product:</span> <b>★</b><b>★</b><b>★</b><b>★</b><i>★</i></li>
+              <li><span class="vote-label">Shipping:</span> <b>★</b><b>★</b><b>★</b><b>★</b><b>★</b></li>
+              <li><span class="vote-label">Communication:</span> <b>★</b><b>★</b><b>★</b><i>★</i><i>★</i></li>
+            </ul>
+	    
+          </div>
+	  
+        </div>
+	
+      </li>
+      
+      <li class="review">
+        <div class="author">
+          <a href="#" class="avatar"><img src="{% static 'tmp/users/80x80/2.jpg' %}" alt="Rachel Woods"></a>
+          <span class="user">
+            by <a href="#">Anonymous Voter</a>
+          </span>
+          <time>22/07/2012</time>
+        </div>
+	
+        <div class="review">
+	  
+          <strong class="review-title">Review title goes here</strong>
+	  
+          <div class="review-body">
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+	  
+          <div class="vote">
+	    
+            <div class="vote-summary vote-medium">3.0</div>
+            <ul class="vote-elements">
+              <li><span class="vote-label">Packaging:</span> <b>★</b><b>★</b><b>★</b><b>★</b><i>★</i></li>
+              <li><span class="vote-label">Product:</span> <b>★</b><b>★</b><b>★</b><i>★</i><i>★</i></li>
+              <li><span class="vote-label">Shipping:</span> <b>★</b><b>★</b><b>★</b><b>★</b><b>★</b></li>
+              <li><span class="vote-label">Communication:</span> <b>★</b><b>★</b><b>★</b><i>★</i><i>★</i></li>
+            </ul>
+	    
+          </div>
+	  
+        </div>
+	
+      </li>
+      
+      
+      <li class="review">
+        <div class="author">
+          <a href="#" class="avatar"><img src="{% static 'tmp/users/80x80/3.jpg' %}" alt="Rachel Woods"></a>
+          <span class="user">
+            by <a href="#">Someone Else</a>
+          </span>
+          <time>22/07/2012</time>
+        </div>
+	
+        <div class="review">
+	  
+          <strong class="review-title">Review title goes here</strong>
+	  
+          <div class="review-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+            <div class="hidden">
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <a href="#" class="reveal-review">Read more...</a>
+          </div>
+	  
+          <div class="vote">
+	    
+            <div class="vote-summary vote-low">1.5</div>
+            <ul class="vote-elements">
+              <li><span class="vote-label">Packaging:</span> <b>★</b><i>★</i><i>★</i><i>★</i><i>★</i></li>
+              <li><span class="vote-label">Product:</span> <b>★</b><i>★</i><i>★</i><i>★</i><i>★</i></li>
+              <li><span class="vote-label">Shipping:</span> <b>★</b><b>★</b><b>★</b><i>★</i><i>★</i></li>
+              <li><span class="vote-label">Communication:</span> <b>★</b><b>★</b><b>★</b><i>★</i><i>★</i></li>
+            </ul>
+	    
+          </div>
+	  
+        </div>
+	
+      </li>
+      
+    </ol>
+	  
+  </div>
+  
+  <div class="tab-pane" id="faq">
+    
+    <div class="faq-content static-content">
+      <h2>FAQ of Business Name Here</h2>
+      
+      <h3>What does make aesthetic post-ironic?</h3>
+      <p>Umami ennui messenger bag kale chips. Ennui aesthetic post-ironic, fap portland mumblecore kale chips letterpress forage fingerstache wolf bicycle rights leggings seitan.</p>
+      <p>Carles put a bird on it brooklyn squid vinyl banksy chillwave, mlkshk wayfarers lo-fi trust fund irony keytar quinoa cardigan. Typewriter pour-over beard retro, jean shorts helvetica bicycle rights put a bird on it. Master cleanse hoodie letterpress raw denim, semiotics brunch forage gluten-free. Chambray cliche cosby sweater, tofu tumblr bicycle rights aesthetic 3 wolf moon. Fap post-ironic direct trade, artisan small batch you probably haven't heard of them terry richardson four loko american apparel quinoa seitan.</p>
+      
+      <h3>Do you make  bicycle rights thundercats?</h3>
+      <p>Vice bespoke put a bird on it occupy, skateboard vinyl scenester pitchfork ethical messenger bag bicycle rights thundercats brooklyn next level. Tattooed marfa cray, VHS skateboard tumblr messenger bag. Skateboard ennui lomo banh mi organic high life, yr food truck art party cosby sweater occupy. Semiotics gentrify sartorial, whatever authentic fingerstache keffiyeh banh mi wayfarers terry richardson food truck odd future locavore flexitarian. Mlkshk thundercats fanny pack sartorial chillwave, sustainable umami terry richardson. Skateboard before they sold out single-origin coffee, polaroid 3 wolf moon terry richardson carles whatever ethical high life retro mcsweeney's trust fund american apparel. Lo-fi sustainable banh mi, etsy seitan swag gastropub wes anderson cardigan brooklyn ethical forage you probably haven't heard of them readymade portland.</p>
+      
+      <h3>Is ther any of these gluten-free DIY fixie?</h3>
+      <p>8-bit tofu pop-up tattooed ennui, cliche squid single-origin coffee. Gluten-free DIY fixie vice, yr single-origin coffee trust fund photo booth authentic PBR retro craft beer fap gastropub. Kogi high life pinterest sustainable. Freegan farm-to-table keytar pitchfork iphone, butcher quinoa vinyl odd future kale chips. Scenester american apparel yr, semiotics ethical ennui post-ironic DIY. Pour-over bicycle rights hella irony, typewriter food truck lomo locavore organic ethnic fanny pack brunch yr blog. Cliche mixtape blog, etsy tofu williamsburg tattooed cardigan viral iphone banh mi locavore semiotics sustainable VHS.</p>
+      
+      <h3>How much does PBR readymade vinyl cost?</h3>
+      <p>Bespoke hoodie sartorial, pinterest lomo banksy irony. DIY fap iphone pop-up, godard stumptown PBR readymade vinyl. Skateboard post-ironic dreamcatcher brooklyn next level. Fap jean shorts pinterest ethnic pitchfork. Single-origin coffee beard +1 small batch, mcsweeney's biodiesel farm-to-table fingerstache squid 8-bit semiotics selvage VHS. Hoodie yr sartorial, aesthetic carles cred keffiyeh cliche butcher tattooed flexitarian vice. Single-origin coffee sartorial terry richardson swag kale chips forage, chambray mixtape.</p>
+      
+      <h3>How can I get some of flexitarian hella twee? Does it comes with leggings, ennui?</h3>
+      <p>Cosby sweater pitchfork leggings, ennui authentic art party occupy lo-fi flexitarian hella twee mixtape fap photo booth. Dreamcatcher put a bird on it wes anderson street art. Banksy brooklyn typewriter kogi. Small batch fingerstache wayfarers semiotics viral, tumblr whatever. Mixtape vegan pickled shoreditch, organic before they sold out authentic salvia hella cliche master cleanse beard wes anderson. Put a bird on it american apparel small batch, occupy polaroid gastropub art party pickled blog viral hella. Brooklyn blog vegan, retro thundercats aesthetic sriracha beard salvia.</p>
+    </div>
+    
+    
+  </div>-->
+  
+</div> 
+

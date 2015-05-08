@@ -1,0 +1,259 @@
+.secondary-content{
+  
+  div.box{
+    
+    @include white-block(15px);
+    margin: 0 0 15px 0;
+    
+    h2{
+      margin:0;
+      padding:0;
+      font-family: $serif;
+      color:#fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      background: url('../images/boxes/header-green.png');
+      font-size:15px;
+      font-weight: 400;
+      padding:9px 15px 6px 15px;      
+      line-height: 20px;
+      margin: -15px -15px 15px -15px;
+      border-radius: 3px 3px 0 0;
+      
+      &.with-link{
+        padding:0;
+      }
+      
+      
+      a{
+        display: block;
+        padding:9px 15px 6px 15px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 400;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        background: rgba(0,0,0,0) url('../images/boxes/header-arrow.png') 95% 8px no-repeat;
+        @include transition(background, 0.2s);
+      }
+      
+      a:hover{
+        text-decoration: underline;
+        background: rgba(0,0,0,0.1) url('../images/boxes/header-arrow.png') 97% 8px no-repeat;
+        text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+      }
+      
+      
+    }
+    
+    &.box-blue{
+      h2{
+        background: url('../images/boxes/header-blue.png');  
+      }
+    }
+    
+  }  
+  
+  div.box-inset{
+    background: rgba(0,0,0,0.1);
+    box-shadow: 0 0 1px rgba(0,0,0,0.2) inset;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    border-radius: 3px;
+    
+    h2{
+      margin:0;
+      padding:0;
+      font-family: $serif;
+      color:#fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      background: url('../images/boxes/header-bronze.png');
+      font-size:15px;
+      font-weight: 300;
+      padding: 0;  
+      line-height: 20px;
+      margin: -10px -10px 10px -10px;
+      border-radius: 3px 3px 0 0;
+      
+      a{
+        color: #fff;
+        text-decoration: none;
+        padding:10px 15px 5px 15px;
+        display: block;
+        text-decoration: none;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        background: rgba(0,0,0,0) url('../images/boxes/arrow.png') 95% 50% no-repeat;
+        @include transition(background, 0.2s);
+      }
+      
+      a:hover{
+        text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+        background: rgba(0,0,0,0.1) url('../images/boxes/arrow.png') 97% 50% no-repeat;
+      }
+      
+    }
+  }
+  
+  .box-action{
+    
+    a{
+      margin: 10px -15px -10px -15px;
+      padding: 10px 15px 10px 15px;
+      border-top: 1px solid #E3E3E3;
+      display: block;
+      background: rgba(0,0,0,0) url('../images/boxes/arrow-gray.png') 95% 8px no-repeat;
+      @include transition(background, 0.2s);
+      
+      &:hover{
+        background: rgba(0,0,0,0) url('../images/boxes/arrow-gray.png') 97% 8px no-repeat;
+      }
+    }
+  }
+  
+}
+
+.completeness-box{
+  
+  .completeness{
+    width: 155px;
+    height: 160px;
+    background: url('../images/elements/stall/stall_0.jpg') 50% 0 no-repeat;
+    position: relative;
+    margin:0 auto;
+    
+    span.value{
+      font-size:25px;
+      font-weight: 500;
+      text-shadow: 0 2px rgba(0,0,0,0.25);
+      color: #fff;
+      position: absolute;
+      top:103px;
+      left: 52px;
+      width: 30px;
+      text-align: center;
+      z-index: 2;
+    }
+    
+    em{
+      background: url('../images/elements/stall/stall_1.jpg') 0 100% no-repeat;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+      
+    }
+    
+  }
+
+
+  strong.slogan{
+    display: block;
+    font-size:16px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+}
+
+.score-box{
+  
+  div.score{
+    width: 246px;
+    height: 113px;
+    background: url('../images/elements/score/box.jpg') 0 0 no-repeat;
+    position: relative;
+    
+    .value{
+      position: absolute;
+      width: 40px;
+      height: 26px;
+      background: url('../images/elements/score/you.jpg') 0 0 no-repeat;
+      bottom: 4px;
+      text-indent: -9999px;
+    }
+    
+    .value.low{left: 30px}
+    .value.medium{ left: 103px;}
+    .value.high{ left: 175px;}
+    
+  }
+  
+  strong.slogan{
+    display: block;
+    font-size:16px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+}
+
+.share-url{
+  input{    
+    width: 180px;
+    height: 27px;
+    margin:0px 5px 0 0;
+    font-size: 11px;
+  }
+}
+
+.box-categories, .box-navigation{
+  
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    li{
+      font-size: 13px;
+      
+      a{
+        display: block;
+        padding: 3px 15px;
+        margin: 0 -15px;
+        text-decoration: none;
+        background: #fff;  
+        @include transition(background, 0.2s);
+      }
+      
+      a:hover{
+        background: #eee;
+        text-decoration: none;
+      }
+    }
+  }
+  
+}
+
+.side-list{
+  display: block;
+  margin: 0 -15px -15px -15px;
+  padding: 0;
+  
+  list-style: none;
+  
+  
+  li{
+    margin: 0;
+    font-size:13px;
+    color: #736A64;
+    font-weight: 500;
+    
+    a{
+      padding: 10px 15px;
+      border-top: 1px solid #E3E3E3;
+      display: block;
+      background: rgba(0,0,0,0) url('../images/boxes/arrow-gray.png') 95% 8px no-repeat;
+      @include transition(background, 0.2s);
+      
+      &:hover{
+        background: rgba(0,0,0,0) url('../images/boxes/arrow-gray.png') 97% 8px no-repeat;
+      }
+    }
+  }
+  
+  li.done{
+    text-decoration: line-through;
+    padding: 10px 15px;
+  }
+  
+}
+

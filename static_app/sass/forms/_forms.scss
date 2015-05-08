@@ -1,0 +1,504 @@
+form.form{
+
+  .formset-errors {
+      clear: both;
+  }
+
+  ul.errorlist{
+    color: #953B39;
+    font-weight: 500;
+    list-style: none;
+    margin: 15px 0 10px 0;
+    width: 320px;
+    padding: 10px 10px 10px 40px;
+    
+    background: #fef4f4;
+    background-repeat: no-repeat;
+    background-image: url('../images/alerts/notification-icons.png');
+    background-position: 10px -367px;
+    border: 1px solid #d47979;
+    border-radius: 3px;    
+    position: relative;
+    display: block;
+  }
+  
+  ul.errorlist:before{
+    content:"";
+    background: #fef4f4;
+    border: 1px solid #fef4f4;
+    display:block;
+    height:14px;
+    width:14px;
+    line-height:0;
+    position:absolute;
+    left:28px;
+    top:-3px;
+    z-index:3;
+    -o-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -khtml-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+  }
+  
+  ul.errorlist:after {
+    content:"";
+    border: 1px solid #d47979;  
+    background: #fef4f4;      
+    display:block;
+    height:10px;
+    width:10px;
+    line-height:0;
+    position:absolute;
+    left:30px;
+    top:-6px;
+    z-index:2;
+    -o-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -khtml-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+  }
+  
+  
+  fieldset{
+    padding: 10px 0;
+    margin: 0 0 20px 0;
+
+    legend{
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #9b9b9b;
+      text-transform: uppercase;
+      border-bottom: none;
+      border-top: 1px solid #e5e5e5;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    label.control-label{
+      font-weight:700;
+      font-size:13px;
+
+      em{
+        font-style: normal;
+        color:#989898;
+      }
+    }
+
+    input[type=text],input[type=email], input[type=password]{
+      height: 30px;
+      width: 320px;
+    }
+    
+    .input-prepend .add-on{
+      height: 30px;
+      margin-top: 1px;
+      line-height: 22px;
+      
+      input[type=text],input[type=email], input[type=password]{
+        width: 297px;
+      }
+      
+    }
+
+    input.postcode {
+      width:150px !important;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    input.price{
+      width:100px !important;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    input.number{
+      width:100px !important;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    textarea{
+      width:320px;
+      height:150px;
+    }
+
+    select{
+      width: 320px;
+    }
+        
+    .select, .tagger-select{
+      width: 320px;
+    }
+    
+
+    div.field-hint{
+      padding:10px 10px 10px 40px;
+      border-radius: 3px;
+      background: #F4EDF0 url('../images/forms/warning-help.png') 10px 8px no-repeat;
+      border: 1px solid #A3848F;
+      width: 320px;
+      margin: -10px 0 15px 175px;
+      font-size: 12px;
+      color: #777676;
+      position: relative;
+
+      strong{
+        color: #824D60;
+        font-weight: 500;
+      }
+
+      a{
+        color:#333;
+        text-decoration: underline;
+      }
+
+      &:after{
+        content: "";
+        width: 15px;
+        height: 10px;
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+        background: url('../images/forms/warning-tip.png') 0 0 no-repeat;
+
+      }
+    }
+
+  }
+  
+  p.field-hint{
+    padding: 5px 0 0 0;
+    color: $subtle-text;
+  }
+
+  .control-group{
+    margin-top:10px;
+  }
+
+  legend + .control-group{
+    margin-top: 5px;
+  }
+
+  .control-group.separated{
+    .controls{
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+    }
+    
+  }
+  
+  .control-group.top-separated{
+    .controls{
+      border-top: 1px dashed #ccc;
+      padding-top: 20px;
+    }
+    .control-label{
+      margin-top: 23px;
+    }
+    
+  }
+
+  .controls.inline-radio{
+    label {
+      display: inline;
+      margin-right: 10px;
+    }
+  }
+  
+  .controls.no-label{
+    margin-left: 0;
+  }
+  
+  label.inline{
+    display: inline;
+  }
+
+  fieldset.box{
+    border: 1px solid #e3e3e3;
+    border-bottom: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    margin: 15px 0;
+    min-height: 100px;
+    width: 610px;
+
+    input[type=text], select, .select, .tagger-select{
+      width: 300px;
+    }
+
+    .legend{
+      background: #f8f7f6;
+      color:#666666;
+      border-radius: 3px 3px 0 0;
+      padding:10px 10px;
+      border: none;
+      text-transform: none;
+      margin: -10px -20px 10px -20px;
+
+      .close{
+        font-size:17px;
+        width:22px;
+        height: 22px;
+        background: url('../images/forms/close.png') 50% 50% no-repeat;
+        text-indent: -9999px;
+        opacity: 0.5;
+        margin-top: -3px;
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+
+    }
+
+    label.control-label{
+      width: 120px;
+    }
+
+    .controls{
+      margin-left: 140px;
+    }
+
+
+  }
+
+  .form-actions{
+    background: none;
+
+    padding: 30px 0;
+    margin: 0px 0 0 0;
+  }
+
+  .form-actions.intended{
+    padding-left: 160px;
+  }
+
+
+
+  fieldset.photos{
+
+    .photo-container{
+      float: left;
+      margin: 0 20px 10px 0;
+    }
+
+    .photo{
+      border: 1px solid #DEDEDE;
+      padding: 5px;
+      border-radius: 3px;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+      width:113px;
+      margin: 0 0 10px 0;
+      position: relative;
+
+      span.drag{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        cursor: pointer;
+        background: url('../images/forms/drag-handle.png') 50% 50% no-repeat;
+        visibility: hidden;
+      }
+
+      &:hover{
+        span.drag{
+          visibility: visible;
+        }
+      }
+
+      .toolbar{
+        padding: 5px 0;
+        height: 20px;
+
+        a .icon{ @include opacity(1)}
+        a:hover .icon{@include opacity(0.75)}
+        a.crop{float:left;
+          .icon-crop{
+            background: url('../images/forms/icon-crop.png')
+          }
+        }
+        a.remove{
+          
+          float:right;
+          
+          .icon{
+            @include opacity(0.6)
+          }
+          
+          &:hover{
+            .icon{
+              @include opacity(0.4)
+            }
+          }
+        }
+        
+
+      }
+
+      a.add,
+      a.edit-photo {
+        display: block;
+        background: url('../images/forms/photos/add.png');
+        width: 100px;
+        height: 100px;
+        
+        &:hover{
+          @include opacity(0.85);
+        }
+
+      }
+    }
+
+    input.photo-name{
+      width: 113px;
+      height: 23px;
+      line-height: 23px;
+      padding: 5px;
+      font-size: 12px;
+    }
+
+
+
+  }
+
+  .tags-list{
+    margin: 15px 0 0 0;
+  }
+
+  .form-actions{
+    .pull-right{
+      padding-top: 15px;
+    }
+  }
+
+}
+
+form fieldset.sign-with-facebook{
+
+  text-align: left;
+  padding-left: 160px;
+
+  p{
+    margin: 5px 0;
+    color:#999;
+  }
+
+  a.fb-register,a.fb-login{
+    display: inline-block;
+    width: 185px;
+    height: 37px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    opacity: 0.9;
+  }
+  
+  a.fb-register{
+    background: url('../images/buttons/sign-up-with-facebook.png') 0 0 no-repeat;
+  }
+  
+  a.fb-login{
+    background: url('../images/buttons/sign-in-with-facebook.png') 0 0 no-repeat;
+  }
+  
+  a:hover{
+    opacity: 1;
+  }
+}
+
+
+.terms-notice{
+  font-size: 13px;
+  margin-left: 160px;
+  margin-bottom: -30px;
+}
+
+// redefine select2 styles    
+.select2-container{
+  
+  .select2-choice{
+    height: 30px;
+    line-height: 30px;
+    
+    span{
+      font-weight: 400;
+    }
+    
+    div{
+      width: 26px;
+      
+      b{
+        background: url('../js/vendor/select2-3.1/select2.png') no-repeat 4px 1px
+      }
+    }
+  }
+  
+  &.select2-dropdown-open{
+   .select2-choice{
+     div{
+       b{
+         background-position: -13px 1px;
+       }
+     }
+   }
+  
+  }
+}
+
+.select2-search{
+  .select2-input{
+    @include border-radius(20px);
+    margin: 5px 0;
+    padding: 3px 15px 3px 10px;
+    font-family: $sans;
+  }
+}
+
+.select2-results{
+  .select2-highlighted{
+    background: #66b0df;
+  }
+}
+
+
+.select2-container-multi{
+  .select2-choices{
+    @include border-radius(3px);
+    width: 320px;
+    height: 32px;
+    min-height: 32px;
+    border: 1px solid #ccc;
+  }
+  
+  .select2-search-field{
+    height: 32px;
+    
+    input{
+      height: 32px !important;
+    }
+  }
+}
+
+
+// typeahead redefine
+
+.typeahead.dropdown-menu{
+  width: 320px;
+  
+  a{
+    color: $dark_link_color;
+  }
+  
+  li.active{
+    a{
+      color: #ffffff;
+      background: $ui_blue;
+    }
+  }
+  
+}

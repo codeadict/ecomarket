@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1,
+        "model": "sites.site",
+        "fields": {
+            "domain": "localhost:8000",
+            "name": "localhost:8000"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "sites.site",
+        "fields": {
+            "domain": "stage.ecomarket.com",
+            "name": "stage.ecomarket.com"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "sites.site",
+        "fields": {
+            "domain": "www.ecomarket.com",
+            "name": "www.ecomarket.com"
+        }
+    }
+]

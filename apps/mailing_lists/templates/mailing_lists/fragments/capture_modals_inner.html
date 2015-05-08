@@ -1,0 +1,39 @@
+{% load url from future %}
+
+    <div class="ecomarket"></div>
+    <a href="#" class="close" data-dismiss="modal">×</a>
+
+    <form class="form email-capture-form" action="{% url 'email_capture' %}" method="post" id="email-capture-form">{% csrf_token %}
+        {{ form.source }}
+
+        <div class="modal-body">
+            <h2>Join us to get our awesome eco deals!</h2>
+            {% with field=form.email_address %}
+            <fieldset class="login-fields">
+                <div class="control-group{% if field.errors %} error{% endif %}">
+                    <div class="controls">
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                </div>
+
+                <div clas="control-group">
+                    {{ form.marketing_optin }}
+                    <label for="id_marketing_optin" class="checkbox">Send me some great product inspirations.</label>
+                    <p>By clicking Join you confirm that you accept our<br />
+                       <a href="/terms-and-conditions">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.</p>
+                </div>
+                {% endwith %}
+                <span class="or">OR</span>                        
+            </fieldset>
+
+            <fieldset class="sign-with-facebook">
+                <a href="{% url 'socialauth_begin' 'facebook' %}?next={{request.GET.next}}" class="fb-login">Sign In with Facebook</a>
+            </fieldset>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary btn-large" data-loading-text="Loading...">Join For Free!</button>
+            <p>Already registered? <a href="#"  class="sign-in">Sign in now</a></p>
+            <!--<p class="fb-login"/></p>-->
+        </div>
+    </form>

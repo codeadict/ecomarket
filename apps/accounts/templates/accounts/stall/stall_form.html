@@ -1,0 +1,24 @@
+{% extends 'accounts/stall/base.html' %}
+
+{# Generic form template for stall forms #}
+
+{% block content_tab %}
+    <form  id="form" class="form form-horizontal" action="" method="post">{% csrf_token %}
+        <fieldset>
+          {% for field in form %}
+            <div class="control-group {% if field.errors %}error{% endif %}">
+              <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+              <div class="controls">
+                {{ field }}
+                {{ field.errors }}
+              </div>
+            </div>
+
+          {% endfor %}
+        </fieldset>
+
+        <fieldset class="form-actions">
+            <input type="submit" class="btn btn-primary btn-large" value="Save Changes"/>
+        </fieldset>
+    </form>
+{% endblock content_tab %}

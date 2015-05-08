@@ -1,0 +1,35 @@
+.actions-toolbar{
+  margin: 8px 0 20px 0;
+  display: inline-block;
+  
+  .btn-group{
+    
+    border-radius: 3px;
+    @include subtle-box-shadow;
+    
+    a{
+      padding: 4px 15px;
+      border: 1px solid #d4d4d4;
+      float: left;
+      border-right: none;
+      color: $subtle_link_color;
+      text-decoration: none;
+    }
+    
+    a:hover{
+      background: #fafafa;
+      color: $subtle_link_hover;
+    }
+    
+    a:first-child{
+      border-radius: 3px 0 0 3px;
+    }
+    
+    a:last-child{
+      border-radius: 0 3px 3px 0;
+      border: 1px solid #d4d4d4;
+    }
+    
+  }
+  
+}

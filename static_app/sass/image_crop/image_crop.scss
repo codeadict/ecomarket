@@ -1,0 +1,59 @@
+/* jcrop compatibility */
+
+.crop-container
+{
+    float: left
+}
+
+.crop-preview-container
+{
+    position: relative;
+    top: 50px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin-left: 5px
+}
+
+form.image-crop fieldset
+{
+    clear: both
+}
+
+img.crop {
+    max-width: none;
+    vertical-align: none;
+}
+
+img.crop-preview {
+    max-width: none;
+    vertical-align: none;
+}
+
+#file-cropper .ord-n.jcrop-handle,
+#file-cropper .ord-e.jcrop-handle,
+#file-cropper .ord-w.jcrop-handle,
+#file-cropper .ord-s.jcrop-handle {
+    display: none;
+}
+
+.crop-container .jcrop-holder
+{
+    margin: auto;
+}
+
+.crop-container
+{
+    width: 400px;
+    margin-bottom: 17px;
+}
+
+fieldset.upload-single.photos {
+    padding: 0;
+    margin: 0;
+}
+
+form fieldset.photos input.image-name {
+    width: 112px;
+}

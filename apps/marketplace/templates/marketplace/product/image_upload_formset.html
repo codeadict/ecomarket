@@ -1,0 +1,17 @@
+{% load url from future %}
+{% with uploader='/products/image/upload/' %}
+<fieldset class="photos">
+  <legend>Photos</legend>	
+  {{formset.management_form}}
+  {% for form in formset %}
+    {{form.id}}
+    <div class="hide image-form-delete">
+      {{form.DELETE}}
+    </div>
+    {% include 'image_crop/includes/image_crop.html' %}
+  {% endfor %}
+  <div class="formset-errors">
+    {{formset.non_form_errors}}
+  </div>
+</fieldset>
+{% endwith %}

@@ -1,0 +1,147 @@
+{% load url from future %}
+{% load jsonify %}
+
+{% if GOOGLE_ANALYTICS_ENABLED %}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_PROPERTY_ID }}']);
+  _gaq.push(['_setDomainName', '{{ GOOGLE_ANALYTICS_SITE_NAME }}']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  {# Track transactions and order items in Analytics #}
+  {% if order_to_track %}
+    var _gat_tries = 20; // 20 * 500ms = 10s
+    function wait_for_google_analytics(tries, success) {
+      if (tries >= 1) {
+        if (window._gat && window._gat._getTracker) {
+          return success();
+        }
+        setTimeout(function() {
+          wait_for_google_analytics(tries - 1, success);
+        }, 500);
+      }
+    }
+    {% with order=order_to_track %}
+      _gaq.push(['_addTrans',
+          '{{ order.pk }}',               // order ID - required
+          '{{ order.stall.title }}',      // affiliation or store name
+          '{{ order.total }}',            // total - required
+          '0',                            // tax
+          '{{ order.delivery_charge }}',  // shipping
+          '{{ order.address.city }}',     // city
+          '{{ order.address.state }}',    // state or province
+          '{{ order.address.country }}'   // country
+        ]);
+      {% for line in order.line_items.all %}
+      _gaq.push(['_addItem',
+        '{{ order.pk }}',                           // order ID - necessary to associate item with transaction
+        '{{ line.product.pk }}',                    // SKU/code - required
+        '{{ line.product.title }}',                 // product name - necessary to associate revenue with product
+        '{{ line.product.primary_category.name }}', // category or variation
+        '{{ line.price.amount }}',                  // unit price - required
+        '{{ line.quantity }}'                       // quantity - required
+      ]);
+      {% endfor %}
+      _gaq.push(['_trackTrans']);
+      {# Notify us when Google has tracked the payment #}
+      wait_for_google_analytics(_gat_tries, function(){
+        $.get("{% url 'payment_tracking_complete' payment_id=order.payment.pk %}");
+        $('.page-notice-tracking .notice-actions').fadeIn();
+      });
+    {% endwith %}{# order #}
+  {% endif %}{# order_to_track #}
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endif %}
+
+{% if GOOGLE_ADWORDS_ENABLED %}
+  {# Adwords Conversion Tracking #}
+  {% if order_to_track %}
+    {% with order=order_to_track %}
+      <!-- BEGIN Google Code for Eco Market Order Conversion Page -->
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 1009895925;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "912FCLOViQUQ9ZPH4QM";
+      var google_conversion_value = '{{ order.total.amount }}';
+      /* ]]> */
+      </script>
+      <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+      <noscript>
+        {# Is noscript suitable in the head tag? #}
+        <div style="display:none;">
+          <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1009895925/?value={{ order.total.amount }}&amp;label=912FCLOViQUQ9ZPH4QM&amp;guid=ON&amp;script=0"/>
+        </div>
+      </noscript>
+      <!-- END Google conversion code -->
+    {% endwith %}
+  {% endif %}
+{% endif %}
+
+<!-- Google Code for Remarketing tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1009895925;
+var google_conversion_label = "ZuzRCPOukgUQ9ZPH4QM";
+var google_custom_params = {
+  {% if ecomm_prodid %}
+    ecomm_prodid: {{ecomm_prodid|jsonify|safe}}, 
+  {% endif %}
+
+  {% if ecomm_quantity %}
+    ecomm_quantity: {{ecomm_quantity|jsonify|safe}},
+  {% endif %}
+
+  {% if ecomm_category %}
+    ecomm_category: {{ecomm_category|jsonify|safe}},
+  {% endif %}
+
+  {% if request.user.is_authenticated %}
+    hasaccount: 'y',
+    {% if request.user.get_profile.gender %}
+    g: '{{request.user.get_profile.gender}}',
+    {% endif %}
+
+    {% if request.user.get_profile.birthday %}
+    a: {{request.user.get_profile.age}},
+    {% endif %}
+
+    {% if request.user.get_profile.repeat_purchaser %}
+    rp: 'y',
+    {% else %}
+    rp: 'n',
+    {% endif %}
+  {% else %}
+    hasaccount: 'n',
+  {% endif %}
+
+  {% if ecomm_pagetype %}
+    ecomm_pagetype: {{ecomm_pagetype|jsonify|safe}},
+  {% else %}
+    ecomm_pagetype: 'other',
+  {% endif %}
+
+  {% if ecomm_totalvalue %}
+    ecomm_totalvalue: {{ecomm_totalvalue}},
+  {% endif %}
+};
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1009895925/?value=0&amp;label=ZuzRCPOukgUQ9ZPH4QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>

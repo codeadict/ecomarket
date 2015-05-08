@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load url from future %}
+
+
+{% block content %}
+<h1>Details for Order id {{ order.id }}</h1>
+<h2>Order Address</h2>
+{% with address=order.address %}
+<ul class="address-details" >
+    <li>
+    <span class="address-fieldname">Recipient Name:</span>
+    <span class="address-field-value">{{ address.name }}</span>
+    </li>
+    <li>
+    <span class="address-fieldname">Address Line 1:</span>
+    <span class="address-field-value">{{ address.line1 }}</span>
+    </li>
+    <li>
+    <span class="address-fieldname">Address Line 2:</span>
+    <span class="address-field-value">{{ address.line2 }}</span>
+    </li>
+    <li>
+    <span class="address-fieldname">City:</span>
+    <span class="address-field-value">{{ address.city }}</span>
+    </li>
+    <li>
+    <span class="address-fieldname">County or State:</span>
+    <span class="address-field-value">{{ address.state }}</span>
+    </li>
+    <li>
+    <span class="address-fieldname">Country</span>
+    <span class="address-field-value">{{ address.country.title }}</span>
+    </li>
+    <li>
+    <span class="address-fieldname">Postal Code:</span>
+    <span class="address-field-value">{{ address.postal_code }}</span>
+    </li>
+</ul>
+<h2>User Details</h2>
+<p>Name: <a href="{% url 'public_profile' username=order.user.username %}">{{ order.user.username }}</a></p>
+<a href="{% url 'messaging_compose_to' recipient=order.user.username %}" class="btn btn-primary">Send Message to User</a>
+<h2>Stall Details</h2>
+<p>Stall Owner: <a href="{% url 'public_profile' username=order.stall.user.username %}">{{ order.stall.user.username }}</a></p>
+<a href="{% url 'messaging_compose_to' recipient=order.stall.user.username %}" class="btn btn-primary">Send Message to Stall Owner</a>
+<h2>Order Items</h2>
+<table border="0" width="100%" style="margin-top: 10px; margin-bottom: 20px;">
+  <thead>
+    <tr>
+      <th >Product Name</th>
+      <th >Quantity</th>
+      <th >Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for line_item in order.line_items.all %}
+    <tr>
+      <td >{{ line_item.product.title }}</td>
+      <td >{{ line_item.quantity }}</td>
+      <td >{{ line_item.total }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      <td><strong>Subtotal</strong></td>
+      <td>{{ order.subtotal.amount }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><strong>Shipping</strong></td>
+      <td>{{ order.delivery_charge.amount }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><strong>Total</strong></td>
+      <td>{{ order.total.amount }}</td>
+    </tr>
+  </tbody>
+</table><br />
+<br />
+{% if order.note %}
+<h3>Special Notes</h3>
+{{ order.note }}<br />
+{% endif %}
+{% endwith %}
+{% endblock %}

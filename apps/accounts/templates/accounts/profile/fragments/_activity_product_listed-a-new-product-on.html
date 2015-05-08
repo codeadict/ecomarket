@@ -1,0 +1,49 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load action_tags %}
+{% load url from future %}
+
+{% block target_title %}{{ action.target.title }}{% endblock %}
+
+{% block activity_extra_class %}activity-stall{% endblock %}
+
+
+{% block li_attrs %}{{ block.super }} id="comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}"{% endblock %}
+
+{% get_related_actions action as actions %}
+{% block body %}
+    <div class="activity-preview products-preview">
+        <div class="thumbs">
+            {% with action.action_object.images|first as image %}
+                <a href="{{ action.action_object.path }}" class="thmb"><img src="{{ image.url_105 }}" alt="{{ image.name }}"></a>
+            {% endwith %}
+
+            {% if total_actions == 1 %}
+                {% with action.action_object.images|first as image %}
+                    <a href="{{ action.action_object.path }}" class="thmb"><img class="thmb50" src="{{ image.url_50 }}" alt="{{ image.name }}"></a>
+                {% endwith %}
+            {% else %}
+                {% get_related_actions action as actions %}
+                {% for single_action in actions %}
+                    {% if forloop.counter < 5 %}
+                        {% with single_action.action_object.images|first as image %}
+                            <a href="{{ single_action.action_object.path }}" class="thmb"><img class="thmb50" src="{{ image.url_50 }}" alt="{{ image.name }}"></a>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block verb %}
+    {% get_related_actions action as actions %}
+    {% if total_actions > 1 %}
+        listed <a href="{{ action.action_object.path }}">{{ action.action_object.title }}</a> and {{ total_actions|add:"-1" }} other product{{ total_actions|pluralize }} on
+    {% else %}
+        listed <a href="{{ action.action_object.path }}">{{ action.action_object.title }}</a> on
+    {% endif %}
+{% endblock %}
+
+{% block reply_button %}
+<a class="comment-reply" data-toplevel_comment="#comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}" href="{% url 'comment_create' ctype_and_id.ctype_id ctype_and_id.object_id %}">Reply</a>
+{% endblock %}

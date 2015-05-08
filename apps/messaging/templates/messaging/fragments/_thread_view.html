@@ -1,0 +1,10 @@
+<div class="check" style="display:none;"><input type="checkbox" checked="checked" name="all" value="{{thread.pk}}"/></div>
+<div class="message-body">    
+    <div class="messages-list">
+        <ol class="messages">
+            {% for message in thread.messages.all %}
+                {% include 'messaging/fragments/_message_reply_detail.html' %}
+            {% endfor %}
+        </ol>
+    </div>
+</div>

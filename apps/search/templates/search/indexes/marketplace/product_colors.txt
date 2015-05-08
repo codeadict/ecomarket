@@ -1,0 +1,4 @@
+{% for item in object.colors.all %}
+{{ item.title }}
+{{ item.slug }}
+{% endfor %}

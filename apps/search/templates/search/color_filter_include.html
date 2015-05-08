@@ -1,0 +1,16 @@
+{{ filter_presenter.form_field }}
+<div class="em-colorpicker hidden em-colorpicker-collapsed">
+    <div class="em-colorpicker-current-choice">
+        <span class="em-colorpicker-value">{{ filter_presenter.name }}</span>
+        <span class="em-colorpicker-toggle">
+            <b class="em-colorpicker-caret"></b>
+        </span>
+    </div>
+    <ul class="em-colorpicker-list clearfix">
+        {% for key, value in filter_presenter.form_field.field.choices %}
+        {% if value != '' %}
+        <li><a href="#" data-value="{{ key }}">{{ value }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,614 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <title>Account Selling - Eco Market</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=988">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="988">
+  <link rel="stylesheet" type="text/css" href="../js/vendor/select2-3.2/select2.css"/>  
+  <link rel="stylesheet" href="../css/ecomarket.css">
+  <script src="../js/vendor/modernizr/modernizr.custom.js"></script>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta http-equiv="cleartype" content="on">
+  <script src="http://use.typekit.com/nrj4aup.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>  
+</head>
+<body class="cf"><div class="body-outer-wrap"><div class="body-inner-wrap cf">
+  <div class="page-wrapper">
+    <header role="banner" class="cf">
+      <a href="/" class="logo">Eco Market.com</a>
+      <nav class="site">
+        <a href="#">Discover</a>        
+        <a href="#">Sell</a>
+        <a href="#">Blogs</a>
+      </nav>
+
+      <nav class="primary">
+        <ul>
+          <li class="activities"><a href="#">Activities <em class="badge">6</em></a></li>
+          <li class="messages"><a href="#">Messages <em class="badge">12</em></a></li>
+          <li class="love-list"><a href="#">Love Lists</a></li>
+          <li class="my-stall"><a href="#">My Stall</a></li>
+        </ul>
+      </nav>
+    
+      <div class="account">
+        
+        <div class="currency">
+          
+          <div class="dropdown">
+            
+            <a href="#" class="current toggle dropdown-toggle" data-toggle="dropdown">
+              <i class="icon icon-cad"></i> CAD
+              <b class="caret"></b>
+            </a>
+          
+          
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon icon-usd"></i> USD</a></li>
+              <li><a href="#"><i class="icon icon-gbp"></i> GBP</a></li>
+              <li><a href="#"><i class="icon icon-aud"></i> AUD</a></li>
+            </ul>
+          </div>
+          
+          
+        </div>
+        
+        <div class="user">
+          
+          <img src="../tmp/users/30x30/3.jpg" alt="Photo of {User.name}" width="30" height="30">
+          
+          <div class="dropdown">
+          
+            <a href="#" class="welcome toggle dropdown-toggle" data-toggle="dropdown">
+              <span class="welcome">Howdy, Jason</span>
+              <b class="caret"></b>
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Profile Page</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          
+          </div>
+          
+          
+        </div>
+        <nav class="support">
+          <a href="#" class="help">Help</a>
+        </nav>
+      </div>
+    
+      <form class="search" action="#" method="get">
+        <fieldset>
+          <label for="q" class="search-for">Products</label>
+          <input name="q" type="search" value="" placeholder="Search Eco Market">
+          <input type="submit" value="Go »">
+          <a href="#" class="cart">Cart</a>
+        </fieldset>
+      </form>
+    
+    </header>
+    
+    <!-- please note here, that this page has wider sidebar, thus, I need to indicate it somehow, by adding class here, for example -->
+    <div class="content cf wider-sidebar">
+      
+      <div class="primary-content">
+        
+        <!-- tabbed navigation (tabs via normal url) -->
+        <nav class="content-tabs">
+          <ul class="nav nav-tabs content-tabs">
+            <li><a href="#">Dashboard</a></li>
+            <li class="active"><a href="#">Selling</a></li>
+            <li><a href="#">Sold</a></li>
+            <li><a href="#">Bought</a></li>
+            <li><a href="#">Stall</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#" class="last">Promotion</a></li>
+          </ul>
+        </nav>
+                
+        
+        <!-- contenf of form -->
+        <h2>Product's I'm selling</h2>
+                
+        
+        <nav class="section-tabs">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#published" data-toggle="tab" class="has-badge">Published Live</a>
+               <em class="badge">16</em>
+            </li>
+            <li>
+              <a href="#unpublished" data-toggle="tab" class="has-badge">Unpublished</a>
+              <em class="badge">5</em>
+            </li>
+            <li>
+              <a href="#drafts" data-toggle="tab" class="has-badge">Drafts</a>
+              <em class="badge">0</em>
+            </li>
+            <li>
+              <a href="#soldout" data-toggle="tab" class="has-badge">Sold Out</a>
+              <em class="badge">38</em>
+            </li>
+          </ul>
+        </nav>
+        
+        
+        <div class="tab-content">
+          <div class="tab-pane active" id="published">
+            
+            <div class="account-products">
+              
+              <div class="actions-toolbar cf">
+                <div class="btn-group actions">
+                  <a href="#">Unpublish</a>
+                  <a href="#">Change shipping</a>
+                  <a href="#">Change stock</a>
+                  <a href="#">Change price</a>
+                  <a href="#">Delete</a>
+                </div>
+              </div>
+              
+              
+              <table class="table table-striped table-products">
+                <thead>
+                  <tr>
+                    <th class="check" scope="col"><input type="checkbox" name="messages" value="all" /></th>
+                    <th class="photo" scope="col">&nbsp;</th>
+                    <th class="product">Product name</th>
+                    <th class="stock"><a href="#" class="dark-link">Stock</a></th>
+                    <th class="price"><a href="#" class="dark-link">Price</a></th>
+                    <th class="update"><a href="#" class="dark-link active">Last update<i class="icon icon-chevron-down"></i></a></th>
+                    <th class="actions">&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="check"><input type="checkbox" name="all" value="msg_3"/></td>
+                    <td class="photo"><a href="#"><img src="../tmp/products/80x80/1.jpg" alt="Some product name goes here" width="80" height="80"></a></td>
+                    <td class="product">
+                      <a href="#" class="name">Some product name goes here</a>
+                    </td>
+                    <td class="stock">
+                      14 <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                    </td>
+                    <td class="price"><strong class="price">£19.99 GBP</strong></td>
+                    <td class="date">Aug 14, 2012</td>
+                    <td class="row-actions">
+                      <a href="">Edit product</a>
+                      <a href="">Copy product</a>
+                      <a href="">Make into template</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>              
+              
+              <div class="bottom-filtering cf">
+                <div class="pagination pagination-left pull-left">
+                  <ul>
+                    <li><a href="#"><i class="icon icon-chevron-left icon-white"></i></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#"><i class="icon icon-chevron-right icon-white"></i></a></li>
+                  </ul>
+                </div>
+              
+                <div class="pagination per-page pagination-right pull-right">
+                  <span class="pagination-label">Show:</span>                  
+                  <ul>
+                    <li class="active"><a href="#">12</a></li>
+                    <li><a href="#">24</a></li>
+                    <li><a href="#">48</a></li>
+                    <li><a href="#">All</a></li>
+                  </ul>
+                </div>
+              </div>
+              
+              
+            </div>
+
+            
+          </div>          
+        </div>
+
+      </div>
+    
+      <div class="secondary-content">          
+        <div class="box box-blue">    
+          <h2>Stall Completeness</h2>
+          <div class="completeness-box">
+            <div class="completeness">
+              <span class="value">65%</span>
+              <em style="height:65%"></em>
+            </div>
+            <strong class="slogan">Complete stalls sell more products!</strong>
+          </div>
+          <ul class="side-list">
+            <li class="done">Here is one item done</li>
+            <li><a href="#">Here is another item</a></li>
+            <li><a href="#">Let me see third item</a></li>
+            <li><a href="#">And last one item here</a></li>
+          </ul>
+        </div>
+        
+        <div class="box box-blue">    
+          <h2>Stall Owner Score</h2>
+          <div class="score-box score-high">
+            <div class="score"><!-- can be low, medium or hight -->
+              <span class="value high">You have high score!</span>
+            </div>
+            <strong class="slogan">Higher scores mean higher sales!</strong>
+          </div>
+          <ul class="side-list">
+            <li class="done">Here is one item done</li>
+            <li><a href="#">Here is another item</a></li>
+            <li><a href="#">Let me see third item</a></li>
+            <li><a href="#">And last one item here</a></li>
+          </ul>
+        </div>  
+        
+        <div class="box box-blue">
+          <h2>My Stall URL</h2>
+          <p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="share-url">
+            <input type="text" value="http://ecomarket.com/linkurl/stall"><a href="#" class="btn btn-flat btn-blue">copy</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+      
+
+  </div>
+  <div class="footer-wrapper">
+    <footer role="contentinfo" class="bottom">
+      <div class="navigational">
+        <nav>
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Shopping</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Selling</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav class="connect">
+          <h3>Connect</h3>
+          <ul>
+            <li class="twitter"><a href="#">Twitter</a></li>
+            <li class="facebook"><a href="#">Facebook</a></li>
+            <li class="pinterest"><a href="#">Pinterest</a></li>
+          </ul>
+        </nav>      
+      </div>
+      <div class="legal">
+        <p class="copy">© Etiska Ltd 2012 | Company No: 06829511</p>
+        <nav>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">About</a>
+          <a href="#">Press</a>
+          <a href="#">Contact</a>      
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="../bootstrap/js/2.1/bootstrap.min.js"></script>
+  <script src="../js/vendor/select2-3.1/select2.min.js"></script>
+  <script src="../js/ecomarket.js"></script>
+  <script>
+    $(document).ready(function(){
+      
+      // reveal stock level field
+
+      $(".stock-level").on('change',function(e){
+        if(e.val == "fixed"){
+          $(".stock-amount").removeClass('hidden').hide().slideDown();
+        } else{
+          $(".stock-amount").slideUp(function(event){
+            $(this).addClass('hidden')
+          });
+        }
+      });
+      
+      
+      // tagger select autocomplete
+      
+      $(".tagger-select").select2({});
+      
+      $(".tagger-select").on('change', function(event){
+        select = $(this)
+        
+        // return if no change
+        if(select.val() == "") return;
+
+        // get tags list in context of select parent
+        tags = $('.tags-list', select.parent())        
+        tags.append('<span class="tag"><em>'+ select.val() +'</em><a href="#" class="tag-remove"><i class="icon icon-remove-sign"></i></a></span>');
+        $("option:selected", select).remove()        
+        
+      });
+      
+      
+      // example of autocomplete on tags
+      
+      $('.tags-autocomplete').select2({
+        tags: ["wood", "cotton", "glass", "fiber", "coal", "wool"]
+      })
+      
+      
+      $(".tags-autocomplete").on('change', function(event){
+        select = $(this)
+        
+        // return if no change
+        if(select.val() == "") return;
+
+        // get tags list in context of select parent
+        tags = $('.tags-list', select.parent())        
+        tags.append('<span class="tag"><em>'+ select.val() +'</em><a href="#" class="tag-remove"><i class="icon icon-remove-sign"></i></a></span>');
+        $("option:selected", select).remove()        
+        
+        select.select2("val", "");
+        
+      });      
+      
+      
+      
+      $(document).on('click', '.tag-remove', function(event){
+        // get select in context of links parent container
+        select = $("select.tagger-select", $(this).parents('.controls').first())
+        event.preventDefault();
+        v = $("em",$(this).parent()).html()
+        $(this).parent().fadeOut('fast',function(){$(this).remove()});;
+        if(select.length > 0)
+          select.append("<option>" + v + "</option>");
+      });
+      
+      
+      // additional triggering logic on causes/certificates      
+      $('.causes-select').on('change', function(e){
+        if(e.val != ""){
+          $('.certificates-group.hidden').removeClass('hidden').hide().slideDown();
+        }
+      })
+      
+      
+      // trigger to show new certificate
+      
+      $('.suggest-certificate').on('click', function(e){
+        e.preventDefault();
+        $(this).parent().fadeOut();
+        
+        $('.new-certificate').removeClass('hidden').hide().slideDown();
+      });
+      
+
+      
+    });
+  </script>
+</div></div></body>
+</html>

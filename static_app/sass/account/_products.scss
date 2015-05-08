@@ -1,0 +1,176 @@
+table.table-products{
+  
+  thead{
+    
+    th{
+      padding: 10px 5px;
+      vertical-align: middle;
+      border-bottom: 1px solid #cccccc;
+      border-top: 1px solid #cccccc !important;
+      font-weight: 400;
+      font-size: 12px;
+      color: $subtle_text;
+      text-transform: uppercase;
+      
+      
+      &.check{width: 20px;}
+      &.photo{width: 90px;}
+      &.product{width: 135px;}
+      &.stock{width: 50px;}
+      &.update{width: 105px;}
+      &.price{width: 90px;text-align: center;}
+      
+      a.active{
+        text-decoration: underline;
+      }
+      
+      a{
+        i.icon{
+          @include opacity(0.5);
+          margin-left: 3px;
+        }
+      }
+      
+    }        
+    
+    
+  }
+  
+  tbody{
+    
+    td{
+      padding: 10px 5px;
+      vertical-align: top;
+      color: $subtle_text;
+      border-top: none;
+      border-bottom: 1px dashed #cccccc;      
+      font-size: 13px;
+      
+      &.avatar{padding: 10px 5px;}     
+      &.product{
+        a{
+          display: block;
+          font-size: 13px;
+          font-weight: 600;
+          margin: 0 0 2px 0;
+        }      
+      }
+      &.stock{line-height: 20px;}
+      &.price{text-align: right;padding: 10px 10px;}
+      
+      strong.price{
+        color: $price_color;
+      }
+      
+      &.row-actions{
+        text-align: right;
+        width: 120px;
+        
+        a{display: block;}
+      }
+      
+      .btn-edit{
+        background: #ddd;
+        width: 20px;
+        height: 20px;
+        margin: -3px 0 0 5px;
+        padding: 2px;
+        visibility: hidden;
+        @include opacity(0);
+        @include transition(opacity, 0.2s);
+        
+        .icon{
+          @include opacity(0.4);
+          margin-left: 0;
+          
+        }
+        
+        &:hover{
+          @include opacity(0.5);
+          background: darken(#dddddd, 5%);
+        }
+      }
+      
+      .thmb{
+        img{
+          @include border-radius(3px);
+          display: block;
+        }
+      }      
+    
+      a.title{
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0 0 2px 0;
+      }
+      
+    }
+    
+    
+    tr:hover{
+      td{
+       .btn-edit{
+         @include opacity(1);
+         visibility: visible;
+        }
+      }
+    }
+    
+  }
+
+  .alert-block {
+      padding:5px 5px 5px 5px;
+  }
+
+  .alert {
+      margin: 0;
+  }
+}
+
+.stripe td {
+    background-color: #f9f9f9;
+}
+
+table.table-stockcheck{
+    tbody{
+      td{
+        input[type="text"]{
+          height:26px;
+          width:40px;
+          margin-bottom:0;
+        }
+      }
+    }
+}
+
+.account-products {
+    position: relative;
+}
+
+.overlay {
+    display:none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #919191;
+    zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+#confirm-stock-check-modal {
+}
+
+#confirm-stock-check-modal .modal-body > p {
+    clear: both;
+    padding-top: 80px;
+    text-align: center;
+}
+
+
+.no-border {
+    border: none;
+}

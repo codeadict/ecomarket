@@ -1,0 +1,96 @@
+{% extends "search/discover_header.html" %}
+{% load add_get_parameter %}
+
+{% block header_extra_content %}
+<div class="category-filters clearfix" id="filter-follow">
+    <div class="sticky-filter">
+        <form class="sticky-wrapper tags-list filter-form" style="margin-top: 0">
+            {% if query %}
+            {{ form.q.as_hidden }}
+            {% endif %}
+            <div class="filter-item">
+                {% if not price_tag %}
+                <a href="#" class="btn btn-flat btn-show-filter">Price</a>
+                {% endif %}
+                <div class="{{ price_tag|yesno:',hide' }}">
+                    {{ form.price }}
+                    {% if price_tag %}
+                    <a href="{% add_get_parameter price='' %}" class="btn btn-remove-filter"><i class="icon icon-remove"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="filter-item">
+                {% if not ships_to_tag %}
+                <a href="#" class="btn btn-flat btn-show-filter">Ships to</a>
+                {% endif %}
+                <div class="{{ ships_to_tag|yesno:',hide' }}">
+                    {{ form.ships_to }}
+                    {% if ships_to_tag %}
+                    <a href="{% add_get_parameter ships_to='' %}" class="btn btn-remove-filter"><i class="icon icon-remove"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="filter-item">
+                {% if not ships_from_tag %}
+                <a href="#" class="btn btn-flat btn-show-filter">Ships from</a>
+                {% endif %}
+                <div class="{{ ships_from_tag|yesno:',hide' }}">
+                    {{ form.ships_from }}
+                    {% if ships_from_tag %}
+                    <a href="{% add_get_parameter ships_from='' %}" class="btn btn-remove-filter"><i class="icon icon-remove"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="filter-item">
+                {% if not recipient_tag %}
+                <a href="#" class="btn btn-flat btn-show-filter">For who?</a>
+                {% endif %}
+                <div class="{{ recipient_tag|yesno:',hide' }}">
+                    {{ form.recipients }}
+                    {% if recipient_tag %}
+                    <a href="{% add_get_parameter recipients='' %}" class="btn btn-remove-filter"><i class="icon icon-remove"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="filter-item">
+                {% if not cause_tag %}
+                <a href="#" class="btn btn-flat btn-show-filter">Causes</a>
+                {% endif %}
+                <div class="{{ cause_tag|yesno:',hide' }}">
+                    {{ form.causes }}
+                    {% if cause_tag %}
+                    <a href="{% add_get_parameter causes='' %}" class="btn btn-remove-filter"><i class="icon icon-remove"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="filter-item ui-colorpicker">
+                {% if not color_tag %}
+                <a href="#" class="btn btn-flat btn-show-filter">Colour</a>
+                {% endif %}
+                <div class="{{ color_tag|yesno:'visible,hide' }}">
+                    {{ form.colors }}
+                    <div class="em-colorpicker hidden em-colorpicker-collapsed">
+                        <div class="em-colorpicker-current-choice">
+                            <span class="em-colorpicker-value">Colour</span>
+                            <span class="em-colorpicker-toggle">
+                                <b class="em-colorpicker-caret"></b>
+                            </span>
+                        </div>
+                        <ul class="em-colorpicker-list clearfix">
+                            {% for key, value in form.colors.field.choices %}
+                            {% if value != '' %}
+                            <li><a href="#" data-value="{{ key }}">{{ value }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% if color_tag %}
+                <a href="{% add_get_parameter colors='' %}" class="btn btn-remove-filter"><i class="icon icon-remove"></i></a>
+                {% endif %}
+                <a href="#" class="btn btn-flat btn-blue btn-to-top hide"><i class="icon icon-chevron-up icon-white"></i> Top</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

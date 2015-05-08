@@ -1,0 +1,34 @@
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% if product.num_hearts %}
+<div class="box-inset box-bronze">
+
+    <h2 class="with-link"><a href="{% url 'lovelist:lists' product.slug %}">Love Lists Containing This Product ({{ product.num_hearts }})</a></h2>
+
+    <div class="box love-box">
+
+        {% for love_list in love_lists|slice:':2' %}
+        <div class="love-list-item">
+            <div class="love-list">
+                {% with username=love_list.user.username %}
+                <div class="list-header">
+                    <a href="{% url 'public_profile' username %}" class="avatar"><img src="{% if profile.avatar_30 %}{{ profile.avatar_30 }}{% else %}{% static 'images/avatar/30/avatar.png' %}{% endif %}" alt="{{ username }}"></a>
+                    <a href="{{ love_list.get_absolute_url }}" class="list-name">{{ love_list.title }} ({{ love_list.hot_products.count }})</a>
+                    <a href="{% url 'public_profile' username %}" class="author dark-link">{{ username }}</a>
+                </div>
+                {% endwith %}
+
+                <ul class="products cf">
+                    {% for product in love_list.hot_products|slice:':8' %}
+                    <li><a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url_80 }}" alt="{{ product.title }}" width="70"></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endif %}

@@ -1,0 +1,19 @@
+{% extends 'accounts/account/base.html' %}
+
+{% block content_tab %}
+    <form  id="form" class="form form-horizontal" action="" method="post">{% csrf_token %}
+        <fieldset>
+            {% include 'fragments/form_field_snippet.html' with field=form.first_name only %}
+
+            {% include 'fragments/form_field_snippet.html' with field=form.last_name only %}
+
+            {% include 'fragments/form_field_snippet.html' with field=form.username only %}
+
+            {% include 'fragments/form_field_snippet.html' with field=form.email only %}
+        </fieldset>
+
+        <fieldset class="form-actions">
+            <input type="submit" class="btn btn-primary btn-large" value="Save Changes"/>
+        </fieldset>
+    </form>
+{% endblock content_tab %}

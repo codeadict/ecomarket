@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+{% load static from staticfiles %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/my_account.js' %}"></script>
+{% endblock %}
+
+{% block mixpanel %}
+mixpanel.track_links("#edit-product-link", "Clicked Edit Product", {"Type of Edit": "Full Edit"});
+{% endblock %}
+
+{% block content %}
+{% url 'video_intro' as video_intro_url %}
+{% url 'video_responses' as video_responses_url %}
+{% url 'video_draft' as video_draft_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Videos in my stall</h2>
+    {% block content_tab %}{% endblock content_tab %}
+  </div>
+
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'accounts/account/base.html' %}
+
+{% load form_tags %}
+
+{% block content_tab %}
+    <form  id="form" class="form form-horizontal" action="" method="post">{% csrf_token %}
+        <fieldset>
+            <legend>Order Notifications</legend>
+            {% form_field form.orders %}
+            {% form_field form.customer_reviews %}
+        </fieldset>
+
+        <fieldset>
+            <legend>Social Activity &amp; Messages</legend>
+            {% form_field form.follower_notifications %}
+            {% form_field form.private_messages %}
+            {% form_field form.share_orders_in_activity_feed %}
+        </fieldset>
+        <fieldset>
+            <legend>Eco Market News, Deals &amp; Features</legend>
+            {% form_field form.stall_owner_tips %}
+            {% form_field form.site_updates_features %}
+            {% form_field form.blogs_you_might_like %}
+            {% form_field form.products_you_might_like %}
+            {% form_field form.product_discounts %}
+        </fieldset> 
+        <fieldset class="form-actions">
+            <input type="submit" class="btn btn-primary btn-large" value="Save Changes"/>
+        </fieldset>
+    </form>
+{% endblock content_tab %}

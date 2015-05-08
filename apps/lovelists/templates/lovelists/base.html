@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content %}
+<div class="content discover-page full-content cf">
+    <div class="primary-content-wrap love-list-header">
+        <div class="content-box">
+            {% with username=love_list.user.username %}
+            {% block breadcrumb %}{% endblock %}
+            <div class="page-header list-header cf">
+                <div class="avatar">
+                    {% with profile=love_list.user.get_profile %}
+                    <a href="{% url 'public_profile' username %}"><img src="{% if profile.avatar_80 %}{{ profile.avatar_80 }}{% else %}{% static 'images/avatar/80/avatar.png' %}{% endif %}" alt="{{ username }}" /></a>
+                    {% endwith %}
+                </div>
+                {% block list-info %}{% endblock %}
+            </div>
+            {% endwith %}
+            {% block beneath-list-info %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+
+<div class="content cf full-content">
+    <div class="primary-content-wrap single-content">
+        <div class="content-box-inset discover-box">
+            {% with products=love_list.product_relationships.all %}
+            <h2>Products in this collection (<span class="products_count">{{ products.count }}</span>)</h2>
+            <ul class="discover-list cf list-4">
+                {% for product in products %}
+                <li>
+                <a href="{{ product.get_absolute_url }}" class="image"><img src="{{ product.image.url_228 }}" width="228" height="228" alt="{{ product.title }}"></a>
+                <div class="details">
+                    <a href="{{ product.get_absolute_url }}" class="product">{{ product.title }}</a>
+                    <a href="{% url 'lovelist:lists' product.slug %}" class="love-info">In {{ product.love_lists.count }} love list{{ product.love_lists.count|pluralize }}</a>
+                    {% block love_button %}{% endblock %}
+                </div>
+                </li>
+                {% endfor %}
+            </ul>
+
+            {% comment %}
+            {# TODO enable pagination pr infinitescroll #}
+            <div class="bottom-filtering white-box cf">
+                <div class="pagination pagination-left pull-left">
+                    <ul>
+                        <li><a href="#"><i class="icon icon-chevron-left icon-white"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#"><i class="icon icon-chevron-right icon-white"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="pagination per-page pagination-right pull-right">
+                    <span class="pagination-label">Show:</span>
+                    <ul>
+                        <li class="active"><a href="#">12</a></li>
+                        <li><a href="#">24</a></li>
+                        <li><a href="#">48</a></li>
+                        <li><a href="#">All</a></li>
+                    </ul>
+                </div>
+            </div>
+            {% endcomment %}
+            {% endwith %}
+        </div>
+        {% block below_list %}{% endblock %}
+    </div>
+</div>
+
+  </div>
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+{% endblock %}

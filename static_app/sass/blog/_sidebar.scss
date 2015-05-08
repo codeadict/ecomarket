@@ -1,0 +1,98 @@
+.blog-page{
+  
+  .secondary-content{
+    
+    .form-search{
+    
+      margin: 0;
+    
+      fieldset{
+        margin-bottom: 0;
+      }
+    
+      input.search-query{
+        width: 220px;
+        height: 26px;
+      }
+    }
+  }
+  
+  .blog-comments{
+    li.comment{
+      padding: 0;
+      
+      .comment-user{
+        
+        margin: 0 0 15px 0;
+        height: 50px;
+        
+        .avatar{
+          float: left;
+          margin: 0 10px 10px 0;
+          
+          img{
+            @include border-radius(3px);
+          }
+          
+        }
+        
+        .user-name{
+          font-size: 18px;
+          line-height: 25px;
+          font-weight: 500;
+          display: block;
+        }
+      }
+      
+      .comment-box{
+        
+        background: #ffffff;
+        
+        &:after{
+          content: "";
+          display: inline-block;
+          width: 22px;
+          height: 10px;
+          background: url('../images/product/comment-tick-vertical.png') 0 0 no-repeat;
+          position: absolute;
+          top: 57px;
+          left: 10px;
+        } 
+      }
+      
+      .comment-head{
+        
+        
+        .avatar{
+          float: left;
+          margin: 0 10px 10px 0;
+        }
+      }
+      .comment-author{
+        margin: 0;
+      }
+      
+    }
+  }
+  
+  
+  .products{
+    @include list-reset;
+    margin: 0 -7px 0 0;
+    
+    
+    li{
+      float: left;
+      margin: 0 7px 7px 0;
+      
+      img{
+        @include border-radius(3px);
+        width: 95px;
+        height: 95px;
+      }
+    }
+    
+  }
+  
+  
+}

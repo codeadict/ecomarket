@@ -1,0 +1,16 @@
+{% load absolute_url %}
+Hello {{ order.user.first_name }},<br />
+<br />
+Congratulations this email confirms your order has been placed with <a href="{% absurl my_stall slug=order.stall.slug %}">{{ order.stall.title }}</a> at Eco Market and will be shipped promptly to you directly from <a href="{% absurl public_profile username=order.stall.user.username %}">{{ order.stall.user.username }}</a>.<br />
+<br />
+{% include 'purchase/emails/includes/order_details.html' %}
+<br />
+
+Your order is set to be delivered to:<br />
+
+{% include 'purchase/emails/includes/address.html' with address=order.address %}
+
+If you have any questions regarding this order you can <a href="{% absurl messaging_compose_to order.stall.user.username %}">message the stall owner directly</a>.<br />
+<br />
+
+Thank you for shopping on Eco Market, we hope to have you back again soon.

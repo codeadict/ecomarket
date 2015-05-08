@@ -1,0 +1,4 @@
+{% for item in object.causes.all %}
+{{ item.title }}
+{{ item.slug }}
+{% endfor %}

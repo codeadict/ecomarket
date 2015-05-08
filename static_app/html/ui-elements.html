@@ -1,0 +1,764 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+  <title>UI Elements - Eco Market</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=988">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="988">
+  <link rel="stylesheet" type="text/css" href="../js/vendor/select2-3.2/select2.css"/>  
+  <link rel="stylesheet" href="../css/ecomarket.css">
+  <script src="../js/vendor/modernizr/modernizr.custom.js"></script>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta http-equiv="cleartype" content="on">
+  <script src="http://use.typekit.com/nrj4aup.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>  
+</head>
+<body class="cf"><div class="body-outer-wrap"><div class="body-inner-wrap cf">
+  <div class="page-wrapper">
+    <header role="banner" class="cf">
+      <a href="/" class="logo">Eco Market.com</a>
+      <nav class="site">
+        <a href="#">Discover</a>        
+        <a href="#">Sell</a>
+        <a href="#">Blogs</a>
+      </nav>
+
+      <nav class="primary">
+        <ul>
+          <li class="activities"><a href="#">Activities <em class="badge">6</em></a></li>
+          <li class="messages"><a href="#">Messages <em class="badge">12</em></a></li>
+          <li class="love-list"><a href="#">Love Lists</a></li>
+          <li class="my-stall"><a href="#">My Stall</a></li>
+        </ul>
+      </nav>
+    
+      <div class="account">
+        
+        <div class="currency">
+          
+          <div class="dropdown">
+            
+            <a href="#" class="current toggle dropdown-toggle" data-toggle="dropdown">
+              <i class="icon icon-cad"></i> CAD
+              <b class="caret"></b>
+            </a>
+          
+          
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon icon-usd"></i> USD</a></li>
+              <li><a href="#"><i class="icon icon-gbp"></i> GBP</a></li>
+              <li><a href="#"><i class="icon icon-aud"></i> AUD</a></li>
+            </ul>
+          </div>
+          
+          
+        </div>
+        
+        <div class="user">
+          
+          <img src="../tmp/users/30x30/3.jpg" alt="Photo of {User.name}" width="30" height="30">
+          
+          <div class="dropdown">
+          
+            <a href="#" class="welcome toggle dropdown-toggle" data-toggle="dropdown">
+              <span class="welcome">Howdy, Jason</span>
+              <b class="caret"></b>
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Profile Page</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          
+          </div>
+          
+          
+        </div>
+        <nav class="support">
+          <a href="#" class="help">Help</a>
+        </nav>
+      </div>
+    
+      <form class="search" action="#" method="get">
+        <fieldset>
+          <label for="q" class="search-for">Products</label>
+          <input name="q" type="search" value="" placeholder="Search Eco Market">
+          <input type="submit" value="Go »">
+          <a href="#" class="cart">Cart</a>
+        </fieldset>
+      </form>
+    
+    </header>
+    
+    <div class="content primary-left cf">
+      
+      <div class="primary-content" style="min-height: 700px;">
+        <div class="page-header">
+          <h1>UI Elements</h1>
+        </div>
+        
+        <p>This page collects some form elements</p>
+        
+        <h3>Breadcrumbs</h3>
+        
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Home</a> 
+            <span class="divider">&gt;</span>
+          </li>
+          <li>
+            <a href="#">Buy</a> 
+            <span class="divider">&gt;</span>
+          </li>
+          <li>
+            <a href="#">Products</a> 
+            <span class="divider">&gt;</span>
+          </li>          
+          <li class="active">
+            Shaving Mug
+          </li>
+        </ul>
+        
+        <h3 class="headline">Primary buttons</h3>
+        
+        <a href="#" class="btn btn-primary btn-load">Do something</a>
+	    <a href="#" class="btn btn-blue btn-load">Click me</a>
+        <input type="submit" class="btn big-button btn-load" value="Other action" />
+        
+        <h3 class="headline">Secondary buttons</h3>
+        
+        <a href="#" class="btn btn-green btn-flat">Do something</a>
+        <a href="#" class="btn btn-blue btn-flat">Do something else</a>
+        <a href="#" class="btn btn-flat">Other action</a>        
+        
+        <h3 class="headline">Follow button</h3>
+        
+        <p>
+        <a href="#" class="btn-follow">Follow</a>
+        <a href="#" class="btn-follow btn-following">Following</a>
+        <a href="#" class="btn-follow btn-unfollow">Unfollow</a>
+        </p>
+        
+        <p>Here is the demo how follow button should work:</p>
+        
+        <p> <a href="#" class="btn-follow">Follow</a></p>
+        
+        <p>There is also smaller version of this button: <a href="#" class="btn-follow btn-follow-small">Follow</a></p>
+        
+        
+        <h3 class="headline">Love button</h3>
+        
+        <div class="love">
+          <p>Normal state of button is grey circle. On hover it becomes purple.<br/>
+            To add "selected state", please add <code>btn-loved</code> class to button element.</p>
+          <a href="#" class="action-love btn-love"><i class="icon icon-love"></i></a>
+        
+          <br><br>
+          <p>Loved buttons has cross instead of heart on hover. Remove class <code>btn-loved</code> to show it back in gray state.</p>          
+          <a href="#" class="action-love btn-love btn-loved"><i class="icon icon-love"></i></a>
+          
+          <br><br>
+          <p>When you click on love button and you don't have love list created already, popup should come to prompt you to create one. Click this to demonstrate:</p>
+          <a href="#" class="action-love btn-love no-lovelist"><i class="icon icon-love"></i></a>          
+          
+          <br><br>
+          <p>When user already has love list it should maybe show some dropdown/popover with possibility to change love list:</p>
+          
+          <a href="#" class="action-love btn-love has-lovelist"><i class="icon icon-love"></i></a>
+          
+        </div>        
+        
+        <br>
+        
+        <h2>Forms</h2>
+        
+        <p>Below you can find an example of form UI elements</p>
+        
+        <form class="product-form form form-horizontal" action="#" method="post" id="product-form">
+        
+          <fieldset class="first"> 
+            <legend>Custom toggle / check</legend>
+            
+            <p>Add class <code>eco-checkbox</code> to checkbox you want to be replaceable with on/off toggle style</p>
+            
+            <div class="control-group">
+              <label class="control-label" for="check">Email Notifications:</label>
+              <div class="controls">
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox eco-checkbox" name="check" id="check" />
+                </div>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="check">Enabled by default:</label>
+              <div class="controls">
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox eco-checkbox" checked="checked" name="check" id="check" />
+                </div>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="check">Disabled check:</label>
+              <div class="controls">
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox eco-checkbox" checked="checked" disabled="disabled" name="check" id="check" />
+                </div>
+              </div>
+            </div>
+
+            
+            
+          </fieldset>
+                    
+          <fieldset>
+            <legend>Multiple category dropdown</legend>
+            
+            <p>Use hidden &lt;select&gt; tag with class <code>"multiple-dropdown"</code>. This is fallback element, will also carry on user selection.<br/>
+            Print out <code>.em-dropdown</code> hidden element, it will replace select via JS.</p>
+            <p>Selectable items should have <code>data-value="{category_id}"</code> attributes, to connect choices with associated select.<br/>
+            When user selects something, associated hidden select will be updated with his choice.</p>
+            <br/>
+            
+            <div class="control-group">
+              <label class="control-label">Multiple dropdown:</label>
+              
+              <div class="controls">
+			          
+			          <select name="main_category" id="id_main_category" class="multiple-dropdown" placeholder="Please select main category">
+			            <optgroup label="Category item 1">
+			              <option value="cat-1.1">Category item 1.1</option>
+			              <option value="cat-1.2">Category item 1.2</option>
+			              <option value="cat-1.3">Category item 1.3</option>
+			              <option value="cat-1.4">Category item 1.4</option>
+			            </optgroup>
+			            <optgroup label="Category item 2">
+			              <option value="cat-2.1">Category item 2.1</option>
+			              <option value="cat-2.2">Category item 2.2</option>
+			              <option value="cat-2.3">Category item 2.3</option>
+			              <option value="cat-2.4">Category item 2.4</option>
+			              <option value="cat-2.5">Category item 2.5</option>
+			              <option value="cat-2.6">Category item 2.6</option>
+			              <option value="cat-2.7">Category item 2.7</option>			              
+			            </optgroup>
+			            <optgroup label="Category item 3">
+			              <option value="cat-3.1">Category item 3.1</option>
+			              <option value="cat-3.2">Category item 3.2</option>
+			              <option value="cat-3.3">Category item 3.3</option>			              
+			            </optgroup>			            
+			          </select>      
+			                    
+                <div class="em-dropdown hidden em-dropdown-collapsed">
+                  <div class="em-dropdown-current-choice">
+                    <span class="em-dropdown-value">Choose category from the list</span>
+                    <span class="em-dropdown-toggle">
+                      <b class="em-dropdown-caret"></b>
+                    </span>
+                  </div>
+                  
+                  <ul class="em-dropdown-list">
+                    <li>
+                      <a href="#" class="em-dropdown-list-toggle">Category item 1</a>
+                      <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-1.1">Category item 1.1</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-1.2">Category item 1.2</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-1.3">Category item 1.3</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-1.4">Category item 1.4</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="em-dropdown-list-toggle">Category item 2</a>
+                      <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.1">Category item 2.1</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.2">Category item 2.2</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.3">Category item 2.3</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.4">Category item 2.4</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.5">Category item 2.5</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.6">Category item 2.6</a></li>
+                        <li><a href="#" class="em-dropdown-choice" data-value="cat-2.7">Category item 2.7</a></li>                        
+                      </ul>                      
+                    </li>
+                    <li>                      
+                      <a href="#" class="em-dropdown-list-toggle">Category item 3</a>
+                      <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                        <li>
+                          <a href="#" class="em-dropdown-list-toggle">Category level 3.1</a>
+                          <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.1.1</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.1.2</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.1.3</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.1.4</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.1.5</a></li>
+                          </ul>                          
+                        </li>
+                        
+                        <li>
+                          <a href="#" class="em-dropdown-list-toggle">Category level 3.2</a>
+                          <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.1</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.2</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.3</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.4</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.5</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.6</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.2.7</a></li>                        
+                          </ul>                          
+                        </li>
+                        
+                        <li>
+                          <a href="#" class="em-dropdown-list-toggle">Category level 3.3</a>
+                          <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.3.1</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.3.2</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.3.3</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.3.4</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.3.5</a></li>
+                            <li><a href="#" class="em-dropdown-choice">Category item 3.3.6</a></li>
+                          </ul>                          
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="em-dropdown-list-toggle">Category item 4</a>
+                      <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.1</a></li>
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.2</a></li>
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.3</a></li>
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.4</a></li>
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.5</a></li>
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.6</a></li>
+                        <li><a href="#" class="em-dropdown-choice">Category item 4.7</a></li>                        
+                      </ul>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </div>
+              
+            </div>
+         
+         </fieldset>
+         
+         <fieldset>
+            <legend>Category picker</legend>
+            <p>Category picker is a example of multiple category dropdown, but to use with possibility to all categories from a list</p>
+            <p>To distinguish it from multiple dropdown add class <code>category-picker</code> to select.</p>
+            <p>The HTML code of dropdown is slightly different, so please take care of this when implementing.<p>
+            <div class="category-picker">
+              <select name="search_category" id="id_search_category" class="multiple-dropdown category-picker" placeholder="Please select category">
+		            <optgroup label="Category item 1">
+		              <option value="cat-1.1">Category item 1.1</option>
+		              <option value="cat-1.2">Category item 1.2</option>
+		              <option value="cat-1.3">Category item 1.3</option>
+		              <option value="cat-1.4">Category item 1.4</option>
+		            </optgroup>
+		            <optgroup label="Category item 2">
+		              <option value="cat-2.1">Category item 2.1</option>
+		              <option value="cat-2.2">Category item 2.2</option>
+		              <option value="cat-2.3">Category item 2.3</option>
+		              <option value="cat-2.4">Category item 2.4</option>
+		              <option value="cat-2.5">Category item 2.5</option>
+		              <option value="cat-2.6">Category item 2.6</option>
+		              <option value="cat-2.7">Category item 2.7</option>			              
+		            </optgroup>
+		            <optgroup label="Category item 3">
+		              <option value="cat-3.1">Category item 3.1</option>
+		              <option value="cat-3.2">Category item 3.2</option>
+		              <option value="cat-3.3">Category item 3.3</option>			              
+		            </optgroup>			            
+		          </select>      
+              <div class="em-dropdown hidden em-dropdown-collapsed">
+                <div class="em-dropdown-current-choice">
+                  <span class="em-dropdown-value">Choose category from the list</span>
+                  <span class="em-dropdown-toggle">
+                    <b class="em-dropdown-caret"></b>
+                  </span>
+                </div>
+                <ul class="em-dropdown-list">
+                  <li>
+                    <a href="#" class="em-dropdown-choice">Category item 1</a>
+                    <a href="#" class="em-dropdown-list-toggle"></a>
+                    <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-1.1">Category item 1.1</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-1.2">Category item 1.2</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-1.3">Category item 1.3</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-1.4">Category item 1.4</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#" class="em-dropdown-choice"  data-value="cat-2">Category item 2</a>
+                    <a href="#" class="em-dropdown-list-toggle"></a>
+                    <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.1">Category item 2.1</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.2">Category item 2.2</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.3">Category item 2.3</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.4">Category item 2.4</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.5">Category item 2.5</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.6">Category item 2.6</a></li>
+                      <li><a href="#" class="em-dropdown-choice" data-value="cat-2.7">Category item 2.7</a></li>                        
+                    </ul>                      
+                  </li>
+                  <li>                      
+                    <a href="#" class="em-dropdown-choice" data-value="cat-3">Category item 3</a>
+                    <a href="#" class="em-dropdown-list-toggle"></a>
+                    <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                      <li>
+                        <a href="#" class="em-dropdown-choice" data-value="cat-3.1">Category level 3.1</a>
+                        <a href="#" class="em-dropdown-list-toggle"></a>
+                        <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.1.1">Category item 3.1.1</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.1.2">Category item 3.1.2</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.1.3">Category item 3.1.3</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.1.4">Category item 3.1.4</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.1.5">Category item 3.1.5</a></li>
+                        </ul>                          
+                      </li>
+                      
+                      <li>
+                        <a href="#" class="em-dropdown-choice" data-value="cat-3.2">Category level 3.2</a>
+                        <a href="#" class="em-dropdown-list-toggle"></a>
+                        <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.1">Category item 3.2.1</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.2">Category item 3.2.2</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.3">Category item 3.2.3</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.4">Category item 3.2.4</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.5">Category item 3.2.5</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.6">Category item 3.2.6</a></li>
+                          <li><a href="#" class="em-dropdown-choice" data-value="cat-3.2.7">Category item 3.2.7</a></li>                        
+                        </ul>                          
+                      </li>
+                      
+                      <li>
+                        <a href="#" class="em-dropdown-choice" data-value="cat-3.3">Category level 3.3</a>
+                        <a href="#" class="em-dropdown-list-toggle"></a>
+                        <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                          <li><a href="#" class="em-dropdown-choice">Category item 3.3.1</a></li>
+                          <li><a href="#" class="em-dropdown-choice">Category item 3.3.2</a></li>
+                          <li><a href="#" class="em-dropdown-choice">Category item 3.3.3</a></li>
+                          <li><a href="#" class="em-dropdown-choice">Category item 3.3.4</a></li>
+                          <li><a href="#" class="em-dropdown-choice">Category item 3.3.5</a></li>
+                          <li><a href="#" class="em-dropdown-choice">Category item 3.3.6</a></li>
+                        </ul>                          
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#" class="em-dropdown-choice"  data-value="cat-3.4">Category item 4</a>
+                    <a href="#" class="em-dropdown-list-toggle"></a>                    
+                    <ul class="em-dropdown-list-collapsed em-dropdown-level-1 em-dropdown-nested-list">
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.1</a></li>
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.2</a></li>
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.3</a></li>
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.4</a></li>
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.5</a></li>
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.6</a></li>
+                      <li><a href="#" class="em-dropdown-choice">Category item 4.7</a></li>                        
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+         
+         
+          </fieldset>
+          
+          <fieldset>
+            
+            <legend>Color picker</legend>
+            
+            <p>Color picker works similar to category dropdown. Takes normal select and hidden UI element to generate color picker.</p>
+          
+            
+            <div class="control-group">
+              <label class="control-label">Pick up some color:</label>
+              
+              <div class="controls">
+                
+                <select name="some-color" id="some-color" class="color-picker">
+                  <option>White</option>
+                  <option>LightGrey<option>
+                  <option>Grey<option>
+                  <option>Black<option>
+                  <option>SaddleBrown</option>
+                  <option>Brown</option>
+                  <option>Orange</option>
+                  <option>Yellow</option>
+                  <option>Ivory</option>
+                  <option>OliveDrab</option>
+                  <option>Olive</option>
+                  <option>Green</option>
+                  <option>LimeGreen</option>
+                  <option>Lime</option>
+                  <option>LightCyan</option>
+                  <option>Turquoise</option>
+                  <option>DeepSkyBlue</option>
+                  <option>Blue</option>
+                  <option>Navy</option>
+                  <option>Purple</option>
+                  <option>Orchid</option>
+                  <option>Pink</option>
+                  <option>Coral</option>
+                  <option>Red</option>
+                </select>
+                <div class="em-colorpicker hidden em-colorpicker-collapsed">
+                  <div class="em-colorpicker-current-choice">
+                    <span class="em-colorpicker-value">Choose color from the list</span>
+                    <span class="em-colorpicker-toggle">
+                      <b class="em-colorpicker-caret"></b>
+                    </span>
+                  </div>  
+                  <ul class="em-colorpicker-list clearfix">
+                    
+                    <li><a href="#" data-value="White">White</a></li>
+                    <li><a href="#" data-value="LightGrey">LightGrey</a></li>
+                    <li><a href="#" data-value="Grey">Grey</a></li>                    
+                    <li><a href="#" data-value="Black">Black</a></li>
+                    
+                    <li><a href="#" data-value="SaddleBrown">SaddleBrown</a></li>
+                    <li><a href="#" data-value="Brown">Brown</a></li>
+                                                           
+                    <li><a href="#" data-value="Orange">Orange</a></li>                    
+                    
+                    <li><a href="#" data-value="Yellow">Yellow</a></li>
+                    <li><a href="#" data-value="Ivory">Ivory</a></li>
+                     
+                     
+                    
+                    <li><a href="#" data-value="OliveDrab">OliveDrab</a></li>
+                    <li><a href="#" data-value="Olive">Olive</a></li>
+                    <li><a href="#" data-value="Green">Green</a></li>
+                    <li><a href="#" data-value="LimeGreen">LimeGreen</a></li>                     
+                    <li><a href="#" data-value="Lime">Lime</a></li>
+                    
+                    <li><a href="#" data-value="LightCyan ">LightCyan </a></li>
+                    <li><a href="#" data-value="Turquoise">Turquoise</a></li>
+                    <li><a href="#" data-value="DeepSkyBlue">DeepSkyBlue</a></li>
+                     
+                    <li><a href="#" data-value="Blue">Blue</a></li>
+                    <li><a href="#" data-value="Navy">Navy</a></li>
+                     
+                    <li><a href="#" data-value="Purple">Purple</a></li>
+                    <li><a href="#" data-value="Orchid">Orchid</a></li>                  
+                    <li><a href="#" data-value="Pink">Pink</a></li>
+                    <li><a href="#" data-value="Coral">Coral</a></li>
+                    <li><a href="#" data-value="Red">Red</a></li>
+                    
+                    
+                    
+                    
+                    
+                  </ul>                  
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </fieldset>
+          
+          
+          <fieldset>
+            <legend>Datepicker</legend>
+            
+            <div class="control-group">
+              <label class="control-label" for="reservation">Select date:</label>
+              <div class="controls">
+                <div class="input">
+                  <input type="text" class="date-picker" name="reservation" id="reservation" />
+                </div>
+              </div>
+            </div>   
+            
+            
+            <div class="control-group">
+              <label class="control-label" for="reservation">Select date range:</label>
+              <div class="controls">
+                <div class="input">
+                  <input type="text" class="daterange-picker" name="reservation" id="reservation" />
+                </div>
+              </div>
+            </div>            
+          
+            <p>You can also use datepicker as dropdown choice, this is rather custom solution - so it require bit of javascript to work with page elements.</p>
+            
+            <div class="btn-group date-dropdown">
+              <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="date-label">From last week</span>
+                <!-- placeholder to keep selected value -->
+                <input type="hidden" class="date-dropdown-value date-value" name="date-value" />
+                <span class="caret"></span>
+              </a>
+               <input type="text" class="date-value" id="sample" name="date-value" placeholder="This input is just for demo purposes"/>
+              <ul class="dropdown-menu">
+                <li><a href="#">Last week</a></li>
+                <li><a href="#">Last 2 weeks</a></li>
+                <li><a href="#">Last month</a></li>
+                <li><a href="#">Last 2 months</a></li>
+                <li><a href="#" class="custom">Choose custom date range</a></li>
+              </ul>
+            </div>
+            
+            <p>Note - the input is just only showing selected date (it should be hidden on normal usage)
+                     
+          </fieldset>
+          
+        </form>
+      
+      
+      </div>
+    
+      <div class="secondary-content">
+        <div class="box">
+          <h2>Secondary content box#1</h2>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>        
+        </div>    
+      </div>
+    </div>
+      
+  </div>
+  <div class="footer-wrapper">
+    <footer role="contentinfo" class="bottom">
+      <div class="navigational">
+        <nav>
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Shopping</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Selling</h3>
+          <ul>
+            <li><a href="#">Natural</a></li>
+            <li><a href="#">Energy Efficient</a></li>
+            <li><a href="#">Vegan</a></li>
+            <li><a href="#">Biodegrable</a></li>
+            <li><a href="#">Recycled</a></li>
+            <li><a href="#">Organic</a></li>
+            <li><a href="#">Fairly Traded</a></li>
+          </ul>
+        </nav>
+        <nav class="connect">
+          <h3>Connect</h3>
+          <ul>
+            <li class="twitter"><a href="#">Twitter</a></li>
+            <li class="facebook"><a href="#">Facebook</a></li>
+            <li class="pinterest"><a href="#">Pinterest</a></li>
+          </ul>
+        </nav>      
+      </div>
+      <div class="legal">
+        <p class="copy">© Etiska Ltd 2012 | Company No: 06829511</p>
+        <nav>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">About</a>
+          <a href="#">Press</a>
+          <a href="#">Contact</a>      
+        </nav>
+      </div>
+    </footer>
+  </div>
+  
+  
+  <div class="modal love-modal hide fade" id="loveListModal" tabindex="-1" role="dialog" aria-labelledby="Love Modal" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Choose which Love list to save</h3>
+    </div>
+    <form class="modal-form" method="#">
+      <div class="modal-body" style="min-height: 140px;">
+        <p>Save your item into an existing list:</p>
+        <p>
+          <select class="select lovelist-choice" style="width: 300px;">
+            <option value="1233">Inspiring Eco products from Europe</option>
+            <option value="1234">Things for funny times.</option>
+            <option value="new">...or create new list now</option>
+          </select>
+        </p>
+      
+        <div class="hide reveal-list-form">
+          <h3 class="headline">Add new love lists</h3>
+
+          <p><input type="text" maxlength="30" name="name" id="id_name" placeholder="Give your love list a name..."></p>
+          <p>
+            <textarea id="id_desc" name="desc" rows="4" style="height:6em" placeholder="Add some good description...."></textarea>
+            <a href="#">See examples</a>
+          </p>
+        
+          <p><label class="inline" for="id_public">
+              <input type="checkbox" value="1" name="id_public" id="id_public" checked="checked">
+              Make my list public so others can see it
+            </label>
+          </p>
+        </div>
+      </div>
+    
+      <div class="modal-footer">
+         <input type="submit" value="Save it" class="btn btn-primary btn-large">
+      </div>
+    </form>
+  </div>
+  
+  
+  <div class="modal love-modal hide fade" id="loveModal" tabindex="-1" role="dialog" aria-labelledby="Love Modal" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Create your love list</h3>
+    </div>
+    <form class="modal-form" method="#">
+      <div class="modal-body">
+        <p>Nearly there! Now just put your product into a list and you'll be able to find them later & share them with others. We call these "love lists".</p>
+
+        <p><input type="text" maxlength="30" name="name" id="id_name" placeholder="Give your love list a name..."></p>
+        <p>
+          <textarea id="id_desc" name="desc" rows="4" style="height:6em" placeholder="Add some good description...."></textarea>
+          <a href="#">See examples</a>
+        </p>
+        
+        <p><label class="inline" for="id_public">
+            <input type="checkbox" value="1" name="id_public" id="id_public" checked="checked">
+            Make my list public so others can see it
+          </label>
+        </p>
+      </div>
+    
+      <div class="modal-footer">
+         <input type="submit" value="Save it" class="btn btn-primary btn-large">
+      </div>
+    </form>
+  </div>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="../bootstrap/js/2.1/bootstrap.min.js"></script>
+  <script src="../js/vendor/select2-3.1/select2.min.js"></script>
+  <script src="../js/vendor/jquery.jtruncate.min.js"></script>
+  <script src="../js/vendor/datepicker/js/date.js"></script>
+  <script src="../js/vendor/datepicker/js/datepicker.js"></script>
+  <script src="../js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js"></script>
+  <script src="../js/ecomarket.js?v=3"></script>
+</div></div></body>
+</html>

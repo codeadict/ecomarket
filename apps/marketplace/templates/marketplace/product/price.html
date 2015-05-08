@@ -1,0 +1,24 @@
+<fieldset class="price">
+  {% with field=form.amount %}
+  <legend>Price</legend>
+  <div class="control-group">
+    <label
+       for="{{field.auto_id}}"
+       class="control-label"></label>
+    <div class="controls">
+      £
+      {{field}}
+      GBP
+      {{field.errors}}
+
+      <div class="alert alert-inline alert-info">
+        <p><strong> Why is this in pounds?</strong> <a href="http://help.ecomarket.com/customer/portal/articles/447274" target="_blank">Read more</a>.</p>
+        <div class="alert-actions">
+          <a href="http://help.ecomarket.com/customer/portal/articles/447274" class="icon-help">?</a>
+        </div>                  
+      </div>
+    </div>
+  </div>
+  {% endwith %}  
+</fieldset>
+

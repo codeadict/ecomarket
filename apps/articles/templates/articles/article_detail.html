@@ -1,0 +1,52 @@
+{% extends 'articles/base.html' %}
+
+{% load url from future %}
+{% load i18n %}
+{% load seo %}
+{% load static from staticfiles %}
+{% load breadcrumb %}
+{% load social_tags %}
+
+{% block title %}{% trans article.title %}{% endblock %}
+{% block meta-keywords %}{{ article.keywords|escape }}{% endblock %}
+{% block meta-description %}{{ article.description|escape }}{% endblock %}
+
+{% block extra-head %}
+{{ block.super }}
+	<meta name="sailthru.bloggerusername" content="{{article.author.username}}" />
+	<meta name="sailthru.bloggeravatar" content="{% if article.author.get_profile.avatar_50 %}{{article.author.get_profile.avatar_50}}{% else %}{% static 'images/avatar/50x50/default.png' %}{% endif %}" />
+	<meta name="sailthru.bloggerprofileurl" content="{% url 'public_profile' article.author.username %}" />
+    <meta name="sailthru.bloggerid" content="{{ article.author.id }}" />
+{% endblock %}
+
+{% block articles-content %}
+{% generate_breadcrumb article %}
+<div class="single-entry">
+{% include 'articles/_article_content.html' %}
+{% with object=article %}
+<div class="entry-comments" id="comments">
+    {% if user.is_authenticated %}
+    <p class="pull-right" style="line-height: 32px">{% include 'comments/_add_comment_link.html' %}</p>
+    {% endif %}
+    <h2>Comments:</h2>
+    {% include 'comments/_comments.html' %}
+</div>
+{% endwith %}
+</div>
+{% if not user.is_authenticated %}
+    {% include 'mailing_lists/fragments/capture_slider.html' %}
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% endblock %}
+
+{% block js %}{{block.super}}
+<script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+{% share_script article %}
+{% if not user.is_authenticated %}
+    <script type="text/javascript" src="{% static 'js/email_capture_slider.js' %}"></script>
+{% endif %}
+{% endblock %}
+

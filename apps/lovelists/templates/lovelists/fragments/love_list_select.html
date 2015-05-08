@@ -1,0 +1,55 @@
+{% load url from future %}
+{% load alerts %}
+
+<div class="modal love-modal hide fade" id="loveListModal" tabindex="-1" role="dialog" aria-labelledby="Love Modal" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		{% if lists.count %}
+        <h3 id="myModalLabel">Choose which love list to save</h3>
+		{% else %}
+        <h3 id="myModalLabel">Create your love list</h3>
+		{% endif %}
+    </div>
+    <form class="form modal-form" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_slug" value="{{ product_slug }}" />
+        <div class="modal-body" style="min-height: 140px;">
+			{% if lists.count %}
+            <p>Save your item into an existing list:</p>
+            <p>
+            <select name="lovelist_choice" class="select lovelist-choice" style="width: 300px;">
+                {% for love_list in lists %}
+                <option value="{{ love_list.identifier }}">{{ love_list.title }}</option>
+                {% endfor %}
+                <option value="new"{% if form.errors %} selected="selected"{% endif %}>...or create new list now</option>
+            </select>
+            </p>
+
+            <div class="{% if form.errors %}expanded{% else %}hide{% endif %} reveal-list-form">
+                <h3 class="headline">Add new love lists</h3>
+			{% else %}
+            <p>Nearly there! Now just put your product into a list and you'll be able to find them later &amp; share them with others. We call these "love lists".</p>
+			{% endif %}
+            {% if form.errors %}
+            {% alert error "Sorry, there were a few mistakes:" "These need fixing before we can save this product for you. Please scroll down and you can see the problems highlighted in red." http://help.ecomarket.com %}
+            {% endif %}
+
+                <p>{{ form.title }}</p>{{ form.title.errors }}
+                <p>{{ form.description }}</p>{{ form.description.errors }}
+                <p>{% include "main/category_dropdown_include.html" with field=form.primary_category %}</p>{{ form.primary_category.errors }}
+                <p>{% include "main/category_dropdown_include.html" with field=form.secondary_category %}</p>{{ form.secondary_category.errors }}
+                <p>{% include "main/category_dropdown_include.html" with field=form.tertiary_category %}</p>{{ form.tertiary_category.errors }}
+                <p>
+                    {{ form.is_public }}
+                    <label class="inline" for="id_is_public">Make my list public so others can see it</label>
+                </p>
+            {% if lists.count %}
+			</div>
+			{% endif %}
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" data-loading-text="Loading..." class="btn btn-primary btn-large">Save it</button>
+        </div>
+    </form>
+</div>

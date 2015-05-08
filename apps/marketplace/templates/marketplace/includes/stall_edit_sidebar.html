@@ -1,0 +1,51 @@
+<div class="secondary-content">
+
+  <div class="box">
+    <h2>Add a product</h2>
+    <p>Add a product to your stall.</p>
+  </div>
+
+    <div class="box box-blue">
+        <h2>Stall Completeness</h2>
+        <div class="completeness-box">
+            <div class="completeness">
+              <span class="value">{{ stall.completeness }}%</span>
+              <em style="height:{{ stall.completeness }}%"></em>
+            </div>
+            <strong class="slogan">Complete stalls sell more products!</strong>
+        </div>
+
+        <ul class="side-list">
+            <li class="done">Here is one item done</li>
+            <li><a href="#">Here is another item</a></li>
+            <li><a href="#">Let me see third item</a></li>
+            <li><a href="#">And last one item here</a></li>
+        </ul>
+    </div>
+
+    <div class="box box-blue">
+        <h2>Stall Owner Score</h2>
+        <div class="score-box score-high">
+            <div class="score"><!-- can be low, medium or hight -->
+              <span class="value high">You have high score!</span>
+            </div>
+            <strong class="slogan">Higher scores mean higher sales!</strong>
+        </div>
+
+        <ul class="side-list">
+            <li class="done">Here is one item done</li>
+            <li><a href="#">Here is another item</a></li>
+            <li><a href="#">Let me see third item</a></li>
+            <li><a href="#">And last one item here</a></li>
+        </ul>
+    </div>
+
+    <div class="box box-blue">
+        <h2>Store URL</h2>
+        <p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="share-url">
+            <input type="text" value="http://{{ CURRENT_SITE.domain }}{{ stall.get_absolute_url }}"><a href="#" class="btn btn-flat btn-blue clipboard">copy</a>
+        </div>
+    </div>
+
+</div>

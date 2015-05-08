@@ -1,0 +1,34 @@
+body{
+  padding: 0 !important;
+  width:100%;
+  min-width: 980px;
+  font-size: 13px;
+}
+
+div.footer-wrapper{
+  background: #4E4639 url('../images/backgrounds/footer-fluid.jpg') 0 100% repeat-x;
+}
+
+div.page-wrapper, footer.bottom{
+  width: 980px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+div.body-outer-wrap{
+  background:#fff url('../images/backgrounds/body.jpg') repeat;
+}
+
+div.body-inner-wrap{
+  background: transparent url('../images/backgrounds/header.jpg') repeat-x;
+}
+
+div.body-inner-wrap-large{
+  background: transparent url('../images/backgrounds/header_extended.jpg') repeat-x;
+}
+
+.free-shipping-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+}

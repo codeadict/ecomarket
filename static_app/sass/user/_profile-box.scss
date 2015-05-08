@@ -1,0 +1,45 @@
+.user-profile-box{
+  
+  .photo{
+    @include white-box(10px)
+  }
+  
+  .profile-actions{
+    margin: 20px 0 20px 0;
+    
+    .btn-flat{
+      margin-bottom: 10px;
+      display: block;
+      text-align: left;
+      position: relative;
+      
+      i.icon{
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        
+        &.icon-message{
+          width:16px;
+          background: url('../images/icons/ui-icons.png') -0px 3px no-repeat;
+        }
+        &.icon-stall{
+          width: 16px;
+          background: url('../images/icons/ui-icons.png') -0px -27px no-repeat;
+        }
+      }
+      
+      
+    }
+  }
+  
+  .bio{
+    border-top: 1px solid $subtle_border;
+    margin: 10px 0 0 0;
+    padding: 10px 0 0 0; 
+    
+    p{
+      color: $subtle_text;
+    }
+  }
+  
+}

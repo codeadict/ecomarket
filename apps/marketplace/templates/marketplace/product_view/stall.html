@@ -1,0 +1,43 @@
+<!-- bronze box with stall info -->
+<div class="box-inset box-bronze">
+  <h2 class="with-link"><a href="{{ stall.get_absolute_url }}">The Stall</a></h2>
+
+  <div class="box stall-box">
+
+    <div class="stall-header">
+      <div class="stall-image">
+        <a href="{{ stall.get_absolute_url }}"><img src="{{ owner_profile.avatar_50 }}" alt="{{ stall.title|capfirst }}" /></a>
+      </div>
+      <a class="stall-name" href="{{ stall.get_absolute_url }}">{{ stall.title|capfirst }}</a>
+      <div class="stall-description">
+        <p>{{ stall.description|linebreaksbr }}</p>
+      </div>
+    </div><!-- .stall-header -->
+
+    <div class="stall-products">
+      <h4>More From This Stall ({{ stall_products_live.count }})</h4>
+      <ul class="products cf">
+        {% for product in stall_products_live|slice:":5" %}
+        <li>
+          <a href="{{ product.path }}"><img src="{{ product.image.url_50 }}" width="50" height="50" alt="{{product.title}}" ></a>
+	      </li>
+        {% empty %}
+        <p>There are no products in this stall yet.</p>
+        {% endfor %}
+      </ul>
+    </div><!-- .stall-products -->
+
+    {% with video=stall.get_welcome_video %}
+    {% if video %}
+    <div class="stall-video">
+      <h4>Stall Owner video</h4>
+      <div class="video">
+        <video width="290" height="155">
+          <source src="{{ video.url }}" type="video/mp4">
+        </video>
+      </div>
+    </div><!-- .stall-video -->
+    {% endif %}
+    {% endwith %}
+  </div>
+</div>

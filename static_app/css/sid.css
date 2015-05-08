@@ -1,0 +1,37 @@
+/* Messaging: styles for compose.html */
+.content-message {
+    margin: 0 auto;
+    width: 295px;
+}
+.content-filter .content-message li {
+    display: block;
+}
+.content-filter .content-message form.form input[type=text] {
+  width: 100%;
+}
+
+/* Messaging: styles for _message_reply_detail.html */
+.messages li .message-box.last-message {
+    border: 1px solid #d47979;
+}
+.messages li .message-box.last-message:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 22px;
+    background: url('../images/icons/message-tick-red.png') 0 0 no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 57px;
+}
+
+/* My Account: Account > connected accounts;  */
+.account a.fb-register{
+    display: inline-block;
+    width: 185px;
+    height: 37px;
+    margin: 0 auto;
+    background: url('../images/buttons/sign-in-with-facebook.png') 0 0 no-repeat;
+    text-indent: -9999px;
+    opacity: 0.9;
+}

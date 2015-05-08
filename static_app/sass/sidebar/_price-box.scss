@@ -1,0 +1,151 @@
+.price-box{
+  
+  position: relative;
+  
+  .product-price{
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  
+  .price{
+    font-size: 17px;
+    font-weight: 600;
+  }
+  
+  .old-price{
+    text-decoration: line-through;
+  }
+  
+  .special-price{
+    color: #C8652B;
+    font-weight: 600;
+  }
+  
+  .approximation{
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    
+    a{
+      color:#7C913C;
+      text-decoration: underline;
+    }
+  }
+  
+  
+  .love{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border-left: 1px solid #E5E5E5;
+    height: 40px;
+    padding: 0 10px 0 15px;
+    color: #C4C4C4;
+    text-align: center;
+    
+    
+    a{
+      
+      cursor: pointer;
+      
+      i.icon-love{
+        width: 28px;
+        height: 26px;
+        background: url('../images/icons/love.png') 0 0 no-repeat;
+      }
+      
+      
+      &:hover{
+        
+        i.icon-love{
+          background: url('../images/icons/love.png') -73px 0 no-repeat;
+        }
+      }
+    }
+    
+    span{
+      color: #C4C4C4;
+      display: block;
+     
+    }
+  }
+  
+  .actions{
+    padding: 10px 0;
+    border-bottom: 1px solid #E5E5E5;
+    
+    .btn{
+      width: 150px;
+      padding-left: 10px;
+      padding-right: 10px;      
+    }
+  }
+  
+  table.stock{
+    
+    margin: 10px 0 0 0;
+    
+    border-collapse: collapse;
+    border: none;
+    text-align: center;
+    
+    th{
+      background: #66A7D0;
+      color: #fff;
+      padding: 2px 0;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+      width: 33.33333%;
+      text-align: center;
+      border: none;      
+      
+      &:first-child{
+        border-radius: 3px 0 0 0;
+      }
+      &:last-child{
+        border-radius: 0 3px 0 0;
+      }
+    }
+    
+    td{
+      text-align: center;
+      text-transform: uppercase;
+      background: #F4F4F4;
+      border: none;
+      padding: 7px 0 3px 0;
+      vertical-align: middle;
+      line-height: 24px;
+      strong{
+        font-weight: 500;
+        font-size: 24px;
+      }
+    }
+    
+    tfoot{
+      
+      td{
+        background: #DEDEDE;
+        text-transform: none;
+        padding: 2px 0;
+        
+        &:first-child{
+          border-radius: 0 0 0 3px;
+        }
+        &:last-child{
+          border-radius: 0 0 3px 0;
+        }
+      }
+      
+      a.help{
+        position: relative;
+        top: -2px;
+        left: 5px;
+      }
+      
+    }
+  }
+  
+}

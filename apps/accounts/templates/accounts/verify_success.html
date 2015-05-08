@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load url from future %}
+
+{% block mixpanel %}
+{% endblock %}
+
+{% block content %}
+    <div class="content cf single-content">
+        <div class="primary-content">
+
+            <div class="page-header">
+              <h1>Verification Succcessful</h1>
+            </div>
+
+            <div class="alert alert-block alert-success">
+                <h4 class="alert-heading">Awesome!</h4>
+                <p>Thank you for verifying your account. Your account is now active and you are now logged in.</p>
+            </div>
+
+            {% if not user.get_profile.is_seller %}
+            <p>Choose from the options below. If you don't want to create a
+                stall owner account, please choose the "No, I'm not a stall owner" option.</p>
+
+            <fieldset class="form-actions">
+                <a class="btn btn-secondary btn-large" href="{% url 'home' %}">No, I'm not a stall owner</a>
+                <a class="btn btn-primary btn-large" href="{% url 'create_stall' %}">Become a stall owner</a>
+            </fieldset>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock content %}

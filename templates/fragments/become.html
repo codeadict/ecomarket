@@ -1,0 +1,44 @@
+{% if order_to_track %}
+<script type="text/javascript">
+var _roi = _roi || [];
+// Step 1: add base order details
+_roi.push(['_setMerchantId', '517541']); // required
+_roi.push(['_setOrderId', '{{ order_to_track.id }}']); // unique customer order ID
+_roi.push(['_setOrderAmount', '{{ order_to_track.total }}']); // order total (including VAT)
+_roi.push(['_setOrderNotes', '']); // notes on order, up to 50 characters
+// Step 2: add every item in the order
+// where your e-commerce engine loops through each item in the cart and prints out _addItem for each
+// please note that the order of the values must be followed to ensure reporting accuracy
+{% for li in order_to_track.line_items.all %}
+_roi.push(['_addItem', 
+'', // Merchant sku
+'{{ li.product.title }}', // Product name
+'', // Category id
+'', // Category name
+'{{ li.price }}', // Unit price
+'{{ li.quantity }}' // Item quantity
+]);
+{% endfor %}
+// Step 3: submit transaction to ECN ROI tracker
+_roi.push(['_trackTrans']);
+</script>
+<script type="text/javascript" src="https://stat.dealtime.com/ROI/ROI2.js"></script>
+
+{% comment %}Become.com ROI Tracker{% endcomment %}
+<script type="text/javascript">
+var become_merchant_id = 'B9A55F49CEA34F0B';
+var become_order_num = '{{ order_to_track.id }}';
+var become_purchased_items = new Array();
+// adding cart items FOR EACH PURCHASED ITEM...
+// add cart item
+{% for li in order_to_track.line_items.all %}
+var become_item = new Object();
+become_item.productid = '{{ li.product.id }}';
+become_item.category = '{{ li.product.category_tree }}';
+become_item.price = '{{ li.price }}';
+become_item.quantity = {{ li.quantity }};
+become_purchased_items.push(become_item);
+{% endfor %}
+</script> <script type="text/javascript" language="javascript" src="https://partner.become.com/roi-tracker2/conversion.js"></script>
+<noscript><img src="https://partner.become.com/roi-tracker2/t.gif?merchantid=B9A55F49CEA34F0B&order_id=ORDER_NUMBER&order_value=ORDER_VALUE" style="display:none;border:0;"/></noscript> 
+{% endif %}

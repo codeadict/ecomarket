@@ -1,0 +1,29 @@
+{% extends "base_modal.html" %}
+{% load url from future %}
+
+{% block modal_title %}Update email address{% endblock %}
+
+{% block modal_content %}
+<p>Your address on our records is <strong>{{ email }}</strong>. If this is wrong, please use this form to change it:</p>
+<form class="form" id="change_address_form" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {% with field=form.email %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+        {% endwith %}
+    </fieldset>
+</form>
+{% endblock %}
+
+{% block modal_footer %}
+<div class="pull-right">
+    <a class="btn btn-primary" href="#" onclick="$('#change_address_form').submit()">Save</a>
+    <a class="btn" href="{% url 'logout' %}">Log out</a>
+</div>
+{% endblock %}

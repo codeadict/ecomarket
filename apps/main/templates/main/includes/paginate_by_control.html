@@ -1,0 +1,13 @@
+<div class="pagination per-page pagination-right pull-right">
+    <span class="pagination-label">Show:</span>
+    <ul>
+        {% for option in paginate_by_options %}
+        {% if option.active %}
+        <li class="active"><a href="{{ option.activate_url }}">{{ option.value }}</a></li>
+        {% else %}
+        <li><a href="{{ option.activate_url }}">{{ option.value }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+

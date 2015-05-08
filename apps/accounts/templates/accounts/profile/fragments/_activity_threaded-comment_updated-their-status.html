@@ -1,0 +1,7 @@
+{% extends 'accounts/profile/fragments/_activity_threaded-comment_base.html' %}
+
+{% block verb %} said{% endblock %}
+
+{% block body %}
+<div class="body-text">{{ action.action_object.comment }}</div>
+{% endblock %}

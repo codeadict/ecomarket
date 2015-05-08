@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="content cf primary-left checkout-page">
+
+      <div class="primary-content-wrap">
+
+        <div class="alert address-form hide">
+            <form class="form form-horizontal" action="" method="POST">{% csrf_token %}
+                <fieldset>
+                    {% include 'fragments/form_snippet.html' with form=address_form only %}
+                </fieldset>
+                <input type="submit" value="Confirm Address" class="btn btn-primary btn-large">
+            </form>
+        </div>
+
+        <div class="content-box-inset">
+          <h2>We're processing your order right now!</h2>
+            <div class="content-box pending">
+                <p id="payment_status_message">
+                    Hold tight! We are just processing your order now and will confirm this for you in just a moment.
+                </p>
+                <img id="process_indicator" src="{% static 'images/loading.gif' %}">
+                <div id="phone_input" style="display:none">
+                  <form action="#" class="form form-inline">
+                    <fieldset class="cf">
+                      <input id="phone_number" type="text" placeholder="Your phone number..."/>
+                      <input id="send_button" class="btn btn-flat btn-green" type="button" value="send" disabled/>
+                    </fieldset>
+                  </form>
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+
+      <div class="secondary-content">
+        {% include 'purchase/includes/howto_snippets.html' %}
+      </div>
+
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        var check_timer;
+
+        function check_payment_status() {
+            var request = $.ajax({
+              url: "{% url 'check_payment_status' payment_id %}",
+              type: "get",
+            });
+
+            request.done(function(response, textStatus, jqXHR) {
+                if (response.status == true) {
+                    clearInterval(check_timer);
+                    window.location = response.success_url;
+                }
+            });
+
+            request.fail(function(jqXHR, textStatus, errorThrown) {
+              console.log("error checking payment status");
+            });
+        }
+
+        function stop_payment_check() {
+            clearInterval(check_timer);
+            $('#payment_status_message').text(
+              "We're very sorry but it seems that there was a problem when taking payment for your order. " +
+              "If you let us know your best contact number below (with country code if outside the UK)" +
+              "a member of our team will give you a call to try to resolve this for you as quickly as possible:"
+            );
+            $('#process_indicator').hide();
+            $('#phone_input').show();
+            notify_about_timeout();
+        }
+
+        function notify_about_timeout() {
+          var request = $.ajax({
+            url: "{% url 'payment_check_timeout' payment_id %}",
+            type: "get",
+          });
+
+          request.done(function(response, textStatus, jqXHR) {
+
+          });
+
+          request.fail(function(jqXHR, textStatus, errorThrown) {
+            console.log("error checking payment status");
+          });
+        }
+
+        function store_phone_number() {
+          var phone_number_sel = $('#phone_number');
+          var phone_number = phone_number_sel.val();
+
+          $('#send_button').attr('disabled', 'disabled');
+
+          var data = {
+            'phone_number': phone_number
+          };
+
+          var request = $.ajax({
+            url: "{% url 'store_phone_number' %}",
+            type: "post",
+            data: data,
+          });
+
+          request.done(function(response, textStatus, jqXHR) {
+            $('#phone_input').hide();
+            $('#payment_status_message').text(
+                "Thanks! We're sorry again that this order didn't go so smoothly for you, " +
+                "but we will be in touch to let you know why this happened."
+            );
+          });
+        }
+
+    $(document).ready(function () {
+      check_payment_status();
+      check_timer = setInterval(check_payment_status, 5000);
+      setTimeout(stop_payment_check, 31000);
+
+      $('#send_button').on('click', function(event) {
+        console.log("clicked, bitch");
+        store_phone_number();
+      });
+
+      $('#phone_number').keyup(function() {
+        var length = $('#phone_number').val().length;
+
+        if (length == 0) {
+            $('#send_button').attr('disabled', 'disabled');
+        } else {
+            $('#send_button').removeAttr('disabled');
+        }
+      });
+    });
+    </script>
+{% endblock %}

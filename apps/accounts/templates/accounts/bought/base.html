@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+
+{% block content %}
+
+{% url 'bought' as bought_url %}
+{% url 'bought_awaiting_feedback' as bought_awaiting_feedback_url %}
+{% url 'bought_feedback_given' as bought_feedback_given_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Product's I've bought</h2>
+    <nav class="section-tabs">
+      <ul class="nav nav-tabs">
+        <li class="{% if request.path|startswith:bought_url %}active{% endif %}">
+          <a class="has-badge"href="{{ bought_url }}">Bought</a>
+          <em class="badge">{{ request.user.orders.count }}</em>
+        </li>
+        {% comment %}
+        {# Disabled for 2.0 launch #}
+        <li class="{% if request.path|startswith:bought_awaiting_feedback_url %}active{% endif %}">
+          <a href="{{ bought_awaiting_feedback_url }}">AWAITING FEEDBACK</a>
+          {#<em class="badge">5</em>#}
+        </li>
+        <li class="{% if request.path|startswith:bought_feedback_given_url %}active{% endif %}">
+          <a href="{{ bought_feedback_given_url }}">FEEDBACK GIVEN</a>
+          {#<em class="badge">0</em>#}
+        </li>
+        {% endcomment %}
+      </ul>
+    </nav>
+      <div class="account-orders" >
+          <div class="sorter">
+              {{ created_tab.render }}
+              <span class="quantity">Qty</span>
+              <span class="price">Price</span>
+          </div>
+      </div>
+    {% block content_tab %}{% endblock content_tab %}
+  </div>
+
+  <div class="secondary-content">
+
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>
+
+</div>
+{% endblock content %}

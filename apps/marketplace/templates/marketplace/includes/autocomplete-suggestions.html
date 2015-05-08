@@ -1,0 +1,39 @@
+<div class="control-group separated{% if field.errors %} error{% endif %}">
+  <label
+     for="{{field.auto_id}}"
+     class="control-label">{{field.label}}:
+    {% if not field.field.required %}
+      <br/>
+      <em class="opt">(Optional)</em>
+    {% endif %}
+  </label>
+  <div class="controls">
+    <select class="m2m" multiple="multiple" name="{{field.name}}" id="{{field.auto_id}}">
+      {% for item in queryset %}
+        {% if item.id in field.value %}
+          <option selected="selected" value="{{item.title}}">{{item.title}}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <input
+       id="select-{{field.auto_id}}"
+       class="tags-autocomplete"
+       type="text"
+       autocomplete="off"
+       data-target="/products/taxonomy/"
+       data-type="{{field.label}}"
+       data-toggle="suggest"
+       placeholder="{{field.field.widget.attrs.placeholder}}" />
+    <div class="tags tags-editable tags-list">
+      {% for item in queryset %}
+        {% if item.id in field.value %}
+        <span class="tag">
+          <em data-value="{{item.title}}">{{item.title}}</em>
+          <a href="#" class="tag-remove"><i class="icon icon-remove-sign m2m-icon"></i></a>
+        </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {{field.errors}}
+  </div>
+</div>

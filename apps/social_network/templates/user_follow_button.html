@@ -1,0 +1,2 @@
+<a href="{% url follow_user user.pk  %}" class="{% if not_friends %}btn-follow{% else %}btn-follow btn-following{% endif %}"
+   data-user_id="{{ user.pk }}">{% if not_friends %}Follow{% else %}Following{% endif %}</a>

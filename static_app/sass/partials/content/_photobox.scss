@@ -1,0 +1,124 @@
+div.product-photos{
+  padding: 10px 0;
+  
+  .photo-slider{
+    position: relative;
+  }
+  
+  div.primary-photo{
+    @include white-box(9px 9px 10px 9px);
+    max-height: 554px;
+    width: 420px;
+    position: relative;
+    text-align: center;
+    
+    a{
+      display: table-cell;
+      max-height: 533px;
+      height: 435px;
+      width: 400px;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+    
+    span.overlay{
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;      
+      opacity: 0;
+      @include transition(opacity, 0.5s, ease-in-out);
+    }
+    
+    a:hover{
+      span.overlay{
+        background: url('../images/product/zoom.png') 50% 50% no-repeat;
+        opacity: 1;
+      }
+    }
+    
+  }
+  
+  div.side-photos{
+    width: 92px;
+    height: 455px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding:18px 0 20px 0;
+    background: #fff;
+    
+  }
+  
+  ul.photos-nav{
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    
+    li{
+      display: block;
+      margin: 0;
+      padding: 5px 0;
+    }
+    
+    a{
+      @include white-box(5px);
+      display: block;
+    }
+  }
+  
+  a.nav{
+    @include background(linear-gradient(#e6e6e6, #c6c6c6));
+    @include filter-gradient(#e6e6e6, #c6c6c6, vertical); 
+    border:1px solid #ccc;
+    display: block;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    width: 92px;
+    height: 20px;
+    cursor: pointer;
+    
+    &.nav-prev{
+      border-radius: 3px 3px 0 0;
+      top: 0;
+    }
+    
+    &.nav-next{
+      border-radius: 0 0 3px 3px;
+      bottom: 0;
+    }
+    
+    &:hover{
+      background: darken(#e0e0e0,10%)
+    }
+    
+    &.disabled{
+      @include opacity(0.5);
+      cursor: default;
+      background: #E0E0E0 !important;
+      border: 1px solid #e0e0e0;
+    }
+  }
+  
+  
+  // photos scrollable
+  
+  .photos-scrollable{
+    overflow: hidden;
+    position: relative;
+    height: 415px;
+    width: 92px;
+    
+    .items{
+      top: 0;
+      left: 0px;
+      position: absolute;
+      height: 9999px;
+    }
+  }
+  
+}

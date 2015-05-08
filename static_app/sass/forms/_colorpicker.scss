@@ -1,0 +1,260 @@
+.em-colorpicker{
+  
+  // width
+  width: 320px;
+  position: relative;
+  
+
+  .em-colorpicker-current-choice{
+    background: #fff;
+    @include background(linear-gradient(#ffffff, #eeeeee));
+    @include filter-gradient(#ffffff, #eeeeee, vertical);    
+    @include border-radius(4px);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #aaa;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: auto;
+    line-height: 28px;
+    padding: 0 0 0 8px;
+    color: #444;
+    text-decoration: none;
+    cursor: pointer;
+    
+    .em-colorpicker-toggle{
+      background: #ccc;
+      @include background(linear-gradient(#eeeeee, #cccccc));
+      @include filter-gradient(#eeeeee, #cccccc, vertical);        
+      @include border-radius(0 4px 4px 0);
+      border-left: 1px solid #aaa;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      height: 30px;
+      width: 26px;    
+
+      .em-colorpicker-caret{
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url("../js/vendor/select2-3.1/select2.png") no-repeat 4px 1px;
+      }
+    }
+    
+    
+  }
+  
+  &.em-colorpicker-expanded{
+    .em-colorpicker-current-choice{
+      @include border-radius(4px 4px 0 0);
+      @include background(linear-gradient(#eeeeee, #ffffff));
+      @include filter-gradient(#eeeeee, #ffffff, vertical);
+      border-bottom: none;
+      height: 28px;
+      
+      .em-colorpicker-toggle{
+        @include background(linear-gradient(#eeeeee, #ffffff));
+        @include filter-gradient(#eeeeee, #ffffff, vertical);
+        border: none; 
+        
+        .em-colorpicker-caret{
+          background: url("../js/vendor/select2-3.1/select2.png") no-repeat -14px 1px;
+        }
+               
+      }
+    }
+  }
+    
+  
+  .em-colorpicker-list{
+    @include list-reset;
+    display: none;
+    @include border-radius(0 0 4px 4px);
+    border: 1px solid #aaa;
+    border-top: none;
+    @include box-shadow(0 4px 5px rgba(0,0,0, 0.15));
+    padding: 1px 0;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 999;
+    top: 28px;    
+    width: 320px;
+    background: #fff;
+    
+    ul{
+      @include list-reset;    
+    }
+    
+    li{
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    
+    a{
+      float: left;
+      padding: 0;
+      margin: 4px 0 0 4px;
+      height: 32px;
+      width: 32px;
+      text-indent: -9999px;
+      @include border-radius(30px);
+      @include box-shadow(0 0 3px rgba(0,0,0, 0.2) inset);
+      background-image: url('../images/ui/color-pattern.png');
+      background-repeat: repeat;
+      text-decoration: none;
+      border: none;
+      @include transition(opacity, 0.3s, ease-in-out);
+      
+      &:hover{
+        @include opacity(0.8);
+        background-image: none;
+        @include box-shadow(0 0 3px rgba(0,0,0, 0.5) inset);
+      }       
+    }
+                
+  }
+  
+  &.em-colorpicker-expanded{
+    .em-colorpicker-list{
+      display: block;
+    }
+  }
+  
+}
+
+.m2m-colorpicker{
+  
+  // width
+  width: 320px;
+  position: relative;
+  
+
+  .m2m-colorpicker-current-choice{
+    background: #fff;
+    @include background(linear-gradient(#ffffff, #eeeeee));
+    @include filter-gradient(#ffffff, #eeeeee, vertical);    
+    @include border-radius(4px);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #aaa;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 30px;
+    height: auto;
+    line-height: 30px;
+    padding: 0 0 0 8px;
+    color: #444;
+    text-decoration: none;
+    cursor: pointer;
+    
+    .m2m-colorpicker-toggle{
+      background: #ccc;
+      @include background(linear-gradient(#eeeeee, #cccccc));
+      @include filter-gradient(#eeeeee, #cccccc, vertical);        
+      @include border-radius(0 4px 4px 0);
+      border-left: 1px solid #aaa;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      height: 30px;
+      width: 26px;    
+
+      .m2m-colorpicker-caret{
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url("../js/vendor/select2-3.1/select2.png") no-repeat 4px 1px;
+      }
+    }
+    
+    
+  }
+  
+  &.m2m-colorpicker-expanded{
+    .m2m-colorpicker-current-choice{
+      @include border-radius(4px 4px 0 0);
+      @include background(linear-gradient(#eeeeee, #ffffff));
+      @include filter-gradient(#eeeeee, #ffffff, vertical);
+      border-bottom: none;
+      height: 32px;
+      
+      .m2m-colorpicker-toggle{
+        @include background(linear-gradient(#eeeeee, #ffffff));
+        @include filter-gradient(#eeeeee, #ffffff, vertical);
+        border: none; 
+        
+        .m2m-colorpicker-caret{
+          background: url("../js/vendor/select2-3.1/select2.png") no-repeat -14px 1px;
+        }
+               
+      }
+    }
+  }
+    
+  
+  .m2m-colorpicker-list{
+    @include list-reset;
+    display: none;
+    @include border-radius(0 0 4px 4px);
+    border: 1px solid #aaa;
+    border-top: none;
+    @include box-shadow(0 4px 5px rgba(0,0,0, 0.15));
+    padding: 1px 0;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 999;
+    top: 31px;    
+    width: 320px;
+    background: #fff;
+    
+    ul{
+      @include list-reset;    
+    }
+    
+    li{
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    
+    a{
+      float: left;
+      padding: 0;
+      margin: 4px 0 0 4px;
+      height: 32px;
+      width: 32px;
+      text-indent: -9999px;
+      @include border-radius(30px);
+      @include box-shadow(0 0 3px rgba(0,0,0, 0.2) inset);
+      background-image: url('../images/ui/color-pattern.png');
+      background-repeat: repeat;
+      text-decoration: none;
+      border: none;
+      @include transition(opacity, 0.3s, ease-in-out);
+      
+      &:hover{
+        @include opacity(0.8);
+        background-image: none;
+        @include box-shadow(0 0 3px rgba(0,0,0, 0.5) inset);
+      }       
+    }
+                
+  }
+  
+  &.m2m-colorpicker-expanded{
+    .m2m-colorpicker-list{
+      display: block;
+    }
+  }
+  
+}

@@ -1,0 +1,84 @@
+div.modal{
+  
+  border: none;
+  outline: none;
+  //position: absolute;
+  margin-top: 0;
+  
+  .modal-header{
+    
+    margin:0;
+    padding:0;
+    font-family: $serif;
+    color:#fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background: url('../images/boxes/header-green.png');
+    font-size:15px;
+    font-weight: 300;
+    padding:10px 15px 5px 15px;      
+    line-height: 20px;
+    margin:0;
+    width: 100% !important;
+    display: block;
+    @include border-radius(6px 6px 0 0);
+    
+    h3{
+      font-weight: 500;
+      font-size: 15px;
+      margin: 0;
+    }
+    
+    a.close{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      float: none;
+    }
+    
+    a.close:link, a.close:visited{
+      @include opacity(0.7);
+      color: #fff;
+      text-decoration: none !important;
+      font-weight: 400;
+    }
+    
+    a.close:hover{
+      @include opacity(0.9);
+    }
+    
+  }
+  
+  
+  form{
+    margin: 0;
+    padding: 0;
+    
+    input[type=text], input[type=password], textarea{
+      width: 528px;
+      height: 35px;
+      padding: 10px;
+      font-size: 13px;
+      color: #746F6A;
+    }
+    
+    textarea{
+      height: 180px;
+    }
+  
+  }
+  
+}
+
+.modal-loading{
+  
+  .modal-body{
+    text-align: center;
+  }
+  
+  p{
+    padding: 76px 0 76px 0px;
+    background: url('../images/loading/light.gif?v4') 35% 50% no-repeat;  
+    color: $subtle_text;
+    height: 168px;
+  }
+}

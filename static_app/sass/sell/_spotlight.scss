@@ -1,0 +1,48 @@
+.spotlight{
+  
+  padding: 20px 0;
+  
+  .quote{
+    width: 260px;
+    float: left;
+  }
+  
+  blockquote{
+    margin:0 0 10px 0;
+    padding: 10px 0;
+    
+  }
+  
+  ul.products{
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;    
+    
+    li{
+      float: left;
+      
+      a{
+        float: left;
+        margin: 0 5px 0 0px;
+      }
+    }
+  }
+  
+  .quote-header{
+    
+    padding:0 0 10px 0;
+    
+    h2{
+      margin: 0;
+      border: none;
+    }
+    
+  }
+  
+  .video{
+    @include white-box(10px);
+    width: 355px;
+    float:right;
+  }
+  
+}

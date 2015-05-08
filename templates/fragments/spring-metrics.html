@@ -1,0 +1,21 @@
+{# Don't do spring-metrics tracking in DEBUG mode #}
+{% if not DEBUG and not TESTING %}
+<script type='text/javascript'>
+	var _springMetq = _springMetq || [];
+ 	_springMetq.push(['id', 'a139d2f653']);
+ 	{% if order_to_track %}
+ 		{% with order=order_to_track %}
+	 		_springMetq.push(["setdata", {revenue: "{{ order.total }}"}]);
+	 		_springMetq.push(["convert", "sale"]);
+	 	{% endwith %}
+ 	{% endif %}
+ 	(function(){
+	   	var s = document.createElement('script');
+	   	s.type = 'text/javascript';
+	   	s.async = true;
+	   	s.src = ('https:' == document.location.protocol ? 'https://d3rmnwi2tssrfx.cloudfront.net/a.js' : 'http://static.springmetrics.com/a.js');
+	   	var x = document.getElementsByTagName('script')[0];
+	   	x.parentNode.insertBefore(s, x);
+	})();
+</script>
+{% endif %}

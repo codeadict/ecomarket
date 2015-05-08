@@ -1,0 +1,17 @@
+{% extends 'base_errors.html' %}
+
+{% block content %}
+
+    <h1>Internal Server Error</h1>
+
+    <p>We're sorry, the page you've requested is not available due to an internal server error.</p>
+
+    <p>You may want to:<br />
+        &bull; Retry the web page by clicking your browser's refresh/reload button.<br />
+        &bull; Come back later. The problem may then be resolved.<br />
+        &bull; If the issue persists, then contact our support.
+    </p>
+
+    <p><a href="javascript:history.back();">&laquo; Go Back</a></p>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'accounts/selling/base.html' %}
+
+{% load url from future %}
+
+{% load string_tags %}
+{% load alerts %}
+
+{% block content_tab %}
+<div class="tab-content">
+  <div
+     class="tab-pane active"
+     id="published">
+    <div class="account-products">
+      <form
+	 id="bulk_form"
+	 action="{{ request.path }}"
+	 method="POST">{% csrf_token %}
+        <input
+	   type="hidden"
+	   name="action"
+	   value=""/>
+        <input
+	   type="hidden"
+	   name="stock"
+	   value=""/>
+        <input
+	   type="hidden"
+	   name="price"
+	   value=""/>
+        <div class="actions-toolbar cf">
+          <div class="btn-group actions">
+            {% if request.path|startswith:selling_published_live_url %}
+            <a href="#" data-action="{{ Action.UNPUBLISH }}">Unpublish</a>
+            {% endif %}
+            {% if request.path|startswith:selling_unpublished_url %}
+            <a href="#" data-action="{{ Action.PUBLISH }}">Publish</a>
+            {% endif %}
+
+            {#<a href="#" data-action="{{ Action.CHANGE_SHIPPING }}">Change shipping</a>#}
+{#            <a href="#" data-action="{{ Action.STOCK }}" data-prompt="yes">Change stock</a>#}
+{#            <a href="#" data-action="{{ Action.PRICE }}" data-prompt="yes">Change price</a>#}
+            <a href="#" data-action="{{ Action.DELETE }}">Delete</a>
+          </div>
+        </div>
+        <div class="actions-toolbar pull-right">
+          <div class="btn-group">
+            <a href="{% url 'stockcheck_update' %}">Do a stock check</a>
+          </div>
+        </div>
+
+        <table class="table table-products">
+          <thead>
+            <tr>
+              <th class="check" scope="col"><input type="checkbox" name="messages" value="all" /></th>
+              <th class="photo" scope="col">&nbsp;</th>
+              <th class="product">Product name</th>
+              <th class="stock">Stock</th>
+              <th class="price">Price</th>
+              <th class="update">Last Updated</th>
+              <th class="actions">&nbsp;</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for product in product_list %}
+            {% with price=product.get_price_instance %}
+              {% if product.flag != None %}
+                <tr class="{% cycle 'stripe' '' %}">
+                <td colspan="7" style="border: none">
+                  <div class="alert alert-block alert-error cf">
+                    <p>Your shipping profile for this product is missing a country, you must edit it.</p>
+                  </div>
+                </td>
+                </tr>
+              {% endif %}
+            <tr class="{% cycle 'stripe' '' %}">
+              <td class="check">
+		<input type="checkbox" name="ids" value="{{ product.id }}"/></td>
+              <td class="photo">
+		<a href="{{product.get_absolute_url}}"
+		   ><img src="{{ product.image.url_80 }}"
+			 alt="{{ product.title }}"
+			 width="80"
+			 height="80"></a></td>
+              <td class="product">
+                <a href="{{product.get_absolute_url}}"
+		   class="name"
+		   >{{ product.title }}</a>
+              </td>
+              <td class="stock">
+                {{ product.stock|default_if_none:"Unlimited" }}
+
+                {% comment %}
+                <a href="#" class="btn btn-flat btn-edit"><i class="icon icon-pencil"></i></a>
+                {% endcomment %}
+              </td>
+              <td class="price">
+				<strong class="price">£{{ product.price.amount }}</strong><br>
+				<strong class="price amount_currency_convert" data-amount="{{ product.price.amount }}" data-approx="true">
+				  (<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ product.price.amount }}</span>)
+			    </strong>
+			  </td>
+              <td class="date">{{ product.updated|date:"N j, Y" }}</td>
+              <td class="row-actions">
+                <a id="edit-product-link" href="{% url 'product_edit' stall_identifier=product.stall.identifier product_name=product.slug %}">Edit product</a>
+		{% comment %}
+                <a href="">Copy product</a>
+                <a href="">Make into template</a>
+		{% endcomment %}
+              </td>
+            </tr>
+            {% endwith %}
+            {% empty %}
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td colspan=5>There are no products to show.</td>
+            <tr>
+              {% endfor %}
+          </tbody>
+        </table>
+
+      </form>
+
+        <div class="bottom-filtering cf">
+            {% include "main/includes/pagination_control.html" %}
+            {{ paginate_by_control.render }}
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock content_tab %}
+
+

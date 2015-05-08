@@ -1,0 +1,22 @@
+
+ul.breadcrumb{
+  background: none;
+  margin: -10px 0 15px 0;
+  padding: 0 0 10px 0;
+  
+  color: #aaa;
+  border: none;
+  border-radius: 0;  
+  border-bottom: 1px solid #E5E5E5;
+  
+  a:link, a:visited{
+    color: $subtle_link_color;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: $subtle_link_hover;
+    text-decoration: underline;
+  }
+  
+}

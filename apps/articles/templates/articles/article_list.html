@@ -1,0 +1,17 @@
+{% extends 'articles/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Articles' %}{% endblock %}
+
+{% block articles-content %}
+
+{% with article=page_obj.object_list|first %}
+{% if article %}
+{% include 'articles/_articles_featured.html' %}
+{% endif %}
+{% endwith %}
+
+{% for article in page_obj.object_list|slice:"1:" %}
+{% include 'articles/_articles.html' %}
+{% endfor %}
+{% endblock %}

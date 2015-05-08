@@ -1,0 +1,15 @@
+{% extends "base_modal.html" %}
+{% load url from future %}
+
+{% block modal_title %}Validate email address{% endblock %}
+
+{% block modal_content %}
+<p>Ok, we've re-sent the validation email to <strong>{{ email }}</strong>. Please click the link in the email and you'll be good to go.</p>
+<p><a href="{% url 'todos:validate_email_change_address' %}">Need to change your address? Do it here.</a></p>
+{% endblock %}
+
+{% block modal_footer %}
+<div class="pull-right">
+    <a class="btn btn-primary" href="{% url 'logout' %}">Log out</a>
+</div>
+{% endblock %}

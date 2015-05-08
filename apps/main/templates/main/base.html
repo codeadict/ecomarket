@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="content primary-left cf">
+
+      <div class="primary-content">
+        <div class="page-header">
+          <h1>Eco Market is made for you {% if name %}{{ name }} {% endif %}...</h1>
+          <a href="#" class="btn btn-primary action">Start selling</a>
+        </div>
+
+        <div class="how-it-works uk-version">
+          <h2>How it works</h2>
+
+          <ol class="cf">
+            <li>
+              <h3>Upload products.</h3>
+              <p>Using our product uploader is super-easy and will get your products looking beautiful online in no time.</p>
+            </li>
+            <li class="middle">
+              <h3>Get paid.</h3>
+              <p>Customers pay for items on our site and we email you showing you where to post it straight away. We take just 10% when you sell something and you get paid quickly up to 48 hours after you dispatch the product.</p>
+            </li>
+            <li>
+              <h3>Ship your items.</h3>
+              <p>You dispatch your products directly just like you normally would, we’ll let your customers know.</p>
+            </li>
+          </ol>
+
+        </div>
+
+        <div class="spotlight cf">
+          {% block spotlight %}
+          <div class="quote">
+
+            <div class="quote-header">
+              <h2>People love to sell with us!</h2>
+              <a href="#">{{ related_stalls.name }}</a>
+            </div>
+
+            <blockquote><p>{{ related_stalls.description }}. </p></blockquote>
+
+            <div class="stall-products">
+              <h4 class="headline">Products</h4>
+              <ul class="products cf">
+                <li><a href="#"><img src="{% static 'tmp/products/80x80/1.jpg' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'tmp/products/80x80/2.jpg' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'tmp/products/80x80/3.jpg' %}" alt=""></a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="video">
+            <a href="#"><img src="{% static 'tmp/video/sell.jpg' %}" alt="Some alt for video title"></a>
+          </div>
+          {% endblock %}
+        </div>
+
+        <div class="why-sell">
+          <h2>Why sell with us?</h2>
+
+          <ul class="cf">
+            <li>
+              <h3><a href="#">Ramp Up your Product Sales</a></h3>
+              <p>As a marketplace with thousands of products, a team working around the clock to promote it, we are able to pull in a lot of traffc and help get your eco and natural products seen and bought!</p>
+              <a href="#">Learn more</a>
+            </li>
+            <li>
+              <h3><a href="#">Take the Headache out of Selling Online</a></h3>
+              <p>Lets face it. Creating your own website to sell online is a
+                  headache (and no-one likes a headache!). Eco Market
+                  provides a simple natural cure for stall owners... we simply
+                  do all the hard work for you! All that is left are the things you love already, your products.</p>
+              <a href="#">Learn more</a>
+            </li>
+            <li>
+              <h3><a href="#">Provide the Personal Experience that Customers Love</a></h3>
+              <p>Eco Market is more than just a marketplace. We provide tools to our members so that they can interact in a very personal way with each other. From webcam videos, to personalised activity streams, your customers get that personal "market stall" experience that they deserve.</p>
+              <a href="#">Learn more</a>
+            </li>
+            <li>
+              <h3><a href="#">Our Fees are Absolutely Tiny!</a></h3>
+              <p>So what do we charge to do all these fabulous things. Must
+                  be expensive, right? Wrong. We charge a measly 10% which is
+                  taken from orders only when you sell something. Are we mad?
+                  Maybe. But please do take advantage as our low stall owner
+                  fees are something that we pride our crazy selves on!</p>
+              <a href="#">Learn more</a>
+            </li>
+          </ul>
+
+          <div class="sell-cta">
+            <span class="btn-wrapper"><a href="#" class="btn btn-primary">let’s get started</a></span>
+          </div>
+
+        </div>
+
+        <div class="press">
+          {% block press %}
+          <ul class="cf">
+            <li>
+              <blockquote><p>&ldquo;you can buy ethical products directly from the people that make them, and get to know the story behind each product&rdquo;</p></blockquote>
+              <cite>
+                <strong>Bonnie Alter, Treehugger</strong>
+                <a class="link" href="http://www.treehugger.com/sustainable-product-design/national-bird-house-week-give-bird-home.html"><img src="{% static 'images/sell/treehugger.png' %}" alt="Trehugger"/></a>
+              </cite>
+            </li>
+            <li>
+              <blockquote><p>&ldquo;The company provides an e-commerce platform for independent sellers that aims to recreate that market stall feeling.&rdquo;</p></blockquote>
+              <cite>
+                <strong>Fiona Graham, BBC</strong>
+                <a class="link"  href="http://www.bbc.co.uk/news/business-17549278"><img src="{% static 'images/sell/bbc.png' %}" alt="BBC"/></a>
+              </cite>
+            </li>
+            <li>
+              <blockquote><p>&ldquo;an eco-friendly, fair trade marketplace for everything from recyclable cat litter trays to earrings made from coke cans.&rdquo;</p></blockquote>
+              <cite>
+                <strong>Cheryl Latham, The Metro</strong>
+                <a class="link"  href="http://www.metro.co.uk/money/900008-university-friends-go-green-with-ethical-amazon-business"><img src="{% static 'images/sell/metro.png' %}" alt="The Metro"/></a>
+              </cite>
+            </li>
+          </ul>
+          {% endblock %}
+        </div>
+
+      </div>
+
+      <div class="secondary-content">
+        <div class="box box-blue">
+          <h2 class="with-link"><a href="#">Help Centre</a></h2>
+          <div class="howto-box">
+
+            <ul class="howto-list">
+              <li>
+                <a href="#" class="head">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </li>
+              <li>
+                <a href="#" class="head">Ued do eiusmod tempor incididunt ut?</a>
+                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </li>
+              <li>
+                <a href="#" class="head">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </li>
+              <li>
+                <a href="#" class="head">Consectetur adipisicing elit?</a>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </li>
+            </ul>
+            <div class="box-action">
+              <a href="#">Ask a question</a>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+#infscr-loading{
+  @include white-block(3px);
+  
+  height: 60px;
+  line-height: 23px;
+  padding: 20px 0 20px 0;
+  
+  text-align: center;
+  margin: 5px 5px 5px 5px;
+  
+  div{
+    display: inline-block;
+    padding: 0 5px;
+    color: $subtle_text;   
+    position: relative;
+    top: -9px;
+    height: 40px;
+    line-height: 40px; 
+  }
+  
+  img{
+    width: 20px;
+    height: 40px;
+    margin: 0;
+    position: relative;
+    top: -12px;
+    display: inline-block;
+  }
+  
+}
+
+.discover-box{
+  #infscr-loading{
+    margin: 5px 0 5px 0;
+  }
+}
+
+#activity-scroll{
+  
+  #infscr-loading{
+    @include box-shadow(0 1px 2px rgba(0,0,0,0.1));
+    margin: 5px 0px 5px 65px;    
+  }  
+  
+}

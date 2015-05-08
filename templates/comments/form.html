@@ -1,0 +1,61 @@
+{% load i18n %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% if request.user.is_authenticated %}
+    {% load comments %}
+    {% block before_form %}{% endblock %}
+    {% block form_outer %}
+    <form action="{% comment_form_target %}" method="post" id="comment-form-{{ form_id|default:object.id }}" class="comment-form form">
+        {% if facebook_off %}{{ form.disable_facebook_by_default|yesno:"," }}{% endif %}
+        {% csrf_token %}
+        {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        {{ form.object_pk }}
+        {{ form.content_type }}
+        {{ form.timestamp }}
+        {{ form.security_hash }}
+        {{ form.parent_id.as_hidden }}
+        <fieldset>
+            {% with field=form.comment %}
+            <div class="control-group {% if field.errors %}error{% endif %}">
+                <div class="control-label comment-author">
+                  {% block control_label %}
+                    {% with fullname=request.user.username|default:request.user image=request.user.get_profile.avatar_50 %}
+                      <a href="#" class="thmb"><img src="{% if image %}{{ image }}{% else %}{% static 'images/avatar/50x50/default.png' %}{% endif %}" alt="{{ fullname }}" /></a>
+                    {% endwith %}                    
+                  {% endblock %}
+                </div>
+                <div class="controls">
+                    <textarea name="comment" id="id_comment" cols="40" placeholder="Comments"> </textarea>
+                    {{ field.errors }}
+                    <a href="javascript:void(0);" class="{% block button_class %}btn btn-primary btn-green{% endblock %} btn-comment" id="send_comment" data-source="{% comment_form_target %}" data-id="{{ form.parent_id.value|yesno:'li,form.comment-form' }}">{% block button_string %}Comment{% endblock %}</a>
+                    {% if user.get_profile.has_facebook_auth %}
+                      <div class="pull-right comment-privacy">
+                        <label class="fb-hint inline" for="id_post_to_facebook">{{ form.post_to_facebook.label }}</label>{{ form.post_to_facebook }}
+                      </div>
+                    {% else %}
+                      <div class="pull-right comment-privacy">
+                        <span class="fb-hint">Post this comment to facebook too</span>
+                      </div>                    
+                    {% endif %}
+                </div>
+            </div>
+            {% endwith %}
+        </fieldset>
+    </form>
+    {% endblock %}
+{% else %}
+    <div class="block-info register-teaser cf">
+        {% block teaser %}
+      <p class="text">
+        <strong class="headline">Want to get your 2 cents in?</strong><br>
+        Register now. Don’t worry it’s free.
+      </p>
+            <a href="{% url 'register' %}?next={{object.get_absolute_url}}#comments" class="btn btn-flat btn-blue btn-big btn-comment-register">Register</a>
+            <a href="{% url 'login' %}?next={{object.get_absolute_url}}#comments" class="btn btn-flat btn-blue btn-big btn-comment-login">Sign in</a>
+            <span class="fb-hint">Its super fast with facebook too!</span>
+        {% endblock %}
+    </div>
+{% endif %}

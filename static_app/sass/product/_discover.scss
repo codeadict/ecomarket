@@ -1,0 +1,345 @@
+ul.discover-list{
+  @include list-reset;
+  
+  li{
+     float: left;
+     width: 228px;
+     height: 302px;
+     margin:0 9px 10px 0;
+     padding: 0;
+     position: relative;
+     overflow: hidden;
+     @include content-box-shadow;
+     
+     &:nth-child(4n){
+       margin-right: 0;
+     }
+
+     .product{
+       display: block;
+     }
+               
+   }
+   
+   .action-love{
+     position: absolute;
+     left:5px;
+     top:12px;
+   }
+
+   a.image img{
+     border-radius: 3px 3px 0 0;
+   }
+   
+   .details{
+     padding: 10px 10px 10px 40px;
+     width: 228px;
+     position:relative;
+     opacity:1;
+     background: #fff;
+     border-radius: 0 0 3px 3px;
+     height:74px;
+
+     .product {
+     }
+   }
+   
+   .btn-remove-item{
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     width: 28px;
+     height: 24px;
+   }
+   
+   &.editable-list{
+     li{
+       
+       height: 228px + 50px;
+       
+       .details{
+         opacity: 1;
+         bottom: 0px;
+       }
+     }
+   }     
+}
+
+.discover-page{
+  
+  margin-bottom: -40px;
+  
+  .main-product-box{
+    min-height: 570px;
+  }
+  
+  .product-box{
+    
+    min-height: 570px;
+    
+    .product-header{
+      
+      margin: 10px 0;
+      
+      h1{
+        font-family: $serif;
+        font-size: 17px;
+        font-weight: 500;
+      }
+      
+    }
+    
+    .eco-credentials{
+      padding: 0 0 10px 0;
+      margin: 0 0 20px 0;
+      border-bottom: 1px solid #E5E5E5;
+    }
+    
+    
+    .product-price{
+      
+      position: relative;
+      
+      .more-links{
+        position: absolute;
+        right: 0;
+        top: -2px;
+        text-align: right;
+        
+        a{
+          display: block;
+        }
+        
+      }
+      
+    }
+    
+    .actions{
+      
+      padding: 20px 0 0;
+      border: 0;
+      
+      a.btn-primary{
+        width: 100%;
+      }
+      
+    }
+  
+  }
+  
+  .stall-lovers{
+    height: 550px;
+  }
+  
+  
+  ul.stall-list{
+  
+    @include list-reset;
+    
+    
+    li{
+      
+      padding: 0 0 10px 0;
+      margin: 0 0 10px 0;
+      border-bottom: 1px dashed #ddd;
+
+      .avatar{
+        float: left;
+        margin: 0 10px 0 0;
+        
+        img{
+          border-radius: 3px;
+        }
+        
+      }
+
+      height: 40px;
+      line-height: 14px;
+
+      .list-name{        
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 500;
+        display: block;
+      }
+
+      .owner, .author{
+        font-size: 11px;
+      }
+
+    }
+    
+  }
+  
+  
+  .love-list-header{
+    margin-bottom: 20px;
+    
+    .content-box{
+      min-height: 150px;
+    }
+    
+    .avatar{
+      float: left;
+      margin-right: 10px;
+    }
+    
+    .list-info{
+      padding: 0px 0 0 0;
+      float: left;
+      
+      form{
+        
+        margin: 0 0 -20px 0;
+        
+        fieldset{
+          margin: 0;
+          padding: 0;
+        }
+        
+        input[type=text], textarea{
+          width: 640px;
+        }
+        
+        textarea{
+          height: 8em;
+        }
+        
+        .list-delete-link{
+          position: absolute;
+          right: 0;
+          bottom: 20px;
+          color:$subtle_link_color;
+          
+          &:hover{
+            color: $subtle_link_hover;
+          }
+        }
+        
+        .categories-row{
+          margin: 0 0 10px 0;
+        }
+
+        .category-field{
+          margin: 5px 5px 5px 0;
+          float: left;
+        }
+
+        .btn-remove-category {
+          height: 30px;
+          line-height: 30px;
+          margin: -1px 0 0 0;
+          padding: 0 7px;
+        }
+
+        .category-picker{
+          display: inline-block;
+        }
+
+        .additional-category{
+          margin: 5px;
+        }
+      }
+      
+    }
+    
+    .social{
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      border-left: 1px dotted #eee;
+      padding: 1px 10px 1px 20px;
+      height: 85px;
+      width: 150px;
+
+      .buttons{
+      }
+      
+      
+    }
+    
+    .subtitle{
+      padding-bottom: 8px;
+    }
+    
+    .followers-info{
+      float: right;
+      font-size: 15px;
+      line-height: 20px;
+      
+      .followers, .following{
+        display: block;
+      }
+    }
+    
+  }
+  
+}
+
+html.touch{
+  .page-wrapper{
+    overflow-x: hidden;
+  }
+}
+
+
+.love-box-horizontal{
+  
+  padding: 0px;
+  
+  .love-list-item{
+    width: 275px;
+    margin: 0 30px 20px 00px;
+    float: left;
+    border: none;        
+    
+    .list-header{
+      border-bottom: 1px solid #E5E5E5;
+      padding: 0 0 10px 0;
+      margin: 0 0 10px 0;
+    }
+    
+    .simple-header{
+      height: 20px;
+    }
+    
+    ul.products{
+      li{
+        a{
+          margin: 0 10px 10px 0;
+          
+          img{
+            border-radius: 3px;
+          }
+          
+        }        
+      }
+    }    
+  }
+  
+  
+  &.list-2{
+    
+    .love-list-item{
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+    }
+    
+    
+  }
+  
+  
+  &.list-3{
+    
+    .love-list-item{
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+    }
+    
+    
+  }
+  
+  
+}

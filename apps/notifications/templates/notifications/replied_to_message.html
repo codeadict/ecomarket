@@ -1,0 +1,10 @@
+{% load url from future %}
+<p>Hi {{ recipient.first_name }},</p>
+
+<p>You’ve got a new reply to your message on Eco Market from <a href="http://ecomarket.com{% url 'public_profile' sender.username %}">{{ sender.username }}</a>.</p>
+
+<p>Here was the reply:</p>
+
+<blockquote>{{ message.body }}</blockquote>
+
+<p>You can login and <a href="http://ecomarket.com{% url 'messaging_inbox' %}">reply to the message</a> on Eco Market.</p>

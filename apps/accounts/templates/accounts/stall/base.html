@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+
+{% block content %}
+
+{% url 'stall_appearance' as stall_appearance_url %}
+{% url 'stall_shipping' as stall_shipping_url %}
+{% url 'stall_address' as stall_address_url %}
+{% url 'stall_payment' as stall_payment_url %}
+{% url 'stall_policies' as stall_policies_url %}
+{% url 'stall_faq' as stall_faq_url %}
+{% url 'stall_options' as stall_options_url %}
+
+
+<div class="content cf wider-sidebar">     
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Settings</h2>
+    <nav class="section-tabs">
+      <ul class="nav nav-tabs narrow-tabs">
+        <li class="{% if request.path|startswith:stall_appearance_url %}active{% endif %}">
+          <a href="{{ stall_appearance_url }}">APPEARANCE</a>
+        </li>
+        <li class="{% if request.path|startswith:stall_address_url %}active{% endif %}">
+          <a href="{{ stall_address_url }}">ADDRESS</a>
+        </li>
+        {% comment %}
+        {# Disabled for 2.0 launch #}
+        <li class="{% if request.path|startswith:stall_shipping_url %}active{% endif %}">
+          <a href="{{ stall_shipping_url }}">SHIPPING</a>
+        </li>
+        {% endcomment %}
+        <li class="{% if request.path|startswith:stall_payment_url %}active{% endif %}">
+          <a href="{{ stall_payment_url }}">PAYMENT</a>
+        </li>
+        <li class="{% if request.path|startswith:stall_policies_url %}active{% endif %}">
+          <a href="{{ stall_policies_url }}">POLICIES &amp; TEMPLATES</a>
+        </li>
+        {% comment %}
+        {# Disabled for 2.0 launch #}
+        <li class="{% if request.path|startswith:stall_faq_url %}active{% endif %}">
+          <a href="{{ stall_faq_url }}">FAQ</a>
+        </li>
+        <li class="{% if request.path|startswith:stall_options_url %}active{% endif %}">
+          <a href="{{ stall_options_url }}">OPTIONS</a>
+        </li>
+        {% endcomment %}
+      </ul>
+    </nav>
+    
+    {% block content_tab %}{% endblock content_tab %}
+
+  </div>
+  
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>
+  
+</div>
+{% endblock content %}

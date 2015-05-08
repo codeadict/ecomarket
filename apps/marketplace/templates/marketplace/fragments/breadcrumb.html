@@ -1,0 +1,12 @@
+<ul class="breadcrumb">
+    {% for locator, name in breadcrumbs %}
+    {% if forloop.last %}
+    <li class="active">{{ name }}</li>
+    {% else %}
+    <li>
+        <a href="{{ locator }}">{{ name }}</a>
+        <span class="divider">&gt;</span>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,119 @@
+{% extends 'accounts/bought/base.html' %}
+
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content_tab %}
+{% for order in orders%}
+{% with user=order.stall.user %}
+{% with profile=user.get_profile %}
+<!-- single seller order entry -->
+<div class="order-box dashboard-order-box content-box">
+  <div class="cf user-order">
+    <strong class="user-name">
+      {% if user %}
+      <a href="{% url 'public_profile' user.username %}"
+        class="avatar"><img src="{{ profile.avatar_30 }}" width="30" height="30" alt="{{ user.username }}"></a>
+      <a href="{% url 'public_profile' user.username %}">{{ user.username }}</a>
+      {% else %}
+        Order from Unidentified Stall Owner
+      {% endif %}
+    </strong>
+
+    {#<span class="order-number">Order No. {{ cart_stall.id }}</span>#}
+
+    <div class="btn-group order-actions">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon icon-cog"></i> Order actions
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="{% url 'invoice' order_id=order.id %}">See Full Invoice</a></li>
+        <li><a href="javascript:void(0)" class="btn-new-messages ajax" data-toggle="modal"
+            data-source="{% url 'messaging_compose' %}"
+            data-target="#new-message"
+            data-username="{{ order.stall.user.username }}">Message Stall Owner</a></li>
+        {#<li><a href="#">Leave Feedback</a></li>#}
+      </ul>
+    </div>
+
+
+    <div class="order-details">
+      <ul class="list">
+        {% for line_item in order.line_items.all %}
+        {% with product=line_item.product %}
+        <li class="order-item">
+          <div class="thumb">
+            <a href="{{product.path}}"><img src="{{ product.image.url_80 }}" width="80" height="80" alt="{{ product.title }}"></a>
+          </div>
+
+          <div class="info">
+            <a href="{{product.path}}" class="name dark-link">{{ product.title }}</a>
+          </div>
+
+          <span class="date">{{ order.created }}</span>
+          <span class="quantity">{{ line_item.quantity }}</span>
+
+          <div class="product-price">
+			<strong class="price amount_currency_convert" data-amount="{{ line_item.total }}">
+			<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ line_item.total }}</span>
+			</strong>
+          </div>
+        </li>
+        {% endwith %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="actions">
+
+      <dl class="totals cf">
+        <dt>Subtotal</dt>
+        <dd>
+			<strong class="amount_currency_convert" data-amount="{{ order.subtotal }}">
+			<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.subtotal }}</span>
+			</strong>
+        </dd>
+
+        <dt>Delivery</dt>
+        <dd>
+			<strong class="amount_currency_convert" data-amount="{{ order.delivery_charge }}">
+			<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.delivery_charge }}</span>
+			</strong>
+        </dd>
+
+        {% if order.discount_amount > 0 %}
+        <dt>Discount</dt>
+        <dd class="negative">
+			<strong class="amount_currency_convert" data-amount="{{ order.discount_amount }}">
+            <span>&minus;</span>
+			<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.discount_amount }}</span>
+			</strong>
+        </dd>
+        {% endif %}
+
+        <dt class="total">Total</dt>
+        <dd class="total">
+            <strong class="amount_currency_convert" data-amount="{{ order.total }}">
+			<span class="amount_currency_symbol">£</span><span class="amount_amount">{{ order.total }}</span>
+			</strong>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<!-- /single seller order entry -->
+{% endwith  %}
+{% endwith  %}
+{% endfor %}
+<div class="bottom-filtering cf">
+    {% include "main/includes/pagination_control.html" %}
+    {{ paginate_by_control.render }}
+</div>
+
+<div class="modal hide fade modal-message" id="new-message"></div>
+{% endblock content_tab %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+{% endblock %}

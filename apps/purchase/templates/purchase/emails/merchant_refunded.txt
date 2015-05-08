@@ -1,0 +1,7 @@
+{% load absolute_url %}
+
+Hello {{ order.stall.user.first_name }}<br />
+<br />
+Your order (order number {{ order.id }}) has been refunded to the customer in full.<br />
+<br />
+If you want to look up your order information you can do so at any time at your <a href="{% absurl sold %}">sold page</a> after logging into Eco Market. You can also <a href="{% absurl messaging_compose_to order.user.username %}">message the customer</a> from this area.

@@ -1,0 +1,44 @@
+
+@mixin transition($property, $duration, $easing: ease-in-out){
+  -webkit-transition: $property $duration $easing;  /* Saf3.2+, Chrome */
+     -moz-transition: $property $duration $easing;  /* FF4+ */
+       -o-transition: $property $duration $easing; /* Opera 10.5+ */
+          transition: $property $duration $easing;
+          // fix for chrome black flickering
+
+}
+
+@mixin opacity( $opacity: 1){
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity*100);
+}
+
+@mixin white-box($padding, $border: 1px solid #dedede){
+  @include border-radius(3px);
+  @include box-shadow(0 1px 2px 0 rgba(0,0,0,0.1));  
+  border: $border;
+  padding: $padding;
+  background: #ffffff;  
+}
+
+@mixin white-block($padding: 10px){
+  @include border-radius(3px);
+  @include box-shadow(0 1px 3px 0 rgba(0,0,0,0.2));
+  padding: $padding;
+  background: #fff;  
+}
+
+@mixin content-box-shadow{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+@mixin subtle-box-shadow{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+@mixin list-reset{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+

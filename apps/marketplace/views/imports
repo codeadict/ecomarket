@@ -1,0 +1,32 @@
+import logging
+import re
+import requests
+import uuid
+
+from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
+from django.core.exceptions import ObjectDoesNotExist
+from django.utils.translation import ugettext as _
+from django.http import HttpResponseRedirect, HttpResponse, Http404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import DetailView, UpdateView, CreateView
+from django.utils.functional import allow_lazy
+from django.utils.encoding import force_unicode
+from django.utils import simplejson as json
+from django.core.serializers.json import DjangoJSONEncoder
+from django.utils.datastructures import MultiValueDictKeyError
+from django.conf import settings
+
+from main.utils.decorators import view_dispatch_decorator
+
+from .forms import \
+    StallOwnerProfileForm, StallCreationForm, \
+    StallEditForm, ProductCreationForm, ShippingProfileForm, \
+    ShippingRuleForm, SuggestedCertificateForm, ProductPriceFormset, \
+    ProductSuggestedCertificateFormset
+
+from .models import \
+    Stall, Product, Country, Keyword, Ingredient, Material, \
+    ShippingProfile, ShippingRule
+
+logger = logging.getLogger(__name__)

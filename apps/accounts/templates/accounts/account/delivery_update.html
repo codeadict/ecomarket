@@ -1,0 +1,23 @@
+{% load url from future %}
+<form action="{% url 'account_delivery_address_update' address.id %}" class="form form-auto" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+	<div class="row"><div class="span6">{% include 'fragments/form_field_snippet.html' with field=form.name only %}</div></div>
+	<div class="row"><div class="span6">{% include 'fragments/form_field_snippet.html' with field=form.line1 only %}</div></div>
+	<div class="row"><div class="span6">{% include 'fragments/form_field_snippet.html' with field=form.line2 only %}</div></div>
+	<div class="row">
+		<div class="span3">
+		{% include 'fragments/form_field_snippet.html' with field=form.city only %}
+		</div>
+		<div class="span3">
+		{% include 'fragments/form_field_snippet.html' with field=form.state only %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="span3">
+		{% include 'fragments/form_field_snippet.html' with field=form.postal_code only %}
+		</div>
+		<div class="span3">
+		{% include 'fragments/form_field_snippet.html' with field=form.country only %}
+		</div>
+	</div>
+</form>

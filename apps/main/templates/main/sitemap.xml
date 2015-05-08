@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+{% load url from future %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{baseurl}}/discover/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    {% for category in categories %}
+    <url>
+        <loc>{{baseurl}}{{ category.get_absolute_url }}</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    {% endfor %}
+
+    <url>
+        <loc>{{baseurl}}/blog/</loc>
+        <changefreq>daily</changefreq>
+    </url>
+
+    {% for cause in causes %}
+    <url>
+      <loc>{{baseurl}}{% url 'product_search' %}?causes={{ cause.slug }}</loc>
+      <changefreq>weekly</changefreq>
+    </url>
+    {% endfor %}
+
+    {% for product in products %}
+    <url>
+        <loc>{{baseurl}}{{product.path}}</loc>
+        <lastmod>{{product.updated|date:"c"}}</lastmod>
+    </url>
+    {% endfor %}
+
+    {% for article in articles %}
+    <url>
+        <loc>{{baseurl}}/blog/{{ article.publish_date|date:"Y" }}/{{ article.slug }}/</loc>
+        <lastmod>{{ article.updated_at|date:"c" }}</lastmod>
+    </url>
+    {% endfor %}
+
+    {% for stall in stalls %}
+    <url>
+        <loc>{{baseurl}}{{ stall.absolute_url }}</loc>
+        <lastmod>{{ stall.updated|date:"c" }}</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    {% endfor %}
+
+    {% for lovelist in lovelists %}
+    <url>
+        <loc>{{baseurl}}{{lovelist.path}}</loc>
+        <lastmod>{{ lovelist.updated|date:"c" }}</lastmod>
+    </url>
+    {% endfor %}
+</urlset>

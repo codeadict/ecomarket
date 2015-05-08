@@ -1,0 +1,27 @@
+{% load url from future %}
+<div class="content-message">
+    <form class="message-form form" action="{% url 'messaging_compose_to' recipient %}" method="POST" id="message-form">{% csrf_token %}
+        <fieldset>
+            <div class="control-group{% if form.recipient.errors %} error{% endif %}">
+                <div class="controls">
+                    {{ form.recipient }}
+                    {{ form.recipient.errors }}
+                </div>
+            </div>
+            <div class="control-group{% if form.subject.errors %} error{% endif %}">
+                <div class="controls">
+                    {{ form.subject }}
+                    {{ form.subject.errors }}
+                </div>
+            </div>
+            <div class="control-group{% if form.body.errors %} error{% endif %}">
+                <div class="controls">
+                    {{ form.body }}
+                    {{ form.body.errors }}
+                </div>
+            </div>
+            <input type="submit" value="Send message" class="btn btn-primary btn-large" />
+            <input type="hidden" name="next" value="{{next}}" />
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+.why-sell{
+  
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    li{
+      float: left;
+      width: 320px;
+      padding: 20px 30px 20px 40px;
+      background: url('../images/sell/tick.png') 0 15px no-repeat;
+      
+      p{
+        color: $subtle-text;
+      }
+      
+    }
+    
+    h3{
+      margin: 0;
+    }
+  }
+  
+  .sell-cta{
+    border-bottom: 1px solid #E5E5E5;
+    text-align: center;
+    height: 40px;
+    margin: 10px 0 40px 0;
+    
+    .btn-wrapper{
+      position: relative;
+      top: 20px;
+      border-left: 20px solid #fff;
+      border-right: 20px solid #fff;
+      display: inline-block;
+      
+      a{
+        margin-right: 0;
+      }
+    }
+    
+  }
+  
+}

@@ -1,0 +1,33 @@
+h2{
+  font-family: $serif;
+  font-size: 16px;
+  line-height: 32px;
+  padding: 0 0 0px 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+} 
+
+h3{
+  font-family: $serif;
+  font-size: 14px;
+  line-height: 28px;
+  padding: 0 0 0px 0;
+  margin: 0 0 10px 0;
+  font-weight: 500; 
+}
+
+h4.small{
+  color: #9b9b9b;    
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight:700;    
+  border-bottom: none;
+  border-top: 1px solid #e5e5e5;    
+  margin:5px 0px;
+  padding: 5px 0 0 0;    
+  letter-spacing: 1px;
+}
+
+
+

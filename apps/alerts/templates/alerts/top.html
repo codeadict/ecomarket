@@ -1,0 +1,10 @@
+<div class="alert alert-block alert-{{ alert_type }} cf">
+  <a class="close alert-dismiss" href="#">×</a>
+  <h4 class="alert-heading">{{ heading }}</h4>
+  <p>{{ body }}</p>
+  {% if help_link %}
+  <div class="flash-actions pull-right">
+    <a href="{{ help_link }}" target="_blank" class="btn btn-flat btn-gray btn-help">need help?</a> 
+  </div>
+  {% endif %}
+</div>

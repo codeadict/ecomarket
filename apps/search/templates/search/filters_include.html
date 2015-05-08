@@ -1,0 +1,23 @@
+<div class="category-filters clearfix" id="filter-follow">
+    <div class="sticky-filter">
+        <form class="sticky-wrapper tags-list filter-form" style="margin-top: 0">
+            {% if query %}
+            {{ form.q.as_hidden }}
+            {% endif %}
+
+            {% for filter_presenter in filter_presenters %}
+            <div class="filter-item">
+                {% if not filter_presenter.active %}
+                <a href="#" class="btn btn-flat btn-show-filter">{{ filter_presenter.name }}</a>
+                {% endif %}
+                <div class="{{ filter_presenter.active|yesno:'visible,hide' }}">
+                    {{ filter_presenter.render }}
+                </div>
+                {% if filter_presenter.active %}
+                <a href="{{ filter_presenter.disable_link }}" class="btn btn-small btn-remove-filter"><i class="icon icon-remove"></i></a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="control-group separated{% if field.errors %} error{% endif %}">
+  <label
+     for="{{field.auto_id}}"
+     class="control-label">{{field.label}}:</label>
+  <div class="controls">
+    {{field}}
+    <div class="m2m-colorpicker hidden m2m-colorpicker-collapsed">
+      <div class="m2m-colorpicker-current-choice">
+	<span class="m2m-colorpicker-value">Choose color from the list</span>
+	<span class="m2m-colorpicker-toggle">
+	  <b class="m2m-colorpicker-caret"></b>
+	</span>
+      </div>
+      <ul class="m2m-colorpicker-list clearfix">
+	{% for color in queryset %}
+	<li>
+	  <a href="#"
+	     data-value="{{color}}"
+	     data-source="{{color.id}}">{{color}}</a>
+	</li>
+	{% endfor %}
+      </ul>
+    </div>
+    <div class="tags tags-editable tags-list m2m-colors-tags m2m-colors-tags-editable m2m-colors-tags-list"></div>
+    {{field.errors}}
+  </div>
+</div>

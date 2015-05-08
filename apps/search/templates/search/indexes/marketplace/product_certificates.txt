@@ -1,0 +1,4 @@
+{% for item in object.certificates.all %}
+{{ item.title }}
+{{ item.slug }}
+{% endfor %}

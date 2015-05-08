@@ -1,0 +1,7 @@
+<li class="comment" id="comment-{{ comment.id }}">
+    {% if template_name %}
+    {% include template_name with thing='comment' %}
+    {% else %}
+    {% include "comments/_comment_inner.html" with thing="comment" %}
+    {% endif %}
+</li>

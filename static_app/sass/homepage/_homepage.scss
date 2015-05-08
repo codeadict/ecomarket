@@ -1,0 +1,105 @@
+.featured-products{
+  .list-header{
+    @include border-radius(3px);
+    background: #fff;
+    padding: 10px;
+    min-height: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    margin: 0 5px 5px 5px;
+    
+    .owner-image{
+      float: left;
+      margin: 0 10px 0px 0;
+      
+      img{
+        @include border-radius(3px);
+      }
+    }
+
+    .list-info{
+      display: block;
+      line-height: 30px;
+      
+      .btn-follow{
+        margin-left: 5px;
+      }
+    }    
+    
+  }
+}
+
+.video-box{
+  
+  div.video{
+    @include white-box(10px);
+    width: 292px;
+    float:left;
+    margin-top: 10px;
+  }
+
+  
+  div.stall-header{
+    float: right;
+    width: 350px;
+    
+
+    .stall-image{
+      float: left;
+      margin: 0 10px 10px 0;
+      
+      img{
+        @include border-radius(3px);
+      }
+    }
+
+    .stall-name{
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: 500;
+      display: block;
+    }
+
+    .stall-description{
+      clear:both;
+      font-size: 13px;
+      color: #888;
+
+      p{
+        margin: 15px 0;
+        padding: 0;        
+      }
+    }
+   
+  }
+  
+  div.stall-products{
+    
+    float: right;
+    width: 350px;
+    
+    ul.products{
+      margin: 0 0 10px 0;
+      padding: 0;
+      list-style: none;    
+
+      li{
+        float: left;
+
+        a{
+          float: left;
+          margin: 0 5px 0 0px;
+        }
+      }
+    }
+    
+    
+  }
+  
+}
+
+.box-press{
+  .logos{
+    margin: 0 -5px;
+    line-height: 30px;
+  }
+}

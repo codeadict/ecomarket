@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+{% load static from staticfiles %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/my_account.js' %}"></script>
+{% endblock %}
+
+{% block mixpanel %}
+mixpanel.track_links("#edit-product-link", "Clicked Edit Product", {"Type of Edit": "Full Edit"});
+{% endblock %}
+
+{% block content %}
+{% url 'selling' as selling_url %}
+{% url 'selling_published_live' as selling_published_live_url %}
+{% url 'selling_unpublished' as selling_unpublished_url %}
+{% url 'selling_sold_out' as selling_sold_out_url %}
+{% url 'stockcheck_update' as selling_stockcheck_update_url %}
+
+<div class="content cf wider-sidebar">
+  <div class="primary-content">
+    {% include 'accounts/fragments/tabs.html' %}
+    <h2>Product's I'm selling</h2>
+    {% block selling_top_navbar %}
+    <nav class="section-tabs">
+      <ul class="nav nav-tabs">
+        <li class="{% if request.path|startswith:selling_published_live_url %}active{% endif %}">
+          <a class="has-badge" href="{{ selling_published_live_url }}">PUBLISHED LIVE</a>
+          <em class="badge">{{ live_count }}</em>
+        </li>
+        <li class="{% if request.path|startswith:selling_unpublished_url %}active{% endif %}">
+          <a class="has-badge" href="{{ selling_unpublished_url }}">UNPUBLISHED</a>
+          <em class="badge">{{ unpublished_count }}</em>
+        </li>
+{#        <li class="{% if request.path|startswith:selling_drafts_url %}active{% endif %}">#}
+{#          <a class="has-badge" href="{{ selling_drafts_url }}">DRAFTS</a>#}
+{#          <em class="badge">{{ drafts_count }}</em>#}
+{#        </li>#}
+        <li class="{% if request.path|startswith:selling_sold_out_url %}active{% endif %}">
+          <a class="has-badge" href="{{ selling_sold_out_url }}">SOLD OUT</a>
+          <em class="badge">{{ sold_out_count }}</em>
+        </li>
+        {% if request.user.stall.is_suspended %}
+        <li class="{% if request.path|startswith:selling_stockcheck_update_url %}active{% endif %}">
+          <a class="has-badge" href="{{ selling_stockcheck_update_url }}">STOCK CHECK</a>
+          <em class="badge">{{ suspended_count }}</em>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% endblock selling_top_navbar %}
+    {% block content_tab %}{% endblock content_tab %}
+  </div>
+
+  <div class="secondary-content">
+    {% include 'accounts/includes/profile_completion.html' %}
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+<div class="modal hide fade modal-message modal-notification" id="main_modal" style="width: 700px; margin-left: -350px">
+
+    <div class="modal-header">
+        <a href="{% url 'logout' %}" class="close">×</a>
+        <h3>{% block modal_title %}{% endblock %}</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="notification-area cf">
+            <div class="content">
+                {% block modal_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer cf">
+        {% block modal_footer %}{% endblock %}
+    </div>
+
+</div>
+<noscript>
+    <div class="page-notice notice-error">
+        <div class="box">
+            <p>We need to get some more information from you before you can
+            continue to the site, but unfortunately it seems your browser
+            doesn't support JavaScript or it is disabled. Please come back in a
+            browser with JavaScript enabled.</p>
+        </div>
+    </div>
+</noscript>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+$(function() {
+    $("#main_modal").modal({
+        backdrop: "static"
+    });
+});
+</script>
+{% endblock %}

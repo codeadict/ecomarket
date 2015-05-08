@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load alerts %}
+{% load static from staticfiles %}
+
+{% block content %}
+<div class="content cf primary-left checkout-page">
+  <div class="primary-content-wrap">
+    <!-- add class of active step to checkout-progress container -->
+    <div class="checkout-progress step-delivery">
+      <ol class="steps">
+        <li class="step-cart step-completed">My Cart</li>
+        <li class="step-delivery step-active">Delivery Address</li>
+        <li class="step-payment">Payment</li>
+        <!-- <li class="step-review">Review order</li> -->
+      </ol>
+      <div class="click-boxes">
+		<span class="click-box step-cart"></span>
+		<span class="click-box step-payment"></span>
+	  </div>
+    </div>
+
+
+    <div class="content-box-inset">
+      <h2>Please Choose a Delivery Address</h2>
+
+      <div class="content-box">
+		{# action="{% url 'checkout_shipping' cart_stall_id=cart_stall.id  %}" #}
+        <form id="address-form" method="POST" accept-charset="utf-8" class="form form-horizontal">
+	    {% csrf_token %}
+	    {% if shipping_addresses %}
+			{% if address_form.errors %}
+				<a class="link-address-type" href="#">Choose an existing delivery address</a>
+			{% else %}
+				<a class="link-address-type" href="#">Create a new delivery address</a>
+			{% endif %}
+			<fieldset class="existing-address{% if address_form.errors %} hide{% endif %}">
+			  <legend>Choose a delivery address</legend>
+			  {% for address in shipping_addresses %}
+				<div class="address" id="address-{{ address.id }}" data-address="{{ address.id }}">
+					<a class="address-box">{{ address.name }}<br>{{ address.line1 }}<br>
+					{% if address.line2 %}{{ address.line2 }}<br>{% endif %}
+					{{ address.city }}, {{ address.postal_code }}<br>
+					{{ address.state }}, <b>{{ address.country }}</b></a>
+					<span class="edit-delete">
+						{# <a href="{% url 'account_delivery_address_update' address.id %}" class="address-update">Edit</a> #}&nbsp;&nbsp;
+						{# <a href="#" class="address-delete">Delete</a> #}
+						<span class="tick"></span>
+					</span>
+					<span class="delete-confirm">
+						<a href="#" class="address-delete-cancel">No, keep it!</a>&nbsp;&nbsp;&nbsp;
+						<a href="{% url 'account_delivery_address_delete' address.id %}" class="address-delete-confirm">Yes, I want to delete this</a>
+					</span>
+				</div>
+			  {% endfor %}
+			  
+			  {# The following field is added to the page if user selects existing address #}
+			  {# and removed from page by JS if user wants to put in new address #}
+			  {# <input type="hidden" name="shipping_address_id"> #}
+			</fieldset>
+        {% endif %}
+          <fieldset class="new-address{% if shipping_addresses and not address_form.errors %} hide{% endif %}">
+            <legend>Add a new delivery address</legend>
+            {% include 'fragments/form_snippet.html' with form=address_form only %}
+          </fieldset>
+          <fieldset class="form-actions">
+              <div class="control-group {% if field.errors %}error{% endif %}">
+                  <div id="check_order_container" class="pull-left inline">
+                    <input type="checkbox" name="check_order_in_activity_feed" id="id_check_order" class="eco-checkbox checkbox" {% if share_orders %}checked=""{% endif %}>
+                    <label for="id_check_order">Share this order in my Eco Market activity feed.</label>
+                  </div>
+                  <input type="submit" value="Continue to payment" class="pull-right btn btn-primary btn-large">
+              </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <div class="secondary-content">
+        {% include 'purchase/includes/howto_snippets.html' %}
+      </div>
+
+    </div>
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript" charset="utf-8" src="{% static 'js/utils.js' %}" ></script>
+<!-- ClickTale event tracking JS integration -->
+<script type="text/javascript">
+$(function() {
+    $('#shipping_address_id').on("select2-open", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping_address_id").select2("open")');
+    }).on("select2-close", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping_address_id").select2("close")');
+    }).on("select2-blur", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping_address_id").select2("blur")');
+    }).on("select2-focus", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping_address_id").select2("focus")');
+    }).on("change", function(e) {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping_address_id").select2("val", ' + e.val + ')');
+    });
+});
+</script>
+<!-- ClickTale event tracking JS integration -->
+<script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.modal.loaded.js' %}"></script>
+
+<script type="text/javascript" charset="utf-8">
+var modal_form_on_submit_success = function(data, status, jqXHR) {
+	if (typeof data == 'object') {
+		$('#address-update-modal').modal('hide');
+		$('#address-update-modal').removeData('modal');
+		$('#address-update-modal .btn-primary').removeClass('btn-disabled');
+		$('.address#address-' + data.address + ' .address-box').html(data.tmpl);
+	} else if (typeof data == 'string') {
+		// We got HTML form since there was an error, print it into the modal
+		$('#address-update-modal .modal-body').html(data);
+		$('#address-update-modal .btn-primary').removeClass('btn-disabled');
+		modal_form_on_loaded();
+	}
+}
+
+var modal_form_on_loaded = function() {
+	if ($('#address-update-modal').find('form').length) {
+		frm = $('#address-update-modal').find('form');
+		
+		frm.find('#id_country').select2();
+		frm.find('.select2-container').css('display', 'block');
+		
+		$('#address-update-modal .btn-primary').click(function(e) {
+			e.preventDefault();
+			if ($(this).hasClass('btn-disabled'))
+				return false;
+			$(this).addClass('btn-disabled');
+			$.ajax({
+				url: frm.attr('action'),
+				data: frm.serialize(),
+				type: 'POST',
+				success: modal_form_on_submit_success
+			});
+		});
+	}
+}
+
+$(function() {
+	var _last_address_id = null;
+	var _address_with_error = null;
+	{% with last_select_address=shipping_addresses_by_use|first %}
+		_last_address_id = {{ last_select_address.id }};
+	{% endwith %}
+	{% if address_with_error %}
+		_address_with_error = {{ address_with_error }};
+	{% endif %}
+	
+	$('#id_country').select2();
+	
+    $(".address-update").click(function(event) {
+        $('#address-update-modal').removeData("modal");
+        $('#address-update-modal').unbind();
+        
+        $('#address-update-modal').on('loaded', modal_form_on_loaded);
+		
+        $('#address-update-modal').modal({remote: $(this).attr("href")});
+        // We do not want the event to bubble up, else the outer box gets click event
+        return false;
+    });
+    
+    $('.address-delete').click(function(event) {
+		parent = $(this).parents('.address');
+		
+		parent.find('.edit-delete').hide();
+		parent.find('.delete-confirm').show();
+		
+		parent.find('.address-delete-cancel').click(function() {
+			parent.find('.delete-confirm').hide();
+			parent.find('.edit-delete').show();
+			// We do not want the event to bubble up, else the outer box gets click event
+			return false;
+		});
+		
+		parent.find('.address-delete-confirm').click(function() {
+			if (parent.hasClass('selected')) {
+				/* This is currently selected, remove the selection and value */
+				$('.existing-address').find('input[name="shipping_address_id"]').remove();
+			}
+			$.ajax({
+				url: $(this).attr('href'),
+				dataType: 'json',
+				success: function(data) {
+					
+					if (data.success) {
+						$('#address-' + data.address).remove();
+					}
+				}
+			});
+			// We do not want the event to bubble up, else the outer box gets click event
+			return false;
+		});
+		
+		// We do not want the event to bubble up, else the outer box gets click event
+		return false;
+	});
+	
+	
+	$('.click-box.step-cart').click(function(e) {
+		$('#show-cart-link')[0].click();
+		e.preventDefault();
+	});
+	
+	$('.click-box.step-payment').click(function(e) {
+		$('#address-form input[type="submit"]')[0].click();
+		e.preventDefault();
+	});
+	
+	$('.link-address-type').click(function(e) {
+		e.preventDefault();
+		if ($('.existing-address:visible').length) {
+			$('.existing-address').addClass('hide');
+			$('.select-address-error').remove();
+			if ($('.address.selected').length) {
+				$('.address.selected').click();
+			}
+			$('.new-address').removeClass('hide');
+			$(this).text('Choose an existing delivery address');
+		} else {
+			$('.existing-address').removeClass('hide');
+			$('.new-address').addClass('hide');
+			$(this).text('Create a new delivery address');
+		}
+	});
+	
+	$('.address').click(function(e) {
+		e.preventDefault();
+		if ($(this).hasClass('selected')) {
+			$('input[name="shipping_address_id"]').val('');
+			$(this).removeClass('selected');
+			$('.tick').text('');
+			$('.existing-address').find('input[name="shipping_address_id"]').remove();
+		} else {
+			$('.address').removeClass('selected');
+			$('.tick').text('');
+			$('.existing-address').append('<input type="hidden" name="shipping_address_id">');
+			$('input[name="shipping_address_id"]').val($(this).data('address'));
+			$(this).addClass('selected');
+			$(this).find('.tick').text('Selected');
+		}
+		return false;
+	});
+	
+	if (_last_address_id && $('.address#address-' + _last_address_id)) {
+		if (!_address_with_error || _address_with_error != _last_address_id)
+			$('.address#address-' + _last_address_id).click();
+	}
+	
+	if (_address_with_error && $('.address#address-' + _address_with_error)) {
+		$('.address#address-' + _address_with_error).addClass('error');
+	}
+	
+	$('form#address-form').submit(function(e) {
+		if ($('.existing-address:visible').length && !$('.existing-address').find('input[name="shipping_address_id"]').length) {
+			if (!$(this).find('ul.select-address-error').length)
+				$('.existing-address').after('<ul class="errorlist select-address-error"><li>'+
+					'Please select one of the delivery addresses from above or <a href="#" class="link-add-address">add a new address</a> to finish your checkout.'+
+					'</li></ul>');
+				$('.errorlist.select-address-error a.link-add-address').click(function(e) {
+					e.preventDefault();
+					$('.link-address-type').click();
+				});
+			e.preventDefault();
+		}
+	});
+});
+</script>
+{% endblock %}

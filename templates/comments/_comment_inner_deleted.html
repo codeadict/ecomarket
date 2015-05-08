@@ -1,0 +1,10 @@
+{% extends "comments/_comment_inner.html" %}
+{% load static from staticfiles %}
+
+{% block author %}
+<img src="{% static 'images/avatar/50/avatar.png' %}" alt="" />
+{% endblock %}
+
+{% block comment-box %}
+<div class="comment-body">Sorry, this message was removed by the person who posted it.</div>
+{% endblock %}

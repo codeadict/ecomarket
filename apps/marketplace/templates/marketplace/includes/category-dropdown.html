@@ -1,0 +1,57 @@
+{% with children=category.get_children %}
+<li>
+  {% if not children %}
+  <a href="#"
+     class="em-dropdown-choaccounts/stall/shipping/ice"
+     data-value="{{category.id}}"
+     >{{category.name}}</a>
+  {% else %}
+  <a href="#"
+     class="em-dropdown-list-toggle"
+     >{{category.name}}</a>
+  <ul class="em-dropdown-list-collapsed em-dropdown-level-{{category.get_level|add:"1"}} em-dropdown-nested-list">
+    {% for category in children %}
+    <li>
+      {% with children=category.get_children %}
+      {% if not children %}
+      <a href="#"
+	 class="em-dropdown-choice"
+	 data-value="{{category.id}}"
+	 >{{category.name}}</a>
+      {% else %}
+      <a href="#"
+	 class="em-dropdown-list-toggle"
+	 >{{category.name}}</a>
+      <ul class="em-dropdown-list-collapsed em-dropdown-level-{{category.get_level|add:"1"}} em-dropdown-nested-list">
+	{% for category in children %}
+	<li>
+	  {% with children=category.get_children %}
+	  {% if not children %}	  
+	  <a href="#"
+	     class="em-dropdown-choice"
+	     data-value="{{category.id}}"
+	     >{{category.name}}</a>
+	  {% else %}
+	  <a href="#" 
+	     class="em-dropdown-list-toggle"
+	     >{{category.name}}</a>
+	  <ul class="em-dropdown-list-collapsed em-dropdown-level-{{category.get_level|add:"1"}} em-dropdown-nested-list">
+	    {% for category in children %}
+	    <li>
+	      <a href="#" class="em-dropdown-choice" data-value="{{category.id}}">{{category.name}}</a>
+	    </li>
+	    {% endfor %}
+	  </ul>
+	  {% endif %}
+	  {% endwith %}
+	</li>
+	{% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>
+{% endwith %}

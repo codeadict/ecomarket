@@ -1,0 +1,27 @@
+{% extends "base_modal.html" %}
+
+{% block modal_title %}Where are you?{% endblock %}
+
+{% block modal_content %}
+<p>We are doing some tidying and need to make sure we know where you are. Please tell us your country - it won't take a minute.</p>
+<form class="form" id="country_form" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {% with field=form.country %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+        {% endwith %}
+    </fieldset>
+</form>
+{% endblock %}
+
+{% block modal_footer %}
+<div class="pull-right">
+    <button type="button" class="btn btn-primary" onclick="$('#country_form').submit()">Save</button>
+</div>
+{% endblock %}

@@ -1,0 +1,2 @@
+{% load url from future %}
+<a href="{% url 'user_activities' %}">Activities {% if activities_count %}<em class="badge">{{ activities_count }}</em>{% endif %}</a>

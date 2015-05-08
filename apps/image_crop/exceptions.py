@@ -1,0 +1,4 @@
+
+
+class ImageUploadError(BaseException):
+    pass

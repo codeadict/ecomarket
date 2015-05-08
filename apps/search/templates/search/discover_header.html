@@ -1,0 +1,24 @@
+{% load breadcrumb %}
+
+<div class="content cf full-content discover-page">
+    <div class="primary-content-wrap love-list-header">
+        <div class="content-box">
+            {% generate_breadcrumb category %}
+            <div class="page-header category-header cf">
+                <div class="category-info">
+                    <h1>{{ category.name }}</h1>
+                    <p class="description">{{ category.description|default:""|safe }}</p>
+                </div>
+                <div class="social">
+                    <div id="shareme"></div>
+                </div>
+                <ul class="categories">
+                    {% for subcat in category.children.all %}
+                    <li><a href="{{ subcat.get_discover_url }}">{{ subcat.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% block header_extra_content %}{% endblock %}
+        </div>
+    </div>
+</div>

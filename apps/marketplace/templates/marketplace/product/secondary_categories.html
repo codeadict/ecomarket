@@ -1,0 +1,28 @@
+{% load cache %}
+<div class="control-group{% if field.errors %} error{% endif %}">
+  <label for="{{field.auto_id}}" class="control-label">{{field.label}}:</label>
+  <div class="controls">
+    {{field}}
+    <div class="em-dropdown hidden em-dropdown-collapsed">
+      <div class="em-dropdown-current-choice">
+        <span class="em-dropdown-value">Choose category from the list</span>
+        <span class="em-dropdown-toggle"><b class="em-dropdown-caret"></b></span>
+      </div>
+      {% cache 600 categories-dropdown %}
+      <ul class="em-dropdown-list categories">
+        {% for category in ROOTS_CATEGORIES %}
+        {% include 'marketplace/includes/category-dropdown.html' %}
+        {% endfor %}
+      </ul>
+      {% endcache %}
+    </div>
+    <div class="alert alert-inline alert-info">
+      <p>You shouldn't fill this optional second category in unless your product definitely fits very clearly into two places. Try to only use a main category if possible, it will help customers find your products and help get you more sales!</p>
+      <div class="alert-actions">
+      <!-- <a href="#" class="icon-help">?</a> -->
+        <a href="#" class="icon-dismiss alert-dismiss">×</a>
+      </div>
+    </div>
+    {{field.errors}}
+  </div>
+</div>

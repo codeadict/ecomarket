@@ -1,0 +1,31 @@
+<fieldset class="shipping">
+  <legend>Shipping</legend>
+
+  {% with field=form.shipping_profile queryset=form.shipping_profiles_qs %}
+  <div class="control-group {% if separated %}separated{% endif %}{% if field.errors %} error{% endif %}">
+    <label for="{{field.auto_id}}" class="control-label">{{field.label}}:
+      {% if not field.field.required %}
+      <br/>
+      <em class="opt">(Optional)</em>
+      {% endif %}
+    </label>
+
+    <div class="controls">
+      <select name="{{field.auto_id}}" id="select-{{field.auto_id}}" class="select">
+        <option value="">Create a new profile</option>
+        {% for item in queryset %}
+        <option value="{{item.id}}" {% if field.value == item.id %} selected="selected" {% endif %}>{{item}}</option>
+        {% endfor %}
+      </select>
+      {{field.errors}}
+    </div>
+  </div>
+  {% endwith %}
+
+  <div id="shipping-profiles">
+    {% with form=shipping_form %}
+    {% include 'marketplace/shipping/profile.html' %}    
+    {% endwith %}
+  </div>
+
+</fieldset>

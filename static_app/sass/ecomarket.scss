@@ -1,0 +1,148 @@
+@import "../bootstrap/css/bootstrap.min.css";
+@import "../bootstrap/css/bootstrap-responsive.min.css";
+// todo, merge bootstrap
+
+@import "compass";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+
+*{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+  // path has to be relative to html files
+  // and htc has to be served as "AddType text/x-component .htc"
+  // *behavior: url(/html/js/ie/boxsizing.htc);
+}
+
+tmp{
+  color: darken(#ffffff, 10%);
+}
+
+
+@import "core/variables";
+@import "core/layout";
+@import "core/typography";
+@import "core/links";
+@import "core/basics";
+
+@import "utilities/clearfix";
+@import "utilities/mixins";
+
+@import "header/menu";
+@import "header/header";
+@import "header/nav";
+@import "header/account";
+@import "header/search";
+
+@import "partials/footer";
+
+
+// styles for content
+
+@import "partials/content";
+@import "partials/content/tabs";
+@import "partials/content/breadcrumbs";
+@import "partials/content/product";
+@import "partials/content/product/shipping";
+
+@import "partials/content/comments";
+
+@import "partials/content/stall";
+@import "partials/content/products-list";
+
+@import "lists/pagination";
+@import "lists/loading";
+@import "lists/love-lists";
+
+@import "sidebar/sidebar";
+@import "sidebar/price-box";
+@import "sidebar/stall-box";
+@import "sidebar/love-box";
+@import "sidebar/howto-box";
+
+@import "partials/content/headlines";
+
+@import "partials/tags";
+
+@import "checkout/checkout";
+
+@import "homepage/homepage";
+@import "homepage/post-list";
+@import "homepage/scrollables";
+
+// product page
+@import "product/credentials";
+
+@import "product/shipping";
+
+// users pages
+@import "user/people-list";
+@import "user/profile-box";
+@import "user/activities";
+@import "user/activity";
+
+
+// sell page
+@import "sell/how-it-works";
+@import "sell/spotlight";
+@import "sell/why-sell";
+@import "sell/press";
+
+// discovery
+@import "product/discover";
+
+// category
+@import "category/category";
+
+// forms
+@import "forms/forms";
+@import "forms/buttons";
+@import "forms/filter";
+@import "forms/dropdown";
+@import "forms/colorpicker";
+@import "forms/datepicker";
+@import "forms/eco_checkbox";
+
+
+// modals
+@import "modals/global";
+@import "modals/login";
+@import "modals/message";
+@import "modals/love";
+@import "modals/email_capture";
+@import "modals/address_update";
+
+// slider
+@import "slider/slider";
+
+// notifications
+@import "notifications/alerts";
+
+// blog layout
+@import "blog/blog";
+@import "blog/sidebar";
+
+// account
+@import "account/dashboard";
+@import "account/account";
+@import "account/toolbar";
+@import "account/messages";
+@import "account/products";
+@import "account/invoice";
+@import "account/stall";
+@import "account/bought_sold";
+@import "account/profile";
+@import "account/stockcheck";
+
+//Purchase admin page
+@import "purchase_admin/purchase_admin";
+
+// merge some vendor JS also
+@import "../js/vendor/media-element/mediaelementplayer.css";
+@import "../js/vendor/bootstrap-gallery/css/bootstrap-image-gallery.min.css";
+
+@import "image_crop/image_crop";
+

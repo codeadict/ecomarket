@@ -1,0 +1,23 @@
+.people-list{
+  
+  ul{
+    @include list-reset;
+    margin-left: -15px;
+
+    li{
+      float: left;
+      @include white-box(5px);
+      margin: 0 0 15px 15px;
+      
+      a{        
+        img{
+          
+        }
+      }
+      
+    }
+    
+  }
+  
+  
+}

@@ -1,0 +1,21 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load url from future %}
+{% load mptt_tags %}
+
+{% block li_attrs %}{{ block.super }} id="comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}"{% endblock %}
+
+{% block reply_button %}
+<a class="comment-reply" data-toplevel_comment="#comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}" href="{% url 'comment_reply' ctype_and_id.object_id %}">Reply</a>
+{% endblock %}
+
+{% comment %}
+{% block below_activity %}
+<ul class="activities">
+    {% recursetree action.action_object.children.all %}{# magically creates node and children variables #}
+        {% if not node.is_removed %}
+        {% include "accounts/profile/fragments/_activity_threaded-comment_child.html" with comment=node %}
+        {% endif %}
+    {% endrecursetree %}
+</ul>
+{% endblock %}
+{% endcomment %}

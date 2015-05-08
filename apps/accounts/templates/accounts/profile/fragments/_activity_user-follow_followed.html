@@ -1,0 +1,20 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load url from future %}
+
+{% block target_title %}{{ action.target.title }}{% endblock %}
+{% block target %} <a href="{% url 'public_profile' action.target.username %}">{{ action.target.username }}</a>
+    {% if action.target.get_profile.stall %} from
+        <a href="{% url 'my_stall' action.target.get_profile.stall.slug %}">
+            {{ action.target.get_profile.stall.title }}</a>
+    {% endif %}
+{% endblock %}
+
+{% block activity_extra_class %}activity-follow{% endblock %}
+
+{% block body %}
+<div class="activity-preview products-preview">
+  <a href="{% url 'public_profile' action.target.username %}" class="avatar thmb">
+  <img src="{{ action.target.get_profile.avatar_228 }}" alt="{{ action.target.username }}" width="80"></a>
+  {% include "fragments/show_follow_button.html" with user=user follow_candidate=action.target %}
+</div>
+{% endblock %}

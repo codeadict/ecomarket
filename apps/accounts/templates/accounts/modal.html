@@ -1,0 +1,15 @@
+{# <div id="fileUploadModal" class="modal hide"> #}
+  {% block modal_header %}
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>{% block modal_title %}title{% endblock modal_title %}</h3>
+  </div>
+  {% endblock modal_header %}
+  {% block modal_body %}
+  <div class="modal-body">
+    {% block modal_content %}
+    content
+    {% endblock modal_content %}
+  </div>
+  {% endblock modal_body %}
+  {# </div> #}

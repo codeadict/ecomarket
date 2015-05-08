@@ -1,0 +1,100 @@
+{% extends 'accounts/selling/base.html' %}
+
+{% load url from future %}
+
+{% load string_tags %}
+{% load alerts %}
+
+{% block selling_top_navbar %}
+{% if request.user.stall.is_suspended %}{{ block.super }}{% endif %}
+{% endblock selling_top_navbar %}
+
+{% block content_tab %}
+<div class="tab-content">
+  <div class="tab-pane active" id="published">
+    <div class="account-products">
+      <form id="bulk_form" action="{{ request.path }}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="action" value=""/>
+        <input type="hidden" name="page" value="1">
+        <table class="table table-striped table-products table-stockcheck">
+          <thead>
+            <tr>
+              <th class="image">Image</th>
+              <th class="product">Product name</th>
+              <th class="stock">Stock</th>
+              <th class="stock">Stock</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for product in product_list %}
+            {% with price=product.get_price_instance %}
+            <tr>
+              <td class="image">
+                <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url_50 }}"></a>
+              </td>
+              <td class="product">
+                <input type="hidden" name="ids" value="{{ product.id }}"/>
+                <a href="{{product.get_absolute_url}}" class="name">{{ product.title }}</a>
+              </td>
+              <td class="stock">
+                <input type="text" class="stock_input" name="stock_data" id="{{ product.slug }}" value="{{ product.stock|default_if_none:'-1' }}"
+                       {% if product.stock == None or product.stock == 0%}readonly="readonly"{% endif %}>
+              </td>
+              <td>
+              <input type="radio" class="stock_checkbox" id="{{ product.slug }}-zero" name="{{ product.slug }}"
+                       {% if product.stock == 0 %}checked="true"{% endif %}> <label for="{{ product.slug }}" style="display: inline">Out of stock</label><br>
+                <input type="radio" class="stock_checkbox" id="{{ product.slug }}-unlimited" name="{{ product.slug }}"
+                       {% if product.stock == None %}checked="true"{% endif %}> <label for="{{ product.slug }}" style="display: inline">Unlimited</label>
+              </td>
+            </tr>
+            {% endwith %}
+            {% empty %}
+            <tr>
+              <td colspan=4>There are no products to show.</td>
+            <tr>
+              {% endfor %}
+          </tbody>
+        </table>
+
+        <div class="actions-toolbar cf">
+          <div class="actions">
+            {% if page_obj.has_next %}
+            <a href="#" class="btn btn-flat btn-green" data-action="{{ Action.STOCK }}">Update stock</a>
+            {% else %}
+            <a href="#" class="btn btn-flat btn-green" data-toggle="modal" data-target="#confirm-stock-check-modal">Update stock</a>
+            {% endif %}
+          </div>
+        </div>
+
+      </form>
+    <div class="overlay">
+
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal hide fade modal-message modal-notification in" id="confirm-stock-check-modal">
+  <div class="modal-header">
+    <a href="#" class="close" data-dismiss="modal">×</a>
+    <h3>You are about to confirm this stock check....</h3>
+  </div>
+  <div class="modal-body">
+    <div class="notification-area cf">
+        <p>Please remember than on Eco Market we require you to keep stock accurate at all times so if your stock changes frequently you can come back and do another stock check here whenever you like. At the moment you need to do this every {{ request.user.stall.stockcheck_days_limit }} days, but if you continually dispatch products on time and have items out of stock we will increase this time period for you.</p>
+        <p>If items are purchased by customers that are not in stock this will lead to unhappy customers and we will eventually be required to suspend stalls who continually do this (which we certainly don't want!) so are you 100% sure that you have all the items in stock that you have just indicated?</p>
+    </div>
+  </div>
+  <div class="modal-footer cf">
+      <div class="pull-left">
+        <a href="http://help.ecomarket.com/customer/portal/articles/1342284-what-is-a-stock-check-and-how-do-i-do-them-" class="btn btn-help" target="_blank"><i class="icon icon-question-sign"></i> Need help?</a>
+      </div>
+      <div class="pull-right actions">
+        <a href="#" class="btn" data-dismiss="modal">No, I'll re-check.</a>
+        <a href="#" class="btn btn-primary" data-action="{{ Action.STOCK }}">Yes I am sure!</a>
+      </div>
+  </div>
+</div>
+{% endblock content_tab %}

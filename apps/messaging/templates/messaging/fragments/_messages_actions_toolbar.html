@@ -1,0 +1,19 @@
+{% load url from future %}
+<div class="actions-toolbar cf">
+    <div class="pull-left">
+        {#<a href="#new-message" class="btn btn-flat btn-blue btn-new-messages" data-toggle="modal">New Message</a>#}
+        <a href="javascript:void(0)" class="btn btn-flat btn-blue btn-new-messages ajax" data-toggle="modal" data-source="{% url 'messaging_compose' %}" data-target="#new-message">New Message</a>
+    </div>    
+    <div class="pull-right btn-group actions">
+        {% ifequal tab 'inbox' %}
+            {#<a href="javascript:void(0)" class="btn-reply-messages ajax" data-toggle="modal" data-source="{% url 'messaging_reply' 20 %}" data-target="#reply-message">Reply</a>#}
+            <a href="javascript:void(0)" class="btn-mark-read-messages ajax" data-source="{% url 'messaging_mark_read_selected' %}">Mark Read</a>
+            <a href="javascript:void(0)" class="btn-mark-unread-messages ajax" data-source="{% url 'messaging_mark_unread_selected' %}">Mark Unread</a>
+            {% if request.user.get_profile.is_seller %}
+                <a href="javascript:void(0)" class="btn-mark-unanswered-messages ajax" data-source="{% url 'messaging_mark_resolved_selected' %}">Mark Resolved</a>
+                <a href="javascript:void(0)" class="btn-mark-unanswered-messages ajax" data-source="{% url 'messaging_mark_unresolved_selected' %}">Mark Unresolved</a>
+            {% endif %}
+        {% endifequal %}
+        <a href="javascript:void(0)" class="btn-delete-messages ajax" data-source="{% url 'messaging_delete_selected' %}">Delete</a>
+    </div>
+</div>

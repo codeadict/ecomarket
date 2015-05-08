@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load string_tags %}
+{% load static from staticfiles %}
+
+{% block content %}
+{% url 'video_intro' as video_intro_url %}
+{% url 'video_responses' as video_responses_url %}
+{% url 'video_draft' as video_draft_url %}
+
+<div class="content cf full-content">
+  <div class="primary-content-wrap single-content">
+    <div class="content-box">
+      <div class="page-header">
+        <h1>Shoot a Video</h1>
+      </div>
+      <div id="capture_video_container" style="height:550px; width: 410px; margin-left: 240px;">
+        <script type="text/javascript">
+          var sociagram_params = {
+            'account': 'ecomarket',
+            'UID': '{{ request.user.stall.id }}',
+            'descriptor': 'stall',
+            'mediaLabel': '& Save My Video',
+            'timeLimit': {{ video_type.time_limit }},
+            'onComplete': function(data) {
+              var dict = {
+                guid: data['guid'],
+                embed_url: data['embedUrl'],
+                splash_url: data['splashUrl']
+              };
+              $.ajax({
+                url: "{% url 'record_guest_video' %}",
+                type: "post",
+                data: dict,
+                success: function(data, textStatus, jqXHR) {
+                  if (data['success'] == true) {
+                    window.location = '{% url 'record_guest_video' %}';
+                  }
+                }
+              })
+            }
+          }
+        </script>
+        <script type="text/javascript" src="//track.sociagram.com/plugin/attached-media.js?account=ecomarket"></script>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

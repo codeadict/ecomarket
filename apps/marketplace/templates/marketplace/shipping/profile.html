@@ -1,0 +1,54 @@
+<div id="shipping-profile">
+
+  {% with field=form.title %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  {% with field=form.shipping_country queryset=form.shipping_country_qs separated=False  %}
+  <div class="control-group {% if separated %}separated{% endif %}{% if field.errors %} error{% endif %}">
+    <label
+       for="{{field.auto_id}}"
+       class="control-label">{{field.label}}:
+      {% if not field.field.required %}
+      <br/>
+      <em class="opt">(Optional)</em>
+      {% endif %}
+    </label>
+
+    <div class="controls">
+      <select name="{{field.auto_id}}" id="select-{{field.auto_id}}" data-placeholder="Please select a country" class="select">
+        <option></option>
+        {% for item in queryset %}
+        <option value="{{item.id}}" {% if field.value == item.id %}selected="selected"{% endif %}>{{item}}</option>
+        {% endfor %}
+      </select>
+      {{field.errors}}
+    </div>
+  </div>
+  {% endwith %}
+
+  {% with field=form.shipping_postcode %}
+  {% include "marketplace/includes/field.html" %}
+  {% endwith %}
+
+  <div class="shipping-profile-rules">
+    <div class="shipping-rules">
+      {% with formset=rules_formset %}
+      {{formset.management_form}}
+      {% for form in formset %}
+      {{form.id}}
+      <div class="hide shipping-rule-form-delete">
+	{{form.DELETE}}
+      </div>
+      {% include 'marketplace/shipping/profile-rule.html' %}   
+      {% endfor %}
+      {% endwith %}
+    </div>
+    <a class="btn btn-flat btn-blue"
+       name="shipping-profile-rule-add"
+       href="#">Add shipping rule</a>
+  </div>
+
+    
+  {% include 'marketplace/shipping/profile-worldwide.html' %}
+</div>

@@ -1,0 +1,24 @@
+We had an order!
+<br>
+<a href="http://{{ request.META.HTTP_HOST }}{{ profile.get_absolute_url }}"> {{ order.user.username }}</a>
+({{ order.user.first_name }} {{ order.user.last_name }}) spent &pound; {{ order.total }}
+<br>
+
+{% if last_em_data %}
+The campaign that brought them to make this order was<br>
+source:{{ last_em_data.source }}, medium: {{ last_em_data.medium }}, campaign: {{ last_em_data.name }}
+<br>
+{% endif %}
+
+{% if first_em_data %}
+The original campaign that brought them to Eco Market was<br>
+source: {{ first_em_data.source }}, medium: {{ first_em_data.medium }}, campaign: {{ first_em_data.name }}
+<br>
+{% endif %}
+
+They ordered the following from <a href="http://{{ request.META.HTTP_HOST }}{{ order.stall.get_absolute_url }}">{{ order.stall.title }}</a>:
+<br>
+{% for line_item in order.line_items.all %}
+- <a href="http://{{ request.META.HTTP_HOST }}{{ line_item.product.get_absolute_url }}">{{ line_item.product.title }}</a> x {{ line_item.quantity }}<br>
+{% endfor %}
+They have now ordered {{ total_orders }} times from Eco Market with a CLV of &pound;{{ profile.total_gmv }}

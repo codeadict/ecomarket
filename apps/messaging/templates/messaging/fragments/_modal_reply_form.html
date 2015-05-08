@@ -1,0 +1,47 @@
+{% load url from future %}
+
+<div class="modal-header">
+    <a href="#" class="close" data-dismiss="modal">×</a>
+    <h3>Subject: {{ subject }}</h3>
+</div>
+<form class="message-form form" action="{% url 'messaging_reply' message_id %}" method="post" id="reply-message-form">{% csrf_token %}
+    <div class="modal-body">
+        <div class="messages-list">
+            <ol class="messages">
+                {% for message in message_list %}
+                    {% include 'messaging/fragments/_message_reply_detail.html' %}
+                {% endfor %}
+                <div id="scroll-target"></div>
+            </ol>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-left">
+            <p style="display:none;">
+                {{ form.recipient }}
+                {{ form.recipient.errors }}
+            </p>
+            <p style="display:none;">
+                {{ form.subject }}
+                {{ form.subject.errors }}
+            </p>
+            <div class="message-reply"><textarea id="id_body" name="body" placeholder="Message"></textarea></div>
+            {{ form.body.errors }}
+        </div>
+        <div class="pull-right">    
+            <div class="btn-group">
+                {% if request.user.get_profile.is_seller %}
+                    <input type="submit" value="Reply" class="btn btn-primary btn-large ajax-submit">
+                    <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="ajax-submit resolve">Reply &amp; Resolve</a></li>
+                    </ul>
+                {% else %}
+                    <input type="submit" value="Reply" class="btn btn-primary btn-large ajax-submit">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</form>

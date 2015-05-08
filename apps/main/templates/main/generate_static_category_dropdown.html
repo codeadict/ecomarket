@@ -1,0 +1,34 @@
+<div class="em-dropdown category-picker em-dropdown-collapsed hidden">
+    <div class="em-dropdown-current-choice">
+        <span class="em-dropdown-value">Category</span>
+        <span class="em-dropdown-toggle">
+            <b class="em-dropdown-caret"></b>
+        </span>
+    </div>
+    <ul class="em-dropdown-list">
+        {% for category in top_level_categories %}
+        <li>
+        <span class="em-dropdown-choice" data-value="{{ category.id }}">{{ category.name }}</span>
+        <span class="em-dropdown-list-toggle"></span>
+        <ul class="em-dropdown-level-1 em-dropdown-nested-list em-dropdown-list-collapsed" style="overflow: hidden; display: none; ">
+            {% for level1_cat in category.children.all %}
+            <li><span class="em-dropdown-choice" data-value="{{ level1_cat.id }}">{{ level1_cat.name }}</span>
+            <span class="em-dropdown-list-toggle"></span>
+            <ul class="em-dropdown-list-collapsed em-dropdown-level-2 em-dropdown-nested-list">
+                {% for level2_cat in level1_cat.children.all %}
+                <li><span class="em-dropdown-choice" data-value="{{ level2_cat.id }}">{{ level2_cat.name }}</span>
+                <ul class="em-dropdown-list-collapsed em-dropdown-level-3 em-dropdown-nested-list">
+                    {% for level3_cat in level2_cat.children.all %}
+                    <li><span class="em-dropdown-choice" data-value="{{ level3_cat.id }}">{{ level3_cat.name }}</span>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+                </li>
+            </ul>
+            </li>
+            {% endfor %}
+        </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

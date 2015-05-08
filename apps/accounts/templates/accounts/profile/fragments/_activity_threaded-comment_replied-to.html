@@ -1,0 +1,27 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load url from future %}
+
+{% block body %}
+<div class="body-text">{{ action.action_object.comment }}</div>
+{% endblock %}
+
+{% block li_attrs %}{{ block.super }} id="comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}"{% endblock %}
+
+{% block target %}
+{% if action.target %}
+    {% if action.target.content_type|stringformat:"s" == "user profile" %}
+    <a href="{{ action.target.content_object.get_absolute_url }}">{{ action.target.user }}</a>
+    {% else %}
+    <a href="{{ action.target.user.get_profile.get_absolute_url }}">{{ action.target.user }}</a> on 
+    {% if action.target.content_object.content_type|stringformat:"s" == "product" %}
+        <a href="{{ action.target.content_object.get_absolute_url }}">{{ action.target.content_object.title }}</a>
+    {% else %}
+        <a href="{{ action.target.content_object.get_absolute_url }}">{{ action.target.content_object }}</a>
+    {% endif %}
+    {% endif %}
+{% endif %}
+{% endblock target %}
+
+{% block reply_button %}
+<a class="comment-reply" data-toplevel_comment="#comment-{{ action.id }}-{{ ctype_and_id.ctype_id }}-{{ ctype_and_id.object_id }}" href="{% url 'comment_reply' action.action_object.id %}">Reply</a>
+{% endblock %}

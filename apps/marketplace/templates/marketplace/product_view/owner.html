@@ -1,0 +1,21 @@
+{% load url from future %}
+     
+  <!-- bronze box with owner info -->
+  <div class="box-inset box-bronze">
+    <h2 class="with-link"><a href="{% url 'public_profile' owner.username %}">The Stall Owner</a></h2>
+    
+    <div class="box stall-box stall-owner">
+      
+      <div class="stall-header">
+        <div class="stall-image">
+          <a href="{% url 'public_profile' owner.username %}"><img src="{{ owner_profile.avatar_50 }}" alt="{{ owner.username }}" /></a>
+        </div>
+        <a class="user-name" href="{% url 'public_profile' owner.username %}">{{ owner.username }}</a>
+        {% include "fragments/show_follow_button.html" with user=user follow_candidate=owner %}
+        <div class="stall-description">
+          <p>{{ owner_profile.about_me }}</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>

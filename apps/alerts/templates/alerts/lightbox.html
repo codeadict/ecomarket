@@ -1,0 +1,35 @@
+<div class="modal fade hide modal-message modal-notification" id="{{ element_id }}" style="display: block;">
+    
+  <div class="modal-header">    
+    <a href="#" class="close" data-dismiss="modal">×</a>
+    <h3>{{ heading }}</h3>
+  </div>
+
+  <div class="modal-body">
+    <div class="notification-area cf{% if image_src %} with-image{% endif %}">
+      {% if image_src %}
+      <div class="image">
+        <img src="{{ image_src }}" width="180">
+      </div>
+      {% endif %}
+      <div class="content">
+        {{ body|safe }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-footer cf">
+    {% if help_link %}
+    <div class="pull-left">
+      <a href="{{ help_link }}" target="_blank" class="btn btn-help"><i class="icon icon-question-sign"></i> Need help?</a>
+    </div>
+    {% endif %}
+    <div class="pull-right">
+      <a href="#" class="btn" data-dismiss="modal">Cancel</a>
+      {% if button_text %}
+        <a href="#" class="btn btn-primary" id="{{ button_id }}">{{ button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,2 @@
+{% load url from future %}
+<a href="{% url 'messaging_inbox' %}">Messages {% if new_threads_count %}<em class="badge">{{ new_threads_count }}</em>{% endif %}</a>

@@ -1,0 +1,17 @@
+<fieldset>
+  <legend>
+    Product details
+  </legend>
+
+  {% with field=form.colors queryset=form.colors_qs %}
+  {% include "marketplace/includes/color.html" %}
+  {% endwith %}
+  {% with field=form.keywords_field queryset=form.keywords_qs %}
+  {% include "marketplace/includes/keywords-form.html" %}
+  {% endwith %}
+
+  {% with field=form.recipients queryset=form.recipients_qs %}
+  {% include "marketplace/includes/m2m.html" %}
+  {% endwith %}
+
+</fieldset>

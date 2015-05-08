@@ -1,0 +1,37 @@
+<div id="messages-container">
+{% if thread_list %}
+    <table class="table table-messages">
+        <thead>
+            <tr>
+                <th class="check" scope="col"><input type="checkbox" name="messages" value="all" /></th>
+                <th class="avatar" scope="col">&nbsp;</th>
+                <th class="user">Details</th>
+                <th class="message">Message</th>
+                <th class="status">
+                    {% comment %}
+                    <div class="btn-group">
+                        <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
+                            Sort by
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Sent date</li></ul>
+                        </ul>
+                    </div>
+                    {% endcomment %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for thread in thread_list %}
+                {% with thread.messages.all.0 as message %}            
+                    {% include 'messaging/fragments/_message_detail.html' %}
+                {% endwith %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include 'messaging/fragments/_messages_footer.html' %}
+{% else %}
+    <p>Your inbox is empty at the moment. Say hello to some nice people here and you will soon fix that!</p>
+{% endif %}
+</div>

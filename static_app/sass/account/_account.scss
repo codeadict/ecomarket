@@ -1,0 +1,19 @@
+.account {
+
+    a.fb-register,a.fb-login{
+      display: inline-block;
+      width: 185px;
+      height: 37px;
+      margin: 0 auto;
+      text-indent: -9999px;
+      opacity: 0.9;
+    }
+
+    a.fb-register{
+      background: url('../images/buttons/sign-up-with-facebook.png') 0 0 no-repeat;
+    }
+
+    a.fb-login{
+      background: url('../images/buttons/sign-in-with-facebook.png') 0 0 no-repeat;
+    }
+}

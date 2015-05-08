@@ -1,0 +1,125 @@
+.stall-box{
+  
+  .stall-header{
+    .stall-image{
+      float: left;
+      margin: 0 10px 10px 0;
+      
+      img{
+        border-radius: 3px;
+      }
+    }
+    
+    .stall-name, .user-name{
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: 500;
+      display: block;
+      text-decoration: none;
+    }
+    
+    .stall-description{
+      clear:both;
+      font-size: 13px;
+      color: #888;
+      
+      p{
+        margin: 15px 0;
+        padding: 0;        
+      }
+    }
+    
+  }
+  
+  ul.products{
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;    
+    
+    li{
+      float: left;
+      
+      a{
+        float: left;
+        margin: 0 5px 5px 0px;
+        
+        img{
+          @include border-radius(3px);
+        }
+      }
+    }
+  }
+  
+  div.video{
+    @include white-box(10px);
+  }
+  
+  .stall-comment{
+    
+    .comment{
+      padding: 0;
+
+      .author {
+        display: none;
+      }
+    }
+    
+    .comment-box{
+      
+      &:after{
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 10px;
+        background: url('../images/product/comment-tick-vertical.png') 0 0 no-repeat;
+        position: absolute;
+        top: -8px;
+        left: 10px;
+      }
+      
+    }
+    
+  }
+  
+  form.comment-form{
+    padding-top: 20px;
+    padding-bottom: 10px;
+   
+    .control-group{
+      margin-top: -15px;
+      margin-bottom: -15px;
+    }
+   
+    .control-label{
+      width: 30px;
+      padding: 0;
+      float: left;
+      
+      img{
+        @include border-radius(3px);
+      }
+    }
+    
+    .controls{margin-left: 40px;}
+    
+    textarea{
+      width: 230px;
+      height: 70px;
+      margin: 0 0 10px 0;
+    }
+    
+    .comment-privacy{
+      padding-right: 5px;
+      padding-top: 5px;
+      
+      .fb-hint{
+        margin-right: 2px;
+        background: none;
+        width: auto;
+        padding: 10px 5px;
+      }
+    }
+    
+  }
+  
+}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load comments %}
+{% load url from future %}
+{% load action_tags %}
+{% load add_get_parameter %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+      <div class="content cf primary-left profile-page">
+
+          <div class="primary-content-wrap">
+
+            <div class="content-box-inset">
+                <h2>Say something:</h2>
+                <div class="content-box status-box">
+                    {% with object=user.get_profile %}
+                    {% include 'comments/form_say_something.html' %}
+                    {% endwith %}
+                </div>
+            </div>
+
+
+            {% if activities %}
+
+            <div class="content-box-inset">
+              <h2>Activity</h2>
+              <div class="content-box" id="activity-scroll">
+                <div id="infinite-scroll" data-page="{{ current_page }}" data-max-page="{{ page_count }}">
+                <div class="pagination-results">
+
+                  <div class="activity-list">
+                    <ol class="activities">
+
+                      {% for action in activities %}
+                        {% get_template_for_action action as template %}
+                        {% get_ctype_and_id action as ctype_and_id %}
+                        {% include template %}
+                      {% endfor %}
+
+                    </ol>
+                  </div>
+                </div>
+                </div>
+
+
+                <div class="pagination separated hidden">
+                  <ul>
+                   {% for page in page_obj.paginator.page_range %}
+                        <li{% if page == page_obj.number %} class="active"{% endif %}><a href="{% add_get_parameter page=page %}">{{ page }}</a></li>
+                   {% endfor %}
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+            {% endif %}
+
+           </div>
+
+          <div class="secondary-content">
+
+{#              <div class="box box-blue">#}
+{#                  <h2>Search for people to follow</h2>#}
+{#                  <form class="form form-search followers-search" method="get" id="followers-search">#}
+{#                    <fieldset>#}
+{#                      <input type="text" class="search-query" placeholder="Search for people, stalls or keywords...">#}
+{#                      <button type="submit" class="btn btn-flat">Find them</button>#}
+{#                    </fieldset>#}
+{#                  </form>#}
+{#              </div>#}
+              {% if following %}
+                <div class="box box-green">
+
+{#                  <h2 class="with-link"><a>You are following ({{ following_count }})</a></h2>#}
+                  <h2>You are following</h2>
+
+                  <div class="people-list followers-list">
+
+                    <ul class="cf">
+                        {% for following_user in following %}
+                          {% if following_user.target.username %}
+                              <li><a href="{% url 'public_profile' following_user.target.username %}" class="thmb"><img src="{{ following_user.target.get_profile.avatar_228 }}" alt="{{following_user.target.username}}" width="60"></a></li>
+                          {% endif %}
+                        {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+            {% endif %}
+
+              {% if followers %}
+                <div class="box box-green">
+{#                  <h2 class="with-link"><a>Following you ({{ followers.count }})</a></h2>#}
+                  <h2>Following you</h2>
+
+                  <div class="people-list following-list">
+                    <ul class="cf">
+                        {% for follower in followers %}
+                            <li><a href="{% url 'public_profile' follower.user.username %}" class="thmb"><img src="{{ follower.user.get_profile.avatar_228 }}" alt="{{follower.user.username}}" width="60"></a></li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+            {% endif %}
+
+              {% if may_like_to_follow_people %}
+                <div class="box box-green">
+{#                  <h2 class="with-link"><a>People you may like to follow</a></h2>#}
+                  <h2>People you may like to follow</h2>
+
+                  <div class="people-list following-list">
+                    <ul class="cf">
+                        {% for person in may_like_to_follow_people %}
+                            <li><a href="{% url 'public_profile' person.username %}" class="thmb"><img src="{{ person.get_profile.avatar_228 }}" alt="{{person.username}}" width="60"></a></li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+            {% endif %}
+
+          </div>
+
+      </div>
+
+<div class="modal hide fade modal-message" id="new-message"></div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vendor/infinite-scroll/jquery.infinitescroll.min.js' %}"></script>
+{% endblock %}
+

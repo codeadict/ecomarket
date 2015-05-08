@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block content %}
+<div class="content primary-left cf">
+    <div class="primary-content">
+        <div class="tab-content">
+            {% block tab-content %}
+            {% endblock %}
+        </div>
+    </div>
+    <div class="secondary-content">
+        <div class="box box-blue box-tips">
+            <h2 class="with-link"><a href="#">Useful tips</a></h2>
+            <p>Try to answer emails as soon as they come in. You'll get more sales and a better ranking on our site!</p>
+            {% comment %}
+            <div class="box-action">
+                <a href="#">Read More</a>
+            </div>
+            {% endcomment %}
+        </div>
+    </div>
+</div>
+<div class="modal hide fade modal-message" id="new-message"></div>
+<div class="modal hide fade modal-message" id="reply-message"></div>
+<div class="hide fade" id="view-thread"></div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+{% endblock %}

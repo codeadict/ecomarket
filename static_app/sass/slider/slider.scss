@@ -1,0 +1,114 @@
+@import "compass/css3/border-radius";
+
+.blog-page .primary-content div.modal-message.modal-notification.off-screen{
+
+        right:-220px;
+
+}
+
+.blog-page .primary-content div.modal-message.modal-notification{
+
+    z-index:9999;
+    position:fixed !important;
+    top:auto;
+    left:auto;
+    right:0;
+    bottom:20px;
+    width:210px;
+    @include border-radius(6px 0 0 6px);
+
+    .modal-header{
+
+        @include border-radius(6px 0 0 0);
+        
+    }
+
+    .social{
+    
+        .buttons{
+
+            width:80px;
+            height:80px;
+
+                .button.facebook{
+
+                    // hide facebook comment box
+                    overflow: hidden;
+                    height: 20px;
+                    margin-bottom: 5px;
+
+                }
+
+        }
+    }
+
+    form{
+
+        fieldset, fieldset.sign-with-facebook{
+
+            padding:0;
+            margin:0;
+
+            div.control-group{
+
+                margin-bottom:0;
+
+
+                .controls{
+
+                    margin:0;
+
+                    input{
+
+                        width:100%;
+                        margin:0;
+
+                    }
+
+                }
+
+            }
+
+            .select{
+
+                width:100%;
+
+            }
+
+        }
+
+        fieldset.sign-with-facebook{
+
+            margin-left:-2px;
+
+        }
+
+        span.or{
+
+            width:100%;
+            display:block;
+            text-align:center;
+
+        }
+
+    }
+
+    .modal-footer{
+
+        button.btn{
+
+            width:100%;
+            display:block;
+
+        }
+
+    }
+
+    ul.errorlist{
+
+        width:185px;
+        margin-bottom:0;
+
+    }
+
+}

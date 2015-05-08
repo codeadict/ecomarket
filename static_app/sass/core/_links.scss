@@ -1,0 +1,16 @@
+a:link, a:visited{
+  color: $link_color;
+  text-decoration: underline;
+}
+
+a.dark-link:link, a.dark-link:visited {
+  color: $dark_link_color;
+  text-decoration: none;
+}
+
+a.dark-link:hover{color: $dark_link_hover;text-decoration: underline}
+a.dark-link:active{color: $dark_link_active;}
+
+a:hover{color: $link_hover;}
+a:active{color: $link_active;}
+

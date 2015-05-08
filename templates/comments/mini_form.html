@@ -1,0 +1,19 @@
+{% extends 'comments/form.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block control_label %}
+	{% with fullname=request.user.username|default:request.user image=request.user.get_profile.avatar_30 %}
+		<a href="#" class="thmb"><img src="{% if image %}{{ image }}{% else %}{% static 'images/avatar/30x30/default.png' %}{% endif %}" alt="{{ fullname }}" /></a>
+	{% endwith %}
+{% endblock control_label %}
+
+{% block button_class %}btn btn-flat{% endblock %}
+{% block button_string %}Say it{% endblock %}
+
+{% block teaser %}
+	<div class="cta">
+		<a href="{% url 'register' %}?next={{ object.get_absolute_url }}" class="btn btn-flat" id="login-to-reply">Sign In to Reply</a>
+	</div>
+	<span class="fb-hint">With facebook!</span>
+{% endblock teaser %}

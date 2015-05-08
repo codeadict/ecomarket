@@ -1,0 +1,14 @@
+{{ object.title }}
+{{ object.description }}
+{% for item in object.materials.all %}
+{{ item.title }}
+{% endfor %}
+{% for item in object.ingredients.all %}
+{{ item.title }}
+{% endfor %}
+{% for item in object.keywords.all %}
+{{ item.title }}
+{% endfor %}
+{% for item in object.causes.all %}
+{{ item.title }}
+{% endfor %}

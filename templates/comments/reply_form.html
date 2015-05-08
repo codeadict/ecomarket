@@ -1,0 +1,21 @@
+{% extends "comments/form.html" %}
+
+{% load url from future %}
+{% load static from staticfiles %}
+
+{% block before_form %}
+{% with image=user.get_profile.avatar_50 %}
+<div class="author"><a href="{% url 'public_profile' user.username %}" class="avatar cf"><img src="{% if image %}{{image}}{% else %}{% static 'images/avatar/50x50/default.png' %}{% endif %}" alt="{{ name }}" /></a></div>
+{% endwith %}
+{% endblock %}
+
+{% block form_outer %}
+<div class="comment-box no-background">
+    {{ block.super }}
+    <div class="comment-actions">
+        <a href="#" class="icon-delete comment-reply-close" title="Close">×</a>          
+    </div>
+</div>
+{% endblock %}
+
+{% block control_label %}{% endblock %}

@@ -1,0 +1,218 @@
+[
+  {
+    "pk": 1, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "",
+      "slug": "white", 
+      "title": "White"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "lightgrey", 
+      "title": "LightGrey"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "grey", 
+      "title": "Grey"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "black", 
+      "title": "Black"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "saddlebrown", 
+      "title": "SaddleBrown"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "brown", 
+      "title": "Brown"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "orange", 
+      "title": "Orange"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "yellow", 
+      "title": "Yellow"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "ivory", 
+      "title": "Ivory"
+    }
+  },  
+  {
+    "pk": 10, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "olivedrab", 
+      "title": "OliveDrab"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "olive", 
+      "title": "Olive"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "green", 
+      "title": "Green"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "limegreen", 
+      "title": "LimeGreen"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "lime", 
+      "title": "Lime"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "lightcyan", 
+      "title": "LightCyan"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "turquoise", 
+      "title": "Turquoise"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "deepskyblue", 
+      "title": "DeepSkyBlue"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "blue", 
+      "title": "Blue"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "navy", 
+      "title": "Navy"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "purple", 
+      "title": "Purple"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "orchid", 
+      "title": "Orchid"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "pink", 
+      "title": "Pink"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "coral", 
+      "title": "Coral"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "marketplace.color", 
+    "fields": {
+      "description": "", 
+      "slug": "red", 
+      "title": "Red"
+    }
+  }
+]

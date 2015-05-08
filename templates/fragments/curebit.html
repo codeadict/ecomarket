@@ -1,0 +1,46 @@
+{% if curebit_site_id %}
+{% with order=order_to_track %}
+<!-- Begin Curebit integration code -->
+<script type="text/javascript">
+    //<![CDATA[
+    var _curebitq = _curebitq || [];
+    _curebitq.push(['init', { site_id: '{{ curebit_site_id }}' }]);
+ 
+ 
+    var _curebit_order_items = [];
+    {% for line in order.line_items.all %}
+    _curebit_order_items.push({
+        product_id: '{{ line.product.pk }}', /* Item Product ID */
+        price: '{{ line.price }}', /* Item Unit Price */
+        quantity: '{{ line.quantity }}', /* Item Quantity */
+        title: '{{ line.product.title }}', /* Name of product */
+        url: '{{ base_url }}{{ line.product.get_absolute_url }}', /* URL for product */
+        image_url: '{{ base_url }}{{ line.product.image.image_or_default }}' /* URL for product image */
+    });
+    {% endfor %}
+ 
+    var _curebit_order_details = {
+        order_number: '{{ order.pk }}', /* REQUIRED - Order number */
+        order_date: '{{ order.payment.created.isoformat }}', /* REQUIRED - Order Date and Time (in UTC time zone, or as a timestamp with timezone information) */
+        email: '{{ order.user.email }}', /* REQUIRED - Customer Email Address */
+        {% with subtotal=order.subtotal %}
+        subtotal: '{{ subtotal.amount }}', /* REQUIRED - Purchase Subtotal */
+        {% endwith %}
+        customer_id: '{{ order.user.username }}', /* Optional - Set to your internal customer ID for tracking */
+        items: _curebit_order_items,
+
+        custom_field: '{{ subtotal.currency }}', /* Optional - Any custom order data you might need */
+        //coupon_code: 'SAVE20', /* Optional - Coupon code used at checkout */
+        //campaign_tags: ['default'], /* Optional - Campaign tags used to target specific campaign for offer */
+        //dont_redeem: false, /* Optional - Tell curebit that this purchase should not be redeemed */
+        first_name: '{{ order.user.first_name }}', /* Optional - Customer First Name */
+        last_name: '{{ order.user.last_name }}' /* Optional - Customer Last Name */
+    };
+    _curebitq.push(['register_purchase', _curebit_order_details]);
+ 
+//]]>
+</script>
+<script src="//d2jjzw81hqbuqv.cloudfront.net/assets/api/all-0.5-c901046058d1c8efbc8682d25172e461.js" type="text/javascript"></script>
+<!-- End Curebit integration code -->
+{% endwith %}
+{% endif %}

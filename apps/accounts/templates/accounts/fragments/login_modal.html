@@ -1,0 +1,47 @@
+{% load url from future %}
+
+{% block login_modal %}
+    <!-- login box include -->
+    <div class="modal hide fade modal-login" id="login">
+        <div class="ecomarket"></div>
+        <a href="#" class="close" data-dismiss="modal">×</a>
+
+        <div class="toggle">
+            <a href="#" class="register" data-toggle="#register-form">Register</a>
+            <a href="#" class="sign-in active" data-toggle="#login-form">Sign In</a>
+        </div>
+
+        <form class="login-form" action="{% url 'login' %}" method="post" id="login-form">{% csrf_token %}
+            <fieldset class="sign-with-facebook">
+                <a href="{% url 'socialauth_begin' 'facebook' %}" class="fb-register">Sign-in with Facebook</a>
+                <p>It's fast and easy. No need to fill in a form!</p>
+            </fieldset>
+
+            <div class="modal-body">
+                <p><label for="id_username">Username:</label> <input type="text" maxlength="40" name="username" id="id_username"></p>
+                <p><label for="id_password">Password:</label> <input type="password" maxlength="128" name="password" id="id_password"></p>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Sign In" class="btn btn-primary btn-large">
+            </div>
+        </form>
+
+        <form class="register-form hidden" action="{% url 'register' %}" method="post" id="register-form">{% csrf_token %}
+            <fieldset class="sign-with-facebook">
+                <a href="{% url 'socialauth_begin' 'facebook' %}" class="fb-register">Sign-in with Facebook</a>
+                <p>It's fast and easy. We'll never post without your permission...</p>
+            </fieldset>
+            <div class="modal-body">
+                <p><label for="id_username">Username:</label> <input type="text" maxlength="30" name="username" id="id_username"></p>
+                <p><label for="id_first_name">First name:</label> <input type="text" maxlength="30" name="first_name" id="id_first_name"></p>
+                <p><label for="id_last_name">Last name:</label> <input type="text" maxlength="30" name="last_name" id="id_last_name"></p>
+                <p><label for="id_email">Email:</label> <input type="email" id="id_email" name="email"></p>
+                <p><label for="id_password">Password:</label> <input type="password" maxlength="128" name="password" id="id_password"></p>
+                <p><label for="id_password_confirm">Password confirm:</label> <input type="password" maxlength="128" name="password_confirm" id="id_password_confirm"></p>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Sign In" class="btn btn-primary btn-large">
+            </div>
+        </form>
+    </div>
+{% endblock login_modal %}

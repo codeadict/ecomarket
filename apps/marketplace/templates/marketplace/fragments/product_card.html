@@ -1,0 +1,76 @@
+{% load free_shipping %}
+{% load static from staticfiles %}
+{% load lovelists_tags %}
+
+{% comment %}
+Medium style card. Used for example on the search page.
+{% endcomment %}
+{% if style == 'medium' %}
+<li>
+    <a href="{{product.get_absolute_url}}" class="image">
+        <img src="{{product.image.url_228}}" width="228" alt="{{product.title}} by {{ product.stall.title }}">
+        {% if product|has_free_shipping:country %}
+        <span class="free-shipping-indicator">
+            <img src="{% static 'images/product/free-shipping-indicator.png' %}">
+        </span>
+        {% endif %}
+    </a>
+    <div class="details">
+        <a href="{{product.get_absolute_url}}"
+            class="product" title="{{ product.title|addslashes }}">{{ product.title }}</a>
+        {% if show_price %}
+            {% with price=product.get_price_instance %}
+            <strong class="price amount_currency_convert" data-amount="{{ price.amount }}">
+                <span class="amount_currency_symbol">&pound;</span><span class="amount_amount">{{ price.amount }}</span>
+            </strong>
+            {% endwith %}
+        {% endif %}
+        {% love_this_button user product %}
+    </div>
+</li>
+{% endif %}
+
+{% comment %}
+Small style card. Used for example on the home page for the love list entries.
+{% endcomment %}
+
+{% if style == 'small' %}
+<li>
+    <a href="{{ product.get_absolute_url }}" class="image">
+        <img width="170" height="170" src="{{ product.image.url_170 }}" alt="{{ product.title }}" />
+        {% if product|has_free_shipping:country %}
+        <span class="free-shipping-indicator">
+            <img src="{% static 'images/product/free-shipping-indicator.png' %}">
+        </span>
+        {% endif %}
+    </a>
+    <div class="details">
+        <a href="{{ product.get_absolute_url }}" class="product dark-link">{{ product.title }}</a>
+        <span class="seller">by <a href="{{ product.stall.get_absolute_url }}">{{ product.stall.title }}</a></span>
+    </div>
+    <div class="prices">
+        {% with price=product.get_price_instance %}
+        <strong class="price amount_currency_convert" data-amount="{{ price.amount }}">
+            <span class="amount_currency_symbol">&pound;</span><span class="amount_amount">{{ price.amount }}</span>
+        </strong>
+        {% endwith %}
+    </div>
+    {% love_this_button user product %}
+    </li>
+{% endif %}
+
+{% comment %}
+Tiny product card. Used on the "Recent Eco Friendly & Natural Products" part of the home page
+{% endcomment %}
+
+{% if style == 'tiny' %}
+<li>
+    <a href="{{ product.path }}" class="image">
+        <img src="{{ product.image.url_105 }}" width="105" height="105" alt="{{ product.title }} by {{ product.stall.title|capfirst }}">
+    </a>
+    <div class="details">
+        <a href="{{ product.path }}" class="product dark-link">--{{ product.title }}</a>
+        by <a href="{{ product.stall.get_absolute_url }}">{{ product.stall.title|capfirst }}</a>
+    </div>
+</li>
+{% endif %}

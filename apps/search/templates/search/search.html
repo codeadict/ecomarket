@@ -1,0 +1,173 @@
+{% extends 'search/base.html' %}
+{% load url from future %}
+{% load static from staticfiles %}
+{% load add_get_parameter %}
+{% load breadcrumb %}
+{% load lovelists_tags %}
+{% load seo %}
+{% load social_tags %}
+{% load render_product_card %}
+
+{% block extra-head %}
+<meta name="robots" content="noindex, follow" />
+{% endblock %}
+
+{% block content %}
+<div class="content discover-page full-content cf" data-page="{{page_no}}">
+
+    <div class="primary-content-wrap love-list-header">
+        <div class="content-box">
+            {% if as_discover %}
+            {% generate_breadcrumb category %}
+            {% else %}
+            <ul class="breadcrumb">
+                <li>
+                <a href="{% url 'home' %}">Eco Market</a>
+                <span class="divider" >&gt;</span>
+                </li>
+                    {% if category %}
+                    <li>
+                    <a href="{{ category.get_discover_url }}">{{ category.name|title }}</a>
+                    <span class="divider" >&gt;</span>
+                    </li>
+                    {% endif %}
+                <li class="active">
+                {% if query %}
+                Searching Eco Friendly and Natural Products for
+                <strong>{{ query|title }}</strong>
+                {% else %}
+                Searching Eco Friendly and Natural Products
+                {% endif %}
+                </li>
+            </ul>
+            {% endif %}
+            <div class="page-header category-header no-border cf">
+                {% if not as_discover %}
+                <div class="category-info">
+                    {% if query %}
+                    <h1>Searching for <strong>{{ query|title }}</strong></h1>
+                    {% else %}
+                    <h1><strong>{{ cause.title|title }}</strong></h1>
+                    {{ cause.description|safe }}
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="category-info">
+                    <h1>{{ category.name|title }}</h1>
+                    <p class="description">{{ category.description|default:""|safe }}</p>
+                </div>
+                {% endif %}
+                <div class="social social-flat">
+                    <div id="shareme"></div>
+                </div>
+                {% if as_discover %}
+                    <ul class="categories">
+                        {% for subcat in category.children.all %}
+                        <li><a href="{{ subcat.get_discover_url }}">{{ subcat.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            {% include 'search/filters_include.html' %}
+        </div>
+    </div>
+</div>
+
+
+<div class="content cf full-content">
+    <div class="primary-content-wrap single-content">
+        <div id="infinite-scroll" class="content-box-inset discover-box" data-page="{{page_no}}">
+            <h2>{{ paginator.count }} results {% if query %}for <em>{{query}}</em>{% endif %}{% if page_no != 1 %} (page {{ page_no }} of {{ paginator.num_pages }}){% endif %}</h2>
+            <div class="pagination-results">
+                <ul class="products discover-list cf list-4">
+                    {% for result in page.object_list %}
+                        {% with product=result.object %}
+                                {% render_product_card product 'medium' %}
+                        {% endwith %}
+                    {% endfor %}
+                </ul>
+            </div><!-- .pagination-results -->
+            <div class="pagination pagination-centered">
+                <ul>
+                    {# TODO: django-pure-pagination seems to handle this scenario better than we do here. Is it worth using? #}
+                    {% if page.has_previous %}
+                    <li><a href="{% add_get_parameter page=1 %}">1</a></li>
+                    <li><a href="{% add_get_parameter page=page.previous_page_number %}"><i class="icon icon-chevron-left icon-white"></i></a></li>
+                    {% endif %}
+                    <li class="active"><a href="{% add_get_parameter page=page.number %}">{{ page.number }}</a></li>
+                    {% if page.has_next %}
+                    <li><a href="{% add_get_parameter page=page.next_page_number %}"><i class="icon icon-chevron-right icon-white"></i></a></li>
+                    <li><a>{{ paginator.num_pages }}</a></li>
+                    {% endif %}
+                </ul>
+            </div><!-- .pagination-centered -->
+        </div><!-- #infinite-scroll -->
+    </div><!-- .primary-content-wrap -->
+</div><!-- .content -->
+{% endblock  %}
+
+{% block js %}
+<script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/jquery.form.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/jquery-waypoints/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/infinite-scroll/jquery.infinitescroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+{% if page.count %}
+    {% share_script page.object_list|first vertical %}
+{% else %}
+    {% share_script vertical %}
+{% endif %}
+
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    var track_and_submit_search = function() {
+        var $form = $(this).parents("form");
+        var properties = Ecomarket.Utils.extractMixpanelPropertiesFromForm($form, {
+            '#id_category': 'Category',
+            "#id_causes": "Causes",
+            "#id_price": "Price",
+            "#id_ships_to": "Ships To",
+            "#id_ships_from": "Ships From",
+            "#id_for_who": "For Who",
+            '#id_colors': 'Colour'
+        });
+        mixpanel.track('Searched for a Product', properties, function(){
+            $form.submit();
+        });
+    }
+
+    $(".filter-form").on('submit', function(){
+        $(this).find('input, select').each(function() {
+            this.disabled = !($(this).val());
+        });
+    });
+
+    // submit form on select change, with some exceptions to price filter
+    $('.category-filters select').on('change', track_and_submit_search);
+
+    $('.category-filters').on('click', 'a.btn-show-filter', function(event){
+        event.preventDefault();
+        $(this).hide()
+               .next().removeClass('hide').addClass("visible")
+        $(this).parent().append('<a href="#" class="btn btn-small btn-remove-filter"><i class="icon icon-remove"></i></a>');
+    });
+
+    $('.category-filters').on('click', 'a.btn-remove-filter', function(event){
+        if ($(this).attr("href") !== "#") {
+            return true;
+        }
+        event.preventDefault();
+        $(this).parent().find('.visible').removeClass("visible").addClass('hide');
+        $(this).parent().find('.btn-show-filter').show();
+        $(this).remove();
+    });
+
+    $('.discover-list .details .product').each(function() {
+        txt = $(this).text().truncatechars(50);
+        $(this).html(txt);
+    })
+});
+</script>
+{% endblock %}

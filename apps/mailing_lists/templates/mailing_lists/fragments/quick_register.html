@@ -1,0 +1,53 @@
+{% load url from future %}
+
+    <div class="ecomarket"></div>
+    <a href="#" class="close" data-dismiss="modal">×</a>
+
+    <form class="form registration-capture-form" action="{% url 'quick_register' %}" method="post" id="registration-capture-form">{% csrf_token %}
+        {{ form.email }}
+        {{ form.marketing_optin }}
+
+        <div class="modal-body">
+            <h2>Nearly done. Just fill out below to set up an account.</h2>
+            {% with field=form.first_name %}
+            <div class="control-group{% if field.errors %} error{% endif %}">
+                <div class="controls">
+                    <label for="{{ field.auto_id }}">{{ field.label }}:</label>
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            </div>
+            {% endwith %}
+            {% with field=form.last_name %}
+            <div class="control-group{% if field.errors %} error{% endif %}">
+                <div class="controls">
+                    <label for="{{ field.auto_id }}">{{ field.label }}:</label>
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            </div>
+            {% endwith %}
+            {% with field=form.gender %}
+            <div class="control-group{% if field.errors %} error{% endif %}">
+                <div class="controls">
+                    <label for="{{ field.auto_id }}">{{ field.label }}:</label>
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            </div>
+            {% endwith %}
+            {% with field=form.password %}
+            <div class="control-group{% if field.errors %} error{% endif %}">
+                <div class="controls">
+                    <label for="{{ field.auto_id }}">{{ field.label }}:</label>
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            </div>
+            {% endwith %}
+        </div>
+        <div class="modal-footer">
+            <button type="submit" data-loading-text="Loading..." class="btn btn-primary btn-large btn-load">Create Account</button>
+            <a href="#" class="btn" data-dismiss="modal">No thanks, I'll do it later</a>
+        </div>
+    </form>

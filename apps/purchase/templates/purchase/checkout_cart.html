@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load alerts %}
+{% load jsonify %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="content cf primary-left checkout-page">
+
+        <div class="primary-content-wrap">
+
+            <div id="alert-container"></div>
+
+            {% if came_from_payment_return %}
+              {% if request.user.cart.cart_stalls.count == 0 %}
+              <div class="page-notice page-notice-tracking notice-success" style="margin-top: 0; margin-bottom: 15px;">
+                <div class="box">
+                  <p>Great job! You have paid for everything in your basket and our stall owners will be sending off your products to you shortly. You will get an email when the item has been dispatched.</p>
+                  <div class="notice-actions" style="display: none;">
+                    <a href="#" class="icon-close notice-dismiss">×</a>
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <div class="page-notice page-notice-tracking notice-warning" style="margin-top: 0; margin-bottom: 15px;">
+                <div class="box">
+                  <p>All done and paid for and the stall owner will be sending 
+                     off your products shortly. Watch out though, there are still 
+                     {{ request.user.cart.cart_stalls.count }} stall owners below in
+                     your cart that you haven't yet paid.</p>
+
+                  <p>You need to checkout seperately from different stall owners on 
+                     Eco Market so just click the green checkout button below to do 
+                     this now.</p>
+                  <div class="notice-actions" style="display: none;">
+                    <a href="#" class="icon-close notice-dismiss">×</a>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+            {% endif %}
+            <div class="content-box-inset" id="cart-container">
+                <h2>Your Cart</h2>
+                <div class="hide content-box" id="empty-cart-message" >
+                    <h3>Your cart is empty. There's an easy way to fix that though!</h3>
+                </div>
+            </div>
+
+            {% comment %}
+            <div class="content-box-inset recent-products">
+              <h2 class="with-link"><a href="#">Some more suggestions</a></h2>
+
+              <ul class="small-products-list list-squeezed list-6 cf">
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/1.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/2.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/3.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/4.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/5.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+                <li>
+                  <a href="#" class="image"><img src="{% static 'tmp/products/105x105/6.jpg' %}" width="105" height="105" alt="{Product.name} by Oils of Egypt"></a>
+                  <div class="details">
+                    <a href="#" class="product">Product Name Here</a> by <a href="#">Oils of Egypt</a>
+                  </div>
+                </li>
+
+
+              </ul>
+
+            </div>
+            {% endcomment %}
+
+        </div>
+
+        <div class="secondary-content">
+          {% include 'purchase/includes/howto_snippets.html' %}
+        </div>
+
+    </div>
+{% endblock content %}
+
+{% block js %}
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone-relational/0.8.5/backbone-relational.min.js"></script>
+{% include "alerts/dynamic.html" %}
+
+<script type="text/javascript" charset="utf-8">
+cart_id = {{ request.user.cart.id }}
+</script>
+
+<script type="text/javascript" charset="utf-8">
+countries = {{ countries|jsonify|safe }};
+</script>
+
+<script type="text/javascript" src="{% static 'js/jquery.getPath.js?v=18062013' %}"></script>
+<script type="text/javascript" src="{% static 'js/purchase.js' %}"></script>
+{# Have the cart data ready to avoid another ajax request in purchase.js #}
+<script type="text/javascript" charset="utf-8">
+cart_stall_data = [
+    {% for cart_stall in cart.cart_stalls.all %}
+    {{ cart_stall.to_json|jsonify|safe}},
+    {% endfor %}
+];
+</script>
+
+<!-- Currency conversion -->
+<script type="text/javascript" charset="utf-8">
+$(function() {
+    if (currency.country() != 'GB') {
+        $('#shipping-country').each(function() {
+            if ($(this).find('option[value="' + currency.countryId() + '"]').length &&
+                !$(this).data('speculative_country'))
+                $(this).select2('val', currency.countryId()).trigger('change');
+        });
+    }
+});
+</script>
+<!-- Currency conversion -->
+
+<script type="text/template" charset="utf-8" id="cart_stall_template">
+<div class="order-box content-box">
+    <form action="#" class="form form-inline">
+        <fieldset class="cf">
+            <h3 class=""><a href="<%= cart_stall.get('stall_url') %>" class="name dark-link"><%= cart_stall.get("title") %></a></h3>
+            <a href="#" class="remove-group" data-id="{{ cart_stall.id }}" >✕</a>
+
+            <div class="order-details">
+                <ul class="list orders">
+                </ul>
+                  <div class="cart-options">
+                      <div class="coupon">
+                          <input type="text" placeholder="Enter your coupon code..." value="<%= cart_stall.get('coupon') %>" />
+                          <input class="btn btn-flat btn-gray" type="button" value="update" />
+                          <% if (cart_stall.get('coupon_message')) { %>
+                          <div class="alert alert-inline alert-<%= cart_stall.get('coupon_message_type') %>">
+                              <p><%= cart_stall.get('coupon_message') %></p>
+                          </div>
+                          <% } %>
+                      </div>
+                      <div class="notes">
+                          <textarea placeholder="Enter in any special notes for the stall owner, for example any size, colour or other choices on any product options..."><%= cart_stall.get("note") %></textarea>
+                      </div>
+
+                  </div>
+            </div>
+
+            <div class="actions">
+                <div class="shipping">
+                    <select class="select" id="shipping-country" data-speculative_country="<%= cart_stall.get('speculative_country') %>">
+                        <% _.each(cart_stall.get("countries"), function(country){
+                            if(country.id == cart_stall.get("country").id){ %>
+                                <option value="<%= country.id %>" name="country_id" selected="true"><%= country.title %></option>
+                            <%} else { %>
+                                <option value="<%= country.id %>" name="country_id"><%= country.title %></option>
+                            <%}
+                        }) %>
+                    </select>
+                    <div class="shipping-alert alert alert-inline alert-warning" style="width:auto; display:none;">
+                        <p>Country not available for this stall</p>
+                        <div class="alert-actions">
+                           <a class="icon-dismiss alert-dismiss" href="#">×</a>
+                        </div>
+                    </div>
+                </div>
+
+                <dl class="totals cf">
+                    <dt>Subtotal</dt>
+                    <dd class="subtotal-value amount_currency_convert" data-amount="<%= cart_stall.get('subtotal') %>">
+                    <strong>
+                        <span class="amount_currency_symbol"><%= currency.symbol() %></span>
+                        <span class="amount_amount"><%= currency.price(cart_stall.get("subtotal")) %></span>&nbsp;
+                        {# <span class="subtotal-code"><% currency.code() %></span> #}
+                    </strong>
+                    </dd>
+
+                    <dt>Delivery</dt>
+                    <dd class="delivery-value amount_currency_convert" data-amount="<%= cart_stall.get('delivery') %>">
+                    <strong>
+                        <span class="amount_currency_symbol"><%= currency.symbol() %></span>
+                        <span class="amount_amount"><%= currency.price(cart_stall.get("delivery")) %></span>&nbsp;
+                        {# <span class="delivery-code"><% currency.code() %></span> #}
+                    </strong>
+                    </dd>
+
+                    <% if (cart_stall.get('discount') > 0) { %>
+                    <dt>Discount</dt>
+                    <dd class="discount-value amount_currency_convert negative" data-amount="<%= cart_stall.get('discount') %>">
+                    <strong>
+                        <span>&minus;</span>
+                        <span class="amount_currency_symbol"><%= currency.symbol() %></span>
+                        <span class="amount_amount"><%= currency.price(cart_stall.get("discount")) %></span>&nbsp;
+                        {# <span class="delivery-code"><% currency.code() %></span> #}
+                    </strong>
+                    </dd>
+                    <% } %>
+
+                    <dt>Total</dt>
+                    <dd class="total-value amount_currency_convert" data-amount="<%= cart_stall.get('total') %>">
+                    <strong>
+                        <span class="amount_currency_symbol"><%= currency.symbol() %></span>
+                        <span class="amount_amount"><%= currency.price(cart_stall.get("total")) %></span>&nbsp;
+                        {# <span class="total-code"><% currency.code() %></span> #}
+                    </strong>
+                    </dd>
+                </dl>
+
+                <div class="buy">
+                  <a href="<%= cart_stall.get('shipping_url') %>" data-user-id="{{cart.user.id}}" class="btn btn-primary btn-paypal">Go To Checkout</a>
+                </div>
+
+                <div class="cards">
+                    <a href="<%= cart_stall.get('shipping_url') %>" data-user-id="{{cart.user.id}}" title="Visa, Maestro, AMEX, MasterCard"><img src="{{ STATIC_URL }}images/icons/cards.png" alt="Visa, Maestro, AMEX, MasterCard"></a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+</script>
+
+<script type="text/template" charset="utf-8" id="cart_product_template">
+<div class="thumb">
+    <a href="<%= product.absolute_url %>"><img src="<%= product.image_url %>" width="80" height="80" alt="<%= product.title %>"></a>
+</div>
+
+<div class="info">
+    <a href="<%= product.absolute_url %>" class="name dark-link"><%= product.title %></a>
+    <span class="more"><%= product.description %></span>
+
+    <div class="item-quantity">
+        <button class="btn btn-minus" type="button" >-</button>
+  <span class="quantity"><%= cart_product.quantity %></span>
+  <button class="btn btn-plus" type="button">+</button>
+    </div>
+</div>
+
+<div class="product-price amount_currency_convert" data-amount="<%= product.price %>">
+    <strong class="price">
+		<span class="amount_currency_symbol"><%= currency.symbol() %></span><span class="amount_amount"><%= currency.price(product.price) %></span></strong>
+</div>
+<a href="#" class="remove-product">Remove item</a>
+</script>
+
+<!-- ClickTale event tracking JS integration -->
+<script type="text/javascript">
+$(function() {
+    $('#shipping-country').on("select2-open", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping-country").select2("open")');
+    }).on("select2-close", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping-country").select2("close")');
+    }).on("select2-blur", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping-country").select2("blur")');
+    }).on("select2-focus", function() {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping-country").select2("focus")');
+    }).on("change", function(e) {
+        if (typeof ClickTaleExec=='function') ClickTaleExec('$("#shipping-country").select2("val", ' + e.val + ')');
+    });
+});
+</script>
+<!-- ClickTale event tracking JS integration -->
+{% endblock %}

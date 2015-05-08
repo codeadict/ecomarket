@@ -1,0 +1,39 @@
+{% extends 'accounts/profile/fragments/_activity_base.html' %}
+{% load action_tags %}
+
+{% block target_title %}{{ action.target.title }}{% endblock %}
+
+{% block activity_extra_class %}activity-purchase{% endblock %}
+
+{% get_related_actions action as actions %}
+{% block body %}
+    <div class="activity-preview purchase-preview">
+        <div class="thumbs">
+            {% with action.action_object.images|first as image %}
+                <a href="{{ action.action_object.path }}" class="thmb"><img src="{{ image.url_105 }}" alt="{{ image.name }}"></a>
+            {% endwith %}
+
+            {% for image in action.action_object.images %}
+                {% if forloop.counter > 1 and forloop.counter < 6 %}
+                    <a href="{{ action.action_object.path }}" class="thmb"><img class="thmb50" src="{{ image.url_50 }}" alt="{{ image.name }}"></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+            {% with product=action.action_object %}
+            <div class="product-info">
+                <span class="name">
+                  <a href="{{ product.get_absolute_url }}" class="dark-link">{{ product.title }}</a><br>
+                  from <a href="{{ product.stall.get_absolute_url }}">{{ product.stall.title }}</a>
+                </span>
+                <span class="price-box">
+                  <strong class="price">£{{ product.price.amount }} GBP</strong>
+    {#              <span class="approximation">Approx $29.99 CDN</span>#}
+                </span>
+            </div>
+            {% endwith %}
+    </div>
+{% endblock %}
+
+{% block verb %}
+    purchased <a href="{{ action.action_object.get_absolute_url }}">{{ action.action_object.title }}</a> at <a href="{{ action.action_object.stall.get_absolute_url }}">{{ action.action_object.stall.title }}</a>
+{% endblock %}

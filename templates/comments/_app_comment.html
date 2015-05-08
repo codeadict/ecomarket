@@ -1,0 +1,25 @@
+{% load url from future %}
+{% load comments %}
+{% load humanize %}
+{% load static from staticfiles %}
+{% with name=comment.user.username image=comment.user.get_profile.avatar_50 %}
+<li class="comment">
+	<div class="comment-user">
+		<a href="{% url 'public_profile' comment.user.username %}" class="avatar cf"><img src="{% if image %}{{image}}{% else %}{% static 'images/avatar/50x50/default.png' %}{% endif %}" alt="{{ name }}" /></a>
+		<strong class="user-name"><a href="{% url 'public_profile' comment.user.username %}">{{ name }}</a></strong>
+		{% if comment.user %}
+		<!--<a href="#" class="btn-follow"><i class="icon icon-plus icon-white"> </i> Follow</a>-->
+		{% else %}
+		<br style="line-height: 25px;height: 25px;" />	
+		{% endif %}	
+	</div>
+	<div class="comment-box">		
+		<div class="comment-body">
+			<p>{{comment.comment}}</p>
+			<hr style="margin: 10px 0 5px 0;" />
+			<a href="{{comment.content_object.get_absolute_url}}">{{ comment.content_object }}</a>
+			<span class="comment-meta"><time>{{ comment.submit_date|naturaltime }}</time></span>
+		</div>
+	</div>
+</li>					
+{% endwith %}

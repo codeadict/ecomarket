@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load alerts %}
+{% load url from future %}
+
+{% block mixpanel %}
+mixpanel.track_links("#regular-account-button", "Submitted Account Registration Type",
+    {
+        "regular account": true,
+        "stall account": false,
+});
+mixpanel.track_links("#stall-account-button", "Submitted Account Registration Type",
+    {
+        "stall account": true,
+        "regular account": false,
+    }
+);
+{% endblock %}
+
+{% block content %}
+    <div class="content cf single-content">
+        <div class="primary-content">
+
+            <div class="page-header">
+              <h1>All done! Now what type of account would you like?</h1>
+            </div>
+
+            <p>Choose from the options below depending on whether you want to sell products in our marketplace or just have a regular account for buying, commenting, and using all our lovely features!</p>
+
+            <br />
+
+            <fieldset>
+                <a id="regular-account-button" class="btn btn-primary btn-large" href="{% url 'profile' %}">Regular account please</a>
+                <a id="stall-account-button" class="btn btn-secondary btn-large" href="{% url 'create_stall' %}">Stall account, I sell products</a>
+            </fieldset>
+
+        </div>
+    </div>
+{% endblock content %}

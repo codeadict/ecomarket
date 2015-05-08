@@ -1,0 +1,4 @@
+This is copied from https://github.com/arneb/django-messages and modified for custom model attributes and simplified for our use case.
+
+Exact commit this was copied over from was:
+https://github.com/arneb/django-messages/commit/ca66a3d8e5b2d076c6eac26ee1e01145de23fa17

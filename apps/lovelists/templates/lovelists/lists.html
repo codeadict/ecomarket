@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+<div class="content cf full-content">
+    <div class="primary-content-wrap single-content">
+        {% if owner %}
+        <h1>Love lists by <a href="{% url 'public_profile' owner.username %}">{{ owner }}</a></h1>
+        {% else %}
+        <h1>Love lists containing <a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h1>
+        {% endif %}
+
+        <div class="love-lists-wrap">
+            {% if lists %}
+            <ul class="love-lists">
+                {% for list in lists %}
+                <li class="ll-item">
+                    <a class="image thumb" title="{{ list.title }}" href="{{ list.get_absolute_url }}">
+                        <span class="title">{{ list.title }}</span>
+                        {% with product=list.product_relationships.all|first %}
+                        <span class="image"><img alt="{{ product.title }}" src="{{ product.image.url_228 }}" /></span>
+                        {% endwith %}
+                        {% if list.product_relationships.count >= 2 %}
+                        {% with product=list.product_relationships.all|slice:"1:"|first %}
+                        <span class="image"><img alt="{{ product.title }}" src="{{ product.image.url_228 }}" /></span>
+                        {% endwith %}
+                        {% endif %}
+                        <span class="images">
+                            {% for product in list.product_relationships.all|slice:"2:6" %}
+                            <img alt="{{ product.title }}" src="{{ product.image.url_105 }}" />
+                            {% endfor %}
+                        </span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+        <p>You have no love lists. Create one by clicking the heart icon next to one of your favourite products.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

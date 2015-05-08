@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% load comments %}
+{% load action_tags %}
+{% load static from staticfiles %}
+
+{% block content %}
+{% with profile=profile_user.get_profile name=profile_user.username %}
+
+{% if not profile.user.privacy.profile_public %}
+<div class="alert alert-block alert-error cf">
+    <h4 class="alert-heading">Sorry!</h4>
+    <p>{{ name }} has chosen to make their profile private.</p>
+    <p>Sorry. Some folk just don't like to be in the public eye!</p>
+</div>
+{% else %}
+<div class="content cf primary-right profile-page">
+
+    <div class="primary-content-wrap">
+
+        {% if love_lists.count %}
+        <div class="content-box-inset">
+            <h2 class="with-link"><a href="{% url 'lovelist:lists' name %}">{{ name }}'s Love Lists</a></h2>
+
+            <div class="content-box">
+
+                <div class="love-box love-box-horizontal cf list-2">
+
+                    {% for love_list in love_lists|slice:":4" %}
+                    <div class="love-list-item">
+                        <div class="love-list">
+                            <div class="list-header simple-header">
+                                <a href="{{ love_list.get_absolute_url }}" class="list-name">{{ love_list.title }} ({{ love_list.hot_products.count }})</a>
+                            </div>
+
+                            <ul class="products cf">
+                                {% for product in love_list.hot_products|slice:":6" %}
+                                <li><a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url_80 }}" width="80" height="80" alt="{{ product.title }}" title="{{ product.title }}"></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="content-box-inset">
+            <h2>Say something:</h2>
+            <div class="content-box status-box">
+                {% with object=profile %}
+                {% include 'comments/form_say_something.html' %}
+                {% endwith %}
+            </div>
+        </div>
+
+        <div class="content-box-inset">
+            <h2>{{ name }}'s Activity</h2>
+            <div class="content-box">
+
+                <div class="activity-list">
+
+                    {% if activities %}
+                    <ul class="activities">
+                        {% for action in activities %}
+                          {% get_template_for_action action as template %}
+                          {% get_ctype_and_id action as ctype_and_id %}
+                          {% include template %}
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p>Oh no! Looks like this user doesn't have any activity yet. That's just no fun at all, so how about you post them a message and get this party started!</p>
+                    {% endif %}
+
+                    <!--<div class="pagination separated">
+                        <ul>
+                            <li><a href="#"><i class="icon icon-chevron-left icon-white"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="icon icon-chevron-right icon-white"></i></a></li>
+                        </ul>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="secondary-content">
+        <div class="box user-profile-box box-green">
+            <h2>{{ name }}</h2>
+
+            <div class="photo">
+                <img src="{{ profile.avatar_228 }}" alt="Photo of {{ name }}">
+            </div>
+
+            <div class="profile-actions">
+                <a href="javascript:void(0)" class="btn btn-flat btn-new-messages ajax" data-toggle="modal"
+                    data-source="{% url 'messaging_compose' %}"
+                    data-target="#new-message"
+                    data-username="{{ profile_user.username }}">Message {{ name }} <i class="icon icon-message icon-white"></i></a>
+                {% if profile.is_seller %}
+                <a href="{% url 'my_stall' profile_user.stall.slug %}" class="btn btn-flat">Visit {{ name }}'s Stall <i class="icon icon-stall icon-white"></i></a>
+                {% endif %}
+                {% include "fragments/show_follow_button.html" with user=user follow_candidate=profile_user %}
+            </div>
+
+            <div class="bio">
+                <p class="truncate">{{ profile.about_me }}</p>
+            </div>
+
+        </div>
+
+        {% if followers %}
+            <div class="box box-green">
+{#              <h2 class="with-link"><a href="#">{{ name }}'s Followers ({{ followers_count }})</a></h2>#}
+              <h2>{{ name }}'s Followers</h2>
+
+              <div class="people-list followers-list">
+                <ul class="cf">
+                    {% for follower in followers %}
+                        {% if follower.user %}
+                        <li><a href="{% url 'public_profile' follower.user.username %}" class="thmb"><img src="{{ follower.user.get_profile.avatar_228 }}" alt="{{follower.user.username}}" width="60"></a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+              </div>
+            </div>
+        {% endif %}
+
+        {% if following %}
+            <div class="box box-green">
+
+              <h2>Following ({{ following_count }})</h2>
+
+              <div class="people-list following-list">
+
+                <ul class="cf">
+                    {% for following_user in following %}
+                        {% if following_user.target %}                            
+                        <li><a href="{% url 'public_profile' following_user.target.username %}" class="thmb"><img src="{{ following_user.target.get_profile.avatar_228 }}" alt="{following_user.target.username}" width="60"></a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+              </div>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<div class="modal hide fade modal-message" id="new-message"></div>
+
+{% endif %}
+
+{% endwith %}
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/vendor/iphone-checkboxes/jquery/iphone-style-checkboxes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/messaging.js' %}"></script>
+
+
+    {% if show_follow_login %}
+        <script type="text/javascript">
+        $(function(){
+            $('#login').data('tempAction', '{{follow_url}}')
+                       .modal();
+        });
+        </script>
+    {% endif %}
+{% endblock %}

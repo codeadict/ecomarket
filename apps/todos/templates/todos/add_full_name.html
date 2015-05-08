@@ -1,0 +1,36 @@
+{% extends "base_modal.html" %}
+
+{% block modal_title %}What is your name?{% endblock %}
+
+{% block modal_content %}
+<p>We are doing some tidying and need to know your full name. Please tell us your name - it won't take a minute.</p>
+<form class="form" id="full_name_form" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {% with field=form.first_name %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+        {% endwith %}
+        {% with field=form.last_name %}
+        <div class="control-group {% if field.errors %}error{% endif %}">
+          <label for="{{ field.auto_id }}" class="control-label">{{ field.label }}:</label>
+          <div class="controls">
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        </div>
+        {% endwith %}
+    </fieldset>
+</form>
+{% endblock %}
+
+{% block modal_footer %}
+<div class="pull-right">
+    <button type="button" class="btn btn-primary" onclick="$('#full_name_form').submit()">Save</button>
+</div>
+{% endblock %}
