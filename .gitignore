@@ -34,3 +34,5 @@ site_local.json
 src/
 .codeintel
 debug.log
+apache-solr-3.6.1/
+apache-solr-3.6.1.*

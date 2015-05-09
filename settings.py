@@ -27,9 +27,15 @@ STATICFILES_FINDERS = (
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
-STATICFILES_STORAGE = \
-    'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+#STATICFILES_STORAGE = \
+ #   'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
+COMPRESS_PRECOMPILERS = (
+        ('text/coffeescript', 'coffee --compile --stdio'),
+        ('text/less', 'lessc {infile} {outfile}'),
+        ('text/x-sass', 'sass {infile} {outfile}'),
+        ('text/x-scss', 'sass --scss {infile} {outfile}'),
+)
 # user uploaded files
 MEDIA_ROOT                          = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL                           = '/media/'
@@ -69,8 +75,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ecomdb_0',
-        'USER': 'ecomarket',
-        'PASSWORD': 'ecomarket',
+        'USER': 'root',
+        'PASSWORD': 'unixrocks2012',
         'HOST': '',
         'PORT': '',
         'OPTIONS': {

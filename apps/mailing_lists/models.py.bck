@@ -70,7 +70,8 @@ class MailingListSignup(models.Model):
     last_name = models.CharField(blank=True, null=True, max_length=255)
     company_name = models.CharField(blank=True, null=True, max_length=255)
     category = models.ForeignKey(
-        Category, blank=True, null=True)
+        Category, blank=True, null=True,
+        choices=Category.objects.get_toplevel().values_list("id", "name"))
     telephone_number = models.CharField(blank=True, null=True, max_length=255)
     country = models.ForeignKey("marketplace.Country", blank=True, null=True)
     source = models.CharField(max_length=2, choices=LEAD_SOURCES,

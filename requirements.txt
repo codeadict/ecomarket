@@ -1,6 +1,8 @@
 BeautifulSoup==3.2.1
 Django==1.4.1
+-e git://github.com/alexjg/django-seo.git@cd37113e34464c38b591fbca8e801dc438866585#egg=DjangoSEO-master
 Fabric==1.4.3
+IPy==0.83
 Jinja2==2.6
 MySQL-python==1.2.3
 Pillow==1.7.7
@@ -8,54 +10,68 @@ Pygments==1.5
 South==0.7.5
 Sphinx==1.1.3
 Werkzeug==0.8.3
+adspygoogle.adwords==15.9.1
 ajaxuploader==0.2.3
 argparse==1.2.1
 coverage==3.5.2
-distribute==0.6.19
+-e git+https://github.com/justquick/django-activity-stream.git@36f0bba25b6c9e9593a1179c2f1feeea58c39d1c#egg=django_activity_stream-dev
 django-annoying==0.7.6
 django-appconf==0.5
 django-braces==1.0.0
 django-categories==1.1
+-e git+https://github.com/ukch/django-ckeditor.git@12446f23b62109dcd687f14c888ee605339e180c#egg=django_ckeditor-master
+django-common-helpers==0.6.4
 django-compressor==1.1.2
 django-countries==1.2
+django-crispy-forms==1.4.0
 django-cron==0.3.0
 django-debug-toolbar==0.9.4
 django-extensions==0.9
 django-grappelli==2.4.6
 -e git+https://github.com/toastdriven/django-haystack.git@acc656cc5f35a84573d5ae82dce62e901f79ef7d#egg=django_haystack-dev
--e git+https://github.com/lamby/django-lint.git@55290dfefc87baa02222db6d9582f2df8437a464#egg=django_lint-dev
+-e git+https://github.com/lamby/django-lint.git@55290dfefc87baa02222db6d9582f2df8437a464#egg=django_lint-master
 django-mptt==0.5.5
 django-nose==1.1
 django-pagination==1.0.7
 django-postman==1.2.0
 django-social-auth==0.7.23
 django-storages==1.1.5
--e git://github.com/ecomarket/django-thumbs.git@cd1fd331336811d410f98af1ee52f67a344608cb#egg=django_thumbs-dev
+-e git://github.com/ecomarket/django-thumbs.git@cd1fd331336811d410f98af1ee52f67a344608cb#egg=django_thumbs-master
 django-tinymce==1.5.1b2
+djangorestframework==2.3.10
 docutils==0.9.1
 easy-thumbnails==1.0.3
+factory-boy==1.2.0
+fpconst==0.7.2
 gunicorn==0.14.5
 html2text==3.200.3
 httplib2==0.7.4
 -e git+https://github.com/francescortiz/image@7cef1c59824e0bb77b643dcaed0aa4d28294584f#egg=image-dev
 ipdb==0.7
 ipython==0.13
+libsaas==0.4
 logilab-astng==0.23.1
 logilab-common==0.57.1
+lxml==3.0.1
+mailsnake==1.6.3
 mock==0.8.0
+newrelic==2.50.0.39
 nose==1.1.2
 oauth2==1.5.211
+oauth2client==1.2
 paramiko==1.7.7.2
 paypal==1.2.0
 pep8==1.3.3
+phonenumbers==5.4b1
 pycrypto==2.6
 pylint==0.25.1
 pysolr==2.1.0-beta
 python-dateutil==2.1
--e git+http://github.com/poswald/python-money.git@29d3671e140307b958b51a32e6d1ac8553edc9e5#egg=python_money-dev
+python-memcached==1.54
+-e git+http://github.com/poswald/python-money.git@29d3671e140307b958b51a32e6d1ac8553edc9e5#egg=python_money-master
 python-openid==2.2.5
 pytz==2012c
-phonenumbers==5.4b1
+raven==5.2.0
 requests==0.13.8
 -e git+https://github.com/sailthru/sailthru-python-client.git@99afb7944bac01bfc765635b57133f4f9eba3e07#egg=sailthru_client-dev
 simplejson==3.1.3
@@ -64,18 +80,3 @@ ssh==1.7.14
 unittest2==0.5.1
 user-messages==0.1
 wsgiref==0.1.2
-factory-boy==1.2.0
-mailsnake
--e git+https://github.com/justquick/django-activity-stream.git@36f0bba25b6c9e9593a1179c2f1feeea58c39d1c#egg=django-activity-stream
--e git://github.com/alexjg/django-seo.git@cd37113e34464c38b591fbca8e801dc438866585#egg=DjangoSEO-dev
-newrelic
--e git+https://github.com/ukch/django-ckeditor.git@12446f23b62109dcd687f14c888ee605339e180c#egg=django-ckeditor
-python-memcached
-IPy
-libsaas
-lxml==3.0.1
-raven
-https://google-api-ads-python.googlecode.com/files/adwords_api_python_15.9.1.tar.gz
-fpconst==0.7.2
-oauth2client==1.2
-PyXML==0.8.4
